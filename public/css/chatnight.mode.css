@@ -1,0 +1,1078 @@
+
+/* ===== CSS For "Common CSS" Starts Here ===== */
+.night{
+    background: var(--nightBodyColor) !important;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+}
+.night input,
+.night textarea,
+.night select {
+	color: var(--nightTextColor) !important;
+	background-color: var(--nightBodyColor) !important;
+}
+.night p,
+.night h1,
+.night h2,
+.night h3,
+.night h4,
+.night h5,
+.night h6,
+.night a,
+.night span,
+.night small,
+.night td,
+.night th,
+.night label,
+.night b,
+.night li{
+	color: var(--nightTextColor) !important;
+}
+.night .gbtn_dark {
+	background: var(--baseColor);
+	border: 1px solid var(--baseColor);
+}
+.night .gbtn_dark_bdr {
+	background: transparent;
+	border: 1px solid var(--nightTextColor);
+}
+.night .gbtn_dark_bdr:hover{
+	color: var(--nightTextColor);
+	background: var(--baseColor);
+	border: 1px solid var(--baseColor);
+}
+.night .para_texts p a {
+	color: var(--baseColor) !important;
+}
+.night .gbtn_bdr{
+	color: var(--baseColor) !important;
+}
+.night .gbtn_bdr:hover{
+	color: var(--nightTextColor) !important;
+}
+.night .gbtn_red_bdr {
+	color: var(--redColor) !important;
+}
+.night .gbtn_red_bdr:hover{
+	color: var(--lightColor) !important;
+}
+.night .gbtn_orange_bdr{
+	color: var(--orangeColor) !important;
+	background: transparent;
+}
+.night .gbtn_orange_bdr:hover{
+	color: var(--lightColor) !important;
+	background: var(--orangeColor);
+}
+.night .gbtn_gray{
+	border: 2px solid var(--baseColor);
+	background: transparent;
+	color: var(--baseColor) !important;
+}
+.night .gbtn_gray:hover{
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+
+.night .pagination .page-link{
+	background: var(--nightBoxColor);
+}
+.night .pagination .page-link:hover{
+	background: #4A4A4A;
+}
+.night .pagination .page-item.active .page-link{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+.night .page_indicator ul li.active a {
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Common CSS" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Home Page" Starts Here ===== */
+.night .navbar .navbar-nav .dropdown_column .dropdown-item:hover,
+.night .navbar .navbar-nav .dropdown_column .dropdown-item:active,
+.night .navbar .navbar-nav .dropdown_column .dropdown-item:focus {
+	color: var(--baseColor) !important;
+}
+.night .navbar .navbar-nav .nav-item .nav-link:hover {
+	color: var(--baseColor) !important;
+}
+.night .hero_banner .banner_heading h1 {
+	color: var(--lightColor) !important;
+}
+.night .hero_search .search_icon .white_icon{
+	display: block;
+}
+.night .hero_search .search_icon .black_icon{
+	display: none;
+}
+
+.night .get_services .easiest_way_box{
+    background: var(--nightBoxColor);
+}
+.night .get_services .steps .single_step {
+	background: var(--nightBoxColor);
+}
+.night .nearby_companies .single_company {
+	background: var(--nightBoxColor);
+}
+.night .nearby_companies .single_company .logo_info ul li::before {
+	color: var(--nightTextColor);
+}
+.night .needed_home_services .service_details {
+	background: var(--nightBoxColor);
+}
+.night .safety_tips .single_safety {
+	background: var(--nightBoxColor);
+}
+.night .registration_counter {
+	background: var(--nightBoxColor);
+}
+.night .navbar .navbar-nav .nav-item .nav-link.gbtn:hover{
+	color: var(--lightColor) !important;
+}
+/* ===== CSS For "Home Page" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Search Page" Starts Here ===== */
+.night .page_indicator ul li a::after {
+	color: var(--nightTextColor);
+}
+.night .filters .single_filter .box::before {
+	color: var(--nightTextColor);
+}
+.night .found_companies .single_company .company_info {
+	background: var(--nightBoxColor);
+}
+.night .location_map_modal .modal-body {
+	background: var(--nightBoxColor);
+}
+
+.night .services_category_slider .single_category {
+	background: var(--nightBoxColor);
+}
+.night .services_category_slider .single_category:hover{
+	background: var(--baseLightColor);
+}
+.night .services_category_slider .single_category:hover h6{
+	color: var(--darkColor) !important;
+}
+/* ===== CSS For "Search Page" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Search Page 2" Starts Here ===== */
+.night .found_services .single_service .company_info {
+	background: var(--nightBoxColor);
+}
+.night .filters .single_filter .gbtn {
+	background: var(--nightBoxColor);
+}
+.night .filters .single_filter .gbtn::before {
+	color: var(--nightTextColor);
+}
+.night .filter_content{
+	background: var(--nightBoxColor);
+	border: 1px solid var(--borderColor);	
+}
+.night .filters_in_details .filters_title .request_new_service a {
+	color: var(--baseColor) !important;
+}
+.night .filter_content .use_current_location a {
+	color: var(--baseColor) !important;
+}
+
+.night .all_filter_tab{
+	background: var(--nightBoxColor);
+}
+.night .all_filter_tab .filter_content{
+	border: none;
+}
+.night .all_filter_tab .nav .nav-link {
+	background: var(--nightBoxColor);
+}
+.night .all_filter_tab .nav .nav-link:hover {
+	background: #4A4A4A;
+}
+.night .filters_in_details .filters_title ul li:hover{
+	background: var(--baseLightColor);
+}
+.night .filters_in_details .filters_title ul li h6{
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.night .filters_in_details .filters_title ul li:hover h6,
+.night .filters_in_details .filters_title ul li:hover h6 span{
+	color: var(--darkColor) !important;
+}
+.night .all_filter_tab .nav .nav-link.active {
+	background: var(--baseColor) !important;
+}
+.night .all_filter_modal .applied_filters {
+	background: #3B3D3E;
+}
+.night .all_filter_modal .selected_done {
+	background: var(--nightBoxColor);
+}
+.night .other_filter_content .filters_title .budget_filter .input_icon i {
+	color: var(--nightTextColor);
+	background: #333333;
+}
+
+.night .found_companies .single_company .logo_info ul li::before {
+	color: var(--nightTextColor);
+}
+
+.night .filters_in_details .filters_title .filter_heading{
+	background: var(--nightBodyColor);
+}
+.night .filters_in_details .filters_title .request_new_service {
+	background: var(--nightBodyColor);
+}
+.night .filter_content .distance_selection ul li:hover h6 {
+	color: var(--darkColor) !important;
+}
+.night .filter_content .distance_selection ul li.active h6 {
+	color: var(--lightColor) !important;
+}
+/* ===== CSS For "Search Page 2" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Company Profile Page" Starts Here ===== */
+.night .company_page_indicator {
+	background: var(--nightBoxColor);
+}
+.night .company_banner .gbtn_dark {
+	color: var(--lightColor);
+	background: var(--darkColor);
+	border: 1px solid var(--darkColor);
+}
+.night .company_banner .gbtn_white {
+	color: var(--baseColor) !important;
+}
+.night .cp_info_details_wrap {
+	background: var(--nightBodyColor);
+}
+.night .cp_info_details .cp_info {
+	background: var(--nightBoxColor);
+}
+.night .cp_info_details .cp_details {
+	background: var(--nightBoxColor);
+}
+.night .cp_info_details .areas_services .all_areas p a {
+	color: var(--baseColor) !important;
+}
+
+.night .services_wrap .company_services .single_service .service_details {
+	background: var(--nightBoxColor);
+}
+.night .portfolio_slider .portfolio_info {
+	background: var(--nightBoxColor);
+}
+.night .faqs {
+	background: var(--nightBodyColor);
+}
+.night .faqs .accordion {
+	background: var(--nightBoxColor);
+}
+.night .faqs .single_item .click_item a {
+	background: var(--nightBoxColor);
+}
+.night .faqs .single_item .click_item a:hover{
+	color: var(--darkColor) !important;
+	background: var(--baseLightColor);
+}
+.night .cp_ratings_wrap .reviews_actions .shows_reviews h4 .star_rating_amount {
+	color: var(--baseColor) !important;
+}
+.night .cp_fixed_menu_wrap {
+	background: var(--nightBoxColor);
+}
+.night .cp_fixed_menu .page_links ul li a:hover{
+	color: var(--baseColor) !important;
+}
+.night .cp_info_details .cp_details .cp_menu ul li a:hover {
+	color: var(--baseColor) !important;
+}
+.night .cp_got_reviews .single_review .profile_info .profile_name h6 .star_rating_amount {
+	color: var(--baseColor) !important;
+}
+.night .cp_ratings_wrap .reviews_actions .form-control:hover{
+	color: var(--darkColor) !important;
+	background: var(--baseLightColor) !important;
+}
+.night .cp_fixed_menu .page_links ul li a.active {
+	color: var(--baseColor) !important;
+}
+.night .cp_info_details .cp_details .cp_menu ul li.active a {
+	color: var(--baseColor) !important;
+}
+
+.night .services_wrap .heading h2 {
+	color: var(--baseColor) !important;
+}
+.night .portfolio_wrap .heading h2 {
+	color: var(--baseColor) !important;
+}
+.night .faqs .heading h2 {
+	color: var(--baseColor) !important;
+}
+.night .cp_ratings_wrap .heading h2 {
+	color: var(--baseColor) !important;
+}
+
+.night .msg_popup_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .msg_popup_modal .need_requirements h5 {
+	color: var(--baseColor) !important;
+}
+.night .msg_popup_modal .msg_box_wrap .form-control {
+	background: var(--nightBoxColor);
+}
+
+.night .msg_popup_modal .msg_box_wrap .msg_box {
+	border: 1px solid var(--borderColor);
+	background: var(--nightBoxColor);
+}
+
+.night .dropdown-menu.company_search_down::before {
+	background: var(--nightBodyColor);
+}
+.night .company_search_down button .white_icon {
+	display: inline-block;
+}
+.night .company_search_down button .black_icon {
+	display: none;
+}
+
+.night .legal_doc_modal .certificate_wrap{
+	background-color: var(--nightBodyColor);
+}
+.night .legal_doc_modal .the_certificate h1 {
+	color: var(--baseColor) !important;
+}
+.night .legal_doc_modal .close {
+	color: var(--baseColor) !important;
+}
+.night .legal_doc_modal .insurance_certificate .certificate_pdf a {
+	color: var(--baseColor) !important;
+}
+.night .legal_doc_modal .verification_process .top_part {
+	background: var(--nightBoxColor);
+}
+.night .legal_doc_modal .verification_process .bottom_part {
+	background: var(--nightBodyColor);
+}
+.night .legal_doc_modal .verification_process .gabazzo_logo.white_logo{
+	display: inline-block;
+}
+.night .legal_doc_modal .verification_process .gabazzo_logo.black_logo{
+	display: none;
+}
+.night .legal_doc_modal .verification_process .single_process h3{
+	color: var(--baseColor);
+}
+.night .saved_list_wrap{
+	background: var(--nightBodyColor);
+	border-radius: 3px;
+}
+.night .saved_list_wrap .saved_list ul li a:hover{
+	color: var(--darkColor) !important;
+}
+.night .saved_list_wrap .creating_new_list a:hover{
+	color: var(--darkColor) !important;
+}
+.night .creating_list_modal .modal-body{
+	background: var(--nightBoxColor);
+}
+.night .share_company_modal .share_company_wrap {
+	background: var(--nightBoxColor);
+}
+
+.night .report_company_modal .modal-body{
+	background: var(--nightBoxColor);
+}
+.night .report_company_modal .modal-footer{
+	background: var(--nightBoxColor);
+	border-top: 1px solid var(--borderColor);
+}
+
+.night .portfolio_wrap{
+	background: var(--nightBoxColor);
+}
+/* ===== CSS For "Company Profile Page" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Port Page" Starts Here ===== */
+.night .port_menu_wrap{
+	background: var(--nightBoxColor);
+}
+.night .port_menu .page_links ul li a.active {
+	color: var(--baseColor) !important;
+}
+.night .port_page_indicator {
+	background: var(--nightBodyColor);
+}
+.night .service_port .received_quote_box .title_head {
+	background: var(--baseColor);
+}
+.night .service_port .received_quote_box {
+	background: var(--nightBoxColor);
+}
+.night .service_port .received_quote_box .quote_details {
+	border: 1px solid var(--blackColor);
+}
+.night .port_fixed{
+	background: var(--nightBoxColor);
+}
+.night .expand_port_fixed {
+	background: var(--nightBoxColor);
+}
+.night .service_port .tags_category {
+	border: 1px solid var(--borderColor);
+	background: var(--nightBoxColor);
+}
+/* ===== CSS For "Port Page" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Company Dashboard" Starts Here ===== */
+.night .dashboard_header_wrap{
+	background: var(--secondaryColor);
+}
+.night .dashboard_header .preview_page a {
+	color: var(--baseColor) !important;
+}
+.night .membersProfileLinks .profile_links ul li a:hover,
+.night .membersProfileLinks .profile_links ul li.active a {
+	color: var(--baseColor) !important;
+}
+
+.night .dashboard_menu {
+	background: var(--nightBoxColor);
+}
+.night .dashboard_menu ul li a:hover{
+	color: var(--baseColor) !important;
+}
+.night .dashboard_menu ul li.active a {
+	color: var(--baseColor) !important;
+}
+.night .general_info .change_logo_wrap {
+	background: var(--nightBoxColor);
+}
+.night .general_info .company_information .form-control{
+	background: var(--nightBoxColor) !important;
+}
+
+.night .pignose-calendar{
+	background: var(--nightBoxColor);
+}
+.night .pignose-calendar .pignose-calendar-top{
+	background: var(--secondaryColor);
+}
+.night .pignose-calendar .pignose-calendar-header .pignose-calendar-week{
+	color: var(--nightTextColor);
+}
+.night .pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sat,
+.night .pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sun {
+	color: #fa4832;
+}
+.night .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sat a,
+.night .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sun a {
+	color: #fa4832 !important;
+}
+
+.night .working_hours thead th {
+	color: var(--darkColor) !important;
+}
+
+.night .dash_fixed_menu_wrap {
+	background: var(--secondaryColor);
+}
+.night .dash_fixed_menu ul li a.active,
+.night .dash_fixed_menu ul li a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .dashboard_save_changes_wrap{
+	background: var(--secondaryColor);
+}
+
+.night .business_docs .single_documents .upload_documents {
+	background: var(--nightBoxColor);
+	border: 1px solid var(--blackColor);
+}
+
+.night .dash_home_wrap {
+	background: var(--nightBoxColor);
+}
+.night .dashboard_home {
+	background: var(--nightBodyColor);
+	border: 1px solid var(--blackColor);
+}
+
+.night .dash_services_wrap {
+	background: var(--nightBodyColor);
+}
+.night .dashboard_services .all_services {
+	border: 1px solid var(--blackColor);
+	background: var(--nightBoxColor);
+}
+.night .dashboard_services .create_new_service {
+	background: var(--nightBodyColor);
+}
+
+.night .dash_reviews_wrap {
+	background: var(--nightBoxColor);
+}
+.night .dashboard_reviews {
+	border: 1px solid var(--blackColor);
+	background: var(--nightBodyColor);
+}
+.night .dashboard_reviews .reviews_actions .shows_reviews h4 .star_rating_amount {
+	color: var(--baseColor) !important;
+}
+.night .dash_fixed_menu_wrap .preview_page a {
+	color: var(--baseColor) !important;
+}
+.night .dashboard_save_changes .texts p b {
+	color: #E23334 !important;
+}
+.night .dashboard_services .create_new_service h4 {
+	color: var(--baseColor) !important;
+}
+.night .legal_doc_upload_modal .attachment {
+	background: var(--nightBoxColor);
+	border: 1px solid var(--blackColor);
+}
+.night .legal_doc_upload_modal .attachment .texts span {
+	color: var(--baseColor) !important;
+}
+.night .dashboard_header .account_msg ul li a:hover{
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Company Dashboard" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Saved List" Starts Here ===== */
+.night .saved_list_page .saved_list .single_list .list_info{
+	background: var(--nightBoxColor);
+}
+.night .saved_list_page .heading h2 {
+	color: var(--baseColor) !important;
+}
+.night .saved_list_page .create_new_list {
+	background: var(--nightBoxColor);
+}
+.night .saved_list_page .saved_list .single_list {
+	border: 1px solid var(--blackColor);
+}
+.night .saved_companies .saved_single_company {
+	background: var(--nightBoxColor);
+}
+.night .saved_companies .saved_single_company .logo_info ul li::before {
+	color: var(--nightTextColor);
+}
+/* ===== CSS For "Saved List" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Member's Page" Starts Here ===== */
+.night .members_banner .action_buttons .gbtn_dark{
+	background: var(--darkColor);
+	border: 1px solid var(--darkColor);
+}
+.night .members_banner .action_buttons .gbtn_white{
+	background: var(--darkColor);
+	color: var(--redColor) !important;
+	border: 1px solid var(--darkColor);
+}
+.night .members_info_details .members_info {
+	background: var(--nightBoxColor);
+	border: 1px solid var(--blackColor);
+}
+.night .members_info_details .members_details {
+	background: var(--nightBoxColor);
+	border: 1px solid var(--blackColor);
+}
+.night .members_info_details .members_social_info ul li i {
+	color: var(--baseColor);
+}
+/* ===== CSS For "Member's Page" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Profile Info Pages" Starts Here ===== */
+.night .pro_info_content .steps_progress .steps_indicator ul li a{
+	background: var(--nightBoxColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li.active a,
+.night .pro_info_content .steps_progress .steps_indicator ul li.completed a{
+	background: var(--baseColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li a::after {
+	border-left: 15px solid var(--nightBoxColor);
+	border-left-color: var(--nightBoxColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li.active a::after,
+.night .pro_info_content .steps_progress .steps_indicator ul li.completed a::after{
+	border-left: 15px solid var(--baseColor);
+	border-left-color: var(--baseColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li a::before {
+	border-left: 16px solid var(--nightTextColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li:last-child a:before{
+	border-left: none;
+}
+.night .pro_info_content .steps_progress .progress_info .completed_amount h5 {
+	color: var(--baseColor) !important;
+}
+.night .pro_info_content .form_wrap .form_title h4 b {
+	color: #FF0000 !important;
+}
+.night .pro_info_content .form_wrap .form-control {
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+.night .pro_info_content .form_wrap .email_verification .email_input .the_input .form-control {
+	border: 1px solid #575757;
+}
+.night .pro_info_content .steps_progress{
+	border-bottom: 1px solid #575757;
+}
+.night .pro_info_content .account_security_info{
+	border-bottom: 1px solid #575757;
+}
+.night .pro_info_content .form_wrap .email_verification{
+	border-bottom: 1px solid #575757;
+}
+.night .gabazzo_contact_intro .form_wrap .form-control{
+	border: 1px solid #575757;
+}
+.night .pro_info_content .form_wrap label b{
+	color: #FF0000 !important;
+}
+.night .pro_info_content .form_wrap .change_logo .label {
+	background: var(--nightBoxColor);
+	border: 2px dashed #000000;
+}
+.night .completed_profile .congrats_texts p {
+	color: var(--baseColor) !important;
+}
+.night .completed_profile .completed_thank_you p a {
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Profile Info Pages" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Login & Signup" Starts Here ===== */
+.night .gabazzo_login {
+	background: var(--nightBodyColor);
+}
+.night .gabazzo_logup .or h6 {
+	background: var(--nightBodyColor);
+}
+.night .gabazzo_logup .alter_info_texts p a {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_logup .form_footer p a {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_login .remember_forgot .forgot_password a:hover {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_logup .login_form h3 {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_logup .form-control{
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+.night .gabazzo_contact_intro .contact_intro .texts ul li a:hover {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_logup .or{
+	border-top: 1px solid #575757;
+}
+/* ===== CSS For "Login & Signup" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Gabazzo Chat" Starts Here ===== */
+.night .gb_chat_wrap{
+	background: var(--nightBodyColor);
+}
+.night .gb_top_search_wrap .client_search .form-control{
+	border: 1px solid #575757;
+	background: var(--nightBoxColor) !important;
+}
+.night .gb_top_search_wrap .client_search button .blue_icon{
+	display: inline-block;
+}
+.night .gb_top_search_wrap .client_search button .black_icon{
+	display: none;
+}
+.night .gb_top_search_wrap .other_actions ul li .blue_icon{
+	display: inline-block;
+}
+.night .gb_top_search_wrap .other_actions ul li .black_icon{
+	display: none;
+}
+
+.night .gb_chat{
+	border: 1px solid #575757;
+}
+.night .gb_chat .gb_list .nav {
+	background: #121212;
+}
+.night .gb_chat .contact_list {
+	background: #121212;
+}
+.night .gb_chat .contact_list ul li a{
+	background: #121212;
+}
+.night .gb_chat .contact_list ul li.active a {
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .contact_list .profile_info time{
+	color: var(--baseColor);
+}
+.night .gb_chat .gb_list .nav .nav-link{
+	border-bottom: 2px solid #575757;
+}
+.night .gb_chat .gb_list .nav .nav-link.active{
+	color: var(--baseColor) !important;
+	border-bottom: 2px solid var(--baseColor);
+}
+.night .gb_chat .user_files_manage .nav .nav-link {
+	border-bottom: 2px solid #575757;
+}
+.night .gb_chat .user_files_manage .nav .nav-link.active{
+	color: var(--baseColor) !important;
+	border-bottom: 2px solid var(--baseColor);
+}
+
+.night .gb_chat .conversation_footer {
+	background: #121212;
+}
+.night .gb_chat .conversation_footer .message_box textarea {
+	background: var(--nightBoxColor) !important;
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns .attachment {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns .attachment .blue_icon{
+	display: none;
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns .attachment .white_icon{
+	display: inline-block;
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns ul li a {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .conversation_footer .sending_actions ul li a .blue_icon {
+	display: none;
+}
+.night .gb_chat .conversation_footer .sending_actions ul li a .white_icon {
+	display: inline-block;
+}
+
+.night .gb_chat .gb_messages {
+	border-left: 1px solid #575757;
+	border-right: 1px solid #575757;
+	background: var(--nightBodyColor);
+}
+.night .gb_chat .gb_messages .msg_flow .security_alert_msg p a {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .gb_messages .msg_flow .msg_time_actions .msg_time time {
+	color: var(--baseColor);
+}
+.night .gb_chat .gb_messages .message_header{
+	border-bottom: 1px solid #575757;
+}
+.night .gb_chat .gb_messages .message_header .history_search .black_icon{
+	display: none;
+}
+.night .gb_chat .gb_messages .message_header .history_search .blue_icon{
+	display: inline-block;
+}
+.night .sliding_search_wrap.search_expanded .form-control {
+	background: var(--nightBoxColor) !important;
+}
+.night .sliding_search_wrap.search_expanded .search_submit {
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .gb_messages .message_header .call_actions ul > li > a .black_icon{
+	display: none;
+}
+.night .gb_chat .gb_messages .message_header .call_actions ul > li > a .blue_icon{
+	display: inline-block;
+}
+.night .gb_chat .gb_messages .message_header .user_actions_down{
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .gb_messages .message_header .user_actions_down::before {
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .gb_messages .message_header .user_actions ul li a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .gb_chat .gb_info {
+	background: #121212;
+}
+.night .gb_chat .gb_info .profile_info .profile_user_link a:hover {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .user_files_manage .single_manage .manage_field .form-control {
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+.night .gb_chat .user_files_manage .single_manage .manage_heading .add_button button {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .user_files_manage .single_manage .manage_field button {
+	background: var(--nightBoxColor);
+}
+
+.night .order_history_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .order_history_modal .table {
+	border: 1px solid #575757;
+}
+.night .order_history_modal thead th {
+	border-bottom: 1px solid #575757;
+}
+.night .order_history_modal .table td,
+.night .order_history_modal .table th{
+	border: 1px solid #575757;
+}
+.night .order_history_modal .member_info .member_texts .member_name a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .create_offer_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .create_offer_modal .select_services .single_service {
+	border: 1px solid #575757;
+	background: var(--nightBoxColor);
+}
+.night .create_offer_modal .modal-footer{
+	background: #121212;
+}
+.night .create_offer_modal .modal_actions ul li a {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .quick_sms_down{
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .single_quick_sms{
+	background: var(--nightBodyColor);
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_title h5{
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .edit_delete ul li a {
+	background: transparent;
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .create_fast_reply a{
+	background: transparent !important;
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .create_fast_reply span {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .msg_header_search .search_form .search_results_wrap{
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .msg_header_search .search_form .single_result a:hover .profile_info h6{
+	color: var(--darkColor) !important;
+}
+.night .gb_chat .msg_header_search .search_form .single_result a:hover .profile_info p {
+	color: var(--darkColor) !important;
+}
+.night .gb_chat .msg_header_search .search_pagination ul li.disabled a {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+.night .gb_chat .msg_header_search .search_pagination ul li a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .gb_chat .gb_info .profile_info .company_ratings span {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .gb_messages .msg_flow .msg_actions ul li .black_icon{
+	display: none;
+}
+.night .gb_chat .gb_messages .msg_flow .msg_actions ul li .blue_icon{
+	display: inline-block;
+}
+
+.night .creating_offer .offer_box{
+	background: var(--nightBoxColor) !important;
+}
+.night .create_offer_modal .select_payment .single_payment{
+	background: var(--nightBoxColor);
+	border: 1px solid #575757;
+}
+.night .creating_offer .form-control{
+	border: 1px solid #575757;
+}
+.night .created_milestones .click_item a{
+	background: var(--nightBoxColor);
+}
+.night .created_milestones .single_item {
+	border-bottom: 1px solid #575757;
+}
+.night .created_milestones {
+	border: 1px solid #575757;
+}
+.night .created_milestone_box {
+	background: var(--nightBodyColor);
+}
+.night .creating_offer .proposal_wrap .describe_offer .form-control {
+	background: var(--nightBoxColor) !important;
+}
+.night .created_milestone_box .service_img_descrip .service_descrip .form-control {
+	height: 120px;
+	border-radius: 4px;
+}
+.night .creating_offer .notes .form-control{
+	background: var(--nightBoxColor) !important;
+}
+
+.night .sent_offer .indicator_texts h4 a {
+	color: var(--baseColor) !important;
+}
+.night .sent_offer .offer_box_wrap {
+	border: 1px solid #575757;
+}
+.night .gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_body p a {
+	color: var(--baseColor) !important;
+}
+.night .sent_offer .offer_facts{
+	background: var(--nightBoxColor);
+}
+.night .sent_offer .offer_facts .tiny_box{
+	border: 1px solid #575757;
+	background: var(--nightBodyColor);
+}
+.night .all_milestones .single_item {
+	border-bottom: 1px solid #575757;
+}
+.all_milestones .single_item:first-child {
+	border-top: 1px solid #575757;
+}
+/* ===== CSS For "Gabazzo Chat" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "" Starts Here ===== */
+/* ===== CSS For "" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "" Starts Here ===== */
+/* ===== CSS For "" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "" Starts Here ===== */
+/* ===== CSS For "" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "" Starts Here ===== */
+/* ===== CSS For "" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "" Starts Here ===== */
+/* ===== CSS For "" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */

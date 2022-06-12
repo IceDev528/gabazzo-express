@@ -1,0 +1,1488 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-T23WPNV');</script>
+	<!--Metatags-->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatble" content="ie=edge" />
+	<!--Website Title-->
+	<title>Company Dashboard</title>
+	<!--Calling Favicon-->
+	<link rel="icon" href="images/layout/favicon.png" />
+	<link rel="shortcut icon" href="images/layout/favicon.ico" />
+	<!--FontAwesome CDN-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+	<!--Normalize v8.0.1 CSS FILE-->
+	<link rel="stylesheet" href="css/normalize.css" />
+	<!--Bootstrap v4.6.0 CSS FILE-->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/pignose.calendar.min.css" />
+	<!--Fonts Are Loads From Here-->
+	<link rel="stylesheet" href="fonts/fonts.css" />
+	<!--Gabazzo Common CSS File-->
+	<link rel="stylesheet" href="css/gabazzo.common.css" />
+	<!--Main Stylesheet-->
+	<link rel="stylesheet" href="css/updatedStyles.css" />
+	<!--Stylesheet For The Responsiveness-->
+	<link rel="stylesheet" href="css/responsive.css" />
+	<!--Stylesheet For The Night Mode-->
+	<link rel="stylesheet" href="css/night.mode.css" />
+</head>
+
+<body data-spy="scroll" data-target="#fixedMenu" data-offset="80">
+
+	<!--===== Markup For "Header" Starts From Here =====-->
+	<header class="dashboard_header_wrap">
+		<div class="container">
+			<div class="dashboard_header">
+				<div class="logo_mode_wrap grid_item">
+					<div class="logo_mode_switching">
+						<ul>
+							<li>
+								<a href="/" class="navbar-brand">
+									<img src="../images/layout/gabazzo_logo_white.png" class="img-fluid white_logo"
+										alt="">
+								</a>
+							</li>
+							<li>
+								<a class="mode_icon" href="javascript:void(0)">
+									<img src="../images/layout/mode_icon_night.png" class="img-fluid night_icon"
+										title="" data-toggle="tooltip" alt="" data-original-title="Night Mode">
+									<img src="../images/layout/mode_icon_day.png" class="img-fluid day_icon" title=""
+										data-toggle="tooltip" alt="" data-original-title="Day Mode">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="preview_page grid_item">
+					<a href="/company-profile/<%= currentUser._id %>">Preview Page</a>
+				</div>
+
+				<div class="account_msg">
+					<ul>
+						<li class="nav-item desktop_only"><a href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+								class="nav-link">Messages</a></li>
+						<li class="nav-item">
+							<a href="javascript:void(0)" class="nav-link profile_pic_link membersProfilePic">
+								<div class="profile_pic">
+									<% if (currentUser?.isCompany) { %>
+										<% if(currentUser.logo) { %>
+											<img src="<%= currentUser.logo %>" class="img-fluid" alt="" />
+											<% } else {%>
+												<img src="../images/man.png" class="img-fluid" alt="" />
+												<% }%>
+													<% } else { %>
+														<% if(currentUser.profilePicture) {%>
+															<img src="<%= currentUser.profilePicture %>"
+																class="img-fluid" alt="<%= currentUser.username %>" />
+															<%} else {%>
+																<img src="../images/man.png" class="img-fluid"
+																	alt="<%= currentUser.username %>" />
+																<% }%>
+																	<% } %>
+																		<span
+																			class="activity_status online_status"></span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--===== Markup For "Header" Ends Here =====-->
+
+	<% if(currentUser) { %>
+		<!--===== Markup For "Members Profile Link" Starts From Here =====-->
+		<div class="membersProfileLinks">
+			<div class="dismissMembersProfileLinks">
+				<i class="fa fa-times"></i>
+			</div>
+
+			<div class="members_profile_pic">
+				<% if (currentUser?.isCompany) { %>
+					<% if(currentUser.logo) { %>
+						<a href="javascript:void(0)"><img src="<%= currentUser.logo %>" class="img-fluid"
+								alt="<%= currentUser.username %>" /></a>
+						<% } else {%>
+							<a href="javascript:void(0)"><img src="../images/man.png" class="img-fluid"
+									alt="profile Picture" /></a>
+							<% }%>
+								<h6>
+									<%= currentUser.companyName %>
+								</h6>
+								<% } else { %>
+									<% if(currentUser?.profilePicture) {%>
+										<a href="javascript:void(0)"><img src="<%= currentUser.profilePicture %>"
+												class="img-fluid" alt="<%= currentUser.username %>" /></a>
+										<%} else {%>
+											<a href="javascript:void(0)"><img src="../images/man.png" class="img-fluid"
+													alt="profile picture" /></a>
+											<% }%>
+												<h6>
+													<%= currentUser.firstName + currentUser.lastName %>
+												</h6>
+												<% } %>
+			</div>
+
+			<div class="profile_links">
+				<% if (currentUser.isCompany) { %>
+					<ul>
+						<li><i class="fas fa-user"></i> <a href="/company-dashboard">View Dashboard</a></li>
+						<li class="mobile_only"><i class="fas fa-envelope"></i> <a
+								href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+						<li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+						<li><i class="fas fa-cog"></i> <a href="/company-settings/account">Settings</a></li>
+						<li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+					</ul>
+					<% } else { %>
+						<ul>
+							<li><i class="fas fa-user"></i> <a href="/member-profile/<%= currentUser._id %>">View
+									Profile</a></li>
+							<li class="mobile_only"><i class="fas fa-envelope"></i> <a
+									href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+							<% if(currentUser && !currentUser.isCompany) { %>
+								<li class="mobile_only"><i class="fas fa-list-alt"></i> <a href="/saved-list">Saved
+										List</a></li>
+								<% } %>
+									<li><i class="fas fa-cog"></i> <a href="/company-settings/account">Settings</a></li>
+									<li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+						</ul>
+						<% } %>
+			</div>
+		</div>
+		<!--===== Markup For "Members Profile Link" Ends Here =====-->
+		<% } %>
+
+		<% include ../partials/flash-messages %>
+
+			<!--===== Markup For "Dashboard Banner" Starts From Here =====-->
+			<section class="dashboard_banner">
+				<div class="overlay">
+					<div class="container">
+						<div class="contents">
+							<h2>Welcome back!</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--===== Markup For "Dashboard Banner" Ends Here =====-->
+
+
+			<!--===== Markup For "Fixed Menu" Starts From Here =====-->
+			<div class="dash_fixed_menu_wrap">
+				<div class="container">
+					<div class="dash_fixed_menu">
+						<div class="page_links grid_item">
+							<ul class="nav" id="fixedMenu">
+								<li class="nav-item"><a class="nav-link" href="#dashboardGeneralInfo">General Info</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="#dashboardHome">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="#dashboardServices">Services</a></li>
+								<li class="nav-item"><a class="nav-link" href="#dashboardPortfolio">Portfolio</a></li>
+								<li class="nav-item"><a class="nav-link" href="#dashboardReviews">Reviews</a></li>
+							</ul>
+						</div>
+
+						<div class="preview_page grid_item">
+							<a href="/company-profile/<%= currentUser._id %>">Preview Page</a>
+						</div>
+
+						<div class="account_msg">
+							<ul>
+								<li class="nav-item"><a href="#" class="nav-link">Messages</a></li>
+								<li class="nav-item">
+									<a href="javascript:void(0)" class="nav-link profile_pic_link membersProfilePic">
+										<div class="profile_pic">
+											<img src=<%=currentUser.logo %> class="img-fluid" alt="" />
+											<span
+												class="<%= currentUser.online ? 'activity_status online_status' : '' %>"
+												</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===== Markup For "Fixed Menu" Ends Here =====-->
+
+			<!-- action="/dashboard?_method=PUT" method="POST" enctype="multipart/form-data" -->
+			<!--===== Markup For "Dashboard Footer" Starts From Here =====-->
+			<form action="/dashboard?_method=PUT" method="post" enctype="multipart/form-data">
+				<div>
+					<section class="dashboard_save_changes_wrap">
+						<div class="container">
+							<div class="dashboard_save_changes">
+								<div class="texts grid_item">
+									<p><b>*</b> Click <span class="bold_texts">Save Changes</span> to update latest
+										added detail (s).</p>
+								</div>
+								<div class="save_changes_button grid_item">
+									<button type="submit" class="btn gbtn">Save Changes</button>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!--===== Markup For "Dashboard Footer" Ends Here =====-->
+
+
+					<!--===== Markup For "Dashboard Menu" Starts From Here =====-->
+					<div class="dashboard_menu">
+						<div class="container">
+							<ul>
+								<li class="active"><a href="javascript:void(0)">General Info</a></li>
+								<li><a href="#dashboardHome">Home</a></li>
+								<li><a href="#dashboardServices">Services</a></li>
+								<li><a href="#dashboardPortfolio">Portfolio</a></li>
+								<li><a href="#dashboardReviews">Reviews</a></li>
+							</ul>
+						</div>
+					</div>
+					<!--===== Markup For "Dashboard Menu" Ends Here =====-->
+
+
+					<!--===== Markup For "General Info" Starts From Here =====-->
+					<section class="general_info_wrap" id="dashboardGeneralInfo">
+						<div class="container">
+							<div class="general_info">
+								<div class="company_logo">
+									<div class="heading">
+										<h4>Company Logo</h4>
+									</div>
+									<div class="change_logo_wrap">
+										<div class="uploaded_logo">
+											<img src="<%= currentUser.logo %>" id="companyLogo" class="img-fluid"
+												alt="" />
+										</div>
+										<div class="change_logo">
+											<div class="attach_file">
+												<label class="attachment gbtn">
+													<span>Change Logo</span>
+													<input class="file_attachment" id="logo" name="logo"
+														value="<%= currentUser.logo %>" type="file" accept="image/*"
+														onchange="document.getElementById('companyLogo').src = window.URL.createObjectURL(this.files[0])">
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="company_information">
+									<div class="heading">
+										<h4>Company Information</h4>
+									</div>
+
+									<div class="form-group">
+										<label for="">Address:</label>
+										<input type="text" name="address" value="<%= currentUser.location %>"
+											class="form-control">
+									</div>
+
+									<input name="yearsInBusiness" id="yearsInBusiness" type="text"
+										style="display: none" />
+
+									<div class="form_row">
+										<div class="form-group">
+											<label for="">Phone Number:</label>
+											<input type="tel" name="phoneNumber" value="<%= currentUser.phoneNumber %>"
+												class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="">Website:</label>
+											<input type="url" name="website" value="<%= currentUser.website %>"
+												class="form-control">
+										</div>
+									</div>
+
+									<div class="form_row">
+										<div class="form-group">
+											<label for="language">Languages:</label>
+											<select name="language" id="language" class="form-control">
+												<option <%=currentUser.language==='English' ? 'selected' : '' %>
+													value="English">English</option>
+												<option <%=currentUser.language==='Español' ? 'selected' : '' %>
+													value="Español">Español</option>
+												<option <%=currentUser.language==='Français' ? 'selected' : '' %>
+													value="Français">Français</option>
+												<option <%=currentUser.language==='Pусский' ? 'selected' : '' %>
+													value="Pусский">Pусский</option>
+												<option <%=currentUser.language==='Polskie' ? 'selected' : '' %>
+													value="Polskie">Polskie</option>
+												<option <%=currentUser.language==='Deutsch' ? 'selected' : '' %>
+													value="Deutsch">Deutsch</option>
+												<option <%=currentUser.language==='Italiano' ? 'selected' : '' %>
+													value="Italiano">Italiano</option>
+												<option <%=currentUser.language==='中國人' ? 'selected' : '' %>
+													value="中國人">中國人</option>
+												<option <%=currentUser.language==='Português' ? 'selected' : '' %>
+													value="Português">Português</option>
+												<option <%=currentUser.language==='한국인' ? 'selected' : '' %>
+													value="한국인">한국인</option>
+												<option <%=currentUser.language==='日本' ? 'selected' : '' %>
+													value="日本">日本</option>
+											</select>
+										</div>
+
+										<div class="form-group">
+											<label for="entity">Type of Entity:</label>
+											<select name="entity" id="entity" class="form-control">
+												<option name="entityType"
+													<%=currentUser.entityType==='Limited Liability Company (LLC)'
+													? 'selected' : '' %> value="Limited Liability Company (LLC)">Limited
+													Liability Company (LLC)</option>
+												<option name="entityType"
+													<%=currentUser.entityType==='Limited Liability Partnership (LLP)'
+													? 'selected' : '' %> value="Limited Liability Partnership
+													(LLP)">Limited Liability Partnership (LLP)</option>
+												<option name="entityType" <%=currentUser.entityType==='C- Corporation'
+													? 'selected' : '' %> value="C- Corporation">C- Corporation</option>
+												<option name="entityType" <%=currentUser.entityType==='S- Corporation'
+													? 'selected' : '' %> value="S- Corporation">S- Corporation</option>
+												<option name="entityType" <%=currentUser.entityType==='Non Profit'
+													? 'selected' : '' %> value="Non Profit">Non Profit</option>
+												<option name="entityType" <%=currentUser.entityType==='Partnership'
+													? 'selected' : '' %> value="Partnership">Partnership</option>
+												<option name="entityType"
+													<%=currentUser.entityType==='Sole Proprietorship' ? 'selected' : ''
+													%> value="Sole Proprietorship">Sole Proprietorship</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group mb-0">
+										<label for="employees">Total Employees:</label>
+										<input type="number" name="employees" value="<%=currentUser.noOfEmployees %>" class="form-control">
+									</div>
+								</div>
+
+								<div class="calendar_part">
+									<div class="calendar"></div>
+								</div>
+							</div>
+
+							<div class="working_hours">
+								<div class="table-responsive">
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th>Day</th>
+												<th>From</th>
+												<th>To</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="day">Monday</td>
+												<td>
+													<input type="time" name="mondayFrom" class="form-control"
+														value="<%= currentUser.mondayFrom %>" />
+												</td>
+												<td>
+													<input type="time" name="mondayTo" class="form-control"
+														value="<%= currentUser.mondayTo %>" />
+												</td>
+											</tr>
+
+											<tr>
+												<td class="day">Tuesday</td>
+												<td>
+													<input type="time" name="tuesdayFrom" class="form-control"
+														value="<%= currentUser.tuesdayFrom %>" />
+												</td>
+												<td>
+													<input type="time" name="tuesdayTo" class="form-control"
+														value="<%= currentUser.tuesdayTo %>" />
+												</td>
+											</tr>
+
+											<tr>
+												<td class="day">Wednesday</td>
+												<td>
+													<input type="time" name="wednesdayFrom"
+														class="form-control tuesday_action_take"
+														value="<%= currentUser.wednesdayFrom %>" />
+												</td>
+												<td>
+													<input type="time" name="wednesdayTo"
+														class="form-control tuesday_action_take"
+														value="<%= currentUser.wednesdayTo %>" />
+												</td>
+											</tr>
+
+											<tr>
+												<td class="day">Thursday</td>
+												<td>
+													<input type="time" name="thursdayFrom" class="form-control"
+														value="<%= currentUser.thursdayFrom %>" />
+												</td>
+												<td>
+													<input type="time" name="thursdayTo" class="form-control"
+														value="<%= currentUser.thursdayTo %>" />
+												</td>
+											</tr>
+
+											<tr>
+												<td class="day">Friday</td>
+												<td>
+													<input type="time" name="fridayFrom" class="form-control"
+														value="<%= currentUser.fridayFrom %>" />
+												</td>
+												<td>
+													<input type="time" name="fridayTo" class="form-control"
+														value="<%= currentUser.fridayTo %>" />
+												</td>
+											</tr>
+
+											<tr>
+												<td class="day">Saturday</td>
+												<td>
+													<input type="time" name="saturdayFrom" class="form-control"
+														value="<%= currentUser.saturdayFrom %>" />
+												</td>
+												<td>
+													<input type="time" name="saturdayTo" class="form-control"
+														value="<%= currentUser.saturdayTo %>" />
+												</td>
+											</tr>
+
+											<tr>
+												<td class="day">Sunday</td>
+												<td>
+													<input type="time" name="sundayFrom" class="form-control"
+														value="<%= currentUser.sundayFrom %>" />
+												</td>
+												<td>
+													<input type="time" name="sundayTo" class="form-control"
+														value="<%= currentUser.sundayTo %>" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!--===== Markup For "General Info" Ends Here =====-->
+
+
+					<!--===== Markup For "Business Documents" Starts From Here =====-->
+					<div class="business_doc_wrap">
+						<div class="container">
+							<div class="heading">
+								<h3>Business Documents</h3>
+							</div>
+							<div class="info_texts">
+								<p>It is okay if you do not have neither of these. Gabazzo gives up to 60 days to
+									acquire a state License and insurance. this will secure your company from potential
+									warnings/lawsuits from your local jurisdiction. if you do not know how to acquire
+									either, please contact us at support@gabazzo.com</p>
+							</div>
+
+							<div class="business_docs">
+								<div class="single_documents">
+									<h5>State License</h5>
+									<div class="upload_documents">
+										<a href="javascript:void(0)" data-target="#uploadLicensedCertificate"
+											data-toggle="modal"><i class="fas fa-plus"></i></a>
+									</div>
+								</div>
+								<div class="single_documents">
+									<h5>Insurance</h5>
+									<div class="upload_documents">
+										<a href="javascript:void(0)" data-target="#uploadInsuranceCertificate"
+											data-toggle="modal"><i class="fas fa-plus"></i></a>
+									</div>
+								</div>
+
+								<div class="single_documents">
+									<h5>Bonded</h5>
+									<div class="upload_documents">
+										<a href="javascript:void(0)" data-target="#uploadBondedCertificate"
+											data-toggle="modal"><i class="fas fa-plus"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--===== Markup For "Business Documents" Ends Here =====-->
+
+
+					<!--===== Markup For "Home" Starts From Here =====-->
+					<section class="dash_home_wrap" id="dashboardHome">
+						<div class="container">
+							<div class="dash_main_heading">
+								<h2>Home</h2>
+							</div>
+
+							<div class="dashboard_home">
+								<div class="about_wrap">
+									<div class="heading">
+										<h4>About</h4>
+									</div>
+									<div class="description_box">
+										<% if (currentUser.about) { %>
+											<textarea name="about" id="myText7" cols="30" rows="5"
+												placeholder="Type in what your company is about here..."
+												class="form-control"
+												maxlength="3000"><%= currentUser.about %></textarea>
+											<div class="character_indicator">
+												<h6><span id="wordCount7">0</span>/3000</h6>
+											</div>
+											<% } else { %>
+												<textarea name="about" id="myText7" cols="30" rows="5"
+													placeholder="Type in what your company is about here..."
+													class="form-control" maxlength="3000"></textarea>
+												<div class="character_indicator">
+													<h6><span id="wordCount7">0</span>/3000</h6>
+												</div>
+												<% } %>
+									</div>
+								</div>
+								<div class="service_areas_wrap">
+									<div class="heading">
+										<h4>Service Areas</h4>
+									</div>
+
+									<div class="service_areas">
+										<div class="area_map">
+											<iframe width="100%" height="500" frameborder="0" scrolling="no"
+												marginheight="0" marginwidth="0"
+												src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=<%= currentUser?.location %>+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+											</iframe>
+
+
+
+										</div>
+
+										<div class="all_areas">
+											<div class="area_input">
+												<input type="text" id="newArea"
+													placeholder="Type Service Area and Click Add" class="form-control">
+												<button type="button" class="btn gbtn" onclick="addNew()">Add</button>
+											</div>
+
+											<div class="added_areas">
+												<ul id="areaList">
+													<% currentUser.serviceAreas.map((service,index)=>{ %>
+														<li>
+															<%= service %><a href="javascript:void(0)"
+																	id="service-<%= index %>"
+																	onclick="removeArea(this.parentNode)">&times;</a><input
+																	name="serviceAreas[]" value="<%= service %>"
+																	type="hidden" />
+														</li>
+														<% }) %>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!--===== Markup For "Home" Ends Here =====-->
+
+
+					<!--===== Markup For "Services" Starts From Here =====-->
+					<section class="dash_services_wrap" id="dashboardServices">
+						<div class="container">
+							<div class="dashboard_services">
+								<div class="dash_main_heading">
+									<h2>Services</h2>
+								</div>
+
+								<div class="all_services">
+									<div class="single_service">
+										<div class="create_new_service">
+											<a href="/company-dashboard/createservice"><i class="fas fa-plus"></i></a>
+											<h4>Create a New Service</h4>
+										</div>
+									</div>
+
+									<% services.map((service, i)=>{ %>
+										<div class="single_service">
+											<div class="service_image">
+												<img src="<%= service.images[0]?.url %>" class="img-fluid"
+													alt="Service Image" />
+											</div>
+											<div class="service_title_actions">
+												<div class="service_title">
+													<h4>
+														<%= service.title %>
+													</h4>
+												</div>
+												<div class="service_ations">
+													<ul>
+														<li><a
+																href="/company-dashboard/updateservice/<%= service._id %>"><i
+																	class="fas fa-edit" title="Edit"
+																	data-toggle="tooltip"></i></a></li>
+														<li><a href="javascript:void(0)"
+																data-target="#deletePort<%= i %>" data-toggle="modal"><i
+																	class="fas fa-trash-alt"></i></a></li>
+														<!-- <li><a data-toggle="modal" data-id="<%= service.id %>" class="delBtn" ><i class="fas fa-trash-alt"></i></a></li> -->
+													</ul>
+												</div>
+											</div>
+										</div>
+
+
+										<!--===== Markup For "Delete Port" Starts From Here =====-->
+										<div class="modal fade creating_list_modal" id="deletePort<%= i %>">
+											<div class="modal-dialog modal-md modal-dialog-centered">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h4>Delete Service Port</h4>
+														<a href="javascript:void(0)" class="close"
+															data-dismiss="modal">&times;</a>
+													</div>
+													<div class="modal-body">
+														<form action="/services/<%= service._id %>?_method=DELETE"
+															method="post">
+															<div class="form-group">
+																<p>Are you sure you want to delete the Service?</p>
+															</div>
+															<div class="submit_button">
+																<button class="gbtn gbtn_red_bdr"
+																	type="submit">Done</button>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--===== Markup For "Delete Port" Ends Here =====-->
+										<% }) %>
+
+
+								</div>
+							</div>
+						</div>
+					</section>
+					<!--===== Markup For "Services" Ends Here =====-->
+
+
+					<!--===== Markup For "Portfolio" Starts From Here =====-->
+					<section class="dash_services_wrap dash_portfolio_wrap" id="dashboardPortfolio">
+						<div class="container">
+							<div class="dashboard_services">
+								<div class="dash_main_heading">
+									<h2>Portfolio</h2>
+								</div>
+
+								<div class="all_services">
+									<div class="single_service">
+										<div class="create_new_service">
+											<a href="/company-dashboard/createportfolio"><i class="fas fa-plus"></i></a>
+											<h4>Add Portfolio</h4>
+										</div>
+									</div>
+
+									<% portfolio.map((item, i)=>{ %>
+										<div class="single_service">
+											<div class="service_image">
+												<img src="<%= item.images[0]?.url %>" class="img-fluid"
+													alt="Portfolio image" />
+											</div>
+											<div class="service_title_actions">
+												<div class="service_title">
+													<h4>
+														<%= item.title %>
+													</h4>
+												</div>
+												<div class="service_ations">
+													<ul>
+														<li><a
+																href="/company-dashboard/updateportfolio/<%= item._id %>"><i
+																	class="fas fa-edit" title="Edit"
+																	data-toggle="tooltip"></i></a></li>
+														<li><a data-toggle="modal"
+																data-target="#deletePortfolio<%= i %>"><i
+																	class="fas fa-trash-alt"></i></a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+
+										<!--===== Markup For "Delete Portfolio" Starts From Here =====-->
+										<div class="modal fade creating_list_modal" id="deletePortfolio<%= i %>">
+											<div class="modal-dialog modal-md modal-dialog-centered">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h4>Delete Portfolio</h4>
+														<a href="javascript:void(0)" class="close"
+															data-dismiss="modal">&times;</a>
+													</div>
+													<div class="modal-body">
+														<form action="/portfolio/<%= item._id %>?_method=DELETE"
+															method="post">
+															<div class="form-group">
+																<p>Are you sure you want to delete the Portfolio?</p>
+															</div>
+															<div class="submit_button">
+																<button class="gbtn gbtn_red_bdr"
+																	type="submit">Done</button>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--===== Markup For "Delete Portfolio" Ends Here =====-->
+
+										<% }) %>
+
+								</div>
+							</div>
+						</div>
+					</section>
+					<!--===== Markup For "Portfolio" Ends Here =====-->
+				</div>
+			</form>
+
+			<!--===== Markup For "Reviews" Starts From Here =====-->
+			<div class="dash_reviews_wrap" id="dashboardReviews">
+				<div class="container">
+					<div class="dash_main_heading">
+						<h2>Reviews</h2>
+					</div>
+
+					<div class="dashboard_reviews">
+						<div class="reviews_actions">
+							<div class="shows_reviews grid_item">
+								<h4>Reviews <span class="star_rating_amount"><i class="fas fa-star"></i>
+										<%= average %>
+									</span> <span class="review_amount">(<%= review.length %>)</span></h4>
+							</div>
+
+							<div class="filter_review">
+								<form action="/company-dashboard/reviews" method="POST" class="filter-form">
+									<div class="form-group">
+										<select name="filter" id="" class="form-control" onchange="this.form.submit()">
+											<option value="recent">Most Recent</option>
+											<option value="positive" selected>Positive Reviews</option>
+											<option value="neutral">Neutral Reviews</option>
+											<option value="negative">Negative Reviews</option>
+										</select>
+									</div>
+								</form>
+							</div>
+							
+						</div>
+
+						<div class="cp_got_reviews">
+
+							<% review.map((item,i)=> { %>
+								<div class="single_review">
+									<div class="review_texts">
+										<div class="clients_review">
+											<div class="profile_info">
+												<div class="profile_pic">
+													<% if(item.author.id?.profilePicture) { %>
+														<img src="<%= item.author.id?.profilePicture %>" class="img-fluid"	alt="Profile Picture" />
+													<% } else { %>
+															<img src="../images/man.png" class="img-fluid" alt="Profile Picture" />
+													<% } %>
+												
+												</div>
+												<div class="profile_name">
+													<h6>
+														<%= item.author.id?.firstName + " " + item.author.id?.lastName %>
+															<span class="star_rating_amount"><i class="fas fa-star"></i>
+																<%= item.rating %>.0
+															</span>
+													</h6>
+												</div>
+											</div>
+											<div class="provided_review">
+												<p>
+													<%= item.text %>
+												</p>
+												<h6><%=  moment(item.createdAt).format("MMMM Do h:mm A") %></h6>
+											</div>
+										</div>
+										<% if(item.reply) { %> 
+											<div class="review_reply">
+												<div class="profile_info">
+													<div class="profile_pic">
+														<% if(item.owner.id?.logo ) { %>
+															<img src="<%= item.owner.id?.logo  %>" class="img-fluid"	alt="Company logo" />
+														<% } else { %>
+																<img src="../images/man.png" class="img-fluid" alt="Company logo" />
+														<% } %>
+													</div>
+													<div class="profile_name">
+														<h6>Reply from Company:</h6>
+													</div>
+												</div>
+												<div class="replied_review">
+													<p>
+														<%= item?.reply %>
+													</p>
+												</div>
+											</div>
+										<% } else { %>
+											<h6 style="margin-top: 10px; margin-bottom: 10px;">Add a Reply</h6>
+											<textarea style="margin-bottom: 15px;" id="<%= item._id %>" cols="30" rows="5" placeholder="Type your response here..." class="form-control"></textarea>
+											<div class="comment_report_btns">
+												<ul>
+													<!-- <li><a class="gbtn gbtn_red_bdr" href="javascript:void(0)">Report</a></li> -->
+													<li><a class="gbtn gbtn_bdr comment" name="<%= item._id %>" href="javascript:void(0)">Comment</a></li>
+												</ul>
+											</div>
+										<% } %>
+									</div>
+									<div class="review_carousel owl_controls_inner">
+										<div class="owl-carousel">
+											<% item?.images.map((image)=> { %>
+												<div class="reviews_media">
+													<a href="<%= image.url %>" class="reviews_1"
+														data-rel="reviews_1:theSlider">
+														<img src="<%= image.url %>" class="img-fluid" alt="Review Image" />
+													</a>
+												</div>
+												<% }) %>
+										</div>
+									</div>
+								</div>
+								<% })%>
+		
+							<!-- <div class="see_more_button">
+								<a class="gbtn" href="javascript:void(0)">+ See More</a>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+			<section class="dashboard_middle">
+				<div class="container_gbz">
+					<div class="dashboard_reviews">
+						<hr />
+
+						<!-- Review Section Starts From Here -->
+						<div class="cp_split_reviews">
+							<div class="header">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!--===== Markup For "Reviews" Ends Here =====-->
+
+
+			<!--===== Markup For "Insurance Certificate" Starts From Here =====-->
+			<div class="modal fade legal_doc_modal legal_doc_upload_modal" id="uploadInsuranceCertificate">
+				<div class="modal-dialog modal-lg modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="certificate_wrap">
+								<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+
+								<form action="/insurance-certificate/<%= currentUser._id %>" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+									<div class="the_certificate licensed_certificate">
+										<div class="certificate_texts">
+											<h1>Insurance</h1>
+											<div class="form_row">
+												<div class="single_certificate_info">
+													<label for="">State:</label>
+													<input type="text" value="<%= currentUser.insurance.insuranceState %>"
+														name="insuranceState" placeholder="" class="form-control" required>
+													<div class="invalid-feedback">
+														Please write a valid Insurance State.
+													</div>
+												</div>
+
+												<div class="single_certificate_info">
+													<label for="">Company:</label>
+													<input type="text" name="insuranceCompany"
+														value="<%= currentUser.insurance.insuranceCompany %>" placeholder=""
+														class="form-control" required>
+														<div class="invalid-feedback">
+															Please write a valid Insurance Company.
+														</div>
+												</div>
+											</div>
+
+											<div class="form_row">
+												<div class="single_certificate_info">
+													<label for="">Insurance #: </label>
+													<input type="text" name="insuranceNo"
+														value="<%= currentUser.insurance.insuranceNo %>" placeholder=""
+														class="form-control" required>
+														<div class="invalid-feedback">
+															Please write a valid Insurance No.
+														</div>
+												</div>
+
+												<div class="single_certificate_info">
+													<label for="">Covered:</label>
+													<input type="text" name="insuranceCovered"
+														value="<%= currentUser.insurance.insuranceCovered  %>" placeholder=""
+														class="form-control" required>
+														<div class="invalid-feedback">
+															Please write Insurance Covered.
+														</div>
+												</div>
+											</div>
+
+											<div class="single_certificate_info">
+												<label for="">Expiration:</label>
+												<input type="date" name="insuranceExpiration"
+													value="<%= currentUser.insurance.insuranceExpiration %>" placeholder=""
+													class="form-control" required> 
+													<div class="invalid-feedback">
+														Please select a valid Insurance Expiration date.
+													</div>
+											</div>
+										</div>
+
+										<div class="certificate_image">
+											<div class="attach_file">
+												<label class="attachment">
+													<div class="texts">
+														<i class="fas fa-cloud-upload-alt"></i>
+														<span>Upload Certificate</span>
+													</div>
+													<input
+														type="file"
+														name="insurance-doc"
+														id="insurance-attachment"
+														class="form-control file_attachment"
+														required
+													/>
+													<div class="invalid-feedback">
+														Please attach the document.
+													</div>
+												</label>
+											
+												<div class="valid-feedback" id="insuranceattachment-msg">
+
+											</div>
+										</div>
+									</div>
+
+									<div class="submit_button">
+										<button type="submit" class="btn gbtn">Upload Certificate</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===== Markup For "Insurance Certificate" Ends Here =====-->
+
+			<!--===== Markup For "State License" Starts From Here =====-->
+			<div class="modal fade legal_doc_modal legal_doc_upload_modal" id="uploadBondedCertificate">
+				<div class="modal-dialog modal-lg modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="certificate_wrap">
+								<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+
+								<form enctype="multipart/form-data"
+									action="/insurance-certificate/<%= currentUser._id %>" method="post">
+
+									<div class="the_certificate licensed_certificate">
+										<div class="certificate_texts">
+											<h1>Bonded</h1>
+											<div class="single_certificate_info">
+												<label for="">State:</label>
+												<input type="text" value="<%= currentUser.bondState %>" name="bondState"
+													placeholder="" class="form-control">
+											</div>
+
+											<div class="single_certificate_info">
+												<label for="">Info:</label>
+												<textarea name="bondInfo" id="" cols="30" rows="3"
+													class="form-control"><%= currentUser.bondInfo %></textarea>
+											</div>
+										</div>
+
+										<div class="certificate_image">
+											<div class="attach_file">
+												<label class="attachment">
+													<div class="texts">
+														<i class="fas fa-cloud-upload-alt"></i>
+														<span>Upload Certificate</span>
+													</div>
+													<input type="file" name="image" class="file_attachment" id=""
+														accept="image/*" class="form-control" />
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="submit_button">
+										<button type="submit" class="btn gbtn">Upload Certificate</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===== Markup For "State License" Ends Here =====-->
+
+			<!--===== Markup For "State License" Starts From Here =====-->
+			<div class="modal fade legal_doc_modal legal_doc_upload_modal" id="uploadLicensedCertificate">
+				<div class="modal-dialog modal-lg modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="certificate_wrap">
+								<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+
+								<form action="/state-license/<%= currentUser._id %>" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+
+									<div class="the_certificate licensed_certificate">
+										<div class="certificate_texts">
+											<h1>State License</h1>
+
+											<div class="form_row">
+												<div class="single_certificate_info">
+													<label for="">State:</label>
+													<input type="text" name="licenseState"
+														value="<%= currentUser.stateLicense.licenseState %>"
+														class="form-control" required>
+													<div class="invalid-feedback">
+														Please write a State
+													</div>
+												</div>
+
+												<div class="single_certificate_info">
+													<label for="">License #:</label>
+													<input type="text" name="licenseNo"
+														value="<%= currentUser.stateLicense.licenseNo %>"
+														class="form-control" required>
+													<div class="invalid-feedback">
+														Please write a valid License No.
+													</div>
+												</div>
+											</div>
+
+											<div class="single_certificate_info">
+												<label for="">Expiration:</label>
+												<input type="date" name="licenseExpiration" 
+													value="<%= currentUser.stateLicense.licenseExpiration %>" class="form-control" required>
+												<div class="invalid-feedback" >
+													Please select an Expiration date.
+												</div>
+											</div>
+										</div>
+
+										<div class="certificate_image">
+											<div class="attach_file">
+												<label class="attachment">
+													<div class="texts">
+														<i class="fas fa-cloud-upload-alt"></i>
+														<span>Upload Certificate</span>
+													</div>
+
+													<input
+														type="file"
+														name="state-doc"
+														id="statelicense-attachment"
+														class="form-control file_attachment"
+														required
+													/>
+													<div class="invalid-feedback">
+														Please attach the document.
+													</div>
+												</label>
+											
+												<div class="valid-feedback" id="stateattachment-msg">
+											</div>
+										</div>
+									</div>
+									<div class="submit_button">
+										<button type="submit" class="btn gbtn">Upload Certificate</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===== Markup For "State License" Ends Here =====-->
+
+
+			<!-- Report Review Modal Starts From Here -->
+			<div class="modal report_review_modal fade" id="reportAgainstReview">
+				<div class="modal-dialog modal-lg modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3>Report Against This Review</h3>
+							<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"
+									aria-hidden="true"></i></button>
+						</div>
+						<div class="modal-body">
+							<h5>Let us know why you would like to report this Reviews?</h5>
+
+							<div class="report_field_button">
+								<label class="radio">It's a Fake Review
+									<input type="radio" id="fakeReport" name="report_type">
+									<span class="checkround"></span>
+								</label>
+								<label class="radio">Other
+									<input type="radio" id="otherReport" name="report_type">
+									<span class="checkround"></span>
+								</label>
+							</div>
+
+							<div class="hidden_report_fields">
+								<div id="fakeReportBottom">
+									<h6>Are you sure it's a Fake Review?</h6>
+									<form action="">
+										<div class="form">
+											<div class="form-group">
+												<textarea name="" id="" placeholder="Tell Us How It's Fake?" cols="30"
+													rows="3" class="form-control"></textarea>
+											</div>
+											<div class="submit_button text-right">
+												<button type="button" class="btn btn-gbz-success">Report Submit</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div id="otherReportBottom">
+									<h6>Please mentioned your report.</h6>
+									<form action="">
+										<div class="form">
+											<div class="form-group">
+												<textarea name="" id="" placeholder="Tell Us a Brief." cols="30"
+													rows="3" class="form-control"></textarea>
+											</div>
+											<div class="submit_button text-right">
+												<button type="button" class="btn btn-gbz-success">Report Submit</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Report Review Modal Ends Here -->
+
+
+
+			<!--jQuery Main Libraty Latest Version-->
+			<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+			<!--Bootstrap v4.5.3 JS File-->
+			<script type="text/javascript" src="js/popper.min.js"></script>
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="js/pignose.calendar.full.min.js"></script>
+			<!--Custom Script JS File-->
+			<script type="text/javascript" src="js/updatedCustom.js"></script>
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+
+					$(".comment").click(function(){
+						const reviewID = $(this).attr('name');
+						const reply = $(`#${reviewID}`).val()
+						
+						$.ajax({
+						method: "POST",
+						url: `/add-comment-reply/${reviewID}`,
+						data: {
+							reply
+						},
+						}).done(function (data) {
+						console.log("data", data);
+						location.reload()
+						});
+					})
+				})
+			</script>
+			
+			<script type="text/javascript">
+				// Example starter JavaScript for disabling form submissions if there are invalid fields
+				(function () {
+				'use strict'
+	
+				// Fetch all the forms we want to apply custom Bootstrap validation styles to
+				var forms = document.querySelectorAll('.needs-validation')
+	
+				// Loop over them and prevent submission
+				Array.prototype.slice.call(forms)
+					.forEach(function (form) {
+					form.addEventListener('submit', function (event) {
+						if (!form.checkValidity()) {
+						event.preventDefault()
+						event.stopPropagation()
+						}
+	
+						form.classList.add('was-validated')
+					}, false)
+					})
+				})()
+			</script>
+
+		  	<!--Custom JavaScript-->
+				<script type="text/javascript">
+				
+				// File attachment manuplator
+				$(document).ready(function(){
+					
+					// Image upload preview
+					async function readLicenseURL(input) {
+						console.log(input)
+						if (input.files && input.files[0]) {
+							var reader = new FileReader();
+
+							reader.readAsDataURL(input.files[0]);
+
+							$("#stateattachment-msg").css("display", "block");
+							$("#stateattachment-msg").html(
+								"Files attached successfully."
+							);
+						}
+					}
+
+					$("#statelicense-attachment").change(function () {
+						readLicenseURL(this);
+					});
+				})
+
+					// File attachment manuplator
+					$(document).ready(function(){
+					
+					// Image upload preview
+					async function readInsuranceURL(input) {
+						console.log(input)
+						if (input.files && input.files[0]) {
+							var reader = new FileReader();
+
+							reader.readAsDataURL(input.files[0]);
+
+							$("#insuranceattachment-msg").css("display", "block");
+							$("#insuranceattachment-msg").html(
+								"Files attached successfully."
+							);
+						}
+					}
+
+					$("#insurance-attachment").change(function () {
+						readInsuranceURL(this);
+					});
+				})
+
+
+
+				// Select Open to Bids or Left an Amount Toggler
+				$(document).ready(function(){
+					$('.budget_openbids .form-control').focus(function () {
+						$('.open_to_bids .btn').removeClass('active');
+					});
+				})
+			</script>
+
+			<!--Custom JavaScript-->
+			<script type="text/javascript">
+
+				// Initialize Calendar
+				$(function () {
+					$('.calendar').pignoseCalendar();
+				});
+
+				const myText7 = document.getElementById("myText7");
+				const wordCount7 = document.getElementById("wordCount7");
+				myText7.addEventListener("keyup", function () {
+					const characters = myText7.value.split("");
+					wordCount7.innerText = characters.length;
+				});
+
+				function addNew() {
+
+					var newArea = document.getElementById("newArea").value
+					// console.log(newArea,"new area");
+					var ul = document.getElementById("areaList");
+					var li = document.createElement("li");
+					var inp = document.createElement("input")
+					inp.name = "serviceAreas[]";
+					inp.id = newArea;
+					inp.type = "hidden"
+					var a = document.createElement("a");
+					a.appendChild(inp);
+					a.appendChild(document.createTextNode('×'));
+					a.style.cursor = "pointer"
+					li.appendChild(document.createTextNode(newArea));
+					li.appendChild(a)
+
+					ul.appendChild(li);
+					a.onclick = function () {
+						removeArea(this.parentNode)
+					}
+					document.getElementById('newArea').value = ''
+
+					$(`#${newArea}`).val(newArea);
+
+				}
+
+				function removeArea(liElement) {
+					liElement.remove();
+				}
+
+
+
+
+
+				//For Smothly Scroll In My Page Start
+				$(function () {
+					var topoffset = 60; //variable for menu height
+
+					//Use smooth scrolling when clicking on navigation
+					$('a[href*="#"]').click(function () {
+						if (location.pathname.replace(/^\//, '') ===
+							this.pathname.replace(/^\//, '') &&
+							location.hostname === this.hostname) {
+							var target = $(this.hash);
+							target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+							if (target.length) {
+								$('html,body').animate({
+									scrollTop: target.offset().top - topoffset
+								}, 1000);
+								return false;
+							} //target.length
+						} //click function
+					}); //smooth scrolling
+
+				});
+
+				$(document).on("click", ".delBtn", function () {
+					var Id = $(this).data('id');
+					$('#deleteForm').attr('action', "/services/" + Id + "?_method=DELETE");
+					$('#deleteModal').modal('show');
+				});
+
+				$(document).on("click", ".delPortfolio", function () {
+					var Id = $(this).data('id');
+					$('#deletePortfolioForm').attr('action', "/portfolios/" + Id + "?_method=DELETE");
+					$('#deletePortfolio').modal('show');
+				});
+			</script>
+
+			<script type="text/javascript">
+
+				$('.reply_reviews_button').click(function () {
+					//$('.hideme').hide();  
+					if ($(this).hasClass('active')) {
+						$(this).removeClass('active');
+						$('.reply_fields').slideUp();
+					} else {
+						$('.reply_fields').slideUp();
+						$('.reply_reviews_button').removeClass('active');
+						$(this).addClass('active');
+						$(this).next().filter('.reply_fields').slideDown();
+					}
+				});
+
+
+				$(document).ready(function () {
+					$('.reply_reviews_cancel_button').click(function () {
+						$('.reply_fields').slideUp();
+						$('.reply_reviews_button').removeClass('active');
+					})
+				})
+
+				$('.carousel').carousel({
+					interval: false,
+				})
+
+				// For Slider Popups
+				$(document).ready(function () {
+					var lightcase = $(".lightcase");
+
+					if (lightcase.length) {
+						$('a[data-rel^=reviewsSlider1_img]').lightcase();
+					}
+					if (lightcase.length) {
+						$('a[data-rel^=reviewsSlider2_img]').lightcase();
+					}
+					if (lightcase.length) {
+						$('a[data-rel^=reviewsSlider3_img]').lightcase();
+					}
+					if (lightcase.length) {
+						$('a[data-rel^=reviewsSlider4_img]').lightcase();
+					}
+				})
+
+
+				$(function () {
+					$('input[name=report_type]').on('click init-post-format', function () {
+						$('#fakeReportBottom').toggle($('#fakeReport').prop('checked'));
+					}).trigger('init-post-format');
+				});
+
+				$(function () {
+					$('input[name=report_type]').on('click init-post-format', function () {
+						$('#otherReportBottom').toggle($('#otherReport').prop('checked'));
+					}).trigger('init-post-format');
+				});
+
+			</script>
+
+			<script>
+				function myFunction() {
+					let x = document.getElementById("hiddenDiv");
+					if (x.style.display === "none") {
+						x.style.display = "block";
+					} else {
+						x.style.display = "none";
+					}
+				}
+			</script>
+
+			<script>
+				$(document).ready(
+					function () {
+
+						$('.calendar').pignoseCalendar({
+							select: function (date, context) {
+								/**
+								 * @params this Element
+								 * @params date moment[]
+								 * @params context PignoseCalendarContext
+								 * @returns void
+								 */
+
+								// This is selected button Element.
+								var $this = $(this);
+
+								// You can get target element in `context` variable, This element is same `$(this)`.
+								var $element = context.element;
+
+								// You can also get calendar element, It is calendar view DOM.
+								var $calendar = context.calendar;
+
+								// Selected dates (start date, end date) is passed at first parameter, And this parameters are moment type.
+								// If you unselected date, It will be `null`.
+								// console.log(date[0].fromNow());
+
+								$("#yearsInBusiness").val(date[0].fromNow());
+							}
+						});
+
+					}
+				);
+			</script>
+</body>
+</html>

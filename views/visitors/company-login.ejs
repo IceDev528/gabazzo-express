@@ -1,0 +1,64 @@
+<% layout('layouts/loginBoilerplate') -%>
+
+<section class="registration_form">
+    <div class="container_gbz">
+        <div class="">
+            <div class="sign_in_wrap">
+                <div class="form_wrapper">
+                    <div class="form_top">
+                        <h2>Welcome Back</h2>
+                    </div>
+                    <form action="/company-login" method="POST">
+                        <div class="form">
+                            <div class="form-group">
+                                <label for="">Username</label>
+                                <input type="text" name="username" required class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="">Password</label>
+                                <input type="password" name="password" required class="form-control" />
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="" value="" checked />
+                                        <span class="checkmark"></span>
+                                        Remember Me
+                                    </label>
+                                </div>
+                                <div class="form-group col-6 text-right">
+                                    <a href="javascript:void(0)">Forgot Password?</a>
+                                </div>
+                            </div>
+                            <div class="create_account_button mt-0">
+                                <button type="submit" class="btn btn-gbz-success d-block">Sign In</button>
+                            </div>
+                            <div class="or_text">
+                                <h4>OR</h4>
+                            </div>
+                            <div class="form_text text-center">
+                                <span>By clicking Sign In with Facebook or Sign In with Google, you agree to the <a
+                                        href="../footer-pages/terms-and-conditions.html">Terms of Use</a> and <a
+                                        href="../footer-pages/privacy-policy.html">Privacy Policy</a>.</span>
+                            </div>
+                            <div class="google_fb_sign_up">
+                                <ul>
+                                    <li class="facebook"><a href="javascript:void(0)"><img
+                                                src="../images/icons/facebook_icon.png" alt="" />Sign In With
+                                            Facebook</a></li>
+                                    <li class="google"><a href="javascript:void(0)"><img
+                                                src="../images/icons/google_icon.png" alt="" />Sign In With
+                                            Google</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="form_bottom">
+                        <h6>Don't have an account? <a href="/become-a-seller-overview">Sign Up As Company</a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,1152 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<!--Metatags-->
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatble" content="ie=edge"/>
+		<!--Website Title-->
+		<title>Buyer Help Center</title>
+		<!--Calling Favicon-->
+		<link rel="icon" href="images/favicon.png" />
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<!--FontAwesome CDN-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+		<!--Normalize v8.0.1 CSS FILE-->
+		<link rel="stylesheet" href="css/normalize.css"/>
+		<!--Bootstrap v4.6.0 CSS FILE-->
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<!--Gabazzo Common CSS File-->
+		<link rel="stylesheet" href="css/gabazzo.common.css" />
+		<!--Fonts Are Loads From Here-->
+		<link rel="stylesheet" href="fonts/fonts.css"/>
+		<!--Main Stylesheet-->
+		<link rel="stylesheet" href="css/updatedStyles.css"/>
+		<!--Stylesheet For The Responsiveness-->
+                <link rel="stylesheet" href="css/responsive.css"/>
+		<!--Stylesheet For The Night Mode-->
+		<link rel="stylesheet" href="css/night.mode.css"/>
+	</head>
+
+	<body>
+
+		<!--===== Markup For "Header" Starts From Here =====-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="logo_mode_switching">
+        <ul>
+          <li>
+            <a href="/" class="navbar-brand"
+              ><img
+                src="../images/layout/gabazzo_logo_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+          </li>
+          <li>
+            <a class="mode_icon" href="javascript:void(0)">
+              <img
+                src="../images/layout/mode_icon_night.png"
+                class="img-fluid night_icon"
+                title="Night Mode"
+                data-toggle="tooltip"
+                alt=""
+              />
+              <img src="../images/layout/mode_icon_day.png" class="img-fluid day_icon" title="Day Mode" data-toggle="tooltip" alt=""/>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="members_navbar">
+        <div class="mobile_search_btn_menubar">
+          <div class="cp_search_btn dropdown">
+            <a
+              href="javascript:void(0)"
+              data-target="#companySearchBar"
+              data-toggle="dropdown"
+              class="nav-link"
+              ><img
+                src="../images/layout/search_icon_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+
+            <div
+              class="dropdown-menu company_search_down"
+              aria-labelledby="companySearchBar"
+            >
+              <form action="">
+                <div class="company_search_field">
+                  <input
+                    id="myInput"
+                    type="search"
+                    placeholder="Search..."
+                    class="form-control"
+                  />
+                  <button class="btn" type="submit">
+                    <img
+                      src="../images/layout/search_icon_black.png"
+                      class="black_icon"
+                      alt=""
+                    />
+                    <img
+                      src="../images/layout/search_icon_white.png"
+                      class="white_icon"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            data-target="#responsive-bar"
+            data-toggle="collapse"
+          >
+            <div class="humbergur_icon">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </button>
+
+          <% if(currentUser) { %>
+          <a
+            href="javascript:void(0)"
+            class="nav-link profile_pic_link membersProfilePic"
+          >
+            <div class="profile_pic">
+              <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) {
+              %>
+              <img src="<%= currentUser.logo %>" class="img-fluid" alt="" />
+              <% } else {%>
+              <img src="../images/man.png" class="img-fluid" alt="" />
+              <% }%> <% } else { %> <% if(currentUser?.profilePicture) {%>
+              <img
+                src="<%= currentUser.profilePicture %>"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <%} else {%>
+              <img
+                src="../images/man.png"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <% }%> <% } %>
+              <span class="activity_status online_status"></span>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="responsive-bar">
+        <div class="menus ml-auto">
+          <ul class="navbar-nav services_menu">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Construction Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=roofing services"
+                      class="dropdown-item"
+                      >Roofing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=landscaping services"
+                      class="dropdown-item"
+                      >Landscaping</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=junk removal"
+                      class="dropdown-item"
+                      >Junk Removal</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=masonry services"
+                      class="dropdown-item"
+                      >Masonry</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=plumbing services"
+                      class="dropdown-item"
+                      >Plumbing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=hvac services"
+                      class="dropdown-item"
+                      >HVAC</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=pest control"
+                      class="dropdown-item"
+                      >Pest Control</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=painting services"
+                      class="dropdown-item"
+                      >Painting</a
+                    >
+                  </li>
+                </ul>
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=flooring services"
+                      class="dropdown-item"
+                      >Flooring</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=electrical services"
+                      class="dropdown-item"
+                      >Electrical</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=moving services"
+                      class="dropdown-item"
+                      >Moving</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=appliance services"
+                      class="dropdown-item"
+                      >Appliance</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=locksmith services"
+                      class="dropdown-item"
+                      >Locksmith</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Vehicle Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=towing services"
+                      class="dropdown-item"
+                      >Towing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=vehicle repair"
+                      class="dropdown-item"
+                      >Vehicle Repair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav access_menu">
+            <li
+              class="nav-item cp_search_btn cp_search_btn_desktop dropdown"
+            >
+              <a
+                href="javascript:void(0)"
+                data-target="#companySearchBar"
+                data-toggle="dropdown"
+                class="nav-link"
+                ><img
+                  src="../images/layout/search_icon_white.png"
+                  class="img-fluid"
+                  alt=""
+              /></a>
+              <div
+                class="dropdown-menu company_search_down"
+                aria-labelledby="companySearchBar"
+              >
+                <form action="">
+                  <div class="company_search_field">
+                    <input
+                      id="myInput"
+                      type="search"
+                      placeholder="Search..."
+                      class="form-control"
+                    />
+                    <button class="btn" type="submit">
+                      <img
+                        src="../images/layout/search_icon_black.png"
+                        class="black_icon"
+                        alt=""
+                      />
+                      <img
+                        src="../images/layout/search_icon_white.png"
+                        class="white_icon"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <% if(currentUser) { %>
+            <li class="nav-item desktop_only_link">
+              <a
+                href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+                class="nav-link"
+                >Messages</a
+              >
+            </li>
+            <% if(currentUser && !currentUser.isCompany) { %>
+            <li class="nav-item desktop_only_link">
+              <a href="/saved-list" class="nav-link">Saved List</a>
+            </li>
+            <% } %>
+            <li class="nav-item profile_pic_desktop">
+              <a
+                href="javascript:void(0)"
+                class="nav-link profile_pic_link membersProfilePic"
+              >
+                <div class="profile_pic">
+                  <% if (currentUser?.isCompany) { %> <%
+                  if(currentUser.logo) { %>
+                  <img
+                    src="<%= currentUser.logo %>"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <% } else {%>
+                  <img src="../images/man.png" class="img-fluid" alt="" />
+                  <% }%> <% } else { %> <% if(currentUser.profilePicture)
+                  {%>
+                  <img
+                    src="<%= currentUser.profilePicture %>"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <%} else {%>
+                  <img
+                    src="../images/man.png"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <% }%> <% } %>
+                  <span class="activity_status online_status"></span>
+                </div>
+              </a>
+            </li>
+            <% } else {%>
+            <li class="nav-item">
+              <a href="/login" class="nav-link sign_in">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a href="/sign-up" class="nav-link gbtn gbtn_white_bdr"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/become-a-seller-overview" class="nav-link gbtn"
+                >Become a Seller</a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--===== Markup For "Header" Ends Here =====-->
+<% if(currentUser) { %>
+<!--===== Markup For "Members Profile Link" Starts From Here =====-->
+<div class="membersProfileLinks">
+  <div class="dismissMembersProfileLinks">
+    <i class="fa fa-times"></i>
+  </div>
+  <div class="members_profile_pic">
+    <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) { %>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.logo %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <% } else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile Picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.companyName %></h6>
+    <% } else { %> <% if(currentUser?.profilePicture) {%>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.profilePicture %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <%} else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.firstName + " " + currentUser.lastName %></h6>
+    <% } %>
+  </div>
+  <div class="profile_links">
+    <% if (currentUser.isCompany) { %>
+    <ul>
+      <li>
+        <i class="fas fa-user"></i>
+        <a href="/company-dashboard">View Dashboard</a>
+      </li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } else { %>
+    <ul>
+      <li><i class="fas fa-user"></i><a href="/member-profile/<%= currentUser._id %>">View Profile</a></li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+          >Messages</a
+        >
+      </li>
+      <% if(currentUser && !currentUser.isCompany) { %>
+      <li class="mobile_only"><i class="fas fa-list-alt"></i> <a href="/saved-list">Saved List</a></li>
+      <% } %>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } %>
+  </div>
+</div>
+<!--===== Markup For "Members Profile Link" Ends Here =====-->
+<% } %>
+
+		<!--===== Markup For "Help Center Menu" Starts From Here =====-->
+		<section class="help_center_menu_wrap">
+			<div class="container">
+				<div class="governance_menu">
+					<ul>
+						<li class="active"><a href="javascript:void(0)">Buyer Help Center</a></li>
+						<li><a href="/help-center-seller">Seller Help Center</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Help Center Menu" Ends Here =====-->
+
+
+		<!--===== Markup For "Help Center Banner" Starts From Here =====-->
+		<section class="gb_help_center_banner">
+			<div class="overlay">
+				<div class="container">
+					<div class="contents">
+						<div class="texts">
+							<h2>Buyer Help Center</h2>
+							<h5>All of our knowledge right at your fingertips. <span class="break"></span> Ask Questions. Find Answers.</h5>
+						</div>
+						<div class="help_search_box">
+							<div class="search_icon">
+								<img src="images/search_icon3_black.png" class="img-fluid black_icon" alt="" />
+								<img src="images/search_icon3_blue.png" class="img-fluid blue_icon" alt="" />
+							</div>
+							<input type="text" placeholder="Search The Buyer Help Center..." class="form-control">
+							<button type="submit" class="btn gbtn">Search</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Help Center Banner" Ends Here =====-->
+
+
+		<!--===== Markup For "Help Topics" Starts From Here =====-->
+		<section class="help_center_topics">
+			<div class="container">
+				<div class="all_help_topics">
+
+					<div class="gutter_size"></div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Getting Started</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">How Gabazzo Works</a></li>
+									<li><a href="javascript:void(0)">Creating an Account</a></li>
+									<li><a href="javascript:void(0)">Terms & Definitions</a></li>
+									<li><a href="javascript:void(0)">Closing Your Account</a></li>
+									<li><a href="javascript:void(0)">Tips For Your Conversations with a Seller</a></li>
+									<li><a href="javascript:void(0)">Using Buyer Requests Effectively</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Member Profile</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Profile Edit</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Profile Picture</a></li>
+												<li><a href="javascript:void(0)">About</a></li>
+												<li><a href="javascript:void(0)">Location</a></li>
+												<li><a href="javascript:void(0)">Member Since</a></li>
+												<li><a href="javascript:void(0)">Social Media</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><a href="javascript:void(0)">Messages</a></li>
+									<li><a href="javascript:void(0)">Member Badges</a></li>
+									<li><a href="javascript:void(0)">Report</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Search Engine</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Search</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Main Category</a></li>
+												<li><a href="javascript:void(0)">Sub Category</a></li>
+												<li><a href="javascript:void(0)">Company Profile</a></li>
+												<li><a href="javascript:void(0)">Request Gabazzo for a New Service</a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Filter Type</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Service Type</a></li>
+												<li><a href="javascript:void(0)">Material Type</a></li>
+												<li><a href="javascript:void(0)">Property Type</a></li>
+												<li><a href="javascript:void(0)">Language</a></li>
+												<li><a href="javascript:void(0)">Other Filter</a></li>
+												<li><a href="javascript:void(0)">Location</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><a href="javascript:void(0)">Service Port</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Saved List</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Create a New List</a></li>
+									<li><a href="javascript:void(0)">Saved Companies</a></li>
+									<li><a href="javascript:void(0)">Adding Company To List</a></li>
+									<li><a href="javascript:void(0)">Delete List</a></li>
+									<li><a href="javascript:void(0)">Remove Company</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Communications</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Search Company Name</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Search Bar</a></li>
+												<li><a href="javascript:void(0)">All Conversations</a></li>
+												<li><a href="javascript:void(0)">Labled</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><a href="javascript:void(0)">Past Orders</a></li>
+									<li><a href="javascript:void(0)">Message Search</a></li>
+									<li><a href="javascript:void(0)">Label</a></li>
+									<li><a href="javascript:void(0)">Delete</a></li>
+									<li><a href="javascript:void(0)">Files</a></li>
+									<li><a href="javascript:void(0)">Tasks & Reminders</a></li>
+									<li><a href="javascript:void(0)">Quick Reply</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Settings</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Account</a></li>
+									<li><a href="javascript:void(0)">Security</a></li>
+									<li><a href="javascript:void(0)">Emails & Notifications</a></li>
+									<li><a href="javascript:void(0)">Billing Information</a></li>
+									<li><a href="javascript:void(0)">Profile</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Payment</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Track your Order</a></li>
+									<li><a href="javascript:void(0)">Buyer Fee</a></li>
+									<li><a href="javascript:void(0)">Discount Code</a></li>
+									<li><a href="javascript:void(0)">Unknown Charges</a></li>
+									<li><a href="javascript:void(0)">Resolve a Decline Payment</a></li>
+									<li><a href="javascript:void(0)">Authorizations</a></li>
+									<li><a href="javascript:void(0)">Multiple Charges for Same Order</a></li>
+									<li><a href="javascript:void(0)">Status of Refund</a></li>
+									<li><a href="javascript:void(0)">Failed Checking Account Authorization</a></li>
+									<li><a href="javascript:void(0)">Avoid Payment Scams</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Manage Requests</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Post a Request</a></li>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Dashboard</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Active Requests</a></li>
+												<li><a href="javascript:void(0)">Paused Requests</a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Offers</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Gabazzo Offers</a></li>
+												<li><a href="javascript:void(0)">Review Offers</a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Action</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Pause</a></li>
+												<li><a href="javascript:void(0)">Delete</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Manage Orders</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Search History</a></li>
+									<li><a href="javascript:void(0)">All</a></li>
+									<li><a href="javascript:void(0)">Active</a></li>
+									<li><a href="javascript:void(0)">Missing Details</a></li>
+									<li><a href="javascript:void(0)">Awaiting My Review</a></li>
+									<li><a href="javascript:void(0)">Delivered</a></li>
+									<li><a href="javascript:void(0)">Completed</a></li>
+									<li><a href="javascript:void(0)">Cancelled</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Tracking Service System</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Activity</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Updates</a></li>
+												<li><a href="javascript:void(0)">Messages</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+
+							<div class="topic_links">
+								<ul>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Tracking Info</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Time Countdown</a></li>
+												<li><a href="javascript:void(0)">Progress</a></li>
+												<li><a href="javascript:void(0)">Receipt Tracker</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><a href="javascript:void(0)">Requirements</a></li>
+								</ul>
+							</div>
+
+
+							<div class="topic_links">
+								<ul>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">PDF Files</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Estimate</a></li>
+												<li><a href="javascript:void(0)">Invoice</a></li>
+												<li><a href="javascript:void(0)">Receipt Tracker</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+							<div class="topic_links">
+								<ul>
+									<li class="dropdown">
+										<a href="javascript:void(0)" data-toggle="dropdown">Resolution Center</a>
+										<div class="sub_links dropdown-menu">
+											<ul>
+												<li><a href="javascript:void(0)">Modify Order</a></li>
+												<li><a href="javascript:void(0)">Extend Time Delivery</a></li>
+												<li><a href="javascript:void(0)">Cancel Order</a></li>
+												<li><a href="javascript:void(0)">Customer Support</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Reviews System</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Complete Order</a></li>
+									<li><a href="javascript:void(0)">Leave a Review</a></li>
+									<li><a href="javascript:void(0)">View Review</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Ranking System</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Level Up</a></li>
+									<li><a href="javascript:void(0)">Refer Friends</a></li>
+									<li><a href="javascript:void(0)">Claim Prize</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Buyer Warnings</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Communications</a></li>
+									<li><a href="javascript:void(0)">Transactions</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Email Alerts</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Account Verification</a></li>
+									<li><a href="javascript:void(0)">Password</a></li>
+									<li><a href="javascript:void(0)">Email Change</a></li>
+									<li><a href="javascript:void(0)">Security Question Alert</a></li>
+									<div class="topic_links">
+										<ul>
+											<li class="dropdown">
+												<a href="javascript:void(0)" data-toggle="dropdown">Account Status</a>
+												<div class="sub_links dropdown-menu">
+													<ul>
+														<li><a href="javascript:void(0)">De-Activate Account</a></li>
+														<li><a href="javascript:void(0)">Re-Activate Account</a></li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<li><a href="javascript:void(0)">Invoice</a></li>
+									<li><a href="javascript:void(0)">Receipt</a></li>
+									<div class="topic_links">
+										<ul>
+											<li class="dropdown">
+												<a href="javascript:void(0)" data-toggle="dropdown">Order Resolution</a>
+												<div class="sub_links dropdown-menu">
+													<ul>
+														<li><a href="javascript:void(0)">Modify Order</a></li>
+														<li><a href="javascript:void(0)">Extend Time Delivery</a></li>
+														<li><a href="javascript:void(0)">Cancel Order</a></li>
+														<li><a href="javascript:void(0)">Customer Support</a></li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+
+									<li><a href="javascript:void(0)">Messaging</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_topic">
+						<div class="topic_title">
+							<h5>Policies</h5>
+						</div>
+
+						<div class="topic_body">
+							<div class="topic_links">
+								<ul>
+									<li><a href="javascript:void(0)">Buyer Policy</a></li>
+									<li><a href="javascript:void(0)">Buyer Warnings</a></li>
+								</ul>
+							</div>
+
+							<div class="sell_all_link">
+								<a href="javascript:void(0)">See All</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Help Topics" Ends Here =====-->
+
+
+		<!--===== Markup For "Still Have Questions" Starts From Here =====-->
+		<section class="still_have_questions">
+			<div class="container">
+				<div class="contents">
+					<h3>Do you still have questions?</h3>
+					<h4>Our support agents are ready with the answers.</h4>
+					<div class="contact_us_button">
+						<a href="/contact-us" class="gbtn">Contact Us</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Still Have Questions" Ends Here =====-->
+
+
+
+			<!--===== Markup For "Registration Counter" Starts From Here =====-->
+<div class="registration_counter_wrap">
+	<div class="container">
+		<div class="registration_counter">
+			<div class="single_count">
+				<div class="heading">
+					<h2><%= total.length %>+</h2>
+				</div>
+				<p>Registered Companies</p>
+			</div>
+			<div class="single_count">
+				<div class="heading">
+					<h2><%= members %>+</h2>
+				</div>
+				<p>Registered Members</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!--===== Markup For "Registration Counter" Ends Here =====-->
+<!--===== Markup For "Footer" Starts From Here =====-->
+    <footer class="footer_wrap">
+      <div class="footer_top">
+        <div class="container">
+          <div class="footer">
+            <div class="single_part">
+              <div class="footer_logo">
+                <a href="/"
+                  ><img
+                    src="images/layout/gabazzo_logo_white.png"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/contact-us">Contact Us</a></li>
+                  <li><a href="/about-us">About</a></li>
+                  <li><a href="/site-map">Sitemap</a></li>
+                  <li><a href="/partnerships">Partnerships</a></li>
+		  <li><a href="/investor-relations">Investor Relations</a></li>
+		  <li><a href="/jobs-and-opportunities">Jobs & Opportunities</a></li>
+		  <li><a href="/press-and-news">Press & News</a></li>
+                </ul>
+              </div>
+              <div class="social_links">
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/gabazzoBCT"
+                      target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/gabazzo/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+		  <li>
+                    <a
+                      href="https://discord.gg/RTDhKw4r99" target="_blank"><i class="fab fa-discord"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Members</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/sign-up">Sign Up</a></li>
+		  <li><a href="/trust-and-safety-members">Trust & Safety</a></li>
+		  <li><a href="/ranking-system-members">Ranking System</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Business</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/company-sign-up-home">Register Business</a>
+                  </li>
+		  <li><a href="/study-buyer">Study Buyer</a>
+                  </li>
+		   <li><a href="/seller-league-system">League System</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Support</h4>
+              <div class="site_links">
+                <ul>
+		  <li><a href="/help-center-buyer">Help Center</a></li>
+                  <li><a href="/terms-and-conditions">Terms of Use</a></li>
+                  <li><a href="/privacy-policy">Privacy Policy</a></li>
+                  <li><a href="/cookie-policy">Cookie Policy</a></li>
+                  <li><a href="/safety-for-members">Safety</a></li>
+		  <li><a href="/covid-info">Covid-19 Info</a></li>
+		  <li><a href="/intellectual-property-claims">IP Claims</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <p>
+            Copyright &copy; 2021 Gabazzo. All Rights Reserved. Patent Pending
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!--===== Markup For "Footer" Ends Here =====-->
+
+
+
+
+
+		<!--===== Markup For "" Starts From Here =====-->
+		<!--===== Markup For "" Ends Here =====-->
+
+
+		<!--jQuery Main Libraty Latest Version-->
+		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+		<!--Bootstrap v4.5.3 JS File-->
+		<script type="text/javascript" src="js/popper.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<!--Masonry JS File-->
+		<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+		<!--Custom Script JS File-->
+		<script type="text/javascript" src="js/updatedCustom.js"></script>
+		<script src="js/autocomplete.js" type="text/javascript"></script>
+		<!--Custom JavaScript-->
+		<script type="text/javascript">
+		// Initialize Masonry
+		$('.all_help_topics').masonry({
+			itemSelector: '.single_topic',
+			gutter: '.gutter_size',
+			percentPosition: true,
+		});
+		</script>
+
+	</body>
+
+</html>

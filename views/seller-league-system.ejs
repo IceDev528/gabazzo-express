@@ -1,0 +1,1032 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<!--Metatags-->
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatble" content="ie=edge"/>
+		<!--Website Title-->
+		<title>Contractor League System</title>
+		<!--Calling Favicon-->
+		<link rel="icon" href="images/favicon.png" />
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<!--FontAwesome CDN-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+		<!--Normalize v8.0.1 CSS FILE-->
+		<link rel="stylesheet" href="css/normalize.css"/>
+		<!--Bootstrap v4.6.0 CSS FILE-->
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<!--Gabazzo Common CSS File-->
+		<link rel="stylesheet" href="css/gabazzo.common.css" />
+		<!--Fonts Are Loads From Here-->
+		<link rel="stylesheet" href="fonts/fonts.css"/>
+	  <!--Main Stylesheet-->
+		<link rel="stylesheet" href="css/updatedStyles.css"/>
+		<!--Stylesheet For The Responsiveness-->
+    <link rel="stylesheet" href="css/responsive.css" />
+		<!--Stylesheet For The Night Mode-->
+		<link rel="stylesheet" href="css/night.mode.css"/>
+	</head>
+
+	<body>
+
+		<!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T23WPNV"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!--===== Markup For "Header" Starts From Here =====-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="logo_mode_switching">
+        <ul>
+          <li>
+            <a href="/" class="navbar-brand"
+              ><img
+                src="../images/layout/gabazzo_logo_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+          </li>
+          <li>
+            <a class="mode_icon" href="javascript:void(0)">
+              <img
+                src="../images/layout/mode_icon_night.png"
+                class="img-fluid night_icon"
+                title="Night Mode"
+                data-toggle="tooltip"
+                alt=""
+              />
+              <img src="../images/layout/mode_icon_day.png" class="img-fluid day_icon" title="Day Mode" data-toggle="tooltip" alt=""/>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="members_navbar">
+        <div class="mobile_search_btn_menubar">
+          <div class="cp_search_btn dropdown">
+            <a
+              href="javascript:void(0)"
+              data-target="#companySearchBar"
+              data-toggle="dropdown"
+              class="nav-link"
+              ><img
+                src="../images/layout/search_icon_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+
+            <div
+              class="dropdown-menu company_search_down"
+              aria-labelledby="companySearchBar"
+            >
+              <form action="">
+                <div class="company_search_field">
+                  <input
+                    id="myInput"
+                    type="search"
+                    placeholder="Search..."
+                    class="form-control"
+                  />
+                  <button class="btn" type="submit">
+                    <img
+                      src="../images/layout/search_icon_black.png"
+                      class="black_icon"
+                      alt=""
+                    />
+                    <img
+                      src="../images/layout/search_icon_white.png"
+                      class="white_icon"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            data-target="#responsive-bar"
+            data-toggle="collapse"
+          >
+            <div class="humbergur_icon">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </button>
+
+          <% if(currentUser) { %>
+          <a
+            href="javascript:void(0)"
+            class="nav-link profile_pic_link membersProfilePic"
+          >
+            <div class="profile_pic">
+              <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) {
+              %>
+              <img src="<%= currentUser.logo %>" class="img-fluid" alt="" />
+              <% } else {%>
+              <img src="../images/man.png" class="img-fluid" alt="" />
+              <% }%> <% } else { %> <% if(currentUser?.profilePicture) {%>
+              <img
+                src="<%= currentUser.profilePicture %>"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <%} else {%>
+              <img
+                src="../images/man.png"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <% }%> <% } %>
+              <span class="activity_status online_status"></span>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="responsive-bar">
+        <div class="menus ml-auto">
+          <ul class="navbar-nav services_menu">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Construction Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=roofing services"
+                      class="dropdown-item"
+                      >Roofing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=landscaping services"
+                      class="dropdown-item"
+                      >Landscaping</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=junk removal"
+                      class="dropdown-item"
+                      >Junk Removal</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=masonry services"
+                      class="dropdown-item"
+                      >Masonry</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=plumbing services"
+                      class="dropdown-item"
+                      >Plumbing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=hvac services"
+                      class="dropdown-item"
+                      >HVAC</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=pest control"
+                      class="dropdown-item"
+                      >Pest Control</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=painting services"
+                      class="dropdown-item"
+                      >Painting</a
+                    >
+                  </li>
+                </ul>
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=flooring services"
+                      class="dropdown-item"
+                      >Flooring</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=electrical services"
+                      class="dropdown-item"
+                      >Electrical</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=moving services"
+                      class="dropdown-item"
+                      >Moving</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=appliance services"
+                      class="dropdown-item"
+                      >Appliance</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=locksmith services"
+                      class="dropdown-item"
+                      >Locksmith</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Vehicle Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=towing services"
+                      class="dropdown-item"
+                      >Towing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=vehicle repair"
+                      class="dropdown-item"
+                      >Vehicle Repair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav access_menu">
+            <li
+              class="nav-item cp_search_btn cp_search_btn_desktop dropdown"
+            >
+              <a
+                href="javascript:void(0)"
+                data-target="#companySearchBar"
+                data-toggle="dropdown"
+                class="nav-link"
+                ><img
+                  src="../images/layout/search_icon_white.png"
+                  class="img-fluid"
+                  alt=""
+              /></a>
+              <div
+                class="dropdown-menu company_search_down"
+                aria-labelledby="companySearchBar"
+              >
+                <form action="">
+                  <div class="company_search_field">
+                    <input
+                      id="myInput"
+                      type="search"
+                      placeholder="Search..."
+                      class="form-control"
+                    />
+                    <button class="btn" type="submit">
+                      <img
+                        src="../images/layout/search_icon_black.png"
+                        class="black_icon"
+                        alt=""
+                      />
+                      <img
+                        src="../images/layout/search_icon_white.png"
+                        class="white_icon"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <% if(currentUser) { %>
+            <li class="nav-item desktop_only_link">
+              <a
+                href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+                class="nav-link"
+                >Messages</a
+              >
+            </li>
+            <% if(currentUser && !currentUser.isCompany) { %>
+            <li class="nav-item desktop_only_link">
+              <a href="/saved-list" class="nav-link">Saved List</a>
+            </li>
+            <% } %>
+            <li class="nav-item profile_pic_desktop">
+              <a
+                href="javascript:void(0)"
+                class="nav-link profile_pic_link membersProfilePic"
+              >
+                <div class="profile_pic">
+                  <% if (currentUser?.isCompany) { %> <%
+                  if(currentUser.logo) { %>
+                  <img
+                    src="<%= currentUser.logo %>"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <% } else {%>
+                  <img src="../images/man.png" class="img-fluid" alt="" />
+                  <% }%> <% } else { %> <% if(currentUser.profilePicture)
+                  {%>
+                  <img
+                    src="<%= currentUser.profilePicture %>"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <%} else {%>
+                  <img
+                    src="../images/man.png"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <% }%> <% } %>
+                  <span class="activity_status online_status"></span>
+                </div>
+              </a>
+            </li>
+            <% } else {%>
+            <li class="nav-item">
+              <a href="/login" class="nav-link sign_in">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a href="/sign-up" class="nav-link gbtn gbtn_white_bdr"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/become-a-seller-overview" class="nav-link gbtn"
+                >Become a Seller</a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--===== Markup For "Header" Ends Here =====-->
+<% if(currentUser) { %>
+<!--===== Markup For "Members Profile Link" Starts From Here =====-->
+<div class="membersProfileLinks">
+  <div class="dismissMembersProfileLinks">
+    <i class="fa fa-times"></i>
+  </div>
+  <div class="members_profile_pic">
+    <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) { %>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.logo %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <% } else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile Picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.companyName %></h6>
+    <% } else { %> <% if(currentUser?.profilePicture) {%>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.profilePicture %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <%} else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.firstName + " " + currentUser.lastName %></h6>
+    <% } %>
+  </div>
+  <div class="profile_links">
+    <% if (currentUser.isCompany) { %>
+    <ul>
+      <li>
+        <i class="fas fa-user"></i>
+        <a href="/company-dashboard">View Dashboard</a>
+      </li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } else { %>
+    <ul>
+      <li><i class="fas fa-user"></i><a href="/member-profile/<%= currentUser._id %>">View Profile</a></li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+          >Messages</a
+        >
+      </li>
+      <% if(currentUser && !currentUser.isCompany) { %>
+      <li class="mobile_only"><i class="fas fa-list-alt"></i> <a href="/saved-list">Saved List</a></li>
+      <% } %>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } %>
+  </div>
+</div>
+<!--===== Markup For "Members Profile Link" Ends Here =====-->
+<% } %>
+
+
+
+
+
+		<!--===== Markup For "Contractor Level Banner" Starts From Here =====-->
+		<section class="contractor_level_banner">
+			<div class="overlay">
+				<div class="container">
+					<div class="contents">
+						<h2>Contractor League System</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Contractor Level Banner" Ends Here =====-->
+
+
+		<!--===== Markup For "What Contractor Levels" Starts From Here =====-->
+		<section class="what_contractor_levels">
+			<div class="container">
+				<div class="contractor_levels">
+					<div class="levels_heading">
+						<h3>What is Gabazzo's Contractor League System?</h3>
+					</div>
+
+					<div class="overview_texts">
+						<p>Your Contractor level is based on your Overall Performance. Superb service, high buyer satisfaction, and on-time delivery can earn you a top-level status on Gabazzo, and help you get more traffic & orders. <span class="break"></span> <a href="javascript:void(0)">Check Your Level</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "What Contractor Levels" Ends Here =====-->
+
+		<!--===== Markup For "All Levels" Starts From Here =====-->
+		<section class="all_contractor_levels">
+			<div class="container">
+				<div class="all_levels">
+					<div class="single_level_box">
+						<div class="badge_heading">
+							<div class="level_badge">
+								<img src="../images/levels/images/badge_new_contractor.png" class="img-fluid" alt="" />
+							</div>
+							<div class="levels_heading">
+								<h3>New Contractor</h3>
+							</div>
+						</div>
+
+						<div class="level_overview">
+							<div class="levels_heading">
+								<h4>Overview</h4>
+							</div>
+							<div class="overview_texts">
+								<p>This is a Fresh New Beginning, When you create your Gabazzo Account you're automatically ranked as a New contractor.
+								We highly encourage you to Create Service Ports & start delivering your best work to move up to the Next Level.</p>
+							</div>
+						</div>
+
+						<div class="you_will_get">
+							<div class="levels_heading">
+								<h4>You’ll Receive:</h4>
+							</div>
+
+							<div class="checked_items checked_items_circle">
+								<ul>
+									<li>Free Company Profile</li>
+									<li>Free Software within Gabazzo</li>
+									<li>Free Leads</li>
+									<li>Service Ports Noticed on Search Engine</li>
+									<li>Able to to type in Company Name on Search Engine</li>
+									<li>Withdraw your earnings after 14 days the Job is Completed</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_level_box">
+						<div class="badge_heading">
+							<div class="level_badge">
+								<img src="../images/levels/images/Badge_Bronze_League.png" class="img-fluid" alt="" />
+							</div>
+							<div class="levels_heading">
+								<h3>Bronze League</h3>
+							</div>
+						</div>
+
+						<div class="level_overview">
+							<div class="levels_heading">
+								<h4>Overview</h4>
+							</div>
+							<div class="overview_texts">
+								<p>To reach to the Bronze League, you need to meet the following requirements:</p>
+							</div>
+							<div class="checked_items">
+								<ul>
+									<li>Be an active Contractor for at least 28 Days</li>
+									<li>Complete at least 10+ orders (All time)</li>
+									<li>Earn $2,500 or more</li>
+									<li>Maintain a 4+ star rating over 28 Days</li>
+									<li>Achieve a 90% on-time delivery score over 28 Days days</li>
+									<li>Receive no warnings over 28 Days</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="you_will_get">
+							<div class="levels_heading">
+								<h4>You’ll get:</h4>
+							</div>
+
+							<div class="checked_items checked_items_circle">
+								<ul>
+									<li>5 Black Custom Gabazzo T-Shirts with your Logo on the Heart of the Shirt</li>
+									<li>2 Packs of 10 Black Custom Gabazzo Nitrile Dip Gloves</li>
+									<li>Receive a Pack of Tempered Safety Glasses</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_level_box">
+						<div class="badge_heading">
+							<div class="level_badge">
+								<img src="../images/levels/images/Badge_Silver_League.png" class="img-fluid" alt="" />
+							</div>
+							<div class="levels_heading">
+								<h3>Silver League</h3>
+							</div>
+						</div>
+
+						<div class="level_overview">
+							<div class="levels_heading">
+								<h4>Overview</h4>
+							</div>
+
+							<div class="overview_texts">
+								<p>To reach to the Silver League status, you need to meet the following requirements:</p>
+							</div>
+
+							<div class="checked_items">
+								<ul>
+									<li>Be an active Contractor for at least 45 days</li>
+									<li>Complete at least 25+ orders (All time)</li>
+									<li>Earn $20,000 or more</li>
+									<li>Maintain a 4+ star rating over 45 days</li>
+									<li>Achieve a 90% on-time delivery score over 45 days</li>
+									<li>Receive no warnings over 45 days</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="you_will_get">
+							<div class="levels_heading">
+								<h4>You’ll get:</h4>
+							</div>
+
+							<div class="checked_items checked_items_circle">
+								<ul>
+									<li>100 Gabazzo Custom Business Cards with your Company Info</li>
+									<li>10 Black Gabazzo Custom Safety Hard Helmet</li>
+									<li>5 Jackson Palmer Comfort Rigs</li>
+									<li>Rank Higher on your Zip Code Gabazzo Search Engine</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_level_box">
+						<div class="badge_heading">
+							<div class="level_badge">
+								<img src="../images/levels/images/Badge_Gold_League.png" class="img-fluid" alt="" />
+							</div>
+							<div class="levels_heading">
+								<h3>Gold League</h3>
+							</div>
+						</div>
+
+						<div class="level_overview">
+							<div class="levels_heading">
+								<h4>Overview</h4>
+							</div>
+
+							<div class="overview_texts">
+								<p>To reach to the Gold League, you need to meet the following requirements:</p>
+							</div>
+
+							<div class="checked_items">
+								<ul>
+									<li>Be an active Contractor for at least 60 Days</li>
+									<li>Complete at least 30+ orders (all time)</li>
+									<li>Earn $60,000 or more</li>
+									<li>Maintain a 4+ star rating over 60 Days</li>
+									<li>Achieve a 90% on-time delivery score over 60 days</li>
+									<li>Receive no warnings over 60 Days</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="you_will_get">
+							<div class="levels_heading">
+								<h4>You’ll get :</h4>
+							</div>
+
+							<div class="checked_items checked_items_circle">
+								<ul>
+									<li>1 BuildClean System Starter Kit</li>
+									<li>$200 BP Gas Gift Card</li>
+									<li>Emergency Roadside Assistance Kit</li>
+									<li>Gabazzo Car Wrap Design with your Company Info</li>
+									<li>$5,000 Gabazzo Protection Guarauntee</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_level_box">
+						<div class="badge_heading">
+							<div class="level_badge">
+								<img src="../images/levels/images/Badge_Platinum_League.png" class="img-fluid" alt="" />
+							</div>
+							<div class="levels_heading">
+								<h3>Platinum League</h3>
+							</div>
+						</div>
+
+						<div class="level_overview">
+							<div class="levels_heading">
+								<h4>Overview</h4>
+							</div>
+
+							<div class="overview_texts">
+								<p>To reach to the Platinum League, you need to meet the following requirements:</p>
+							</div>
+
+							<div class="checked_items">
+								<ul>
+									<li>Be an active Contractor for at least 75 days</li>
+									<li>Complete at least 40+ orders (all time)</li>
+									<li>Earn $150,000 or more</li>
+									<li>Maintain a 4 + star rating over 75 days</li>
+									<li>Achieve a 90% on-time delivery score over 75 days</li>
+									<li>Receive no warnings over 75 days</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="you_will_get">
+							<div class="levels_heading">
+								<h4>You’ll get :</h4>
+							</div>
+
+							<div class="checked_items checked_items_circle">
+								<ul>
+									<li>$20,000 Gabazzo Protection Guarauntee</li>
+									<li>$1,500 Amazon Gift Card</li>
+									<li>$500 Menards Gift Card</li>
+									<li>1 Laptop</li>
+									<li>1 Craftsman 2000 Series 26.5 in. 5 drawer Steel Rolling Tool Cabinet</li>
+									<li>Get Ranked Higher on the Gabazzo Search Engine when Clicked on Service Type</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_level_box">
+						<div class="badge_heading">
+							<div class="level_badge">
+								<img src="../images/levels/images/Badge_Diamond_League.png" class="img-fluid" alt="" />
+							</div>
+							<div class="levels_heading">
+								<h3>Diamond League</h3>
+							</div>
+						</div>
+
+						<div class="level_overview">
+							<div class="levels_heading">
+								<h4>Overview</h4>
+							</div>
+
+							<div class="overview_texts">
+								<p>To reach to the Diamond League, you need to meet the following requirements:</p>
+							</div>
+
+							<div class="checked_items">
+								<ul>
+									<li>Be an active Contractor for at least 100 days</li>
+									<li>Complete at least 50 orders (all time)</li>
+									<li>Earn $1,500,000 or more</li>
+									<li>Maintain a 4+ star rating over 100 days</li>
+									<li>Achieve a 90% on-time delivery score over 100 days</li>
+									<li>Receive no warnings over 100 days</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="you_will_get">
+							<div class="levels_heading">
+								<h4>You’ll get:</h4>
+							</div>
+
+							<div class="checked_items checked_items_circle">
+								<ul>
+									<li>2022 FORD Transit Van</li>
+									<li>2 Desktop Computers iBUYPOWER</li>
+									<li>$2,000 BP Gas Gift Card</li>
+									<li>3 Electric Generators</li>
+									<li>5 Gabazzo Kits of Merchandise </li>
+									<li>4 Flat Screen TV's Samsung</li>
+									<li>$50,000 Gabazzo Protection Guarauntee</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="single_level_box">
+						<div class="badge_heading">
+							<div class="level_badge">
+								<img src="../images/levels/images/Master Titan League Seller Badge.png" class="img-fluid" alt="" />
+							</div>
+							<div class="levels_heading">
+								<h3>Master Titan League</h3>
+							</div>
+						</div>
+
+						<div class="level_overview">
+							<div class="levels_heading">
+								<h4>Overview</h4>
+							</div>
+
+							<div class="overview_texts">
+								<p>The Top Rated Contractor level is the highest status you can achieve on Gabazzo and is a recognition for all your hard work. Our editorial team manually reviews your performance for the previous 60 days and awards you this level when you meet the following requirements:</p>
+							</div>
+
+							<div class="checked_items">
+								<ul>
+									<li>Be an active Contractor for at least 120 days</li>
+									<li>Complete at least 120 orders (all time)</li>
+									<li>Earn $3,500,000 or more</li>
+									<li>Maintain a 4+ star rating over 120 days</li>
+									<li>Achieve a 90% on-time delivery score over 120 days</li>
+									<li>Receive no warnings over 120 days</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="you_will_get">
+							<div class="levels_heading">
+								<h4>You’ll get :</h4>
+							</div>
+
+							<div class="checked_items checked_items_circle">
+								<ul>
+									<li>2022 Chevrolet Silverado Limited 1500 | Pickup Truck</li>
+									<li>$5,000 Visa Gift Card</li>
+									<li>Craftsman Tools: $3K Worth</li>
+									<li>10 Samsung Flat Screen TV's</li>
+									<li>20 $100 Dominoes Gift Cards</li>
+									<li>5 Desktop Computers iBUYPOWER</li>
+									<li>$100,000 Gabazzo Protection Guarauntee</li>
+									<li>Receive a Public Gabazzo Written Article with Press</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "All Levels" Ends Here =====-->
+
+
+		<!--===== Markup For "Terms For Levels" Starts From Here =====-->
+		<section class="terms_for_levels_wrap">
+			<div class="container">
+				<div class="terms_level_inner">
+					<div class="levels_heading">
+						<h3>Terms we use</h3>
+					</div>
+
+					<div class="terms_for_levels">
+						<div class="single_term">
+							<h4>Custom offer</h4>
+							<p>Tailored offers you can send to buyers with specific requirements.</p>
+						</div>
+
+						<div class="single_term">
+							<h4>Priority customer support</h4>
+							<p>We prioritize your inquiries to make sure you get help fast.</p>
+						</div>
+
+						<div class="single_term">
+							<h4>Extras</h4>
+							<p>Add-ons services that you can add to your Gig packages.</p>
+						</div>
+
+						<div class="single_term">
+							<h4>Warnings</h4>
+							<p>Violations of our <a href="javascript:void(0)">Terms of Services</a> could result in a warning.</p>
+						</div>
+
+						<div class="single_term">
+							<h4>Priority customer support</h4>
+							<p>We prioritize your inquiries to make sure you get help fast.</p>
+						</div>
+
+						<div class="single_term">
+							<h4>Extras</h4>
+							<p>Add-ons services that you can add to your Gig packages.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Terms For Levels" Ends Here =====-->
+
+
+
+
+
+
+
+
+
+		
+		<!--===== Markup For "Registration Counter" Starts From Here =====-->
+    <div class="registration_counter_wrap">
+      <div class="container">
+        <div class="registration_counter">
+          <div class="single_count">
+            <div class="heading">
+              <h2><%= total.length %>+</h2>
+            </div>
+            <p>Registered Companies</p>
+          </div>
+          <div class="single_count">
+            <div class="heading">
+              <h2><%= members %>+</h2>
+            </div>
+            <p>Registered Members</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== Markup For "Registration Counter" Ends Here =====-->
+		<!--===== Markup For "Footer" Starts From Here =====-->
+    <footer class="footer_wrap">
+      <div class="footer_top">
+        <div class="container">
+          <div class="footer">
+            <div class="single_part">
+              <div class="footer_logo">
+                <a href="/"
+                  ><img
+                    src="images/layout/gabazzo_logo_white.png"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/contact-us">Contact Us</a></li>
+                  <li><a href="/about-us">About</a></li>
+                  <li><a href="/site-map">Sitemap</a></li>
+                  <li><a href="/partnerships">Partnerships</a></li>
+		  <li><a href="/investor-relations">Investor Relations</a></li>
+		  <li><a href="/jobs-and-opportunities">Jobs & Opportunities</a></li>
+		  <li><a href="/press-and-news">Press & News</a></li>
+                </ul>
+              </div>
+              <div class="social_links">
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/gabazzoBCT"
+                      target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/gabazzo/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+		  <li>
+                    <a
+                      href="https://discord.gg/RTDhKw4r99" target="_blank"><i class="fab fa-discord"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Members</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/sign-up">Sign Up</a></li>
+		  <li><a href="/trust-and-safety-members">Trust & Safety</a></li>
+		  <li><a href="/ranking-system-members">Ranking System</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Business</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/company-sign-up-home">Register Business</a>
+                  </li>
+		  <li><a href="/study-buyer">Study Buyer</a>
+                  </li>
+		   <li><a href="/seller-league-system">League System</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Support</h4>
+              <div class="site_links">
+                <ul>
+		  <li><a href="/help-center-buyer">Help Center</a></li>
+                  <li><a href="/terms-and-conditions">Terms of Use</a></li>
+                  <li><a href="/privacy-policy">Privacy Policy</a></li>
+                  <li><a href="/cookie-policy">Cookie Policy</a></li>
+                  <li><a href="/safety-for-members">Safety</a></li>
+		  <li><a href="/covid-info">Covid-19 Info</a></li>
+		  <li><a href="/intellectual-property-claims">IP Claims</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <p>
+            Copyright &copy; 2021 Gabazzo. All Rights Reserved. Patent Pending
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!--===== Markup For "Footer" Ends Here =====-->
+
+
+
+
+
+		<!--===== Markup For "" Starts From Here =====-->
+		<!--===== Markup For "" Ends Here =====-->
+
+
+		<!--jQuery Main Libraty Latest Version-->
+		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+		<!--Bootstrap v4.5.3 JS File-->
+		<script type="text/javascript" src="js/popper.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<!--Custom Script JS File-->
+		<script type="text/javascript" src="js/updatedCustom.js"></script>
+    <script src="js/autocomplete.js" type="text/javascript"></script>
+		<!--Custom JavaScript-->
+		<script type="text/javascript">
+
+		</script>
+
+	</body>
+
+</html>

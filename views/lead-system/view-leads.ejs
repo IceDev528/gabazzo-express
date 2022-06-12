@@ -1,0 +1,937 @@
+<% layout('layouts/generalBoilerplate') -%>
+    
+<!--===== Markup For "View Leads Page" Starts From Here =====-->
+<div class="view_leads view_offer">
+    <div class="view_leads_tab">
+        <section id="viewRequestTab">
+            <!--===== Markup For "View Leads Header" Starts From Here =====-->
+            <div class="tabs_menu">
+                <div class="container">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="view_leads_active_tab" data-toggle="tab" href="#view_leads_active" role="tab" aria-controls="view_leads_active" aria-selected="true">Active</a>
+                                                                        
+                        <a class="nav-item nav-link" id="view_leads_sent_offer_tab" data-toggle="tab" href="#view_leads_sent_offer" role="tab" aria-controls="view_leads_sent_offer" aria-selected="false">Sent Offers</a>
+                    </div>
+                </div>
+            </div>
+            <!--===== Markup For "View Leads Header" Ends Here =====-->
+                
+                
+            <div class="tab-content" id="nav-tabContent">
+                <!--===== Markup For "View Leads" Starts From Here =====-->
+                <div class="tab-pane fade show active" id="view_leads_active" role="tabpanel" aria-labelledby="view_leads_active_tab">
+                    <div class="container">
+                        <!--===== Markup For "Leads Indicator" Starts From Here =====-->
+                        <div class="leads_header">
+                            <div class="leads_title grid_item">
+                                <% let activeLeadCount = 0; %>
+                                <% for(let i = 0; i < projects.length; i++) { %>
+                                    <% if(!projects[i]?.sentoffers.includes(currentUser.username)){ %>
+                                       <%  activeLeadCount++; %>
+                                    <% }%>
+                                <% }%>
+                                <h4>View Leads <span class="leads_amount">(<%= activeLeadCount %> Leads)</span></h4>
+                            </div>
+
+                            <!-- <div class="right_filter">
+                                <div class="filter_wrappp">
+                                    <div class="single_filter">
+                                        <div class="select_field">
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Construction Services</option>
+                                                <option value="">Vehicle Services</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="single_filter">
+                                        <div class="select_field">
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Main Category 1</option>
+                                                <option value="">Main Category 2</option>
+                                                <option value="">Main Category 3</option>
+                                                <option value="">Main Category 4</option>
+                                                <option value="">Main Category 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="single_filter">
+                                        <div class="select_field">
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Sub Category 1</option>
+                                                <option value="">Sub Category 2</option>
+                                                <option value="">Sub Category 3</option>
+                                                <option value="">Sub Category 4</option>
+                                                <option value="">Sub Category 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <!--===== Markup For "Leads Indicator" Ends Here =====-->
+
+
+                        <!--===== Markup For "All Leads" Starts From Here =====-->
+                        <% for(let i = 0; i < projects.length; i++) { %>
+                            <% if(!projects[i]?.sentoffers.includes(currentUser.username)){ %>
+                                <div class="single_leads">
+                                    <div class="members_request_wrap">
+                                        <div class="members_request">
+                                            <div class="members_info grid_item">
+                                                <div class="profile_pic">
+                                                    <a href="javascript:void(0)">
+                                                        <% if(projects[i].owner.profilePicture) { %>
+                                                            <img src="<%= projects[i].owner?.profilePicture %>" class="img-fluid" alt="" />
+                                                        <% } else { %>
+                                                            <img src="../images/man.png" class="img-fluid" alt="" />
+                                                        <% } %>
+                                                    </a>
+                                                </div>
+                                                <div class="profile_name">
+                                                    <a href="javascript:void(0)"><%= projects[i].owner.name %></a>
+                                                </div>
+                                            </div>
+                    
+                                            <div class="request grid_item">
+                                                <div class="request_head">
+                                                    <div class="request_title">
+                                                        <h4><%= projects[i].title %></h4>
+                                                    </div>
+                                                    <div class="request_method">
+                                                        <% if(!projects[i].isOpenToBid ) { %>
+                                                            <h2>Budget: $<%= projects[i].budget %></h2>
+                                                        <% } else { %>
+                                                            <span class="gbtn">Open to Bids</span>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                                <p><%= projects[i].description %><a href="javascript:void(0)">See More...</a></p>
+                                                <div class="tags">
+                                                    <ul>
+                                                        <li><%= projects[i].mainCategory %></li>
+                                                        <li><%= projects[i].subCategory %></li>
+                                                        <li><%= projects[i].type %></li>
+                                                        <li><%= projects[i].language %></li>
+                                                        <li>Date: <%= projects[i].date %></li>
+                                                        <li>Time: <%= projects[i].time %></li>
+                                                        <li>Location: <%= projects[i]?.address %></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="download_files">
+                                                    <ul>
+                                                        <% for(let j = 0; j < projects[i].media.length ; j++) { %>
+                                                            <li><a href="<%= projects[i].media[j].path %>"><i class="far fa-arrow-alt-circle-down"></i> <span class="file_name"><%= projects[i].media[j].key %> </span></a></li>
+                                                        <% } %>
+                                                    </ul>
+                                                </div>
+                                                <div class="actions">
+                                                    <ul>
+                                                        <li><a class="gbtn gbtn_orange" href="javascript:void(0)" data-target="#theMessagePopupactive<%= i %>" data-toggle="modal">Message Client</a></li>
+                                                        <li><a class="gbtn gbtn_red" href="javascript:void(0)" data-target="#deleteLeads" data-toggle="modal">Remove Lead</a></li>
+                                                        <li id="<%= projects[i].owner.id %>" name="<%= projects[i]._id %>"><a class="gbtn gbtn_green sendoffer"  href="javascript:void(0)" data-target="#selectService" data-toggle="modal">Send Offer</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+                        <% } %>
+                        <!--===== Markup For "All Leads" Ends Here =====-->
+                    </div>
+                </div>
+                <!--===== Markup For "View Leads" Ends Here =====-->
+                
+                    
+                
+                <!--===== Markup For "Sent Offers" Starts From Here =====-->
+                <div class="tab-pane fade" id="view_leads_sent_offer" role="tabpanel" aria-labelledby="view_leads_sent_offer_tab">
+                    <div class="container">
+                        <!--===== Markup For "Leads Indicator" Starts From Here =====-->
+                        <div class="leads_header">
+                            <div class="leads_title grid_item">
+                                <h4>Sent Offers <span class="leads_amount">(<%= projects.length - activeLeadCount %> Offer Sent)</span></h4>
+                            </div>
+                        </div>
+                        <!--===== Markup For "Leads Indicator" Ends Here =====-->
+                        
+
+
+                        <!--===== Markup For "All Offers" Starts From Here =====-->
+                        <% for(let i = 0; i< sentOffers.length; i++) { %>
+                            <div class="single_leads">
+                                <div class="members_request_wrap">
+                                    <div class="members_request">
+                                        <div class="members_info grid_item">
+                                            <div class="profile_pic">
+                                                
+                                                <% if(sentOffers[i].project.owner.profilePicture) { %>
+                                                    <a href="javascript:void(0)"><img src="<%= sentOffers[i].project.owner.profilePicture %>" class="img-fluid" alt="profile picture" /></a>
+                                                <% } else { %>
+                                                    <img src="../images/man.png" class="img-fluid" alt="" />
+                                                <% } %>
+                                            </div>
+                                            <div class="profile_name">
+                                                <a href="javascript:void(0)"><%= sentOffers[i].project.owner.name %></a>
+                                            </div>
+                                        </div>
+                
+                                        <div class="request grid_item">
+                                            <div class="request_head">
+                                                <div class="request_title">
+                                                    <h4><%= sentOffers[i].project.title %></h4>
+                                                </div>
+                                                <div class="request_method">
+                                                    <% if(!sentOffers[i].project.isOpenToBid ) { %>
+                                                        <h2>Budget: $<%= sentOffers[i].project.budget %></h2>
+                                                    <% } else { %>
+                                                        <span class="gbtn">Open to Bids</span>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                            <p><%= sentOffers[i].project.description %><a href="javascript:void(0)">See More...</a></p>
+                                            <div class="tags">
+                                                <ul>
+                                                    <li><%= sentOffers[i].project.mainCategory %></li>
+                                                    <li><%= sentOffers[i].project.subCategory %></li>
+                                                    <li><%= sentOffers[i].project.type %></li>
+                                                    <li><%= sentOffers[i].project.language %></li>
+                                                    <li>Date: <%= sentOffers[i].project.date %></li>
+                                                    <li>Time: <%= sentOffers[i].project.time %></li>
+                                                    <li>Location: <%= sentOffers[i].project?.address %></li>
+                                                </ul>
+                                            </div>
+                                            <div class="download_files">
+                                                <ul>
+                                                    <% for(let j = 0; j < sentOffers[i].project.media.length ; j++) { %>
+                                                        <li><a href="<%= sentOffers[i].project?.media[j].path %>"><i class="far fa-arrow-alt-circle-down"></i> <span class="file_name"><%= sentOffers[i].project?.media[j].key %> </span></a></li>
+                                                    <% } %>
+                                                </ul>
+                                            </div>
+                                            <div class="actions">
+                                                <ul>
+                                                    <li><a class="gbtn gbtn_orange_bdr" href="https://s3.amazonaws.com/assets.gabazzo.com/<%= sentOffers[i]._id %>.pdf">View Sent Offer</a></li>
+                                                    <li><a class="gbtn gbtn_orange" href="javascript:void(0)" data-target="#theMessagePopupsent<%= i %>" data-toggle="modal">Message Client</a></li>
+                                                    <li><a class="gbtn gbtn_red" href="javascript:void(0)" data-target="#deleteOffer<%= i %>" data-toggle="modal">Remove Offer</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                        <% } %>
+                        <!--===== Markup For "All Offers" Ends Here =====-->
+                    </div>
+                </div>
+                <!--===== Markup For "Sent Offers" Ends Here =====-->
+            </div>
+        </section>
+    </div>
+</div>
+<!--===== Markup For "View Leads Page" Ends Here =====-->
+
+<!--===== Markup For "Delete Offers" Starts From Here =====-->
+<% for(let i = 0; i< sentOffers.length; i++){ %> 
+    <div class="modal fade delete_leads_modal" id="deleteOffer<%= i %>">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="delete_leads_wrap">
+                        <a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+
+                        <div class="delete_leads">
+                            <p>Are you sure you want to delete this <span class="bold_texts">"Offer"</span>?<span class="break"></span> You cannot get this offer back once it is deleted.</p>
+
+                            <ul>
+                                <li><a class="gbtn gbtn_bdr" href="javascript:void(0)" data-dismiss="modal">No</a></li>
+                                <li>
+                                <form action="/view-offer/<%= sentOffers[i]._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="gbtn">Yes</button>
+                                </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>
+<!--===== Markup For "Delete Offers" Ends Here =====-->
+
+<!--===== Markup For "Delete Leads" Starts From Here =====-->
+<div class="modal fade delete_leads_modal" id="deleteLeads">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="delete_leads_wrap">
+                    <a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+
+                    <div class="delete_leads">
+                        <p>Are you sure you want to delete this "Lead" from your leads system? <span class="break"></span> You cannot get this lead back once it is deleted</p>
+
+                        <ul>
+                            <li><a class="gbtn gbtn_bdr" href="javascript:void(0)" data-dismiss="modal">Cancel</a></li>
+                            <li><a class="gbtn" href="javascript:void(0)">Delete Lead</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== Markup For "Delete Leads" Ends Here =====-->
+
+<!--===== Markup For "Message Popup" Starts From Here =====-->
+<% for(let i = 0; i < projects.length; i++) { %>
+    <div class="modal fade msg_popup_modal" id="theMessagePopupactive<%= i %>">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Send a Message</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="msg_pop_box">
+                        <div class="company_info">
+                            <div class="company_logo_name">
+                                <div class="company_logo">
+                                    <% if(projects[i].owner.profilePicture) { %>
+                                        <a href="javascript:void(0)"><img src="<%= projects[i].owner.profilePicture %>" class="img-fluid" alt="" /></a>
+                                    <% } else { %>
+                                        <a href="javascript:void(0)"><img src="../images/man.png" class="img-fluid" alt="" /></a>
+                                    <% } %>
+                                </div>
+                                <div class="company_name">
+                                    <h5><%= projects[i].owner.name %></h5>
+                                </div>
+                            </div>
+
+                            <div class="need_requirements">
+                                <h5>Please Include:</h5>
+                                <ul>
+                                    <li>Project Description</li>
+                                    <li>Specific Instructions</li>
+                                    <li>Relevant Files</li>
+                                    <li>Your Budget</li>
+                                    <li>Delivery Time</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="msg_box_wrap">
+                            <div class="time_zone">
+                                <h5>Time Zone: <span>10:53 AM</span></h5>
+                            </div>
+
+                            <form action="../message/<%= projects[i].owner.id %>"  enctype="multipart/form-data"  method="POST">
+                                <div class="msg_box">
+                                    <textarea name="message" id="myText" placeholder="Type your message..." cols="30" rows="10" class="form-control"></textarea>
+
+                                    <div class="indicator_attach">
+                                        <div class="character_indicator grid_item">
+                                            <h6>0/2,500</h6>
+                                        </div>
+                                        <div class="attach_button">
+                                            <div class="attach_file">
+                                                <label class="attachment">
+                                                    <input
+                                                    type="file"
+                                                    name="attachments"
+                                                    id="<%= projects[i].owner.id %>"
+                                                    class="inputfile inputfile-1"
+                                                    data-multiple-caption="{count} files selected"
+                                                    multiple
+                                                    />
+                                                   <i id="<%= projects[i].owner.id+2 %>"
+                                                            for="<%= projects[i].owner.id %>" class="fa fa-paperclip" aria-hidden="true"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="submit_button">
+                                    <button class="btn gbtn" type="submit">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+<% for(let i = 0; i< sentOffers.length; i++) { %>
+    <div class="modal fade msg_popup_modal" id="theMessagePopupsent<%= i %>">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Send a Message</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="msg_pop_box">
+                        <div class="company_info">
+                            <div class="company_logo_name">
+                                <div class="company_logo">
+                                    <% if(sentOffers[i].project.owner.profilePicture) { %>
+                                        <a href="javascript:void(0)"><img src="<%= sentOffers[i].project.owner.profilePicture %>" class="img-fluid" alt="" /></a>
+                                    <% } else { %>
+                                        <a href="javascript:void(0)"><img src="../images/man.png" class="img-fluid" alt="" /></a>
+                                    <% } %>
+                                </div>
+                                <div class="company_name">
+                                    <h5><%= sentOffers[i].project.owner.name %></h5>
+                                </div>
+                            </div>
+
+                            <div class="need_requirements">
+                                <h5>Please Include:</h5>
+                                <ul>
+                                    <li>Project Description</li>
+                                    <li>Specific Instructions</li>
+                                    <li>Relevant Files</li>
+                                    <li>Your Budget</li>
+                                    <li>Delivery Time</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="msg_box_wrap">
+                            <div class="time_zone">
+                                <h5>Time Zone: <span>10:53 AM</span></h5>
+                            </div>
+
+                            <form action="../message/<%= sentOffers[i].project.owner.id %>"  enctype="multipart/form-data"  method="POST">
+                                <div class="msg_box">
+                                    <textarea name="message" id="myText" placeholder="Type your message..." cols="30" rows="10" class="form-control"></textarea>
+
+                                    <div class="indicator_attach">
+                                        <div class="character_indicator grid_item">
+                                            <h6>0/2,500</h6>
+                                        </div>
+                                        <div class="attach_button">
+                                            <div class="attach_file">
+                                                <label class="attachment">
+                                                    <label class="attachment">
+                                                        <input
+                                                        type="file"
+                                                        name="attachments"
+                                                        id="<%= sentOffers[i].project.owner.id %>"
+                                                        class="inputfile inputfile-1"
+                                                        data-multiple-caption="{count} files selected"
+                                                        multiple
+                                                        />
+                                                       <i id="<%= sentOffers[i].project.owner.id+2 %>"
+                                                                for="<%= sentOffers[i].project.owner.id %>" class="fa fa-paperclip" aria-hidden="true"></i>
+                                                    </label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="submit_button">
+                                    <button class="btn gbtn" type="submit">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>
+<!--===== Markup For "Message Popup" Ends Here =====-->
+
+<!--===== Markup For "Select Service Modal" Starts From Here =====-->
+<div class="modal fade create_offer_modal" id="selectService">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Service</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="select_services">
+                    <form action="">
+                        <ul data-toggle="buttons">
+                            <% services.forEach((service, i) => { %>
+                                <li class="btn serviceSelect" id="<%= service.title[0] + i%>">
+                                    <input type="radio" name="theService" autocomplete="off">
+                                    <div class="single_service">
+                                        <div class="service_image">
+                                            <% if(service.images.length) {%>
+                                                <img src="<%= service.images[0].url %>"
+                                                    class="img-fluid" alt="<%= service.title %>" />
+                                            <%} else {%>
+                                                <img src="../images/Roofing_Services.jpg"
+                                                    class="img-fluid" alt="<%= service.title %>" />
+                                            <% }%>
+                                        </div>
+                                        <div class="service_title">
+                                            <h4 id="<%= service._id %>">
+                                                <%= service.title %>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </form>
+                </div>
+                <div class="label text-danger" id="selectserviceerr" style="display: none;"> 
+                    Please choose atleast one service. 
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal_actions">
+                    <ul>
+                        <li><a href="javascript:void(0)" class="gbtn gbtn_bdr" data-dismiss="modal">Cancel</a></li>
+                        <li><a href="javascript:void(0)" class="gbtn continue" id="selectServiceCnt">Continue</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== Markup For "Select Service Modal" Ends Here =====-->
+
+<!--===== Markup For "Payment Way Modal" Starts From Here =====-->
+<div class="modal fade create_offer_modal" id="singleMilestones">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>How would <a href="javascript:void(0)"><%= currentUser.companyName %></a> get paid?</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="top_texts">
+                    <p>Get paid in full to work on Project or break it into smaller chunks to get paid as you work along the the way <a href="javascript:void(0)" title="Milestones allow you to work through large projects in small steps with pre-defined deadlines, deliverables, and payments. It's a great way to build trust with your buyer, step-by-step." data-toggle="tooltip"><i class="fa fa-question-circle" aria-hidden="true"></i></a></p>
+                </div>
+                <div class="select_payment">
+                    <form action="">
+                        <ul data-toggle="buttons">
+                            <li class="btn">
+                                <input type="radio" name="paymentSystem" autocomplete="off"> 
+                                <div class="single_payment">
+                                    <div class="icon">
+                                        <img src="images/single_payment.png" class="img-fluid" alt="" />
+                                    </div>
+                                    <div class="texts">
+                                        <h2>Single Payment</h2>
+                                        <p>Receive one payment for the entire project once completed.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="go_back_button">
+                    <a href="javascript:void(0)" class="gbtn gbtn_orange" data-dismiss="modal" data-target="#selectService" data-toggle="modal">Go Back</a>
+                </div>
+                <div class="modal_actions">
+                    <ul>
+                        <li><a href="javascript:void(0)" class="gbtn gbtn_bdr" data-dismiss="modal">Cancel</a></li>
+                        <li><a href="javascript:void(0)" class="gbtn continue" data-dismiss="modal" data-target="#singlePaymentSt1" data-toggle="modal">Continue</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== Markup For "Payment Way Modal" Ends Here =====-->
+
+
+
+<form id="createofferform" action="/post-offer-lead" method="post">
+<!--===== Markup For "Single Payment Modal" Starts From Here =====-->
+<div class="modal fade create_offer_modal payment_method_modal" id="singlePaymentSt1">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create Single Payment Offer</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="creating_offer">
+                   
+                        <div class="title">
+                            <h4 id="serviceName">Service Name/Service Title</h4>
+                        </div>
+                        <div class="proposal_wrap">
+                            <div class="service_image">
+                                <img id="serviceImage" src="images/Roofing_Services.jpg" class="img-fluid" alt="" />
+                            </div>
+                            <div class="describe_offer">
+                                <textarea name="offer[description]" class="form-control" id="" cols="30" rows="4" placeholder="Describe Your System..."></textarea>
+                                <div class="label text-danger" id="deserror" style="display: none;"> 
+                                    Please provide a description! 
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="set_offer_wrap">
+                            <div class="title">
+                                <h4>Set Up Offer</h4>
+                            </div>
+                            <div class="offer_box set_offer">
+                                <div class="single_field the_qty_field">
+                                    <div class="label_wrap">
+                                        <label for="">QTY:</label>
+                                    </div>
+                                    
+                                    <select name="offer[qty]" id="" class="form-control">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                <div class="single_field">
+                                    <div class="label_wrap">
+                                        <label for="">Unit Price:</label>
+                                    </div>
+                                    <div class="input_icon">
+                                        <input name="offer[unitPrice]" type="text" class="form-control" placeholder="25,000 Max" />
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                </div>
+                                <div class="single_field">
+                                    <div class="label_wrap">
+                                        <label for="">Total:</label>
+                                    </div>
+                                    <div class="input_icon">
+                                        <input name="offer[totalPrice]" type="text" class="form-control" placeholder="1,000,000 Max"  readonly/>
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="label text-danger" id="unitpriceerr" style="display: none;"> 
+                                    Please write a unit price! 
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="created_milestones" id="createdSingles"></div>
+                                     
+                        <!-- Temporary data -->
+                        <input id="receiver" name="receiver" type="hidden"/>
+                        <input id="serviceid" name="serviceID" type="hidden"/>
+                        <input id="projectid" name="projectID" type="hidden"/>
+
+                        <div class="add_create_btns">
+                            <ul>
+                                <li id="addbtn"><a href="javascript:void(0)" class="gbtn"><i class="fas fa-plus"></i> Add</a></li>
+                            </ul>
+                        </div>
+                </div>
+
+                <div class="label text-danger" id="taskerr" style="display: none;"> 
+                    Please add atleast one task.
+                </div>
+            
+            </div>
+           
+            <div class="modal-footer">
+                <div class="go_back_button">
+                    <a href="javascript:void(0)" class="gbtn gbtn_orange" data-dismiss="modal" data-target="#singleMilestones" data-toggle="modal">Go Back</a>
+                </div>
+                <div class="modal_actions">
+                    <ul>
+                        <li><a href="javascript:void(0)" class="gbtn gbtn_bdr" data-dismiss="modal">Cancel</a></li>
+                        <li><a id="gotofinaldetail" href="javascript:void(0)" class="gbtn continue">Continue</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade create_offer_modal payment_method_modal" id="singlePaymentSt2">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Single Payment Final Details</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="creating_offer">
+                        <div class="final_offer">
+                            <div class="title">
+                                <h4>Offer Final Details</h4>
+                            </div>
+                            
+                            <div class="offer_box delivery_revisions">
+                                <div class="single_field delivery_field">
+                                    <div class="label_wrap">
+                                        <label for="">Delivery <a href="javascript:void(0)" title="The order duration might change depending on the back and forth communications between buyer and seller." data-toggle="tooltip"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label>
+                                    </div>
+                                    
+                                    <div class="input_icon">
+                                        <select name="delivery" id="delivery" class="form-control">
+                                            <option value="1">1 Day</option>
+                                            <option value="2">2 Days</option>
+                                            <option value="3">3 Days</option>
+                                            <option value="4">4 Days</option>
+                                            <option value="5">5 Days</option>
+                                            <option value="6">6 Days</option>
+                                            <option value="7">7 Days</option>
+                                        </select>
+                                        <i class="far fa-clock"></i>
+                                    </div>
+                                </div>
+                                <div class="single_field">
+                                    <div class="label_wrap">
+                                        <label for="revision">Revisions <span>(Optional)</span></label>
+                                    </div>
+                                    
+                                    <div class="input_icon">
+                                        <select name="revision" id="revision" class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                        </select>
+                                        <i class="fas fa-sync-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="offer_box pricing_details">
+                                <div class="single_field">
+                                    <div class="label_wrap">
+                                        <label for="">Sub-Total</label>
+                                    </div>
+                                    <div class="input_icon">
+                                        <input id="subtotal" name="subtotal" type="text" class="form-control" placeholder="" readonly />
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                </div>
+                                <div class="single_field">
+                                    <div class="label_wrap">
+                                        <label for="discount">Discount</label>
+                                    </div>
+                                    <div class="input_icon">
+                                        <input id="discount" name="discount" type="text" class="form-control" placeholder="" />
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                </div>
+                                <div class="single_field">
+                                    <div class="label_wrap">
+                                        <label for="">Gabazzo Rate</label>
+                                    </div>
+                                    <input type="text" class="form-control" disabled value="2.4%" placeholder="" readonly/>
+                                </div>
+                                <div class="single_field">
+                                    <div class="label_wrap">
+                                        <label for="">Quote Total</label>
+                                    </div>
+                                    <div class="input_icon">
+                                        <input id="quotetotal" name="quotetotal" type="text" class="form-control" placeholder="" readonly/>
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="label text-danger" id="discounterr" style="display: none; margin-bottom: 10px;"> 
+                                Please provide a valid discount or quotation should be greater than $4! 
+                            </div>
+
+                            <div class="notes">
+                                <div class="title">
+                                    <h4>Notes</h4>
+                                </div>
+                                
+                                <textarea name="notes" id="notes" cols="30" rows="4" placeholder="If you have any additional notes for the estimate you can add them here..." class="form-control"></textarea>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="go_back_button">
+                    <a href="javascript:void(0)" class="gbtn gbtn_orange" data-dismiss="modal" data-target="#singlePaymentSt1" data-toggle="modal">Go Back</a>
+                </div>
+                <div class="modal_actions">
+                    <ul>
+                        <li><a href="javascript:void(0)" class="gbtn gbtn_bdr" data-dismiss="modal">Cancel</a></li>
+                        <li><a href="javascript:void(0)" id="submitoffer" class="gbtn continue">Send Offer</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== Markup For "Single Payment Modal" Ends Here =====-->
+</form>
+
+<script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+<!--Custom JavaScript-->
+<script type="text/javascript">
+    // Force Body To Has Class Open For Modal
+    $(document).on('hidden.bs.modal', function (event) {
+        if ($('.modal:visible').length) {
+            $('body').addClass('modal-open');
+        }
+    });
+</script>
+    
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        let selectedService = '', serviceImage = '', serviceID = '', qty = '', unitPrice = '', total = '', description = '', count = 1, quantity = 1, noOfTask = 0, subTotal = 0, discount = 0, quotetotal;
+
+        //Service Select Modal
+        $(".serviceSelect").click(function () {
+            
+            serviceID = $(this).find(".service_title h4").attr("id");
+            selectedService = $(this).find(".service_title h4").text();
+            serviceImage = $(this).find(".service_image img").attr("src");
+            
+        });
+
+        // Continue button of firt modal - Select service modal
+        $("#selectServiceCnt").click(function(){
+            if(serviceID === ''){
+                $("#selectserviceerr").css("display", 'block');
+            }else{
+
+                // Changing the image and title on the next modal
+                $("#serviceImage").attr('src', serviceImage);
+                $("#serviceName").text(selectedService);
+
+                $("#serviceid").val(serviceID);
+
+                $("#singlePaymentSt1").modal('show');
+                $("#selectService").modal('hide');
+                $("#selectserviceerr").css("display", 'none');
+            }
+
+        })
+
+        $("select[name='offer[qty]']").on("change", function () {
+            quantity = $(this).val();
+
+            total = $("input[name='offer[unitPrice]']")[0].value * quantity;
+            $("input[name='offer[totalPrice]']")[0].value = $("input[name='offer[unitPrice]']")[0].value * quantity;
+        });
+        
+
+        // Picking up the form element
+        $("input[name='offer[unitPrice]']")[0].onchange = function(){
+            unitPrice =  $(this).val();
+            total = $(this).val() * quantity;
+            $("input[name='offer[totalPrice]']")[0].value = $(this).val() * quantity;
+
+            if(unitPrice != 0)
+                $("#unitpriceerr").css("display", 'none');
+        }
+
+        $("textarea[name='offer[description]']")[0].onchange = function(){
+            description =  $(this).val().trim();
+            
+            if(description.trim().length !== 0){
+                $("#deserror").css("display", 'none');
+            }
+        }
+
+        $("#addbtn").click(function(){
+            if(unitPrice == '' || unitPrice == 0 || description == ''){
+                if(unitPrice == '' && description == '' || unitPrice == 0 && description == ''){
+                    $("#unitpriceerr").css("display", "block");
+                    $("#deserror").css("display", 'block');
+                }
+
+                if(unitPrice == '' || unitPrice == 0)
+                    $("#unitpriceerr").css("display", "block");
+                else
+                    $("#deserror").css("display", 'block');
+            }else{
+
+                $("select[name='offer[qty]']")[0].value = 1;
+                $("input[name='offer[unitPrice]']")[0].value = 0;
+                $("input[name='offer[totalPrice]']")[0].value = 0;
+                $("textarea[name='offer[description]']")[0].value = '';
+
+                subTotal += total;
+
+                const offer = '<div class="single_item"><div class="click_item"><a href="javascript:void(0)" data-target="#milestone' + count + '" class="collapsed" data-toggle="collapse"><div class="milestone_name_price"><div class="milestone_name"><h4>Description # ' + count + '</h4></div><div class="milestone_price"><h4>' + total + '$</h4></div></div></a></div><div id="milestone' + count + '" class="collapse fade contents" data-parent="#createdSingles"><div class="created_milestone_box"><div class="service_title"><h4>' + selectedService + '</h4></div><div class="service_img_descrip"><div class="service_image"><img src="' + serviceImage + '" class="img-fluid" alt="" /></div><div class="service_descrip"><textarea name="offer[description]" value="'+ description +'" cols="30" rows="4" class="form-control" readonly>' + description + '</textarea></div></div><div class="offer_box set_milestones"><div class="single_field"><label for="">QTY</label><div class="input_icon"><input name="offer[qty]" type="text" class="form-control" value="' + quantity + '" readonly/><i class="fas fa-sort-amount-up-alt"></i></div></div><div class="single_field"><label for="">Unit Price</label><div class="input_icon"><input name="offer[unitPrice]" type="text" class="form-control" value="' + unitPrice + '" readonly/><i class="fas fa-dollar-sign"></i></div></div><div class="single_field"><label for="">Total</label><div class="input_icon"><input name="offer[totalPrice]" type="text" class="form-control" placeholder="1,00,000 Max" value="' + total + '" readonly/><i class="fas fa-dollar-sign"></i></div></div></div></div></div></div>';
+                $("#createdSingles").append(offer);
+                serviceID = '', qty = '', unitPrice = '', total = '', description = '', count += 1;
+
+                // Resetting the err labels to display none
+                $("#unitpriceerr").css("display", "none");
+                $("#deserror").css("display", 'none');
+                $("#taskerr").css("display", 'none');
+                
+                noOfTask += 1;
+            }
+        })
+    
+        $(".sendoffer").click(function(){
+            const id = $(this).parent().attr("id");
+            const projectid = $(this).parent().attr("name");
+            $("#receiver").val(id);
+            $("#projectid").val(projectid)
+        })
+
+        $("#gotofinaldetail").click(function(){
+            if(noOfTask == 0){
+                $("#taskerr").css("display", 'block');
+            }else{
+                $("#singlePaymentSt2").modal("show");
+                $("#singlePaymentSt1").modal("hide");
+
+                $("#taskerr").css("display", 'none');
+
+                // Changing the values of next modal
+                $("#subtotal").val(subTotal);
+                $("#quotetotal").val(subTotal);
+            }
+        })
+
+        $("#discount").on("change", function(){
+            discount = $(this).val();
+
+            quotetotal = Math.round((subTotal - discount) + ((subTotal - discount) * 0.024));
+
+            if(discount <= -1 || quotetotal <= 4){
+                $("#discounterr").css("display", 'block');
+            }else{
+                $("#quotetotal").val(quotetotal);
+                $("#discounterr").css("display", 'none');
+            }
+
+        })
+
+        $("#submitoffer").click(function(){
+            if(discount <= -1 || quotetotal <= 4){
+                $("#discounterr").css("display", 'block');
+            }else{
+                console.log("trueee")
+                $("#discounterr").css("display", 'none');
+                $("#createofferform").submit();
+            }
+        })
+    })
+
+</script>

@@ -1,0 +1,821 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<!--Metatags-->
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatble" content="ie=edge"/>
+		<!--Website Title-->
+		<title>Investor FAQs</title>
+		<!--Calling Favicon-->
+		<link rel="icon" href="images/favicon.png" />
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<!--FontAwesome CDN-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+		<!--Normalize v8.0.1 CSS FILE-->
+		<link rel="stylesheet" href="css/normalize.css"/>
+		<!--Bootstrap v4.6.0 CSS FILE-->
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<!--Gabazzo Common CSS File-->
+		<link rel="stylesheet" href="css/gabazzo.common.css" />
+		<!--Fonts Are Loads From Here-->
+		<link rel="stylesheet" href="fonts/fonts.css"/>
+		<!--Main Stylesheet-->
+		<link rel="stylesheet" href="css/updatedStyles.css"/>
+		<!--Stylesheet For The Responsiveness-->
+                <link rel="stylesheet" href="css/responsive.css"/>
+		<!--Stylesheet For The Night Mode-->
+		<link rel="stylesheet" href="css/night.mode.css"/>
+	</head>
+
+	<body>
+	
+	
+<!--===== Markup For "Header" Starts From Here =====-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="logo_mode_switching">
+        <ul>
+          <li>
+            <a href="/" class="navbar-brand"
+              ><img
+                src="../images/layout/gabazzo_logo_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+          </li>
+          <li>
+            <a class="mode_icon" href="javascript:void(0)">
+              <img
+                src="../images/layout/mode_icon_night.png"
+                class="img-fluid night_icon"
+                title="Night Mode"
+                data-toggle="tooltip"
+                alt=""
+              />
+              <img src="../images/layout/mode_icon_day.png" class="img-fluid day_icon" title="Day Mode" data-toggle="tooltip" alt=""/>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="members_navbar">
+        <div class="mobile_search_btn_menubar">
+          <div class="cp_search_btn dropdown">
+            <a
+              href="javascript:void(0)"
+              data-target="#companySearchBar"
+              data-toggle="dropdown"
+              class="nav-link"
+              ><img
+                src="../images/layout/search_icon_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+
+            <div
+              class="dropdown-menu company_search_down"
+              aria-labelledby="companySearchBar"
+            >
+              <form action="">
+                <div class="company_search_field">
+                  <input
+                    id="myInput"
+                    type="search"
+                    placeholder="Search..."
+                    class="form-control"
+                  />
+                  <button class="btn" type="submit">
+                    <img
+                      src="../images/layout/search_icon_black.png"
+                      class="black_icon"
+                      alt=""
+                    />
+                    <img
+                      src="../images/layout/search_icon_white.png"
+                      class="white_icon"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            data-target="#responsive-bar"
+            data-toggle="collapse"
+          >
+            <div class="humbergur_icon">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </button>
+
+          <% if(currentUser) { %>
+          <a
+            href="javascript:void(0)"
+            class="nav-link profile_pic_link membersProfilePic"
+          >
+            <div class="profile_pic">
+              <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) {
+              %>
+              <img src="<%= currentUser.logo %>" class="img-fluid" alt="" />
+              <% } else {%>
+              <img src="../images/man.png" class="img-fluid" alt="" />
+              <% }%> <% } else { %> <% if(currentUser?.profilePicture) {%>
+              <img
+                src="<%= currentUser.profilePicture %>"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <%} else {%>
+              <img
+                src="../images/man.png"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <% }%> <% } %>
+              <span class="activity_status online_status"></span>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="responsive-bar">
+        <div class="menus ml-auto">
+          <ul class="navbar-nav services_menu">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Construction Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=roofing services"
+                      class="dropdown-item"
+                      >Roofing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=landscaping services"
+                      class="dropdown-item"
+                      >Landscaping</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=junk removal"
+                      class="dropdown-item"
+                      >Junk Removal</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=masonry services"
+                      class="dropdown-item"
+                      >Masonry</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=plumbing services"
+                      class="dropdown-item"
+                      >Plumbing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=hvac services"
+                      class="dropdown-item"
+                      >HVAC</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=pest control"
+                      class="dropdown-item"
+                      >Pest Control</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=painting services"
+                      class="dropdown-item"
+                      >Painting</a
+                    >
+                  </li>
+                </ul>
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=flooring services"
+                      class="dropdown-item"
+                      >Flooring</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=electrical services"
+                      class="dropdown-item"
+                      >Electrical</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=moving services"
+                      class="dropdown-item"
+                      >Moving</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=appliance services"
+                      class="dropdown-item"
+                      >Appliance</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=locksmith services"
+                      class="dropdown-item"
+                      >Locksmith</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Vehicle Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=towing services"
+                      class="dropdown-item"
+                      >Towing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=vehicle repair"
+                      class="dropdown-item"
+                      >Vehicle Repair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav access_menu">
+            <li
+              class="nav-item cp_search_btn cp_search_btn_desktop dropdown"
+            >
+              <a
+                href="javascript:void(0)"
+                data-target="#companySearchBar"
+                data-toggle="dropdown"
+                class="nav-link"
+                ><img
+                  src="../images/layout/search_icon_white.png"
+                  class="img-fluid"
+                  alt=""
+              /></a>
+              <div
+                class="dropdown-menu company_search_down"
+                aria-labelledby="companySearchBar"
+              >
+                <form action="">
+                  <div class="company_search_field">
+                    <input
+                      id="myInput"
+                      type="search"
+                      placeholder="Search..."
+                      class="form-control"
+                    />
+                    <button class="btn" type="submit">
+                      <img
+                        src="../images/layout/search_icon_black.png"
+                        class="black_icon"
+                        alt=""
+                      />
+                      <img
+                        src="../images/layout/search_icon_white.png"
+                        class="white_icon"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <% if(currentUser) { %>
+            <li class="nav-item desktop_only_link">
+              <a
+                href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+                class="nav-link"
+                >Messages</a
+              >
+            </li>
+            <% if(currentUser && !currentUser.isCompany) { %>
+            <li class="nav-item desktop_only_link">
+              <a href="/saved-list" class="nav-link">Saved List</a>
+            </li>
+            <% } %>
+            <li class="nav-item profile_pic_desktop">
+              <a
+                href="javascript:void(0)"
+                class="nav-link profile_pic_link membersProfilePic"
+              >
+                <div class="profile_pic">
+                  <% if (currentUser?.isCompany) { %> <%
+                  if(currentUser.logo) { %>
+                  <img
+                    src="<%= currentUser.logo %>"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <% } else {%>
+                  <img src="../images/man.png" class="img-fluid" alt="" />
+                  <% }%> <% } else { %> <% if(currentUser.profilePicture)
+                  {%>
+                  <img
+                    src="<%= currentUser.profilePicture %>"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <%} else {%>
+                  <img
+                    src="../images/man.png"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <% }%> <% } %>
+                  <span class="activity_status online_status"></span>
+                </div>
+              </a>
+            </li>
+            <% } else {%>
+            <li class="nav-item">
+              <a href="/login" class="nav-link sign_in">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a href="/sign-up" class="nav-link gbtn gbtn_white_bdr"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/become-a-seller-overview" class="nav-link gbtn"
+                >Become a Seller</a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--===== Markup For "Header" Ends Here =====-->
+<% if(currentUser) { %>
+<!--===== Markup For "Members Profile Link" Starts From Here =====-->
+<div class="membersProfileLinks">
+  <div class="dismissMembersProfileLinks">
+    <i class="fa fa-times"></i>
+  </div>
+  <div class="members_profile_pic">
+    <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) { %>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.logo %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <% } else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile Picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.companyName %></h6>
+    <% } else { %> <% if(currentUser?.profilePicture) {%>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.profilePicture %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <%} else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.firstName + " " + currentUser.lastName %></h6>
+    <% } %>
+  </div>
+  <div class="profile_links">
+    <% if (currentUser.isCompany) { %>
+    <ul>
+      <li>
+        <i class="fas fa-user"></i>
+        <a href="/company-dashboard">View Dashboard</a>
+      </li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } else { %>
+    <ul>
+      <li><i class="fas fa-user"></i><a href="/member-profile/<%= currentUser._id %>">View Profile</a></li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+          >Messages</a
+        >
+      </li>
+      <% if(currentUser && !currentUser.isCompany) { %>
+      <li class="mobile_only"><i class="fas fa-list-alt"></i> <a href="/saved-list">Saved List</a></li>
+      <% } %>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } %>
+  </div>
+</div>
+<!--===== Markup For "Members Profile Link" Ends Here =====-->
+<% } %>
+
+
+
+
+		<!--===== Markup For "Investor Banner" Starts From Here =====-->
+		<section class="gb_investor_banner">
+			<div class="overlay">
+				<div class="container">
+					<div class="contents">
+						<h2>Investor FAQs</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Investor Banner" Ends Here =====-->
+
+
+		<!--===== Markup For "Investor Menu" Starts From Here =====-->
+		<section class="investor_menu_wrap">
+			<div class="container">
+				<div class="investor_menu">
+					<ul>
+						<li class="active"><a href="javascript:void(0)">Investor FAQs</a></li>
+						<li><a href="/investor-email-alerts">Investor Email Alerts</a></li>
+						<li><a href="/investor-contact-us">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Investor Menu" Ends Here =====-->
+
+
+		<section class="investor_contents_wrap">
+			<div class="container">
+				<!--===== Markup For "Faqs" Starts From Here =====-->
+				<div class="faqs">
+					<div class="accordion" id="theFaq">
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseOne" class="collapsed" data-toggle="collapse"><b>What is Gabazzo?</b></a>
+							</div>
+							<div id="collapseOne" class="collapse fade contents" data-parent="#theFaq">
+								<p><b>GABAZZO LLC</b> is an <b>SaaS Company</b> operating in <b>Chicago, Illinois</b> that offers Software Services to Local <b>Contractors/Technicians</b> and
+									made it easier for consumers such as <b>Realtors, Property & Facility Managers, Home/Property Owners, Dealerships, Vehicle Owners</b> and other
+									Regular People [Whom may need a Service]  to purchase Services in our <b>Online-Marketplace.</b> </p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseTwo" class="collapsed" data-toggle="collapse"><b>How does Gabazzo Generate Revenue?</b></a>
+							</div>
+							<div id="collapseTwo" class="collapse fade contents" data-parent="#theFaq">
+								<p>When a Contractor sends their Invoice to the Client and the Buyer pays, We receive <b>8% Seller Commission</b> and a <b>2.4% Buyer Fee</b> for a Transaction made on the Website.
+
+<b>Affiliate Marketing</b> through our ERD (Explore Resources Directory), we send users to different websites that are with us in exchange for Members as well.</p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseThree" class="collapsed" data-toggle="collapse"> <b>What is the 2.4% Buyer Fee?</b></a>
+							</div>
+							<div id="collapseThree" class="collapse fade contents" data-parent="#theFaq">
+								<p>A <b>Service Fee</b>. When the client purchases a Service Port from the Contractor they receive a Tracking Service System. Where Clients will be able
+									to review Work Progress from 0-100% [Photos/Videos] of what the Contractor uploads.</p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseFour" class="collapsed" data-toggle="collapse"><b>What is the 8% Commission Seller Fee?</b></a>
+							</div>
+							<div id="collapseFour" class="collapse fade contents" data-parent="#theFaq">
+								<p>A <b>Sales Fee</b>. When the Contractor sells a Service Port to the Buyer. GABAZZO takes commission for giving that client Software, Free Leads, & other
+									 Services. Once the Transaction has been made, the Contractor will be directed to the Tracking Service System.</p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseFive" class="collapsed" data-toggle="collapse"><b>What Type of Documents will I receive if I Invest?</b></a>
+							</div>
+							<div id="collapseFive" class="collapse fade contents" data-parent="#theFaq">
+								<p>You will receive <b>Non-Disclosure Agreement, Operating Agreement, Release of Liability, Last Will & Testament, 83 (B) Election Form, Banking Resolution,
+									Certificate of Equity Ownership</b> and a <b>Record of Certificates Issued & Transferred.</b></p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseSix" class="collapsed" data-toggle="collapse"><b>Where can I Invest in Gabazzo?</b></a>
+							</div>
+							<div id="collapseSix" class="collapse fade contents" data-parent="#theFaq">
+								<p>You can go to our <b>Crowdfunding Campgain</b> we have <a href="/crowdfunding-campaign">Here</a> OR you can <b>Contact Us</b> Directly <a href="/investor-contact-us">Here</a></p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseSeven" class="collapsed" data-toggle="collapse"><b>What is the Minimum & Maximum Investment I can Invest?</b></a>
+							</div>
+							<div id="collapseSeven" class="collapse fade contents" data-parent="#theFaq">
+								<h5>At the Moment <b>GABAZZO LLC</b> is capital raising a total of <b>$250,000 (12.50%)</b> in <b>Crowdfunding</b>. You can learn more <a href="url">Here</a> </h5>
+								<div class="checked_items">
+									<ul>
+										<li><b>Minimum Investment</b>: <b>$1,000</b> In exchange for <b>0.05% Equity</b> of GABAZZO LLC </li>
+										<li><b>Maximum Investment</b>: <b>$5,000</b> in exchange for <b>0.25% Equity</b> of GABAZZO LLC</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseEight" class="collapsed" data-toggle="collapse"><b>How will I get paid?</b></a>
+							</div>
+							<div id="collapseEight" class="collapse fade contents" data-parent="#theFaq">
+								<p>As the Investor, whichever Equity % Ownership you may receive GABAZZO LLC will pay you Percentage (%) you own from the profits we make and get paid Quarterly (Every 3 months).</p>
+<p><b>Example:</b>
+You invest <b>$1,000</b> in exchange for <b>0.05% Equity</b> of GABAZZO LLC
+Gabazzo in profits alone make <b>$1,000,000</b> 1st Quarter you will receive <b>0.05%</b> of <b>Profits</b>
+In this case scenario you will receive <b>$500</b> from that <b>1st Quarter</b>
+Taxes must also be paid, your personal accountant or other bookkeeper can help with that</p>
+
+<p>We take <b>10%</b> from <b>10.4% - $0.10</b>, so let's say GABAZZO makes <b>$100</b> from that transaction we take <b>10%</b> meaning now there is <b>$10 as Revenue</b> for paying back investors
+as the example above you own <b>0.05% Equity</b> you would receive <b>$0.05 for Every Transaction</b></p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseNine" class="collapsed" data-toggle="collapse"><b>How far are you from Finishing the MVP (Minimum Viable Product)?</b></a>
+							</div>
+							<div id="collapseNine" class="collapse fade contents" data-parent="#theFaq">
+								<p><b>1-2 Months</b>, all we really need is to update our <b>Invoice System</b>, Implement <b>Request/Free Leads</b>, Update <b>Chat System</b>, Update <b>Tracking Service System</b>, Implement <b>Gabazzo Wallet</b> and <b>Update Payment System</b></p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseTen" class="collapsed" data-toggle="collapse"><b>Who will be in the Support Team?</b></a>
+							</div>
+							<div id="collapseTen" class="collapse fade contents" data-parent="#theFaq">
+								<p>We're dedicated on Mainly Hiring <b>Retired Contractors</b> and <b>Technicians</b> to keep an eye on Order Disputes whom may have a better knowledge of what's going with an Order. </p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseEleven" class="collapsed" data-toggle="collapse"><b>Does Gabazzo Allow Crypto-Currency Transactions?</b></a>
+							</div>
+							<div id="collapseEleven" class="collapse fade contents" data-parent="#theFaq">
+								<p><b>No</b>, we are currently Working closely with <b>Digipaid LLC</b></p> To make this happen. We will be the first Online-Market Place that will allow Crypto-Currency Transactions
+								including Currency such as: Bitcoin, Ethereum, Polkadot, and etc... </p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseTwelve" class="collapsed" data-toggle="collapse"><b>Why do Contractors need this when most are already booked full?</b></a>
+							</div>
+							<div id="collapseTwelve" class="collapse fade contents" data-parent="#theFaq">
+								<p><b>Contractors</b> need this just in case one of the clients does not want to pay or is arguing work was not done, sometimes contractors with the most booked jobs face these issues with clients. So Gabazzo is a great solution to use to keep <b>Transactions Transparent.</b></p>
+                <p><b>Insurance Claims</b>, <b>Warranty Claims</b>, <b>Job 100% Done Claim.</b> They can download all of this information into one file</p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseThirteen" class="collapsed" data-toggle="collapse"><b>Who are your Competitors?</b></a>
+							</div>
+							<div id="collapseThirteen" class="collapse fade contents" data-parent="#theFaq">
+								<p>We currently have <b>28 Competitors</b>, they are the following companies:</p>
+                <p>Thumbtack, Angi, Home Advisor, Houzz, Porch, Gentask, Amazon Home Services, Handy, ProReferral, TalkLocal, Bloomchase, Home Flock, Troolr, Zaarly, Task Rabbit,
+                 CraftJack, Chore Relief, Adopt a Contractor, 1800 Remodel, Contractors.com, Hux, The Home Fixers, Google Local Services, Hello Super, Handy, Yelp, Ace Handyman Service, and Mr.Handyman</p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseFourthteen" class="collapsed" data-toggle="collapse"><b>How does Gabazzo differentiate itself from Competitors?</b></a>
+							</div>
+							<div id="collapseFourthteen" class="collapse fade contents" data-parent="#theFaq">
+								<p>With the help of our Web Services, Contractors give direct estimates and get <b>Paid by the Job</b> not Hourly. </p>
+									<p>We've built a <b>State of the Art Search Engine</b> that is easy for <b>Both Parties (Members and Contractors)</b> to control that includes: <b>Service Type, Material Type, Property Type, Language, Other Filter and Location.</b>
+									When clicking on a <b>Filter</b> it helps you identify the Service with an <b>Image, Title, and description.</b></p>
+									<p>We've built a <b>Tracking Service System</b> that will help you view the entire progress of your Work order from <b>0-100%</b> allowing <b>Transparent Transactions</b>, the first ever seen in the Construction & Vehicle Industry.
+									Which allows you to view <b>Activity</b>, <b>Tracking Info</b>, <b>Requirements</b>, and <b>PDF Files</b>. This specific feature has been through an <b>Digital IP Patent Analysis</b> and have a <b>Secured Patent Pending.</b>
+								We make sure to give the Contractor the Full Amount once the Job/Project Request has been completed to initialize Safety.</p>
+									<p>Our <b>Chat System</b> haves features such as <b>Create/Sending an Offer</b>, <b>Chat Search</b>, <b>Pay Through Chat or Email</b>, <b>View Past Orders</b>, Downloading <b>Invoice PDF File</b>, <b>Sent Offer Invoice Email</b>,
+										<b>View Files Uploaded</b> and have a Section for <b>Task & Reminders.</b>  </p>
+										<p>We give Contractors the Tool of having <b>FREE Leads</b> instead of charging them per lead, a better working system to boost the morale of Contractors without having to worry on paying. We do receive
+										8% commission per Transaction made through the Gabazzo Platform. </p>
+										<p>We've developed a <b>Ranking System</b> for <b>Members</b> and a <b>League System</b> for <b>Contractors.</b> We believe in giving back to the Community with <b>Discounts</b> and <b>Rewards</b> from the <b>Fee's</b> and <b>Commission</b>
+											we take from both parties to have a <b>Euphoric Community.</b>  </p>
+										<p>Buyers can Search for Main Categories, Sub-Categories, and Companies and do not need to complete a Survey like the rest of our competitors </p>
+
+										<p> <b>Explore Resources Directory</b>: This will allow to educate <b>Buyers/Sellers</b> on <b>Pricing</b> on <b>Sub-Categories</b> such as <b>Estimates, Insurance, Permits, Material Type, Safety, Procedures, FAQ's, General Info,  Warranty,
+											and [Main Category] Industry Report.</b> </p>
+							</div>
+						</div>
+
+						<div class="single_item">
+							<div class="click_item">
+								<a href="javascript:void(0)" data-target="#collapseFifthteen" class="collapsed" data-toggle="collapse"><b>Does GABAZZO plan on Expanding Nationally and Internationally?</b></a>
+							</div>
+							<div id="collapseFifthteen" class="collapse fade contents" data-parent="#theFaq">
+								<p><b>Yes</b>, our first goal is to first Dominate Local here in Chicago, Illinois then move onto Neighoboring States and other Major Cities.
+									<p> We plan on Expanding to Mexico within the Near Future </p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!--===== Markup For "Faqs" Ends Here =====-->
+			</div>
+		</section>
+
+
+
+
+		<!--===== Markup For "Registration Counter" Starts From Here =====-->
+<div class="registration_counter_wrap">
+	<div class="container">
+		<div class="registration_counter">
+			<div class="single_count">
+				<div class="heading">
+					<h2><%= total.length %>+</h2>
+				</div>
+				<p>Registered Companies</p>
+			</div>
+			<div class="single_count">
+				<div class="heading">
+					<h2><%= members %>+</h2>
+				</div>
+				<p>Registered Members</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!--===== Markup For "Registration Counter" Ends Here =====-->
+<!--===== Markup For "Footer" Starts From Here =====-->
+    <footer class="footer_wrap">
+      <div class="footer_top">
+        <div class="container">
+          <div class="footer">
+            <div class="single_part">
+              <div class="footer_logo">
+                <a href="/"
+                  ><img
+                    src="images/layout/gabazzo_logo_white.png"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/contact-us">Contact Us</a></li>
+                  <li><a href="/about-us">About</a></li>
+                  <li><a href="/site-map">Sitemap</a></li>
+                  <li><a href="/partnerships">Partnerships</a></li>
+		  <li><a href="/investor-relations">Investor Relations</a></li>
+		  <li><a href="/jobs-and-opportunities">Jobs & Opportunities</a></li>
+		  <li><a href="/press-and-news">Press & News</a></li>
+                </ul>
+              </div>
+              <div class="social_links">
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/gabazzoBCT"
+                      target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/gabazzo/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+		  <li>
+                    <a
+                      href="https://discord.gg/RTDhKw4r99" target="_blank"><i class="fab fa-discord"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Members</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/sign-up">Sign Up</a></li>
+		  <li><a href="/trust-and-safety-members">Trust & Safety</a></li>
+		  <li><a href="/ranking-system-members">Ranking System</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Business</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/company-sign-up-home">Register Business</a>
+                  </li>
+		  <li><a href="/study-buyer">Study Buyer</a>
+                  </li>
+		   <li><a href="/seller-league-system">League System</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Support</h4>
+              <div class="site_links">
+                <ul>
+		  <li><a href="/help-center-buyer">Help Center</a></li>
+                  <li><a href="/terms-and-conditions">Terms of Use</a></li>
+                  <li><a href="/privacy-policy">Privacy Policy</a></li>
+                  <li><a href="/cookie-policy">Cookie Policy</a></li>
+                  <li><a href="/safety-for-members">Safety</a></li>
+		  <li><a href="/covid-info">Covid-19 Info</a></li>
+		  <li><a href="/intellectual-property-claims">IP Claims</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <p>
+            Copyright &copy; 2021 Gabazzo. All Rights Reserved. Patent Pending
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!--===== Markup For "Footer" Ends Here =====-->
+
+
+
+
+
+		<!--===== Markup For "" Starts From Here =====-->
+		<!--===== Markup For "" Ends Here =====-->
+
+
+		<!--jQuery Main Library Latest Version-->
+		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+		<!--Bootstrap v4.5.3 JS File-->
+		<script type="text/javascript" src="js/popper.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<!--Custom Script JS File-->
+		<script type="text/javascript" src="js/updatedCustom.js"></script>
+		<script src="js/autocomplete.js" type="text/javascript"></script>
+		<!--Custom JavaScript-->
+		<script type="text/javascript">
+
+		</script>
+
+	</body>
+
+</html>

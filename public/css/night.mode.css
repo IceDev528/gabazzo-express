@@ -1,0 +1,2735 @@
+/* ===== CSS For "Common CSS" Starts Here ===== */
+.night {
+  background: var(--nightBodyColor) !important;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.night input,
+.night textarea,
+.night select {
+  color: var(--nightTextColor) !important;
+  background-color: var(--nightBodyColor) !important;
+}
+.night p,
+.night h1,
+.night h2,
+.night h3,
+.night h4,
+.night h5,
+.night h6,
+.night a,
+.night span,
+.night small,
+.night td,
+.night th,
+.night label,
+.night b,
+.night li {
+  color: var(--nightTextColor) !important;
+}
+.night .gbtn_dark {
+  background: var(--baseColor);
+  border: 1px solid var(--baseColor);
+}
+.night .gbtn_dark_bdr {
+  background: transparent;
+  border: 1px solid var(--nightTextColor);
+}
+.night .gbtn_dark_bdr:hover {
+  color: var(--nightTextColor);
+  background: var(--baseColor);
+  border: 1px solid var(--baseColor);
+}
+.night .para_texts p a {
+  color: var(--baseColor) !important;
+}
+.night .gbtn_bdr {
+  color: var(--baseColor) !important;
+}
+.night .gbtn_bdr:hover {
+  color: var(--nightTextColor) !important;
+}
+.night .gbtn_red_bdr {
+  color: var(--redColor) !important;
+}
+.night .gbtn_red_bdr:hover {
+  color: var(--lightColor) !important;
+}
+
+.night .pagination .page-link {
+  background: var(--nightBoxColor);
+}
+.night .pagination .page-link:hover {
+  background: #4a4a4a;
+}
+.night .pagination .page-item.active .page-link {
+  color: var(--lightColor);
+  background: var(--baseColor);
+}
+.night .page_indicator ul li.active a {
+  color: var(--baseColor) !important;
+}
+/* ===== CSS For "Common CSS" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Home Page" Starts Here ===== */
+.night .navbar .navbar-nav .dropdown_column .dropdown-item:hover,
+.night .navbar .navbar-nav .dropdown_column .dropdown-item:active,
+.night .navbar .navbar-nav .dropdown_column .dropdown-item:focus {
+  color: var(--baseColor) !important;
+}
+.night .navbar .navbar-nav .nav-item .nav-link:hover {
+  color: var(--baseColor) !important;
+}
+.night .navbar .navbar-nav .dropdown-menu {
+  background: var(--nightBodyColor);
+}
+.night .hero_banner .banner_heading h1 {
+  color: var(--lightColor) !important;
+}
+.night .hero_search .search_icon .white_icon {
+  display: block;
+}
+.night .hero_search .search_icon .black_icon {
+  display: none;
+}
+
+.night .get_services .easiest_way_box {
+  background: var(--nightBoxColor);
+}
+.night .get_services .steps .single_step {
+  background: var(--nightBoxColor);
+}
+.night .nearby_companies .single_company {
+  background: var(--nightBoxColor);
+}
+.night .nearby_companies .single_company .logo_info ul li::before {
+  color: var(--nightTextColor);
+}
+.night .needed_home_services .service_details {
+  background: var(--nightBoxColor);
+}
+.night .safety_tips .single_safety {
+  background: var(--nightBoxColor);
+}
+.night .registration_counter {
+  background: var(--nightBoxColor);
+}
+/* ===== CSS For "Home Page" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Search Page" Starts Here ===== */
+.night .page_indicator ul li a::after {
+  color: var(--nightTextColor);
+}
+.night .filters .single_filter .box::before {
+  color: var(--nightTextColor);
+}
+.night .found_companies .single_company .company_info {
+  background: var(--nightBoxColor);
+}
+.night .location_map_modal .modal-body {
+  background: var(--nightBoxColor);
+}
+
+.night .services_category_slider .single_category {
+  background: var(--nightBoxColor);
+}
+.night .services_category_slider .single_category:hover {
+  background: var(--baseLightColor);
+}
+.night .services_category_slider .single_category:hover h6 {
+  color: var(--darkColor) !important;
+}
+/* ===== CSS For "Search Page" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Search Page 2" Starts Here ===== */
+.night .found_services .single_service .company_info {
+  background: var(--nightBoxColor);
+}
+.night .filters .single_filter .gbtn {
+  background: var(--nightBoxColor);
+}
+.night .filters .single_filter .gbtn::before {
+  color: var(--nightTextColor);
+}
+.night .filter_content {
+  background: var(--nightBoxColor);
+  border: 1px solid var(--borderColor);
+}
+.night .filters_in_details .filters_title .request_new_service a {
+  color: var(--baseColor) !important;
+}
+.night .filter_content .use_current_location a {
+  color: var(--baseColor) !important;
+}
+
+.night .all_filter_tab {
+  background: var(--nightBoxColor);
+}
+.night .all_filter_tab .filter_content {
+  border: none;
+}
+.night .all_filter_tab .nav .nav-link {
+  background: var(--nightBoxColor);
+}
+.night .all_filter_tab .nav .nav-link:hover {
+  background: #4a4a4a;
+}
+.night .filters_in_details .filters_title ul li:hover {
+  background: var(--baseLightColor);
+}
+.night .filters_in_details .filters_title ul li h6 {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.night .filters_in_details .filters_title ul li:hover h6,
+.night .filters_in_details .filters_title ul li:hover h6 span {
+  color: var(--darkColor) !important;
+}
+.night .all_filter_tab .nav .nav-link.active {
+  background: var(--baseColor) !important;
+}
+.night .all_filter_modal .applied_filters {
+  background: #3b3d3e;
+}
+.night .all_filter_modal .selected_done {
+  background: var(--nightBoxColor);
+}
+.night .other_filter_content .filters_title .budget_filter .input_icon i {
+  color: var(--nightTextColor);
+  background: #333333;
+}
+
+.night .found_companies .single_company .logo_info ul li::before {
+  color: var(--nightTextColor);
+}
+
+.night .filters_in_details .filters_title .filter_heading {
+  background: var(--nightBodyColor);
+}
+.night .filters_in_details .filters_title .request_new_service {
+  background: var(--nightBodyColor);
+}
+.night .filter_content .distance_selection ul li:hover h6 {
+  color: var(--darkColor) !important;
+}
+.night .filter_content .distance_selection ul li.active h6 {
+  color: var(--lightColor) !important;
+}
+/* ===== CSS For "Search Page 2" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Company Profile Page" Starts Here ===== */
+.night .company_page_indicator {
+	background: var(--nightBoxColor);
+}
+.night .company_banner .gbtn_dark {
+	color: var(--lightColor);
+	background: var(--darkColor);
+	border: 1px solid var(--darkColor);
+}
+.night .company_banner .gbtn_white {
+	color: var(--baseColor) !important;
+}
+.night .cp_info_details_wrap {
+	background: var(--nightBodyColor);
+}
+.night .cp_info_details .cp_info {
+	background: var(--nightBoxColor);
+}
+.night .cp_info_details .cp_details {
+	background: var(--nightBoxColor);
+}
+.night .cp_info_details .areas_services .all_areas p a {
+	color: var(--baseColor) !important;
+}
+
+.night .services_wrap .company_services .single_service .service_details {
+	background: var(--nightBoxColor);
+}
+.night .portfolio_slider .portfolio_info {
+	background: var(--nightBoxColor);
+}
+.night .faqs {
+	background: var(--nightBodyColor);
+}
+.night .faqs .accordion {
+	background: var(--nightBoxColor);
+}
+.night .faqs .single_item .click_item a {
+	background: var(--nightBoxColor);
+}
+.night .faqs .single_item .click_item a:hover{
+	color: var(--darkColor) !important;
+	background: var(--baseLightColor);
+}
+.night .cp_ratings_wrap .reviews_actions .shows_reviews h4 .star_rating_amount {
+	color: var(--baseColor) !important;
+}
+.night .cp_fixed_menu_wrap {
+	background: var(--nightBoxColor);
+}
+.night .cp_fixed_menu .page_links ul li a:hover{
+	color: var(--baseColor) !important;
+}
+.night .cp_info_details .cp_details .cp_menu ul li a:hover {
+	color: var(--baseColor) !important;
+}
+.night .cp_got_reviews .single_review .profile_info .profile_name h6 .star_rating_amount {
+	color: var(--baseColor) !important;
+}
+.night .cp_ratings_wrap .reviews_actions .form-control:hover{
+	color: var(--darkColor) !important;
+	background: var(--baseLightColor) !important;
+}
+.night .cp_fixed_menu .page_links ul li a.active {
+	color: var(--baseColor) !important;
+}
+.night .cp_info_details .cp_details .cp_menu ul li.active a {
+	color: var(--baseColor) !important;
+}
+
+.night .services_wrap .heading h2 {
+	color: var(--baseColor) !important;
+}
+.night .portfolio_wrap .heading h2 {
+	color: var(--baseColor) !important;
+}
+.night .faqs .heading h2 {
+	color: var(--baseColor) !important;
+}
+.night .cp_ratings_wrap .heading h2 {
+	color: var(--baseColor) !important;
+}
+
+.night .msg_popup_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .msg_popup_modal .modal-header{
+	border-bottom: none;
+}
+.night .msg_popup_modal .need_requirements h5 {
+	color: var(--baseColor) !important;
+}
+.night .msg_popup_modal .msg_box_wrap .form-control {
+	background: var(--nightBoxColor);
+}
+.night .msg_popup_modal .company_info {
+	border-right: 1px solid #575757;
+}
+.night .msg_popup_modal .msg_box_wrap .msg_box {
+	border: 1px solid #575757;
+	background: var(--nightBoxColor);
+}
+
+@media (max-width: 575.98px) {
+	
+	.msg_popup_modal .company_info{
+		border-right: none !important;
+	}
+	
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+	
+	.msg_popup_modal .company_info{
+		border-right: none !important;
+	}
+	
+}
+
+.night .dropdown-menu.company_search_down::before {
+	background: var(--nightBodyColor);
+}
+.night .company_search_down button .white_icon {
+	display: inline-block;
+}
+.night .company_search_down button .black_icon {
+	display: none;
+}
+
+.night .legal_doc_modal .certificate_wrap{
+	background-color: var(--nightBodyColor);
+}
+.night .legal_doc_modal .the_certificate h1 {
+	color: var(--baseColor) !important;
+}
+.night .legal_doc_modal .close {
+	color: var(--baseColor) !important;
+}
+.night .legal_doc_modal .insurance_certificate .certificate_pdf a {
+	color: var(--baseColor) !important;
+}
+.night .legal_doc_modal .verification_process .top_part {
+	background: var(--nightBoxColor);
+}
+.night .legal_doc_modal .verification_process .bottom_part {
+	background: var(--nightBodyColor);
+}
+.night .legal_doc_modal .verification_process .gabazzo_logo.white_logo{
+	display: inline-block;
+}
+.night .legal_doc_modal .verification_process .gabazzo_logo.black_logo{
+	display: none;
+}
+.night .legal_doc_modal .verification_process .single_process h3{
+	color: var(--baseColor) !important;
+}
+
+.night .user_badges_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .user_badges_modal .all_years {
+	border: 1px solid #575757;
+}
+.night .user_badges_modal .tab-content {
+	border: 1px solid #575757;
+}
+.night .user_badges_modal .nav a{
+	border: 1px solid #575757;
+}
+.night .user_badges_modal .nav a.active {
+	color: var(--darkColor) !important;
+}
+
+.night .saved_list_wrap{
+	background: var(--nightBodyColor);
+	border-radius: 3px;
+}
+.night .saved_list_wrap .saved_list ul li a:hover{
+	color: var(--darkColor) !important;
+}
+.night .saved_list_wrap .creating_new_list a:hover{
+	color: var(--darkColor) !important;
+}
+.night .creating_list_modal .modal-body{
+	background: var(--nightBoxColor);
+}
+.night .share_company_modal .share_company_wrap {
+	background: var(--nightBoxColor);
+}
+
+.night .report_company_modal .modal-body{
+	background: var(--nightBoxColor);
+}
+.night .report_company_modal .modal-footer{
+	background: var(--nightBoxColor);
+	border-top: 1px solid var(--borderColor);
+}
+
+.night .portfolio_wrap{
+	background: var(--nightBoxColor);
+}
+/* ===== CSS For "Company Profile Page" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Port Page" Starts Here ===== */
+.night .port_menu_wrap {
+  background: var(--nightBoxColor);
+}
+.night .port_menu .page_links ul li a.active {
+  color: var(--baseColor) !important;
+}
+.night .port_page_indicator {
+  background: var(--nightBodyColor);
+}
+.night .service_port .received_quote_box .title_head {
+  background: var(--baseColor);
+}
+.night .service_port .received_quote_box {
+  background: var(--nightBoxColor);
+}
+.night .service_port .received_quote_box .quote_details {
+  border: 1px solid var(--blackColor);
+}
+.night .port_fixed {
+  background: var(--nightBoxColor);
+}
+.night .expand_port_fixed {
+  background: var(--nightBoxColor);
+}
+.night .service_port .tags_category {
+  border: 1px solid var(--borderColor);
+  background: var(--nightBoxColor);
+}
+/* ===== CSS For "Port Page" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Company Dashboard" Starts Here ===== */
+.night .dashboard_header_wrap{
+	background: var(--secondaryColor);
+}
+.night .dashboard_header .preview_page a {
+	color: var(--baseColor) !important;
+}
+.night .membersProfileLinks .profile_links ul li a:hover,
+.night .membersProfileLinks .profile_links ul li.active a {
+	color: var(--baseColor) !important;
+}
+
+.night .dashboard_menu {
+	background: var(--nightBoxColor);
+}
+.night .dashboard_menu ul li a:hover{
+	color: var(--baseColor) !important;
+}
+.night .dashboard_menu ul li.active a {
+	color: var(--baseColor) !important;
+}
+.night .general_info .change_logo_wrap {
+	background: var(--nightBoxColor);
+}
+.night .general_info .company_information .form-control{
+	background: var(--nightBoxColor) !important;
+}
+
+.night .pignose-calendar{
+	background: var(--nightBoxColor);
+}
+.night .pignose-calendar .pignose-calendar-top{
+	background: var(--secondaryColor);
+}
+.night .pignose-calendar .pignose-calendar-header .pignose-calendar-week{
+	color: var(--nightTextColor);
+}
+.night .pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sat,
+.night .pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sun {
+	color: #fa4832;
+}
+.night .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sat a,
+.night .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sun a {
+	color: #fa4832 !important;
+}
+
+.night .working_hours thead th {
+	color: var(--darkColor) !important;
+}
+
+.night .dash_fixed_menu_wrap {
+	background: var(--secondaryColor);
+}
+.night .dash_fixed_menu ul li a.active,
+.night .dash_fixed_menu ul li a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .dashboard_save_changes_wrap{
+	background: var(--secondaryColor);
+}
+
+.night .business_docs .single_documents .upload_documents {
+	background: var(--nightBoxColor);
+	border: 1px solid var(--blackColor);
+}
+
+.night .dash_home_wrap {
+	background: var(--nightBoxColor);
+}
+.night .dashboard_home {
+	background: var(--nightBodyColor);
+	border: 1px solid var(--blackColor);
+}
+
+.night .dash_services_wrap {
+	background: var(--nightBodyColor);
+}
+.night .dashboard_services .all_services {
+	border: 1px solid var(--blackColor);
+	background: var(--nightBoxColor);
+}
+.night .dashboard_services .create_new_service {
+	background: var(--nightBodyColor);
+}
+
+.night .dash_reviews_wrap {
+	background: var(--nightBoxColor);
+}
+.night .dashboard_reviews {
+	border: 1px solid var(--blackColor);
+	background: var(--nightBodyColor);
+}
+.night .dashboard_reviews .reviews_actions .shows_reviews h4 .star_rating_amount {
+	color: var(--baseColor) !important;
+}
+.night .dash_fixed_menu_wrap .preview_page a {
+	color: var(--baseColor) !important;
+}
+.night .dashboard_save_changes .texts p b {
+	color: #E23334 !important;
+}
+.night .dashboard_services .create_new_service h4 {
+	color: var(--baseColor) !important;
+}
+.night .legal_doc_upload_modal .attachment {
+	background: var(--nightBoxColor);
+	border: 1px solid var(--blackColor);
+}
+.night .legal_doc_upload_modal .attachment .texts span {
+	color: var(--baseColor) !important;
+}
+.night .dashboard_header .account_msg ul li a:hover{
+	color: var(--baseColor) !important;
+}
+
+/* ============================== */
+/* ============================== */
+
+.night .creating_dash_fig_wrap .creating_dash_fig{
+	background: var(--nightBoxColor);
+}
+.night .creating_dash_fig_wrap .form-control{
+	border: 1px solid #575757;
+}
+
+.night .creating_dash_fig_wrap .upload_box .label {
+	border: 2px dashed #575757;
+}
+.night .creating_dash_fig_wrap .upload_box {
+	background: #121212;
+}
+.night .creating_dash_fig_wrap .price_range {
+	border: 1px solid #575757;
+}
+
+/* ============================== */
+/* ============================== */
+
+.night .creating_dash_fig_wrap .steps_indicator ul li a{
+	background: var(--nightBodyColor);
+}
+.night .creating_dash_fig_wrap .steps_indicator ul li.active a,
+.night .creating_dash_fig_wrap .steps_indicator ul li.completed a{
+	background: var(--baseColor);
+}
+.night .creating_dash_fig_wrap .steps_indicator ul li a::after {
+	border-left: 15px solid var(--nightBodyColor);
+	border-left-color: var(--nightBodyColor);
+}
+.night .creating_dash_fig_wrap .steps_indicator ul li.active a::after,
+.night .creating_dash_fig_wrap .steps_indicator ul li.completed a::after{
+	border-left: 15px solid var(--baseColor);
+	border-left-color: var(--baseColor);
+}
+.night .creating_dash_fig_wrap .steps_indicator ul li a::before {
+	border-left: 16px solid var(--nightTextColor);
+}
+.night .creating_dash_fig_wrap .steps_indicator ul li:last-child a:before{
+	border-left: none;
+}
+/* ===== CSS For "Company Dashboard" Ends Here ===== */
+/* ============================== */
+
+/* ===== CSS For "Settings Pages" Starts Here ===== */
+.night .setting_menu_wrap .setting_menu ul li a:hover {
+	color: var(--blackColor) !important;
+}
+.night .setting_menu_wrap .setting_menu ul li a {
+	border: 1px solid #575757;
+	border-bottom: none;
+}
+.night .setting_menu_wrap .setting_menu ul li:last-child a {
+	border-bottom: 1px solid #575757;
+}
+.night .setting_menu_wrap .setting_menu ul li.active a {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+	border: 1px solid var(--baseColor);
+	border-bottom: none;
+}
+.night .settings_fields_wrap {
+	border: 1px solid #575757;
+}
+.night .settings_heading p a {
+	color: var(--baseColor) !important;
+}
+.night .settings_heading {
+	border-bottom: 1px solid #575757;
+}
+.night .settings_fields_wrap .settings_form .form-control {
+	border: 1px solid #575757;
+	background: var(--nightBoxColor) !important;
+}
+.night .settings_fields_wrap .account_verification .single_verification h5 a {
+	color: var(--baseColor) !important;
+}
+.night .settings_fields_wrap .bill_to {
+	border-bottom: 2px solid #575757;
+}
+.night .settings_fields_wrap .change_logo .label {
+	background: var(--nightBoxColor);
+	border: 2px dashed #121212;
+}
+.night .settings_fields_wrap .profile_settings .single_part {
+	border-bottom: 1px solid #575757;
+}
+.night .settings_fields_wrap .profile_settings .single_part:last-child{
+	border-bottom: none;
+}
+.night .setting_menu_wrap .setting_menu ul{
+	background: var(--nightBoxColor);
+}
+/* ===== CSS For "Settings Pages" Ends Here ===== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Saved List" Starts Here ===== */
+.night .saved_list_page .saved_list .single_list .list_info {
+  background: var(--nightBoxColor);
+}
+.night .saved_list_page .heading h2 {
+  color: var(--baseColor) !important;
+}
+.night .saved_list_page .create_new_list {
+  background: var(--nightBoxColor);
+}
+.night .saved_list_page .saved_list .single_list {
+  border: 1px solid var(--blackColor);
+}
+.night .saved_companies .saved_single_company {
+  background: var(--nightBoxColor);
+}
+.night .saved_companies .saved_single_company .logo_info ul li::before {
+  color: var(--nightTextColor);
+}
+/* ===== CSS For "Saved List" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Member's Page" Starts Here ===== */
+.night .members_banner .action_buttons .gbtn_dark{
+	background: var(--darkColor);
+	border: 1px solid var(--darkColor);
+}
+.night .members_banner .action_buttons .gbtn_white{
+	background: var(--darkColor);
+	color: var(--redColor) !important;
+	border: 1px solid var(--darkColor);
+}
+.night .members_info_details .members_info {
+	background: var(--nightBoxColor);
+	border: 1px solid var(--blackColor);
+}
+.night .members_info_details .members_details {
+	background: var(--nightBoxColor);
+	border: 1px solid var(--blackColor);
+}
+.night .members_info_details .members_social_info ul li i {
+	color: var(--baseColor);
+}
+/* ===== CSS For "Member's Page" Ends Here ===== */
+
+/* ===== CSS For "Manage Orders" Starts Here ===== */
+.night .mng_orders_header .search_form .search_bar button .black_icon {
+  display: none;
+}
+.night .mng_orders_header .search_form .search_bar button .blue_icon {
+  display: inline-block;
+}
+.night .manage_orders_wrap .manage_orders .nav-tabs {
+  border-bottom: 1px solid #575757;
+}
+.night .manage_orders_wrap .manage_orders .nav-tabs .nav-link span {
+  color: var(--lightColor) !important;
+  background: #999999;
+}
+.night .manage_orders .table th,
+.night .manage_orders .table td {
+  border: 1px solid #575757;
+  background: var(--nightBoxColor);
+}
+.night .manage_orders .order_details_info .service_title h5 a:hover {
+  color: var(--baseColor) !important;
+}
+.night
+  .manage_orders
+  .order_details_info
+  .service_img_info
+  .member_info
+  ul
+  li
+  a {
+  color: var(--baseColor) !important;
+}
+.night .manage_orders .nothing_found p {
+	border: 1px solid #575757;
+	background: var(--nightBoxColor);
+}
+/* ===== CSS For "Manage Orders" Ends Here ===== */
+
+
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Profile Info Pages" Starts Here ===== */
+.night .pro_info_content .steps_progress .steps_indicator ul li a{
+	background: var(--nightBoxColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li.active a,
+.night .pro_info_content .steps_progress .steps_indicator ul li.completed a{
+	background: var(--baseColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li a::after {
+	border-left: 15px solid var(--nightBoxColor);
+	border-left-color: var(--nightBoxColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li.active a::after,
+.night .pro_info_content .steps_progress .steps_indicator ul li.completed a::after{
+	border-left: 15px solid var(--baseColor);
+	border-left-color: var(--baseColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li a::before {
+	border-left: 16px solid var(--nightTextColor);
+}
+.night .pro_info_content .steps_progress .steps_indicator ul li:last-child a:before{
+	border-left: none;
+}
+.night .pro_info_content .steps_progress .progress_info .completed_amount h5 {
+	color: var(--baseColor) !important;
+}
+.night .pro_info_content .form_wrap .form_title h4 b {
+	color: #FF0000 !important;
+}
+.night .pro_info_content .form_wrap .form-control {
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+.night .pro_info_content .form_wrap .email_verification .email_input .the_input .form-control {
+	border: 1px solid #575757;
+}
+.night .pro_info_content .steps_progress{
+	border-bottom: 1px solid #575757;
+}
+.night .pro_info_content .account_security_info{
+	border-bottom: 1px solid #575757;
+}
+.night .pro_info_content .form_wrap .email_verification{
+	border-bottom: 1px solid #575757;
+}
+.night .gabazzo_contact_intro .form_wrap .form-control{
+	border: 1px solid #575757;
+}
+.night .pro_info_content .form_wrap label b{
+	color: #FF0000 !important;
+}
+.night .pro_info_content .form_wrap .change_logo .label {
+	background: var(--nightBoxColor);
+	border: 2px dashed #000000;
+}
+.night .completed_profile .congrats_texts p {
+	color: var(--baseColor) !important;
+}
+.night .completed_profile .completed_thank_you p a {
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Profile Info Pages" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Login & Signup" Starts Here ===== */
+.night .gabazzo_login {
+	background: var(--nightBodyColor);
+}
+.night .gabazzo_logup .or h6 {
+	background: var(--nightBodyColor);
+}
+.night .gabazzo_logup .alter_info_texts p a {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_logup .form_footer p a {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_login .remember_forgot .forgot_password a:hover {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_logup .login_form h3 {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_logup .form-control{
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+.night .gabazzo_contact_intro .contact_intro .texts ul li a:hover {
+	color: var(--baseColor) !important;
+}
+.night .gabazzo_logup .or{
+	border-top: 1px solid #575757;
+}
+/* ===== CSS For "Login & Signup" Ends Here ===== */
+
+/* ===== CSS For "Forgot Reset Password" Starts Here ===== */
+.night .forgot_reset_passord{
+	background: var(--nightBodyColor);
+}
+.night .forgot_reset_passord .form-control{
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+.night .forgot_reset_passord .forgot_reset_form h3{
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Forgot Reset Password" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Gabazzo Chat" Starts Here ===== */
+.night .gb_chat_wrap{
+	background: var(--nightBodyColor);
+}
+.night .gb_top_search_wrap .client_search .form-control{
+	border: 1px solid #575757;
+	background: var(--nightBoxColor) !important;
+}
+.night .gb_top_search_wrap .client_search button .blue_icon{
+	display: inline-block;
+}
+.night .gb_top_search_wrap .client_search button .black_icon{
+	display: none;
+}
+.night .gb_top_search_wrap .other_actions ul li .blue_icon{
+	display: inline-block;
+}
+.night .gb_top_search_wrap .other_actions ul li .black_icon{
+	display: none;
+}
+
+.night .gb_chat{
+	border: 1px solid #575757;
+}
+.night .gb_chat .gb_list .nav {
+	background: #121212;
+}
+.night .gb_chat .contact_list {
+	background: #121212;
+}
+.night .gb_chat .contact_list ul li a{
+	background: #121212;
+}
+.night .gb_chat .contact_list ul li.active a {
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .contact_list .profile_info time{
+	color: var(--baseColor);
+}
+.night .gb_chat .gb_list .nav .nav-link{
+	border-bottom: 2px solid #575757;
+}
+.night .gb_chat .gb_list .nav .nav-link.active{
+	color: var(--baseColor) !important;
+	border-bottom: 2px solid var(--baseColor);
+}
+.night .gb_chat .user_files_manage .nav .nav-link {
+	border-bottom: 2px solid #575757;
+}
+.night .gb_chat .user_files_manage .nav .nav-link.active{
+	color: var(--baseColor) !important;
+	border-bottom: 2px solid var(--baseColor);
+}
+
+.night .gb_chat .conversation_footer {
+	background: #121212;
+}
+.night .gb_chat .conversation_footer .message_box textarea {
+	background: var(--nightBoxColor) !important;
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns .attachment {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns .attachment .blue_icon{
+	display: none;
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns .attachment .white_icon{
+	display: inline-block;
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns ul li a {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .conversation_footer .sending_actions ul li a .blue_icon {
+	display: none;
+}
+.night .gb_chat .conversation_footer .sending_actions ul li a .white_icon {
+	display: inline-block;
+}
+
+.night .gb_chat .gb_messages {
+	border-left: 1px solid #575757;
+	border-right: 1px solid #575757;
+	background: var(--nightBodyColor);
+}
+.night .gb_chat .gb_messages .msg_flow .security_alert_msg p a {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .gb_messages .msg_flow .msg_time_actions .msg_time time {
+	color: var(--baseColor);
+}
+.night .gb_chat .gb_messages .message_header{
+	border-bottom: 1px solid #575757;
+}
+.night .gb_chat .gb_messages .message_header .history_search .black_icon{
+	display: none;
+}
+.night .gb_chat .gb_messages .message_header .history_search .blue_icon{
+	display: inline-block;
+}
+.night .sliding_search_wrap.search_expanded .form-control {
+	background: var(--nightBoxColor) !important;
+}
+.night .sliding_search_wrap.search_expanded .search_submit {
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .gb_messages .message_header .call_actions ul > li > a .black_icon{
+	display: none;
+}
+.night .gb_chat .gb_messages .message_header .call_actions ul > li > a .blue_icon{
+	display: inline-block;
+}
+.night .gb_chat .gb_messages .message_header .user_actions_down{
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .gb_messages .message_header .user_actions_down::before {
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .gb_messages .message_header .user_actions ul li a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .gb_chat .gb_info {
+	background: #121212;
+}
+.night .gb_chat .gb_info .profile_info .profile_user_link a:hover {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .user_files_manage .single_manage .manage_field .form-control {
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+.night .gb_chat .user_files_manage .single_manage .manage_heading .add_button button {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .user_files_manage .single_manage .manage_field button {
+	background: var(--nightBoxColor);
+}
+
+.night .order_history_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .order_history_modal .table {
+	border: 1px solid #575757;
+}
+.night .order_history_modal thead th {
+	border-bottom: 1px solid #575757;
+}
+.night .order_history_modal .table td,
+.night .order_history_modal .table th{
+	border: 1px solid #575757;
+}
+.night .order_history_modal .member_info .member_texts .member_name a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .create_offer_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .create_offer_modal .select_services .single_service {
+	border: 1px solid #575757;
+	background: var(--nightBoxColor);
+}
+.night .create_offer_modal .modal-footer{
+	background: #121212;
+}
+.night .create_offer_modal .modal_actions ul li a {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .quick_sms_down{
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .single_quick_sms{
+	background: var(--nightBodyColor);
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_title h5{
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .edit_delete ul li a {
+	background: transparent;
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .create_fast_reply a{
+	background: transparent !important;
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .create_fast_reply span {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .msg_header_search .search_form .search_results_wrap{
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .msg_header_search .search_form .single_result a:hover .profile_info h6{
+	color: var(--darkColor) !important;
+}
+.night .gb_chat .msg_header_search .search_form .single_result a:hover .profile_info p {
+	color: var(--darkColor) !important;
+}
+.night .gb_chat .msg_header_search .search_pagination ul li.disabled a {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+.night .gb_chat .msg_header_search .search_pagination ul li a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .gb_chat .gb_info .profile_info .company_ratings span {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .gb_messages .msg_flow .msg_actions ul li .black_icon{
+	display: none;
+}
+.night .gb_chat .gb_messages .msg_flow .msg_actions ul li .blue_icon{
+	display: inline-block;
+}
+
+.night .creating_offer .offer_box{
+	background: var(--nightBoxColor) !important;
+}
+.night .create_offer_modal .select_payment .single_payment{
+	background: var(--nightBoxColor);
+	border: 1px solid #575757;
+}
+.night .creating_offer .form-control{
+	border: 1px solid #575757;
+}
+.night .created_milestones .click_item a{
+	background: var(--nightBoxColor);
+}
+.night .created_milestones .single_item {
+	border-bottom: 1px solid #575757;
+}
+.night .created_milestones {
+	border: 1px solid #575757;
+}
+.night .created_milestone_box {
+	background: var(--nightBodyColor);
+}
+.night .creating_offer .proposal_wrap .describe_offer .form-control {
+	background: var(--nightBoxColor) !important;
+}
+.night .created_milestone_box .service_img_descrip .service_descrip .form-control {
+	height: 120px;
+	border-radius: 4px;
+}
+.night .creating_offer .notes .form-control{
+	background: var(--nightBoxColor) !important;
+}
+
+.night .sent_offer .indicator_texts h4 a {
+	color: var(--baseColor) !important;
+}
+.night .sent_offer .offer_box_wrap {
+	border: 1px solid #575757;
+}
+.night .gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_body p a {
+	color: var(--baseColor) !important;
+}
+.night .sent_offer .offer_facts{
+	background: var(--nightBoxColor);
+}
+.night .sent_offer .offer_facts .tiny_box{
+	border: 1px solid #575757;
+	background: var(--nightBodyColor);
+}
+.night .all_milestones .single_item {
+	border-bottom: 1px solid #575757;
+}
+.all_milestones .single_item:first-child {
+	border-top: 1px solid #575757;
+}
+/* ===== CSS For "Gabazzo Chat" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Trust" Starts Here ===== */
+.night .trust_middle_wrap{
+	background: var(--nightBodyColor);
+}
+.night .trust_middle{
+	background: var(--nightBoxColor);
+}
+.night .trust_support .support_icon img{
+	background: var(--nightBoxColor);
+}
+/* ===== CSS For "Trust" Ends Here ===== */
+
+/* ============================== */
+
+/* ===== CSS For "Contractors Level" Starts Here ===== */
+.night .what_contractor_levels {
+	background: var(--nightBodyColor);
+}
+.night .all_contractor_levels {
+	background: var(--nightBoxColor);
+}
+.night .terms_for_levels_wrap {
+	background: var(--nightBodyColor);
+}
+.night .what_contractor_levels .overview_texts p a {
+	color: var(--baseColor) !important;
+}
+.night .all_contractor_levels .all_levels .single_level_box{
+	border-bottom: 1px solid #575757;
+}
+.night .all_contractor_levels .all_levels .single_level_box:last-child{
+	border-bottom: none;
+}
+.night .terms_for_levels_wrap .terms_for_levels .single_term{
+	background: var(--nightBoxColor);
+}
+.night .terms_for_levels_wrap .terms_for_levels .single_term p a {
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Contractors Level" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Jobs" Starts Here ===== */
+.night .we_are_team .team_expertise .single_team{
+	background: var(--nightBoxColor);
+	border: 1px solid #575757;
+}
+.night .we_are_team .team_expertise .single_team h6 {
+	color: var(--baseColor) !important;
+}
+.night .gbz_offices .office_locations ul li a{
+	background: var(--nightBoxColor);
+	border: 1px solid #575757;
+}
+.night .opinion_about_gabazzo .the_opinion{
+	background: var(--nightBoxColor);
+}
+.night .jobs_learn_more_gbz .contents{
+	background: var(--nightBoxColor);
+}
+.night .jobs_learn_more_gbz .contents .texts_link a{
+	color: var(--baseColor) !important;
+}
+.night .love_working_banner .contents h2 .color_texts{
+	color: #EAFE00 !important;
+}
+/* ===== CSS For "Jobs" Ends Here ===== */
+
+/* ============================== */
+
+/* ===== CSS For "News" Starts Here ===== */
+.night .breaking_trending_news_wrap{
+	background: var(--nightBodyColor);
+}
+.night .breaking_trending_news .trending_news_wrap{
+	background: #121212;
+}
+.night .breaking_trending_news .trending_news .single_trending{
+	background: var(--nightBoxColor);
+}
+.night .category_news_wrap{
+	background: var(--nightBoxColor);
+}
+.night .category_news_head .category_filter ul li a{
+	border: 1px solid #575757;
+	border-bottom: 1px solid var(--baseColor);
+	background: var(--nightBodyColor);
+}
+.night .category_news_head .category_filter ul li.active a{
+	color: var(--lightColor);
+	background: var(--baseColor);
+	border: 1px solid var(--baseColor);
+}
+.night .category_news_wrap .news_info {
+	background: var(--nightBodyColor);
+}
+.night .category_news_wrap .news_info h6 a {
+	color: var(--baseColor) !important;
+}
+.night .all_newsletter_wrap{
+	background: var(--nightBodyColor);
+}
+.night .allnews_and_letter .all_news_wrap .single_news .news_info{
+	background: var(--nightBoxColor);
+}
+.night .allnews_and_letter .all_news_wrap .single_news .news_info h6 a {
+	color: var(--baseColor) !important;
+}
+.night .allnews_and_letter .newsletter{
+	background: var(--nightBoxColor);
+}
+.night .allnews_and_letter .follow_us{
+	background: var(--nightBoxColor);
+}
+.night .allnews_and_letter .subscribe_form .form-control{
+	border: 1px solid #575757;
+}
+.night .category_news_head .category_filter .filter_toggler_wrap .filter_toggler{
+	background: var(--nightBodyColor);
+	color: var(--baseColor) !important;
+}
+.night .category_news_head .category_filter .filter_toggler_wrap .filter_toggler.active{
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .category_news_head .category_filter ul li a:hover{
+	color: var(--darkColor) !important;
+	background: var(--baseLightColor);
+}
+@media (max-width: 991.98px) {
+
+	.night .category_news_head .category_filter .the_filter{
+		background: var(--nightBodyColor);
+	}
+	.night .category_news_head .category_filter .the_filter::before {
+		background: var(--nightBodyColor);
+	}
+	.night .category_news_head .category_filter ul li a {
+		border: none;
+	}
+	.night .category_news_head .category_filter ul li.active a {
+		color: var(--baseColor) !important;
+		background: transparent;
+		border: none;
+	}
+	.night .category_news_head .category_filter .the_filter li a:hover{
+		color: var(--baseColor) !important;
+		background: transparent;
+	}
+
+}
+/* ===== CSS For "News" Ends Here ===== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Safety" Starts Here ===== */
+.night .safety_contents_wrap .safety_contents{
+	background: var(--nightBoxColor);
+}
+.night .safety_contents_wrap .safety_contents .info_links ul li a{
+	color: var(--baseColor) !important;
+}
+.night .safety_contents_wrap .safety_contents .single_part ul li a {
+	color: var(--baseColor) !important;
+}
+.night .safety_contents_wrap .safety_contents .single_part p a {
+	color: var(--baseColor) !important;
+}
+.night .safety_contents_wrap .safety_contents .info_links p a {
+	color: var(--baseColor) !important;
+}
+.night .safety_contents_wrap .safety_contents .info_links {
+	border-top: 1px solid #575757;
+}
+/* ===== CSS For "Safety" Ends Here ===== */
+
+/* ===== CSS For "Payment System" Starts Here ===== */
+.night .pps_wrap .pps_middle .left_details{
+	background: var(--nightBoxColor);
+}
+.night .pps_wrap .pps_middle .sidebar_box{
+	background: var(--nightBoxColor);
+}
+.night .pps_wrap .service_descrip p a {
+	color: var(--baseColor) !important;
+}
+.night .pps_wrap .cost_info .single_summary h5 a {
+	color: var(--baseColor) !important;
+}
+.night .pps_wrap .payment_info h5 i {
+	color: var(--baseColor);
+}
+.night .pps_wrap .payment_info h6 span {
+	color: var(--baseColor) !important;
+}
+.night .pps_wrap .payment_options ul .btn{
+	background: var(--nightBodyColor);
+}
+.night .pps_wrap .info_texts p a {
+	color: var(--baseColor) !important;
+}
+.night .pps_wrap .payment_methods .single_method .form-group label a {
+	color: var(--baseColor) !important;
+}
+.night .pps_wrap .payment_methods .single_method{
+	background: var(--nightBodyColor);
+}
+.night .pps_wrap .payment_methods .single_method .form-control{
+	background: var(--nightBoxColor) !important;
+}
+.night .pps_wrap .payment_methods .cards_icons ul li .black_icon{
+	display: none;
+}
+.night .pps_wrap .payment_methods .cards_icons ul li .white_icon{
+	display: inline-block;
+}
+.night .pps_wrap .payment_methods .single_method .form-control{
+	border: 1px solid #575757;
+}
+.night .pps_wrap .payment_methods form h6 b {
+	color: var(--redColor) !important;
+}
+.night .pps_wrap .payment_info ul li .black_icon{
+	display: none;
+}
+.night .pps_wrap .payment_info ul li .white_icon{
+	display: inline-block;
+}
+/* ===== CSS For "Payment System" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Manage Orders" Starts Here ===== */
+.night .mng_orders_header .search_form .search_bar button .black_icon{
+	display: none;
+}
+.night .mng_orders_header .search_form .search_bar button .blue_icon{
+	display: inline-block;
+}
+.night .manage_orders_wrap .manage_orders .nav-tabs{
+	border-bottom: 1px solid #575757;
+}
+.night .manage_orders_wrap .manage_orders .nav-tabs .nav-link span{
+	color: var(--lightColor) !important;
+	background: #999999;
+}
+.night .manage_orders .table th,
+.night .manage_orders .table td{
+	border: 1px solid #575757;
+	background: var(--nightBoxColor);
+}
+.night .manage_orders .order_details_info .service_title h5 a:hover {
+	color: var(--baseColor) !important;
+}
+.night .manage_orders .order_details_info .service_img_info .member_info ul li a{
+	color: var(--baseColor) !important;
+}
+.night .manage_orders .nothing_found p {
+	border: 1px solid #575757;
+	background: var(--nightBoxColor);
+}
+
+/* ===== CSS For "Manage Orders" Ends Here ===== */
+
+/* ===== CSS For "Covid-19" Starts Here ===== */
+.night .covid_contents_wrap .covid_contents{
+	background: var(--nightBoxColor);
+}
+.night .covid_contents_wrap .covid_contents .single_part p a {
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Covid-19" Ends Here ===== */
+
+/* ===== CSS For "Investor Relations" Starts Here ===== */
+.night .inv_imp_info .all_imp_info .single_info .details_info{
+	background: var(--nightBoxColor);
+}
+.night .inv_imp_info .all_imp_info .single_info .the_links ul li a{
+	color: var(--baseColor) !important;
+}
+.night .presentation_events .the_links ul li a{
+	color: var(--baseColor) !important;
+}
+.night .presentation_events .no_links ul li::after{
+	color: var(--nightTextColor);
+}
+/* ===== CSS For "Investor Relations" Ends Here ===== */
+
+/* ===== CSS For "Patronage" Starts Here ===== */
+.night .governance_contents_wrap .governance_doc_table th,
+.night .governance_contents_wrap .governance_doc_table td {
+	border: 1px solid #575757;
+}
+.night .governance_contents_wrap .governance_doc_table th{
+	background: #121212;
+	border-bottom: 2px solid #575757;
+}
+.night .governance_contents_wrap .governance_doc_table td a {
+	color: var(--baseColor) !important;
+}
+
+.night .governance_contents_wrap .comittee_com_table th,
+.night .governance_contents_wrap .comittee_com_table td {
+	border: 1px solid #575757;
+}
+.night .governance_contents_wrap .comittee_com_table th {
+	border-bottom: 2px solid #575757;
+	background: #121212;
+}
+.night .governance_contents_wrap .comittee_com_table tfoot td {
+	background: #121212;
+}
+/* ===== CSS For "Patronage" Ends Here ===== */
+
+/* ===== CSS For "Extra Investor Relations Pages" Starts Here ===== */
+.night .investor_contents_wrap{
+	background: var(--nightBodyColor);
+}
+.night .investor_contents_wrap .faqs {
+	background: var(--nightBoxColor);
+}
+.night .investor_contents_wrap .faqs .single_item .click_item a:hover {
+	color: var(--nightTextColor) !important;
+	background: transparent;
+}
+.night .investor_contents_wrap .faqs .single_item {
+	border-bottom: 1px solid #575757;
+}
+.night .investor_contents_wrap .faqs .single_item:last-child{
+	border-bottom: none;
+}
+.night .investor_contents_wrap .faqs .contents p a {
+	color: var(--baseColor) !important;
+}
+
+.night .mail_alert_form{
+	background: var(--nightBoxColor);
+}
+.night .mail_alert_form .form-control{
+	background: var(--nightBodyColor) !important;
+	border: 1px solid #575757;
+}
+.night .mail_alert_form .check .checkmark::after {
+	background: var(--nightBodyColor);
+	border: 1px solid #575757;
+}
+.night .investor_email_alert .mail_alert_form p a {
+	color: var(--baseColor) !important;
+}
+
+.night .investor_email_alert .investor_alert_texts {
+	border: 1px solid #575757;
+	background: var(--nightBoxColor);
+}
+
+.night .investor_contents_wrap .contac_us_texts p a {
+	color: var(--baseColor) !important;
+}
+.night .investor_contents_wrap .contact_boxes .single_box{
+	background: var(--nightBoxColor);
+}
+.night .investor_contents_wrap .contact_boxes ul li a {
+	color: var(--baseColor) !important;
+}
+
+.night .mail_alert_form{
+	border: 1px solid #575757;
+}
+/* ===== CSS For "Extra Investor Relations Pages" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Events & Presentations" Starts Here ===== */
+.night .events_presentations .no_links ul li::after{
+	color: var(--nightTextColor);
+}
+.night .events_presentations .the_links ul li a{
+	color: var(--baseColor) !important;
+}
+.night .events_presentations .single_video{
+	background: var(--nightBoxColor);
+}
+.night .events_presentations .single_video .video_info h5{
+	color: var(--baseColor) !important;
+}
+.night .events_presentations .single_video .video_info time {
+	color: #b3b3b3;
+}
+/* ===== CSS For "Events & Presentations" Ends Here ===== */
+
+/* ===== CSS For "Whistleblower" Starts Here ===== */
+.night .gbz_whistleblower form{
+	background: var(--nightBoxColor);
+}
+.night .gbz_whistleblower .form-control{
+	border: 1px solid #575757;
+}
+.night .gbz_whistleblower .check a {
+	color: var(--baseColor) !important;
+}
+.night .gbz_whistleblower .check .checkmark::after {
+	background: var(--nightBodyColor);
+	border: 1px solid #575757;
+}
+.night .gbz_whistleblower .checkround {
+	background: var(--nightBoxColor);
+}
+.night .gbz_whistleblower .radio input:checked ~ .checkround {
+	background-color: var(--nightBodyColor);
+}
+.night .gbz_whistleblower .attachment{
+	background: var(--nightBodyColor);
+	color: var(--baseColor) !important;
+}
+.night .gbz_whistleblower .attachment:hover{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+/* ===== CSS For "Whistleblower" Ends Here ===== */
+
+
+
+/* ===== CSS For "Article" Starts Here ===== */
+.night .gb_article_page .article_author{
+	background: var(--nightBoxColor);
+	border: 1px solid #575757;
+}
+.night .gb_article_page .article_tags ul li a{
+	color: var(--baseColor) !important;
+	background: var(--nightBoxColor);
+	border: 1px solid #575757;
+}
+/* ===== CSS For "Article" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Site Map" Starts Here ===== */
+.night .site_map_wrap .the_site_map .map_contents .map_links{
+	background: var(--nightBoxColor);
+}
+.night .site_map_wrap .the_site_map .map_contents .map_links ul li a{
+	border-bottom: 1px solid #575757;
+}
+.night .site_map_wrap .the_site_map .map_contents .map_links ul li:last-child a{
+	border-bottom: none;
+}
+.night .site_map_wrap .the_site_map .map_contents .map_links ul li a:hover {
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Site Map" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Partnership" Starts Here ===== */
+.night .partnership_wrap .become_partner .form-control{
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+/* ===== CSS For "Partnership" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ============================== */
+	
+	/* ===== CSS For "Legal Pages" Starts Here ===== */
+.night .legal_pages_wrap .single_legal_texts a{
+	color: var(--baseColor) !important;
+}
+.night .legal_pages_wrap .cookie_types .table th,
+.night .legal_pages_wrap .cookie_types .table td{
+	border: 1px solid #575757;
+}
+.night .legal_pages_wrap .table-striped tbody tr:nth-of-type(2n+1) {
+	background-color: var(--nightBoxColor);
+}
+.night .cookie_setting_modal .modal-content{
+	background: var(--nightBodyColor);
+}
+.night .cookie_setting_modal .nav a{
+	border: 1px solid #575757;
+	border-bottom: none;
+}
+.night .cookie_setting_modal .nav a:hover{
+	color: var(--darkColor) !important;
+}
+.night .cookie_setting_modal .nav a.active:hover{
+	color: var(--lightColor) !important;
+}
+.night .cookie_setting_modal .nav a:last-child{
+	border-bottom: 1px solid #575757;
+}
+.night .cookie_setting_modal .cookie_setting_texts {
+	border: 1px solid #575757;
+}
+.night .cookie_setting_modal .cookie_setting_texts p a {
+	color: var(--baseColor) !important;
+}
+.night .controlling_cookies .single_item{
+	border: 1px solid #575757;
+}
+.night .controlling_cookies .single_item .view_cookie a h6{
+	color: var(--baseColor) !important;
+}
+.night .cookie_setting_modal .cookie_switching .always_active{
+	color: var(--baseColor) !important;
+}
+.night .controlling_cookies .cookies_details .single_details{
+	background: var(--nightBoxColor);
+}
+.night .controlling_cookies .check .checkmark::after {
+	background: var(--nightBoxColor);
+	border: 1px solid #575757;
+}
+/* ===== CSS For "Legal Pages" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ============================== */
+/* ============================== */
+
+
+/*	Extra small devices (portrait phones, less than 576px)	*/
+@media (max-width: 575.98px) {
+	
+	.legal_pages_wrap {
+		padding: 20px 0px;
+		margin-bottom: -35px;
+	}
+	.legal_pages_wrap .legal_page_title h3{
+		font-size: 24px;
+	}
+	.legal_pages_wrap .single_legal_texts p{
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	.legal_pages_wrap .single_legal_texts h4{
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+	.legal_pages_wrap .checked_items ul li{
+		font-size: 13px;
+		padding-left: 20px;
+	}
+	.legal_pages_wrap .checked_items ul li::before{
+		font-size: 14px;
+	}
+	.legal_pages_wrap .circle_items ul li{
+		padding-left: 15px;
+	}
+	.legal_pages_wrap .circle_items ul li::before{
+		font-size: 10px;
+	}
+	.legal_pages_wrap .single_legal_texts h5{
+		font-size: 14px;
+	}
+	.legal_pages_wrap .legal_page_title h6{
+		font-size: 12px;
+	}
+
+	.legal_pages_wrap .cookie_types .table th p,
+	.legal_pages_wrap .cookie_types .table td p{
+		font-size: 12px;
+	}
+	.legal_pages_wrap .cookie_types .table th p{
+		font-size: 14px;
+	}
+	.legal_pages_wrap .cookie_types .table .types_cookie p {
+		width: 60px;
+	}
+	.legal_pages_wrap .cookie_types .table .cookie_lifespan p {
+		width: 180px;
+	}
+
+	.cookie_setting_modal .modal-header h3{
+		font-size: 20px;
+	}
+	.cookie_setting_tab {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 10px;
+	}
+	.cookie_setting_modal .nav{
+		font-size: 0px;
+		margin: 0px -2.5px;
+	}
+	.cookie_setting_modal .nav a{
+		width: calc(50% - 5px);
+		margin: 2.5px;
+		display: inline-block;
+		border: 1px solid var(--borderColor);
+		font-size: 14px;
+		padding: 7.5px 5px;
+		text-align: center;
+	}
+	.cookie_setting_modal .modal-body{
+		padding: 10px;
+	}
+	.cookie_setting_modal .cookie_switching {
+		-ms-grid-columns: 1fr 5px 120px;
+		grid-template-columns: 1fr 120px;
+		gap: 5px;
+	}
+	.cookie_setting_modal .cookie_setting_texts{
+		padding: 10px;
+	}
+	.cookie_setting_modal .cookie_setting_texts h3{
+		font-size: 18px;
+	}
+	.cookie_setting_modal .cookie_setting_texts p{
+		font-size: 14px;
+	}
+
+	.controlling_cookies .site_view {
+		-ms-grid-columns: 150px 5px 1fr;
+		grid-template-columns: 150px 1fr;
+		gap: 5px;
+	}
+	.controlling_cookies .check{
+		font-size: 13px;
+	}
+	.controlling_cookies .single_item .view_cookie a h6{
+		font-size: 13px;
+	}
+	.controlling_cookies .single_item{
+		padding: 10px;
+	}
+
+	.cookie_setting_modal .modal-footer .gbtn {
+		font-size: 12px;
+		padding: 12px 15px;
+		min-width: 100px;
+	}
+	.cookie_setting_modal .go_back_to_list .gbtn{
+		padding: 6px 15px;
+	}
+	.cookie_setting_modal .go_back_to_list .gbtn img{
+		font-size: 20px;
+	}
+
+	.controlling_cookies .cookies_details .single_details ul li{
+		font-size: 12px;
+	}
+	.controlling_cookies .cookies_details .single_details ul li span{
+		width: 80px;
+	}
+	
+}
+
+/*	Small devices (landscape phones, 576px and up)	*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+	.legal_pages_wrap {
+		margin-bottom: -35px;
+	}
+	.legal_pages_wrap .legal_page_title h3{
+		font-size: 26px;
+	}
+	.legal_pages_wrap .single_legal_texts p{
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	.legal_pages_wrap .single_legal_texts h4{
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+	.legal_pages_wrap .checked_items ul li{
+		font-size: 13px;
+		padding-left: 20px;
+	}
+	.legal_pages_wrap .checked_items ul li::before{
+		font-size: 14px;
+	}
+	.legal_pages_wrap .circle_items ul li{
+		padding-left: 15px;
+	}
+	.legal_pages_wrap .circle_items ul li::before{
+		font-size: 10px;
+	}
+	.legal_pages_wrap .single_legal_texts h5{
+		font-size: 14px;
+	}
+	.legal_pages_wrap .legal_page_title h6{
+		font-size: 12px;
+	}
+
+	.legal_pages_wrap .cookie_types .table th p,
+	.legal_pages_wrap .cookie_types .table td p{
+		font-size: 14px;
+	}
+	.legal_pages_wrap .cookie_types .table th p{
+		font-size: 16px;
+	}
+	.legal_pages_wrap .cookie_types .table .types_cookie p {
+		width: 80px;
+	}
+	.legal_pages_wrap .cookie_types .table .cookie_lifespan p {
+		width: 180px;
+	}
+
+	.cookie_setting_modal {
+		padding: 10px;
+	}
+	.cookie_setting_modal .modal-lg {
+		max-width: 100%;
+	}
+
+	.cookie_setting_tab {
+		-ms-grid-columns: 160px 10px 1fr;
+		grid-template-columns: 160px 1fr;
+		gap: 10px;
+	}
+	.cookie_setting_modal .nav a{
+		font-size: 14px;
+		padding: 7.5px 5px;
+	}
+	.cookie_setting_modal .modal-body{
+		padding: 10px;
+	}
+	.cookie_setting_modal .cookie_switching {
+		-ms-grid-columns: 1fr 5px 120px;
+		grid-template-columns: 1fr 120px;
+		gap: 5px;
+	}
+	.cookie_setting_modal .cookie_setting_texts h3{
+		font-size: 18px;
+	}
+	.cookie_setting_modal .cookie_setting_texts p{
+		font-size: 14px;
+	}
+	
+}
+
+/*	Medium devices (tablets, 768px and up)	*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	
+	.legal_pages_wrap {
+		margin-bottom: -35px;
+	}
+
+	.legal_pages_wrap .cookie_types .table th p,
+	.legal_pages_wrap .cookie_types .table td p{
+		font-size: 14px;
+	}
+	.legal_pages_wrap .cookie_types .table th p{
+		font-size: 16px;
+	}
+	.legal_pages_wrap .cookie_types .table .types_cookie p {
+		width: 80px;
+	}
+	.legal_pages_wrap .cookie_types .table .cookie_lifespan p {
+		width: 180px;
+	}
+
+	.cookie_setting_modal {
+		padding: 10px;
+	}
+	.cookie_setting_modal .modal-lg {
+		max-width: 800px;
+	}
+	
+}
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Become a Seller" Starts Here ===== */
+.night .become_seller_page .todo_boxes .single_box{
+	background: var(--nightBoxColor);
+}
+.night .recently_joined .single_company{
+	background: var(--nightBoxColor);
+}
+.night .recently_joined .single_company .logo_info ul li::before{
+	color: var(--baseColor);
+}
+.night .cp_signup_how_works {
+	background: var(--nightBoxColor);
+}
+.night .cp_signup_header_wrap .highlighted_facts .single_fact h4{
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Become a Seller" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Jobs Apply" Starts Here ===== */
+.night .jobs_apply_form{
+	background: var(--nightBoxColor);
+}
+.night .jobs_apply_form .form-control{
+	border: 1px solid #575757;
+}
+.night .jobs_apply_form .attachment{
+	background: var(--nightBodyColor);
+}
+.night .jobs_apply_form .attachment span{
+	color: var(--baseColor) !important;
+}
+.night .jobs_apply_form .attachment:hover span{
+	color: var(--lightColor) !important;
+}
+/* ===== CSS For "Jobs Apply" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "Gabazzo Chat" Starts Here ===== */
+.night .gb_chat_wrap{
+	background: var(--nightBodyColor);
+}
+.night .gb_top_search_wrap .client_search .form-control{
+	border: 1px solid #575757;
+	background: var(--nightBoxColor) !important;
+}
+.night .gb_top_search_wrap .client_search button .blue_icon{
+	display: inline-block;
+}
+.night .gb_top_search_wrap .client_search button .black_icon{
+	display: none;
+}
+.night .gb_top_search_wrap .other_actions ul li .blue_icon{
+	display: inline-block;
+}
+.night .gb_top_search_wrap .other_actions ul li .black_icon{
+	display: none;
+}
+
+.night .gb_chat{
+	border: 1px solid #575757;
+}
+.night .gb_chat .gb_list .nav {
+	background: #121212;
+}
+.night .gb_chat .contact_list {
+	background: #121212;
+}
+.night .gb_chat .contact_list ul li a{
+	background: #121212;
+}
+.night .gb_chat .contact_list ul li.active a {
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .contact_list .profile_info time{
+	color: var(--baseColor);
+}
+.night .gb_chat .gb_list .nav .nav-link{
+	border-bottom: 2px solid #575757;
+}
+.night .gb_chat .gb_list .nav .nav-link.active{
+	color: var(--baseColor) !important;
+	border-bottom: 2px solid var(--baseColor);
+}
+.night .gb_chat .user_files_manage .nav .nav-link {
+	border-bottom: 2px solid #575757;
+}
+.night .gb_chat .user_files_manage .nav .nav-link.active{
+	color: var(--baseColor) !important;
+	border-bottom: 2px solid var(--baseColor);
+}
+
+.night .gb_chat .conversation_footer {
+	background: #121212;
+}
+.night .gb_chat .conversation_footer .message_box textarea {
+	background: var(--nightBoxColor) !important;
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns .attachment {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns .attachment .blue_icon{
+	display: none;
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns .attachment .white_icon{
+	display: inline-block;
+}
+.night .gb_chat .conversation_footer .sending_actions .left_btns ul li a {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .conversation_footer .sending_actions ul li a .blue_icon {
+	display: none;
+}
+.night .gb_chat .conversation_footer .sending_actions ul li a .white_icon {
+	display: inline-block;
+}
+
+.night .gb_chat .gb_messages {
+	border-left: 1px solid #575757;
+	border-right: 1px solid #575757;
+	background: var(--nightBodyColor);
+}
+.night .gb_chat .gb_messages .msg_flow .security_alert_msg p a {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .gb_messages .msg_flow .msg_time_actions .msg_time time {
+	color: var(--baseColor);
+}
+.night .gb_chat .gb_messages .message_header{
+	border-bottom: 1px solid #575757;
+}
+.night .gb_chat .gb_messages .message_header .history_search .black_icon{
+	display: none;
+}
+.night .gb_chat .gb_messages .message_header .history_search .blue_icon{
+	display: inline-block;
+}
+.night .sliding_search_wrap.search_expanded .form-control {
+	background: var(--nightBoxColor) !important;
+}
+.night .sliding_search_wrap.search_expanded .search_submit {
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .gb_messages .message_header .call_actions ul > li > a .black_icon{
+	display: none;
+}
+.night .gb_chat .gb_messages .message_header .call_actions ul > li > a .blue_icon{
+	display: inline-block;
+}
+.night .gb_chat .gb_messages .message_header .user_actions_down{
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .gb_messages .message_header .user_actions_down::before {
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .gb_messages .message_header .user_actions ul li a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .gb_chat .gb_info {
+	background: #121212;
+}
+.night .gb_chat .gb_info .profile_info .profile_user_link a:hover {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .user_files_manage .single_manage .manage_field .form-control {
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+.night .gb_chat .user_files_manage .single_manage .manage_heading .add_button button {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .user_files_manage .single_manage .manage_field button {
+	background: var(--nightBoxColor);
+}
+
+.night .order_history_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .order_history_modal .table {
+	border: 1px solid #575757;
+}
+.night .order_history_modal thead th {
+	border-bottom: 1px solid #575757;
+}
+.night .order_history_modal .table td,
+.night .order_history_modal .table th{
+	border: 1px solid #575757;
+}
+.night .order_history_modal .member_info .member_texts .member_name a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .create_offer_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .create_offer_modal .select_services .single_service {
+	border: 1px solid #575757;
+	background: var(--nightBoxColor);
+}
+.night .create_offer_modal .modal-footer{
+	background: #121212;
+}
+.night .create_offer_modal .modal_actions ul li a {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .gb_chat .quick_sms_down{
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .single_quick_sms{
+	background: var(--nightBodyColor);
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_title h5{
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .edit_delete ul li a {
+	background: transparent;
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .create_fast_reply a{
+	background: transparent !important;
+}
+.night .gb_chat .quick_sms_down .all_quick_sms .create_fast_reply span {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .msg_header_search .search_form .search_results_wrap{
+	background: var(--nightBoxColor);
+}
+.night .gb_chat .msg_header_search .search_form .single_result a:hover .profile_info h6{
+	color: var(--darkColor) !important;
+}
+.night .gb_chat .msg_header_search .search_form .single_result a:hover .profile_info p {
+	color: var(--darkColor) !important;
+}
+.night .gb_chat .msg_header_search .search_pagination ul li.disabled a {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+.night .gb_chat .msg_header_search .search_pagination ul li a:hover {
+	color: var(--baseColor) !important;
+}
+
+.night .gb_chat .gb_info .profile_info .company_ratings span {
+	color: var(--baseColor) !important;
+}
+.night .gb_chat .gb_messages .msg_flow .msg_actions ul li .black_icon{
+	display: none;
+}
+.night .gb_chat .gb_messages .msg_flow .msg_actions ul li .blue_icon{
+	display: inline-block;
+}
+
+.night .creating_offer .offer_box{
+	background: var(--nightBoxColor) !important;
+}
+.night .create_offer_modal .select_payment .single_payment{
+	background: var(--nightBoxColor);
+	border: 1px solid #575757;
+}
+.night .creating_offer .form-control{
+	border: 1px solid #575757;
+}
+.night .created_milestones .click_item a{
+	background: var(--nightBoxColor);
+}
+.night .created_milestones .single_item {
+	border-bottom: 1px solid #575757;
+}
+.night .created_milestones {
+	border: 1px solid #575757;
+}
+.night .created_milestone_box {
+	background: var(--nightBodyColor);
+}
+.night .creating_offer .proposal_wrap .describe_offer .form-control {
+	background: var(--nightBoxColor) !important;
+}
+.night .created_milestone_box .service_img_descrip .service_descrip .form-control {
+	height: 120px;
+	border-radius: 4px;
+}
+.night .creating_offer .notes .form-control{
+	background: var(--nightBoxColor) !important;
+}
+
+.night .sent_offer .indicator_texts h4 a {
+	color: var(--baseColor) !important;
+}
+.night .sent_offer .offer_box_wrap {
+	border: 1px solid #575757;
+}
+.night .gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_body p a {
+	color: var(--baseColor) !important;
+}
+.night .sent_offer .offer_facts{
+	background: var(--nightBoxColor);
+}
+.night .sent_offer .offer_facts .tiny_box{
+	border: 1px solid #575757;
+	background: var(--nightBodyColor);
+}
+.night .all_milestones .single_item {
+	border-bottom: 1px solid #575757;
+}
+.night .all_milestones .single_item:first-child {
+	border-top: 1px solid #575757;
+}
+
+
+@media (max-width: 575.98px) {
+	
+	.night .gb_chat .gb_info {
+		border-left: 1px solid #575757;
+		border-bottom: 1px solid #575757;
+	}
+	.night .gb_chat .gb_messages {
+		border-left: none;
+		border-right: none;
+	}	
+	
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+	
+	.night .gb_chat .gb_info {
+		border-left: 1px solid #575757;
+	}
+	.night .gb_chat .gb_messages {
+		border-left: none;
+		border-right: none;
+	}
+	
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+	
+	.night .gb_chat .gb_info {
+		border-left: 1px solid #575757;
+	}
+	.night .gb_chat .gb_messages {
+		border-right: none;
+	}
+	
+}
+/* ===== CSS For "Gabazzo Chat" Ends Here ===== */
+
+
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+
+
+/* ===== CSS For "Payment System" Starts Here ===== */
+.night .pps_wrap .pps_middle .submit_info {
+  background: var(--nightBoxColor);
+}
+.night .pps_wrap .pps_middle .sidebar_box {
+  background: var(--nightBoxColor);
+}
+.night .pps_wrap .service_descrip p a {
+  color: var(--baseColor) !important;
+}
+.night .pps_wrap .cost_info .single_summary h5 a {
+  color: var(--baseColor) !important;
+}
+.night .pps_wrap .payment_info h5 i {
+  color: var(--baseColor);
+}
+.night .pps_wrap .payment_info h6 span {
+  color: var(--baseColor) !important;
+}
+.night .pps_wrap .payment_options ul .btn {
+  background: var(--nightBodyColor);
+}
+.night .pps_wrap .info_texts p a {
+  color: var(--baseColor) !important;
+}
+.night .pps_wrap .payment_methods .single_method .form-group label a {
+  color: var(--baseColor) !important;
+}
+.night .pps_wrap .payment_methods .single_method {
+  background: var(--nightBodyColor);
+}
+.night .pps_wrap .payment_methods .single_method .form-control {
+  background: var(--nightBoxColor) !important;
+}
+.night .pps_wrap .payment_methods .cards_icons ul li .black_icon {
+  display: none;
+}
+.night .pps_wrap .payment_methods .cards_icons ul li .white_icon {
+  display: inline-block;
+}
+.night .pps_wrap .payment_methods .single_method .form-control {
+  border: 1px solid #575757;
+}
+.night .pps_wrap .payment_methods form h6 b {
+  color: var(--redColor) !important;
+}
+.night .pps_wrap .payment_info ul li .black_icon {
+  display: none;
+}
+.night .pps_wrap .payment_info ul li .white_icon {
+  display: inline-block;
+}
+.night .pps_wrap .cost_info .total_price {
+  border-top: 1px solid #575757;
+}
+.night .od_milestones {
+  border: 1px solid #575757;
+}
+.night .od_milestones .single_item {
+  border-bottom: 1px solid #575757;
+}
+.night .od_milestones .single_item:last-child {
+  border-bottom: none;
+}
+.night .od_milestones .contents {
+  border-top: 1px solid #575757;
+}
+.night .pps_wrap .submit_info .milestone_req_submit {
+  border: 1px solid #575757;
+}
+.night .pps_wrap .submit_info .milestone_req_submit .single_milestone_submit {
+  border-bottom: 1px solid #575757;
+}
+.night
+  .pps_wrap
+  .submit_info
+  .milestone_req_submit
+  .single_milestone_submit:last-child {
+  border-bottom: none;
+}
+.night .pps_wrap .all_milestones_infos .cost_info_details {
+  border-bottom: 1px solid #575757;
+}
+.night .pps_wrap .all_milestones_infos .cost_info_details:last-child {
+  border-bottom: none;
+}
+.night .pps_wrap .pps_middle .service_details_info {
+  background: var(--nightBoxColor);
+}
+.night .pps_wrap .pps_middle .payment_options_wrap {
+  background: var(--nightBoxColor);
+}
+/* ===== CSS For "Payment System" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Tracking System" Starts Here ===== */
+.night .ts_navbar .nav_with_bar .ellipsis_menu .dropdown-menu{
+	background: var(--nightBoxColor);
+}
+.night .ts_navbar .nav_with_bar .ellipsis_menu .dropdown-menu::before{
+	background: var(--nightBoxColor);
+}
+.night .ts_navbar .nav_with_bar .ellipsis_menu .dropdown-menu ul li a:hover {
+	color: var(--baseColor) !important;
+	background: var(--nightBoxColor);
+}
+
+.night .ts_middle{
+	background: var(--nightBoxColor);
+}
+.night .ts_middle .service_img_descrip p a {
+	color: var(--baseColor) !important;
+}
+.night .ts_middle .order_facts{
+	background: var(--nightBodyColor);
+}
+.night .ts_middle .order_facts .tiny_box{
+	background: var(--nightBoxColor);
+}
+
+.night .require_submit_box{
+	border: 1px solid #575757;
+}
+.night .activity_msg_box{
+	border: 1px solid #575757;
+}
+.night .ts_middle_wrap .view_inbox p a {
+	color: var(--baseColor) !important;
+}
+
+.night .activity_accordion {
+	border: 1px solid #575757;
+}
+.night .activity_accordion .single_item {
+	border-bottom: 1px solid #575757;
+}
+.night .activity_accordion .single_item .the_click .tracking_progress .filled_bar span{
+	color: var(--baseColor) !important;
+}
+.night .activity_accordion .requirements_info {
+	border-top: 1px solid #575757;
+}
+.night .activity_accordion .requirements_texts {
+	border-bottom: 1px solid #575757;
+}
+.night .activity_accordion .single_item:last-child {
+	border-bottom: none;
+}
+.night .activity_accordion .requirements_image .single_image {
+	border: 1px solid #575757;
+}
+.night .ts_middle_wrap .delivered_complete_btns {
+	border: 1px solid #575757;
+}
+.night .activity_accordion .updated_info .updated_texts {
+	border-bottom: 1px solid #575757;
+}
+.night .activity_accordion .updated_info {
+	border-top: 1px solid #575757;
+}
+.night .activity_accordion .updated_info .updated_image .single_image {
+	border: 1px solid #575757;
+}
+.night .order_main_info .delivery_time .timeTo ul li{
+	color: var(--darkColor) !important;
+}
+.night .progress_update .add_new_tracking h6 a {
+	color: var(--baseColor) !important;
+}
+.night .receipt_tracker{
+	border: 1px solid #575757;
+}
+.night .progress_update .ts_slide .status_media{
+	background: var(--nightBoxColor);
+}
+.night .progress_update .ts_slide .status{
+	border: 1px solid #575757;
+}
+.night .progress_update .ts_description {
+	border: 1px solid #575757;
+}
+.night .progress_boxes .progress_link .progress_box{
+	background: var(--nightBoxColor);
+}
+.night .progress_boxes .progress_box .progress_status h3{
+	color: var(--baseColor) !important;
+}
+.night .progress_boxes .plus_box{
+	border: 2px solid #575757;
+}
+.night .progress_boxes .plus_box h5 {
+	color: var(--baseColor) !important;
+}
+.night .receipt_tracker .receipt_boxes .receipt_box {
+	background: var(--nightBodyColor);
+	border: 1px solid #575757;
+}
+.night .require_submit_box .agreement input[type="checkbox"] + label::before{
+	background: var(--nightBoxColor);
+}
+.night .require_submit_box .agreement input[type="checkbox"]:checked + label::before {
+	background-color: var(--baseColor);
+}
+.night .require_submit_box .submitted_requirements_box {
+	background: var(--nightBoxColor);
+}
+.night .require_submit_box .submitted_requirements_box .requirements_image .single_image {
+	border: 1px solid #575757;
+}
+.night .invoice_wrap .downloads_area {
+	background: var(--nightBodyColor);
+	border: 1px solid #575757;
+	border-top: none;
+}
+.night .invoice_wrap .downloads_area .single_download {
+	background: var(--nightBoxColor);
+}
+.night .invoice_wrap .downloads_area .single_download:hover .file_title h6 {
+	color: var(--baseColor) !important;
+}
+.night .invoice_wrap .invoice_tab .nav .nav-link {
+	background: var(--nightBodyColor);
+}
+.night .invoice_wrap .invoice_tab .nav .nav-link.active{
+	background: var(--baseColor);
+}
+.night .invoice_wrap .sent_offer .sent_offer_box {
+	border: none;
+}
+.night .invoice_wrap .invoice_tab .tab-content .invoice-tab-pane {
+	background: var(--nightBodyColor);
+}
+.night .invoice_wrap .preview_invoice {
+	background: var(--nightBoxColor);
+}
+.night .invoice_wrap .preview_invoice .bill_delivery .title ul {
+	border-bottom: 2px solid #575757;
+}
+.night .common_modal .modal-body{
+	background: var(--nightBoxColor);
+}
+.night .progress_update .ts_slide .status .status_progress{
+	background: var(--nightBoxColor);
+}
+.night .invoice_wrap .preview_invoice .pricing_details .table td,
+.night .invoice_wrap .preview_invoice .pricing_details .table th{
+	border: 1px solid #575757;
+}
+.night .receipt_modal .pricing_details td,
+.night .receipt_modal .pricing_details th{
+	border: 1px solid #575757;
+}
+.night .receipt_tracker .receipt_boxes .receipt_box .receipt_fact ul li span {
+	color: var(--baseColor) !important;
+}
+.night .receipt_tracker .receipt_boxes .receipt_box .receipt_icon .black_icon{
+	display: none;
+}
+.night .receipt_tracker .receipt_boxes .receipt_box .receipt_icon .white_icon{
+	display: inline-block;
+}
+.night .invoice_wrap .preview_invoice .gabazzo_logo .logo_black{
+	display: none;
+}
+.night .invoice_wrap .preview_invoice .gabazzo_logo .logo_white{
+	display: inline-block;
+}
+
+.night .require_submit_box .pre_requirements_box{
+	border: 1px solid #575757;
+}
+.night .progress_update .add_new_tracking{
+	background: var(--nightBodyColor);
+	border: 1px solid #575757;
+}
+.night .receipt_tracker .receipt_boxes .creating_receipt{
+	background: var(--nightBodyColor);
+	border: 1px solid #575757;
+}
+.night .progress_boxes .plus_box h6{
+	color: var(--baseColor) !important;
+}
+.night .progress_info_modal .modal-body{
+	background: var(--nightBoxColor);
+}
+.night .progress_info_modal .percent_progress input{
+	border: 1px solid #575757;
+}
+.night .progress_info_modal .upload_files .uploaded_files .single_uploaded a{
+	color: var(--redColor) !important;
+}
+.night .progress_info_modal .upload_box {
+	background: var(--nightBodyColor);
+}
+.night .progress_info_modal .upload_box .label {
+	border: 2px dashed #575757;
+}
+
+.night .receipt_modal .details_wrap .single_details{
+	border: 1px solid #575757;
+}
+.night .common_modal .form-control{
+	border: 1px solid #575757;
+}
+.night .receipt_modal .service_info_pricing{
+	border: 1px solid #575757;
+	background: var(--nightBoxColor);
+}
+.night .common_modal .modal-footer{
+	background: var(--nightBoxColor);
+	border-top: 1px solid #575757;
+}
+/* ============================== */
+/* ============================== */
+
+.night .providing_reviews .left_details{
+	background: var(--nightBoxColor);
+}
+.night .providing_reviews .sidebar_box{
+	background: var(--nightBoxColor);
+}
+.night .providing_reviews .review_field .form-control {
+	box-shadow: 0px 0px 7px rgba(19, 187, 182, 0.25);
+}
+.night .providing_reviews .took_rating .rating > input:checked ~ label,
+.night .providing_reviews .took_rating .rating:not(:checked) > label:hover,
+.night .providing_reviews .took_rating .rating:not(:checked) > label:hover ~ label {
+	color: #FFD700 !important;
+}
+.night .providing_reviews_wrap .cost_info .single_summary h5 a {
+	text-decoration: none;
+	color: var(--baseColor) !important;
+}
+/* ===== CSS For "Tracking System" Ends Here ===== */
+
+/* ============================== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Help Center" Starts Here ===== */
+.night .gb_help_center_banner .help_search_box .form-control{
+	border: 1px solid var(--baseColor);
+}
+.night .gb_help_center_banner .help_search_box .search_icon .blue_icon {
+	display: inline-block;
+}
+.night .gb_help_center_banner .help_search_box .search_icon .black_icon {
+	display: none;
+}
+.night .help_center_topics{
+	background: var(--nightBodyColor);
+}
+.night .help_center_topics .all_help_topics .single_topic{
+	background: var(--nightBoxColor);
+}
+.night .help_center_topics .single_topic .topic_links ul li a:hover {
+	color: var(--baseColor) !important;
+}
+.night .help_center_topics .single_topic .sell_all_link a {
+	color: var(--baseColor) !important;
+}
+.night .help_center_topics .single_topic .topic_links ul li.dropdown.show > a {
+	color: var(--baseColor) !important;
+}
+.night .help_center_topics .single_topic .dropdown .dropdown-menu{
+	background: var(--nightBodyColor);
+}
+/* ===== CSS For "Help Center" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+/* ===== CSS For "" Starts Here ===== */
+/* ===== CSS For "" Ends Here ===== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */

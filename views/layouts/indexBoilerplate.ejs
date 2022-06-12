@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Google Tag Manager faisal-->
+	<script>
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-T23WPNV');
+	</script>
+	<!-- End Google Tag Manager -->
+	
+	<!--Metatags-->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+	<meta http-equiv="X-UA-Compatble" content="ie=edge"/>		
+	<!--Website Title-->
+	<title>Gabazzo</title>
+	<!--Calling Favicon-->
+	<link rel="icon" href="images/layout/favicon.png" />
+	<link rel="shortcut icon" href="images/layout/favicon.ico" />		
+	<!--FontAwesome CDN-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+	<!--Normalize v8.0.1 CSS FILE-->
+	<link rel="stylesheet" href="css/normalize.css"/>
+	<!--Bootstrap v4.6.0 CSS FILE-->
+	<link defer href="css/bootstrap.min.css" rel="preload" as="style" />	
+	<!--Fonts Are Loads From Here-->
+	<link href="fonts/fonts.css"rel="preload" as="style" />
+	<!--Owl Carousel CSS File-->
+	<link rel="stylesheet" href="css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="css/owl.theme.default.min.css" />
+	<!--Gabazzo Common CSS File-->
+	<link rel="stylesheet" href="css/gabazzo.common.css" />
+	<!--Main Stylesheet-->
+	<link rel="stylesheet" href="css/updatedStyles.css"/>		
+	<!--Stylesheet For The Responsiveness-->
+	<link defer href="css/responsive.css" rel="preload" as="style" />
+	<!--Stylesheet For The Night Mode-->
+	<link href="css/night.mode.css" rel="preload" as="style" />
+
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="preload" as="style" />
+
+	<link href="js/jquery-3.3.1.min.js" rel="preload" as="script" />
+	<link href="js/bootstrap.bundle.min.js" rel="preload" as="script" />
+	
+	<link rel="preload" as="image" href="images/main-cover.webp" />
+	<link rel="preconnect" href="www.facebook.com" />
+	<link rel="preconnect" href="www.connect.facebook.net" />
+	<link rel="preconnect" href="www.googletagmanager.com" />
+	<link rel="preconnect" href="www.fonts.gstatic.com" />
+	<link rel="preconnect" href="www.stackpath.bootstrapcdn.com" />
+    <link rel="preconnect" href="www.google-analytics.com"/>
+    <link rel="preconnect" href="https://cdnjs.com/"/>
+
+	<link defer href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link defer href="fonts/fonts.css" rel="stylesheet" />
+	<link defer href="css/normalize.css" rel="stylesheet" type="text/css" />
+	<link defer href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link defer href="css/gabazzo.common.css" rel="stylesheet" type="text/css" />
+	<link defer href="css/updatedStyles.css" rel="stylesheet" type="text/css" />
+	<link defer href="css/night.mode.css" rel="stylesheet" type="text/css" />
+	<link defer href="css/responsive.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T23WPNV"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+			<!--===== Markup For "Header" Starts From Here =====-->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg">
+					<div class="container">
+						<div class="logo_mode_switching">
+							<ul>
+								<li><a href="/" class="navbar-brand"><img src="../images/layout/gabazzo_logo_white.png" class="img-fluid" alt="" /></a></li>
+								<li>
+									<a class="mode_icon" href="javascript:void(0)">
+										<img src="../images/layout/mode_icon_night.png" class="img-fluid night_icon" title="Night Mode" data-toggle="tooltip" alt="" />
+										<img src="../images/layout/mode_icon_day.png" class="img-fluid day_icon" title="Day Mode" data-toggle="tooltip" alt="" />
+									</a>
+								</li>
+							</ul>
+						</div>
+	
+						<% if(currentUser) { %>
+							<div class="mobile_profile_menubar">
+								<button class="navbar-toggler" data-target="#responsive-bar" data-toggle="collapse">
+									<div class="humbergur_icon">
+										<span></span><span></span><span></span><span></span>
+									</div>
+								</button>
+		
+								<a href="javascript:void(0)" class="nav-link profile_pic_link membersProfilePic">
+									<div class="profile_pic">
+										<% if (currentUser.isCompany) { %>
+											<% if(currentUser.logo) { %>
+												<img src="<%= currentUser.logo %>" class="img-fluid" alt="" />
+											<% } else {%>
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											<% }%>
+										<% } else { %>
+											<% if(currentUser.profilePicture) {%>
+												<img src="<%= currentUser.profilePicture %>" class="img-fluid" alt="<%= currentUser.username %>" />
+											<%} else {%>
+												<img src="../images/man.png" class="img-fluid" alt="<%= currentUser.username %>" />
+											<% }%>
+										<% } %>
+										<span class="activity_status online_status"></span>
+									</div>
+								</a>
+							</div>
+						<% }else{ %>
+	
+						<button class="navbar-toggler" data-target="#responsive-bar" data-toggle="collapse">
+							<div class="humbergur_icon">
+								<span></span><span></span><span></span><span></span>
+							</div>
+						</button>
+						<% }%>
+	
+						<div class="collapse navbar-collapse" id="responsive-bar">
+							<div class="menus ml-auto">
+								<ul class="navbar-nav services_menu">
+									<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Construction Services</a>
+										<div class="dropdown-menu">
+											<ul class="dropdown_column">
+												<li><a href="/search?category=roofing services" class="dropdown-item">Roofing</a></li>
+												<li><a href="/search?category=landscaping services" class="dropdown-item">Landscaping</a></li>
+												<li><a href="/search?category=junk removal" class="dropdown-item">Junk Removal</a></li>
+												<li><a href="/search?category=masonry services" class="dropdown-item">Masonry</a></li>
+												<li><a href="/search?category=plumbing services" class="dropdown-item">Plumbing</a></li>
+												<li><a href="/search?category=hvac services" class="dropdown-item">HVAC</a></li>
+												<li><a href="/search?category=pest control" class="dropdown-item">Pest Control</a></li>
+												<li><a href="/search?category=painting services" class="dropdown-item">Painting</a></li>
+											</ul>
+		
+											<ul class="dropdown_column">
+												<li><a href="/search?category=flooring services" class="dropdown-item">Flooring</a></li>
+												<li><a href="/search?category=electrical services" class="dropdown-item">Electrical</a></li>
+												<li><a href="/search?category=moving services" class="dropdown-item">Moving</a></li>
+												<li><a href="/search?category=appliance services" class="dropdown-item">Appliance</a></li>
+												<li><a href="/search?category=locksmith services" class="dropdown-item">Locksmith</a></li>
+											</ul>
+										</div>
+									</li>
+									<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vehicle Services</a>
+										<div class="dropdown-menu">
+											<ul class="dropdown_column">
+												<li><a href="/search?category=towing services" class="dropdown-item">Towing</a></li>
+												<li><a href="/search?category=vehicle repair" class="dropdown-item">Vehicle Repair</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+								
+								<% if(!currentUser) { %>
+								<ul class="navbar-nav access_menu">
+									<li class="nav-item"><a href="/login" class="nav-link sign_in">Sign In</a></li>
+									<li class="nav-item"><a href="/sign-up" class="nav-link gbtn gbtn_white_bdr">Sign Up</a></li>
+									<li class="nav-item"><a href="/become-a-seller-overview" class="nav-link gbtn">Become a Seller</a></li>
+								</ul>
+								<% } else { %>
+								<ul class="navbar-nav access_menu">
+									<li class="nav-item desktop_only_link"><a href="/inbox/<%= lastMessage?.messages?.receiver.id %>" class="nav-link">Messages</a></li>
+									<% if(currentUser && !currentUser.isCompany) { %>
+										<li class="nav-item desktop_only_link"><a href="/saved-list" class="nav-link">Saved List</a></li>
+									<% } %>
+									<li class="nav-item profile_pic_desktop">
+										<a href="javascript:void(0)" class="nav-link profile_pic_link membersProfilePic">
+											<div class="profile_pic">
+												<% if (currentUser?.isCompany) { %>
+													<% if(currentUser.logo) { %>
+														<img src="<%= currentUser.logo %>" class="img-fluid" alt="" />
+													<% } else {%>
+														<img src="../images/man.png" class="img-fluid" alt="" />
+													<% }%>
+												<% } else { %>
+													<% if(currentUser.profilePicture) {%>
+														<img src="<%= currentUser.profilePicture %>" class="img-fluid" alt="<%= currentUser.username %>" />
+													<%} else {%>
+														<img src="../images/man.png" class="img-fluid" alt="<%= currentUser.username %>" />
+													<% }%>
+												<% } %>
+												<span class="activity_status online_status"></span>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<% } %>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<!--===== Markup For "Header" Ends Here =====-->
+		
+			<% if(currentUser) { %>
+			<!--===== Markup For "Members Profile Link" Starts From Here =====-->
+			<div class="membersProfileLinks">
+				<div class="dismissMembersProfileLinks">
+					<i class="fa fa-times"></i>
+				</div>
+	
+				<div class="members_profile_pic">
+					<% if (currentUser?.isCompany) { %>
+						<% if(currentUser.logo) { %>
+							<a href="javascript:void(0)"><img src="<%= currentUser.logo %>" class="img-fluid" alt="<%= currentUser.username %>" /></a>
+						<% } else {%>
+							<a href="javascript:void(0)"><img src="../images/man.png" class="img-fluid" alt="profile Picture" /></a>
+						<% }%>
+						<h6><%= currentUser.companyName %></h6>
+					<% } else { %>
+						<% if(currentUser?.profilePicture) {%>
+							<a href="javascript:void(0)"><img src="<%= currentUser.profilePicture %>" class="img-fluid" alt="<%= currentUser.username %>" /></a>
+						<%} else {%>
+							<a href="javascript:void(0)"><img src="../images/man.png" class="img-fluid" alt="profile picture" /></a>
+						<% }%>
+						<h6><%= currentUser.firstName + " " + currentUser.lastName %></h6>
+					<% } %>
+				</div>
+	
+				<div class="profile_links">
+					<% if (currentUser.isCompany) { %>
+						<ul>
+							<li><i class="fas fa-user"></i> <a href="/company-dashboard">View Dashboard</a></li>
+							<li class="mobile_only"><i class="fas fa-envelope"></i> <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+							<li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+							<li><i class="fab fa-angellist"></i> <a href="/view-lead">View Leads</a></li>
+							<li><i class="fas fa-cog"></i> <a href="/company-settings/account">Settings</a></li>
+							<li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+						</ul>
+					<% } else { %>
+						<ul>
+							<li><i class="fas fa-user"></i> <a href="/member-profile/<%= currentUser._id %>">View Profile</a></li>
+							<li class="mobile_only"><i class="fas fa-envelope"></i> <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+							<% if(currentUser && !currentUser.isCompany) { %>
+								<li class="mobile_only"><i class="fas fa-list-alt"></i> <a href="/saved-list">Saved List</a></li>
+							<% } %>
+							<li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+							<li><i class="fas fa-tasks"></i> <a href="javascript:void(0)" data-target="#postProject" data-toggle="modal">Post Project</a></li>
+							<li><i class="fas fa-bullhorn"></i> <a href="/view-request">View Request</a></li>
+							<li><i class="fas fa-cog"></i> <a href="/company-settings/account">Settings</a></li>
+							<li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+						</ul>
+					<% } %>
+				</div>
+			</div>
+			<!--===== Markup For "Members Profile Link" Ends Here =====-->
+			<% } %>
+
+	<!--===== Markup For "Hero Banner" Starts From Here =====-->
+	<section class="hero_banner home_banner">
+		<div class="overlay">
+			<div class="container">
+				<div class="banner_heading">
+					<h1>We’re Here To Make <span class="break"></span> Your Life Easier.</h1>
+				</div>
+
+				<form autocomplete="off" action="/pages" method="POST">
+					<div class="hero_search">
+						<input id="myInput" name="service" type="search" placeholder="I’m searching for..." class="form-control">
+						<div class="search_icon">
+							<img src="../images/layout/search_icon_black.png" class="black_icon" alt="">
+							<img src="../images/layout/search_icon_white.png" class="white_icon" alt="">
+						</div>
+						<button class="btn gbtn" type="submit">Search</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!--===== Markup For "Hero Banner" Ends Here =====-->
+
+	<%- body -%>
+
+			<!--===== Markup For "Post Project Modal" Starts From Here =====-->
+			<div class="modal fade post_project_modal" id="postProject">
+				<div class="modal-dialog modal-lg modal-dialog-centered">
+					<div class="modal-content">
+						<!--===== Markup For "Logo & Slogan" Starts From Here =====-->
+						<div class="modal-header">
+							<div class="gabazzo_logo">
+								<h6><img src="images/gabazzo_logo_white.png" class="img-fluid" alt=""> <span class="slogan">Building Communities Together</span></h6>
+							</div>
+	
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+	
+						<!--===== Markup For "Logo & Slogan" Ends Here =====-->
+						<div class="modal-body">
+							<div class="form_wrap">
+								<form action="/post-project" method="post" class="needs-validation" novalidate  enctype="multipart/form-data"> 
+									<!--===== Markup For "Top Inputs" Starts From Here =====-->
+									<div class="top_inputs">
+										<div class="inputs_row">
+											<div class="input_field">
+												<label for="title">Project Title:</label>
+												<input name="title" type="text" class="form-control" required>
+												<div class="invalid-feedback">
+													Please write a project title.
+												</div>
+											</div>
+											<div class="input_field">
+												<label for="location">Service Location:</label>
+												<input name="location" type="text" class="form-control" required>
+												<div class="invalid-feedback">
+													Please write a service location.
+												</div>
+											</div>
+											<div class="input_field">
+												<label for="budget">Budget</label>
+												<div class="budget_openbids">
+													<div class="input_icon_wrap">
+														<div class="input_icon">
+															<input type="number" name="budget" class="form-control">
+															<i class="fas fa-dollar-sign"></i>
+														</div>
+													</div>
+													<div class="or grid_item">
+														<h5>OR</h5>
+													</div>
+													<div class="open_to_bids">
+														<ul data-toggle="buttons">
+															<li class="btn">
+																<input type="radio" name="openBids" autocomplete="off"> 
+																<span class="gbtn gbtn_bdr" title="Companies will bid on your project & give you quotes." data-toggle="tooltip">Open to Bids</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+			
+										<div class="inputs_row">
+											<div class="input_field">
+												<label for="mainCategory">Service Category:</label>
+												<div class="select_field">
+													<select name="mainCategory" id="mainCategory" class="form-control" required>
+														<option value="">Choose</option>
+														<option value="Construction Services">Construction Services</option>
+														<option value="Vehicle Services">Vehicle Services</option>
+													</select>
+												</div>
+												<div class="invalid-feedback">
+													Please select a category.
+												</div>
+											</div>
+											<div class="input_field">
+												<label for="subCategory">Service Sub-Category:</label>
+												<div class="select_field">
+													<select name="subCategory" id="subCategory" class="form-control" required>
+														<option value="">Choose</option>
+													</select>
+												</div>
+												<div class="invalid-feedback">
+													Please select a category.
+												</div>
+											</div>
+											<div id="propertyTypeParent" class="input_field">
+												<label for="propertyType" id="propertyTypeLabel">Property Type:</label>
+												<div class="select_field">
+													<select name="propertyType" id="propertyType" class="form-control" required>
+														<option value="">Choose</option>
+													</select>
+													<div class="invalid-feedback">
+														Please select a property type.
+													</div>
+												</div>
+											</div>
+										</div>
+			
+										<div class="inputs_row">
+											<div class="input_field">
+												<label for="language">Preferred Seller Language:</label>
+												<div class="select_field">
+													<select name="language" id="language" class="form-control" required>
+														<option value="English">English</option>
+														<option value="Español">Español</option>
+														<option value="Français">Français</option>
+														<option value="Pусский">Pусский</option>
+														<option value="Polskie">Polskie</option>
+														<option value="Deutsch">Deutsch</option>
+														<option value="Italiano">Italiano</option>
+														<option value="中國人">中國人</option>
+														<option value="Português">Português</option>
+														<option value="한국인">한국인</option>
+														<option value="日本">日本</option>
+													</select>
+												</div>
+												<div class="invalid-feedback">
+													Please select a language.
+												</div>
+											</div>
+											<div class="input_field">
+												<label for="date">Select Date:</label>
+												<input type="date" name="date" class="form-control" required>
+												<div class="invalid-feedback">
+													Please select a date.
+												</div>
+											</div>
+											<div class="input_field">
+												<label for="time">Select Time:</label>
+												<input type="time" name="time" class="form-control" required>
+												<div class="invalid-feedback">
+													Please select a time.
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--===== Markup For "Top Inputs" Ends Here =====-->
+									
+		
+									<!--===== Markup For "Texts Box" Starts From Here =====-->
+									<div class="texts_box">
+										<div class="texts_box_info">
+											<h6>Tell us more about service you are looking to purchase.</h6>
+											<p>Note: Leave this details as possible.</p>
+										</div>
+										<div class="form-group">
+											<textarea name="description" placeholder="Describe What You Are Looking For Here..." id="" cols="30" rows="4" class="form-control" required></textarea>
+											<div class="invalid-feedback">
+												Please write a description.
+											</div>
+										</div>
+										<div class="character_indicator">
+											<h5>0/2500</h5>
+										</div>
+									</div>
+									<!--===== Markup For "Texts Box" Ends Here =====-->
+									
+	
+									<!--===== Markup For "Upload Box" Starts From Here =====-->
+									<div class="upload_box">
+										<label class="label">
+											<i class="fas fa-cloud-upload-alt"></i>
+											<span class="title">Drag & Drop Images, Videos or Documents That will help what you Need.</span>
+											<input
+												type="file"
+												name="attachments"
+												id="file-attachment"
+												class="form-control"
+												data-multiple-caption="{count} files selected"
+												multiple
+												required
+											  />
+											<div class="invalid-feedback">
+												Please attach the images.
+											</div>
+											<div class="valid-feedback" id="attachment-msg">
+												
+											</div>
+										</label>
+									</div>
+									<!--===== Markup For "Upload Box" Ends Here =====-->
+									
+		
+									<!--===== Markup For "Post Project" Starts From Here =====-->
+									<div class="post_project_button">
+										<button class="btn gbtn" type="submit">Post Project</button>
+									</div>
+									<!--===== Markup For "Post Project" Ends Here =====-->
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===== Markup For "Post Project Modal" Ends Here =====-->
+
+	<!--===== Markup For "Registration Counter" Starts From Here =====-->
+	<div class="registration_counter_wrap">
+		<div class="container">
+			<div class="registration_counter">
+				<div class="single_count">
+					<div class="heading">
+						<h2><%= total.length %>+</h2>
+					</div>
+					<p>Registered Companies</p>
+				</div>
+
+				<div class="single_count">
+					<div class="heading">
+						<h2><%= members %>+</h2>
+					</div>
+					<p>Registered Members</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--===== Markup For "Registration Counter" Ends Here =====-->
+
+
+	<!--===== Markup For "Footer" Starts From Here =====-->
+    <footer class="footer_wrap">
+      <div class="footer_top">
+        <div class="container">
+          <div class="footer">
+            <div class="single_part">
+              <div class="footer_logo">
+                <a href="/"
+                  ><img
+                    src="images/layout/gabazzo_logo_white.png"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/contact-us">Contact Us</a></li>
+                  <li><a href="/about-us">About</a></li>
+                  <li><a href="/site-map">Sitemap</a></li>
+                  <li><a href="/partnerships">Partnerships</a></li>
+		  <li><a href="/investor-relations">Investor Relations</a></li>
+		  <li><a href="/jobs-and-opportunities">Jobs & Opportunities</a></li>
+		  <li><a href="/press-and-news">Press & News</a></li>
+                </ul>
+              </div>
+              <div class="social_links">
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/gabazzoBCT"
+                      target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/gabazzo/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+		  <li>
+                    <a
+                      href="https://discord.gg/RTDhKw4r99" target="_blank"><i class="fab fa-discord"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Members</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/sign-up">Sign Up</a></li>
+		  <li><a href="/trust-and-safety-members">Trust & Safety</a></li>
+		  <li><a href="/ranking-system-members">Ranking System</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Business</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/company-sign-up-home">Register Business</a>
+                  </li>
+		  <li><a href="/study-buyer">Study Buyer</a>
+                  </li>
+		   <li><a href="/seller-league-system">League System</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Support</h4>
+              <div class="site_links">
+                <ul>
+		  <li><a href="/help-center-buyer">Help Center</a></li>
+                  <li><a href="/terms-and-conditions">Terms of Use</a></li>
+                  <li><a href="/privacy-policy">Privacy Policy</a></li>
+                  <li><a href="/cookie-policy">Cookie Policy</a></li>
+                  <li><a href="/safety-for-members">Safety</a></li>
+		  <li><a href="/covid-info">Covid-19 Info</a></li>
+		  <li><a href="/intellectual-property-claims">IP Claims</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <p>
+            Copyright &copy; 2021 Gabazzo. All Rights Reserved. Patent Pending
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!--===== Markup For "Footer" Ends Here =====-->
+
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+	<script src="js/classie.js" type="text/javascript"></script>
+	<!--Owl Carousel JS File-->
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="js/updatedCustom.js" type="text/javascript"></script>
+	<script src="js/autocomplete.js" type="text/javascript"></script>
+	<script src="js/messageModal.js" type="text/javascript"></script>
+	<script src="js/read_more.js" type="text/javascript"></script>
+
+</body>
+
+</html>

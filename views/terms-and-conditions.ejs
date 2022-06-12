@@ -1,0 +1,881 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>		
+		<!--Metatags-->
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+		<meta http-equiv="X-UA-Compatble" content="ie=edge"/>		
+		<!--Website Title-->
+		<title>Terms of Use</title>
+		<!--Calling Favicon-->
+		<link rel="icon" href="images/favicon.png" />
+		<link rel="shortcut icon" href="images/favicon.ico" />		
+		<!--FontAwesome CDN-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+		<!--Normalize v8.0.1 CSS FILE-->
+		<link rel="stylesheet" href="css/normalize.css"/>
+		<!--Bootstrap v4.6.0 CSS FILE-->
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<!--Gabazzo Common CSS File-->
+		<link rel="stylesheet" href="css/gabazzo.common.css" />		
+		<!--Fonts Are Loads From Here-->
+		<link rel="stylesheet" href="fonts/fonts.css"/>
+		<!--Main Stylesheet-->
+		<link rel="stylesheet" href="css/updatedStyles.css"/>
+		<!--Stylesheet For The Responsiveness-->
+		<link rel="stylesheet" href="css/responsive.css"/>
+		<!--Stylesheet For The Night Mode-->
+		<link rel="stylesheet" href="css/night.mode.css"/>	
+	</head>
+	
+	<body>
+
+		<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T23WPNV"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+
+	<!--===== Markup For "Header" Starts From Here =====-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="logo_mode_switching">
+        <ul>
+          <li>
+            <a href="/" class="navbar-brand"
+              ><img
+                src="../images/layout/gabazzo_logo_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+          </li>
+          <li>
+            <a class="mode_icon" href="javascript:void(0)">
+              <img
+                src="../images/layout/mode_icon_night.png"
+                class="img-fluid night_icon"
+                title="Night Mode"
+                data-toggle="tooltip"
+                alt=""
+              />
+              <img src="../images/layout/mode_icon_day.png" class="img-fluid day_icon" title="Day Mode" data-toggle="tooltip" alt=""/>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="members_navbar">
+        <div class="mobile_search_btn_menubar">
+          <div class="cp_search_btn dropdown">
+            <a
+              href="javascript:void(0)"
+              data-target="#companySearchBar"
+              data-toggle="dropdown"
+              class="nav-link"
+              ><img
+                src="../images/layout/search_icon_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+
+            <div
+              class="dropdown-menu company_search_down"
+              aria-labelledby="companySearchBar"
+            >
+              <form action="">
+                <div class="company_search_field">
+                  <input
+                    id="myInput"
+                    type="search"
+                    placeholder="Search..."
+                    class="form-control"
+                  />
+                  <button class="btn" type="submit">
+                    <img
+                      src="../images/layout/search_icon_black.png"
+                      class="black_icon"
+                      alt=""
+                    />
+                    <img
+                      src="../images/layout/search_icon_white.png"
+                      class="white_icon"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            data-target="#responsive-bar"
+            data-toggle="collapse"
+          >
+            <div class="humbergur_icon">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </button>
+
+          <% if(currentUser) { %>
+          <a
+            href="javascript:void(0)"
+            class="nav-link profile_pic_link membersProfilePic"
+          >
+            <div class="profile_pic">
+              <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) {
+              %>
+              <img src="<%= currentUser.logo %>" class="img-fluid" alt="" />
+              <% } else {%>
+              <img src="../images/man.png" class="img-fluid" alt="" />
+              <% }%> <% } else { %> <% if(currentUser?.profilePicture) {%>
+              <img
+                src="<%= currentUser.profilePicture %>"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <%} else {%>
+              <img
+                src="../images/man.png"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <% }%> <% } %>
+              <span class="activity_status online_status"></span>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="responsive-bar">
+        <div class="menus ml-auto">
+          <ul class="navbar-nav services_menu">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Construction Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=roofing services"
+                      class="dropdown-item"
+                      >Roofing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=landscaping services"
+                      class="dropdown-item"
+                      >Landscaping</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=junk removal"
+                      class="dropdown-item"
+                      >Junk Removal</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=masonry services"
+                      class="dropdown-item"
+                      >Masonry</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=plumbing services"
+                      class="dropdown-item"
+                      >Plumbing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=hvac services"
+                      class="dropdown-item"
+                      >HVAC</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=pest control"
+                      class="dropdown-item"
+                      >Pest Control</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=painting services"
+                      class="dropdown-item"
+                      >Painting</a
+                    >
+                  </li>
+                </ul>
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=flooring services"
+                      class="dropdown-item"
+                      >Flooring</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=electrical services"
+                      class="dropdown-item"
+                      >Electrical</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=moving services"
+                      class="dropdown-item"
+                      >Moving</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=appliance services"
+                      class="dropdown-item"
+                      >Appliance</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=locksmith services"
+                      class="dropdown-item"
+                      >Locksmith</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Vehicle Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=towing services"
+                      class="dropdown-item"
+                      >Towing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=vehicle repair"
+                      class="dropdown-item"
+                      >Vehicle Repair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav access_menu">
+            <li
+              class="nav-item cp_search_btn cp_search_btn_desktop dropdown"
+            >
+              <a
+                href="javascript:void(0)"
+                data-target="#companySearchBar"
+                data-toggle="dropdown"
+                class="nav-link"
+                ><img
+                  src="../images/layout/search_icon_white.png"
+                  class="img-fluid"
+                  alt=""
+              /></a>
+              <div
+                class="dropdown-menu company_search_down"
+                aria-labelledby="companySearchBar"
+              >
+                <form action="">
+                  <div class="company_search_field">
+                    <input
+                      id="myInput"
+                      type="search"
+                      placeholder="Search..."
+                      class="form-control"
+                    />
+                    <button class="btn" type="submit">
+                      <img
+                        src="../images/layout/search_icon_black.png"
+                        class="black_icon"
+                        alt=""
+                      />
+                      <img
+                        src="../images/layout/search_icon_white.png"
+                        class="white_icon"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <% if(currentUser) { %>
+            <li class="nav-item desktop_only_link">
+              <a
+                href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+                class="nav-link"
+                >Messages</a
+              >
+            </li>
+            <% if(currentUser && !currentUser.isCompany) { %>
+            <li class="nav-item desktop_only_link">
+              <a href="/saved-list" class="nav-link">Saved List</a>
+            </li>
+            <% } %>
+            <li class="nav-item profile_pic_desktop">
+              <a
+                href="javascript:void(0)"
+                class="nav-link profile_pic_link membersProfilePic"
+              >
+                <div class="profile_pic">
+                  <% if (currentUser?.isCompany) { %> <%
+                  if(currentUser.logo) { %>
+                  <img
+                    src="<%= currentUser.logo %>"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <% } else {%>
+                  <img src="../images/man.png" class="img-fluid" alt="" />
+                  <% }%> <% } else { %> <% if(currentUser.profilePicture)
+                  {%>
+                  <img
+                    src="<%= currentUser.profilePicture %>"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <%} else {%>
+                  <img
+                    src="../images/man.png"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <% }%> <% } %>
+                  <span class="activity_status online_status"></span>
+                </div>
+              </a>
+            </li>
+            <% } else {%>
+            <li class="nav-item">
+              <a href="/login" class="nav-link sign_in">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a href="/sign-up" class="nav-link gbtn gbtn_white_bdr"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/become-a-seller-overview" class="nav-link gbtn"
+                >Become a Seller</a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--===== Markup For "Header" Ends Here =====-->
+<% if(currentUser) { %>
+<!--===== Markup For "Members Profile Link" Starts From Here =====-->
+<div class="membersProfileLinks">
+  <div class="dismissMembersProfileLinks">
+    <i class="fa fa-times"></i>
+  </div>
+  <div class="members_profile_pic">
+    <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) { %>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.logo %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <% } else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile Picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.companyName %></h6>
+    <% } else { %> <% if(currentUser?.profilePicture) {%>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.profilePicture %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <%} else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.firstName + " " + currentUser.lastName %></h6>
+    <% } %>
+  </div>
+  <div class="profile_links">
+    <% if (currentUser.isCompany) { %>
+    <ul>
+      <li>
+        <i class="fas fa-user"></i>
+        <a href="/company-dashboard">View Dashboard</a>
+      </li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } else { %>
+    <ul>
+      <li><i class="fas fa-user"></i><a href="/member-profile/<%= currentUser._id %>">View Profile</a></li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+          >Messages</a
+        >
+      </li>
+      <% if(currentUser && !currentUser.isCompany) { %>
+      <li class="mobile_only"><i class="fas fa-list-alt"></i> <a href="/saved-list">Saved List</a></li>
+      <% } %>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } %>
+  </div>
+</div>
+<!--===== Markup For "Members Profile Link" Ends Here =====-->
+<% } %>
+
+	
+		<!--===== Markup For "Legal Pages" Starts From Here =====-->
+		<section class="legal_pages_wrap">
+			<div class="container">
+				<div class="legal_page_title">
+					<h3>Terms of Use</h3>
+					<h6>Last Updated: <span>February 20, 2021</span></h6>
+				</div>
+
+				<div class="single_legal_texts">
+					<p><span class="bold_texts">IMPORTANT NOTICE: BY USING GABAZZO, INTENDED AS A WEB APPLICATION (Collectively, the “Gabazzo”, the “Service”, the “Platform” and the “System”), THE USER OF OUR SERVICES EXPRESSLY AGREES TO HAVE READ, UNDERSTOOD AND ACCEPTED THESE TERMS OF USE, PRIVACY POLICY, AND OUR COOKIES POLICY. IF YOU DO NOT AGREE WITH ONE OR MORE OF THE CLAUSES IN OUR LEGAL DOCUMENTATION, PLEASE DO NOT USE OUR SERVICES.</span></p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>AGREEMENTS TO OUR AMENDMENTS</h4>
+					<p>This Terms of Use Agreement (“Terms”), govern your access to, use of, and participation in the platform made available by Gabazzo LLC [67 E Madison St, Ste 1603a #1683 Chicago, Illinois 60603] . (“<span class="bold_texts">Gabazzo</span>,” “<span class="bold_texts">We</span>,” “<span class="bold_texts">Our</span>,” or “<span class="bold_texts">Us</span>”) or through Gabazzo and the entirety of your relationship with Gabazzo. If you are a service member, you understand and authorize Gabazzo to use your information to obtain background checks and business credit checks from its vendors through the service. When you register your company with us you have 2 months to form a business entity for the safety purposes of everyone.</p>
+					<p><span class="bold_texts">Please read the Terms Thoroughly and carefully. By using the platform, you AGREE to be bound by these Terms.If you do not AGREE to these TERMS, then you may not access or use the platform in any way.</span></p>
+					<p>All references to “<span class="bold_texts">you</span>” or “<span class="bold_texts">your</span>” as referenced, means the person who accesses, uses, and/or participates in the Gabazzo platform in any manner, and each of your heirs, assigns, and successors. If you use the Platform on behalf of an entity, you represent and warrant that you the authority to bind that entity, your acceptance of the Terms will be deemed an acceptance by that entity, and “<span class="bold_texts">you</span>” and “<span class="bold_texts">your</span>” herein shall refer to that entity, its directors, officers, employees, and agents.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>MODIFICATIONS</h4>
+					<p>Gabazzo reserves the right, from time to time, We may at our discretion may modify or discontinue, periodically and at any time, temporarily or permanently, the functions and capabilities of the Gabazzo Service and/or legal documentation (“<span class="bold_texts">Terms of Use</span>,” “<span class="bold_texts">Privacy Policy</span>,” & “<span class="bold_texts">Cookie Policy</span>”). With or without notice and without any liability to users, except where prohibited by law, for any interruptions, changes or terminations of the GABAZZO Service or other related functions. Gabazzo will notify you by posting on the Gabazzo <a href="terms-and-conditions">Terms of Use</a>, <a href="/privacy-policy">Privacy Policy</a>, & <a href="/cookie-policy">Cookie Policy</a> webpages, we will send you a message by Via E-mail. Modifications will become effective twenty-eight (28) days after the earliest of: (A) modifications being posted on the Platform; (B) Gabazzo’s Via Email system will send you a message about the modifications. Your use of the Platform after the expiration of the twenty-eight (28) days shall constitute your consent to the changes. If you do not agree, please do access or plan to use Gabazzo in any way.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>ADDITIONAL TERMS AND POLICIES</h4>
+					<p>Take a moment to please review <a href="/privacy-policy">Gabazzo’s Privacy Policy</a>, incorporated herein by reference, for information and notices concerning Gabazzo’s User Collection and use of your information. Please review the full set of <a href="cookie-policy">Gabazzo Cookie Policy</a> that govern your use of the Platform and our interactions with you and third parties. If you do not agree, please do not use the platform or plan to use in any type of way.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Account Registration and Other Submissions</h4>
+					<p>Users may access the Platform without registering for an account. To access and participate in certain features of the Platform, you will need to create a password-protected account ("Account"). You may register for an Account using certain third-party account and log-in credentials (your "Third-Party Site Password"), such as your Facebook or Google credentials. You agree to provide accurate, current, and complete information during the registration or request submission process and at all other times when you use the Platform, and to update information to keep it accurate, current, and complete. You are solely responsible for safeguarding your Gabazzo password and, if applicable, your Third-Party Site Password. You are solely responsible for all activity that occurs on your Account, and you will notify Gabazzo immediately of any unauthorized use. Gabazzo is not liable for any losses by any party caused by an unauthorized use of your Account.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>KEY TERMS</h4>
+					<p><span class="bold_texts">“Collective Content”</span> means User Content and Gabazzo Content Together.</p>
+					<p><span class="bold_texts">“Content”</span> means text, graphics, images, software, video, other Document Files, information or other materials, including but not limited to profile information, Contractor Services, message threads, reviews, search engine results, map services, and other information or materials available on or through Gabazzo.</p>
+					<p><span class="bold_texts">“Customer Member”</span> means a Member who is registered to receive messages from contractors, request quotes from contractors, or otherwise uses the platform to receive, review, or facilitate the receipt of Contractors.</p>
+					<p><span class="bold_texts">“Member”</span> means a person or entity who completes Gabazzo;s registration process or a person or entity who submits or receives a request through Gabazzo, including buy not limited to Contractors and Customer Members.</p>
+					<p><span class="bold_texts">“Platform”</span> means all Gabazzo Websites, mobile or other applications, software, process and any other services provided by or through Gabazzo.</p>
+					<p><span class="bold_texts">“Contractor Services”</span> means the services listed, offered by Contactors, or sought, scheduled or received by the Customer Members, through the platform.</p>
+					<p><span class="bold_texts">“Contractor”</span> means a Member who is registered to send quotes for Contractor Services, sends quotes for Contractor Services, or otherwise uses the platform to offer services, provide, message, share files, or facilitate the provision of Contractor Services.</p>
+					<p><span class="bold_texts">“User Content”</span> means all Content submitted, posted, uploaded, published, or transmitted on or through the Platform by any Member or other user of the Platform. Including but not limited to photographs, profile information, descriptions, postings, reviews, and messages made through the Platform, but excluding Gabazzo Content.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>GABAZZO CONTRACTORS ACCOUNT</h4>
+					<div class="sub_single_part">
+						<h5>Section 1 (A) - General:</h5>
+						<p>Gabazzo Contractors Account is a platform specifically designed/created for Contractors only. Contractors can create their own Company Profile and have access to their Dashboard which include editing their Home, About, Portfolio, Services, Reviews, and FAQ’s Pages.</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (B) - Account:</h5>
+						<p>In order to access and use Gabazzo Company Profile Account, you must first register and create an account on Gabazzo (“<a href="/become-a-seller-overview">Become a Seller</a>,” “<a href="/become-a-seller-overview">Sign up as a Company</a>”). When opening a Gabazzo Company Profile Account you represent and warrant that you are authorized to bind the client to these Gabazzo Terms of Use and you agree to these Gabazzo Contractors Account Terms on your behalf and on the Client’s behalf</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (C) - The Client:</h5>
+						<p>Upon completion of your registration to Gabazzo Contractors Account, the Contractors Account will be created of your organization/company. The term “<span class="bold_texts">Client</span>” or “<span class="bold_texts">Buyer</span>” Shall refer to your organization/company, which can be any type of business (LLCs, LLPs, Corporations, Partnerships, Sole Proprietorship, Non-Profit Organization). The Client shall be the sole and exclusive owner of the Contractors Account including any messages, file sharing, Orders and Deliveries. In case of a dispute regarding the identity of the Client, Gabazzo reserves the right to determine the identity of the Client at its sole discretion, whether or not an independent investigation has been conducted by us. However, if we cannot make such determination (as we may deem in our sole discretion), we reserve the right to avoid doing so and/or suspend the Contractors Account, without liability to you or to any other party. We reserve the right to request from you or the Administrator any form of verification we deem necessary for this purpose.</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (D) - Administrator:</h5>
+						<p>The first user opening a Contractors Account will automatically become the administrator of the Contractors Account (“<span class="bold_texts">Administrator</span>”). Gabazzo reserves the right to change the Administrator of the Contractors Account at its sole discretion. Gabazzo may request such information as it deems necessary in order to change the identity of the administrator. If we believe (at our sole discretion) that we cannot change the identity of the administrator. We reserve the right to avoid doing so and/or suspend a Contractors Account, without any liability.</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (E) - Undertakings:</h5>
+						<p>By creating a Contractors Account, Administrator or otherwise, you: (i) Agree to provide us with accurate, complete and current registration information; (ii) Acknowledge that it is your responsibility to ensure that your password remains confidential and secure; (iii) Agree that you are fully responsible for all activities that occur under your Contractors Account; and (iv) undertake to promptly notify us in writing if you become aware of any unauthorized access or use to your Contractors Account and/or any breach of these Gabazzo Contractors Account Terms. The Client and you, will jointly and severally, will be responsible and liable for any losses, damages, liability, and expenses incurred by us or a third party, due to any unauthorized usage of the Contractors Account by either you or any other user or third party on your behalf.</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (F) - Closure and Disabling of Accounts:</h5>
+						<p>When a Contractors Account is created it can only be closed by either the Client, Administrator, or Gabazzo.</p>
+						<div class="checked_items">
+							<ul>
+								<li>A Contractors Account can only be closed by the Client, or the Admin on Client’s behalf. Upon Closure of a Contractors Account, all content and other information shall be removed from the Contractors Account.</li>
+								<li>Gabazzo reserves the right to put a Contractors Account on hold or permanently disable accounts should we notice any activity that we deem it necessary to be fraudulent or inappropriate, or due to breach of these Gabazzo Terms of Use, Gabazzo Contractors Account Terms, and/or Community Standards, by the Contractors Account. Users with disabled accounts, I will not be able to sell or buy on Gabazzo platform or otherwise use Gabazzo as registered users.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Members Conduct in the Gabazzo Marketplace</h4>
+					<div class="sub_single_part">
+						<h5>Section 1 (A) - User Conduct:</h5>
+						<p>Gabazzo maintains a friendly, community friendly, and a professional environment to work on projects. Users should keep it community friendly while participating in any activity or extensions of Gabazzo. You undertake to comply with the Terms of Service, Privacy Policy, and Cookie Policy. Which are a set of behavior rules and guidelines, applicable to the Gabazzo community and marketplace.</p>
+						<div class="checked_items">
+							<ul>
+								<li>If any “Member” violates any such terms and/or standards, it may affect the “Contractor” the ability to use Gabazzo, and Gabazzo have the right to suspend or terminate the Members Account or close the Contractors Account.</li>
+								<li>To report a violation of the General Terms of Service or any other user misconduct, please contact our Support Team at <a href="mailto:support@gabazzo.com">support@gabazzo.com</a>.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (A) - User Conduct:</h5>
+						<p>All content uploaded to Gabazzo by users is UGC. Gabazzo does not check user uploaded/created content for appropriateness, violations of copyright, trademarks, other rights of violations and the user uploading/creating content shall be solely responsible for it and the consequences thereof using, disclosing, storing, or transmitting it. By uploading to, or creating content, on the Gabazzo platform, you represent and warrant that you and/or the Client own or have obtained all rights, licenses, consents, permissions, power and/or authority, necessary to use and/or upload such content and that such content or the use thereof in Gabazzo (Including Gabazzo Contractors Account) does not and shall not (i) infringe or violate any type of intellectual property, proprietary, privacy, data protection or publicity rights of any third party; (ii) violate any applicable local, state, federal laws, regulations and conventions; and/or (iii) violate any of your or third party’s policies and/or terms of service.</p>
+						<div class="checked_items">
+							<ul>
+								<li>Gabazzo invites everyone to report violations together with proof of ownership as appropriate. Reported violating content may be removed or disabled.</li>
+								<li>Gabazzo is not responsible for the content, quality or the level of service provided by the Contractor (Even if they’re defined as “Verified,” “Top Rated Contractors,” and “Featured”). We provide no warranty with the respect to the Service Ports, their delivery, any communications between a Customer Member and Contractors. We encourage our users to take advantage of looking at Contractors company profile (Home Page, About, Portfolio, Services, Reviews, and FAQ’s Web pages) to make sure they’ll fit your needs.</li>
+								<li>By offering a Service, the Contractor undertakes to provide sufficient permissions, rights and/or licenses to provide, sell or resell the Service Port that is offered on Gabazzo.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (C) - Delivered Files:</h5>
+						<p>You as the “Customer Member” or “Member” are responsible for scanning all delivered files for viruses and malware. Gabazzo will not be held responsible for any damages which might occur due to site usage, use of content or files transferred.</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (D) - Reviews:</h5>
+						<p>Feedback reviews provided by Customer Member while completing an Order are an essential part of Gabazzo rating system. Reviews demonstrate the Customer Member overall experience with the Contractor and their service. Customer Member are encouraged to communicate to the Contractor any concerns experienced during their active order in regards to the service provided by the Contractor.</p>
+						<div class="checked_items">
+							<ul>
+								<li>
+									Any Customer Member can leave a review on Orders placed by him/her up to 10 days after an Order is marked complete by the Contractor.
+									<div class="circle_items mt-3">
+										<ul>
+											<li>or a Contractor/Company Profile, you can leave a public review on their profile.</li>
+											<li>Contractors are able to report if they have never dealt business with you. They also have the opportunity to reply to a given review.</li>
+										</ul>
+									</div>
+								</li>
+								<li>Your Reviews will be publicly displayed on a Contractors/Company Profile Page</li>
+								<li>When you review a company you must provide Text and Images to display your delivered work together with the review on the Contractors Review page. Gabazzo retains the right to use all publicly published delivered works for Gabazzo marketing and promotional purposes.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>YOUR LICENSE TO USE THE PLATFORM</h4>
+					<p>Subject to your compliance with these Terms, Gabazzo grants you a limited, non-exclusive, revocable, non transferable, and non-sublicensable license to reproduce and display Collective Content (excluding any software source code) solely for your personal and non-commercial use and only in connection with your access to and participation in the Platform. You will not use, copy, adapt, modify, prepare derivative works based upon, distribute, license, sell, transfer, publicly display, publicly perform, transmit, stream, broadcast or otherwise exploit the Platform or Collective Content, except as expressly permitted in these <a href="javascript:void(0)">Terms of Use</a>. The Platform and Collective Content are provided to you AS IS. If you download or print a copy of Collective Content for personal use, you must retain all copyright and other proprietary notices contained thereon. No licenses or rights are granted to you by implication or otherwise under any intellectual property rights owned or controlled by Gabazzo or its licensors, except for the licenses and rights expressly granted in these Terms.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>User Conduct & Protection</h4>
+					<p>Gabazzo enables people nearby the Chicago area to create, share information, sell and purchase nearly any Service they need at fixed prices & at an economical value. Services offered on Gabazzo reflect the diversity of different Categories of an expanding Service economy. Members of the Gabazzo community communicate and engage with each other thoug orders and social media. Gabazzo maintains a friendly, community driven atmosphere, and professional environment. Users should keep to the spirit while participating in any activity or other extensions Gabazzo may have. This section relates to the expected conduct users should adhere to while interacting with each other on Gabazzo. To report a violation of our Terms of Service and/or Community inquiries regarding to your account , please contact us <a href="mailto:support@gabazzo.com">support@gabazzo.com</a>.</p>
+					<div class="checked_items">
+						<ul>
+							<li>To protect our users’ privacy, user identities are kept private and anonymous. Requesting or providing Email addresses, Skype/IM usernames, Discord Usernames/Links, telephone numbers or any other personal details to communicate outside of Gabazzo in order to circumvent or abuse the Gabazzo messaging system or Gabazzo platform is not permitted.</li>
+							<li>Any type of necessary exchange of personal information required to continue/work on a service may be exchanged within the messaging system only.</li>
+							<li>Gabazzo does not whatsoever provide any guarantee of the level of service offered to Customer Members. You may contact us at support@gabazzo.com if you have any problems.</li>
+							<li>Gabazzo does not provide protection for users who interact outside the Gabazzo platform</li>
+							<li>All types of information and file exchanges must be performed exclusively on Gabazzo’s platform.</li>
+							<li>Rude, abusive, improper language, or any other type of violent negative messages will not be tolerated and may result in account Warning or the suspension/removal of your account.</li>
+							<li>Gabazzo is open to everyone. Discrimination agaisnt a community member based on gender, race, age, religious affilation, sexual preference or otherwise is not acceptable and may result in an account Warning or the suspension/removal of your account.</li>
+							<li>Users may not submit proposals or solicit parties introduced through Gabazzo to contract, engage with, or do business outside of Gabazzo.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Reporting Prohibitions/Violations</h4>
+					<p>If you come across any unauthorized content that may violate our Terms of Service and/or Community, you should report it to us through Via E-mail <a href="mailto:support@gabazzo.com">support@gabazzo.com</a> to handle those issues as outlined in our Terms of Service. All cases will be reviewed by our Support Team. To protect individual privacy, the results of the investigation are not shared with no one. You can review our <a href="javascript:void(0)">Privacy Policy</a> for more information.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Prohibitions/Violations</h4>
+					<p>Users may receive a Warning or Suspension/Removal to their account for violations of our Terms of Service and disrespecting the community, or any user misconduct reported to our Trust and Safety Team. A warning will be sent to the user’s email address and will be displayed for such user on the Site. Warnings do not limit account activity, but can lead to your losing our Gabazzo messaging system or becoming permanently disabled based on the severity of the violation/prohibitions.</p>
+					<p>As a User ("Customer Member," "Member," "Contractor," "Administrator” and etc) of the Platform, these are the following prohibited usage actions:</p>
+					<div class="checked_items">
+						<ul>
+							<li>Chat outside of the Gabazzo Messaging System, we are not responsible if anything happens outside the Chat Box system.</li>
+							<li>Security Privacy & Identity: By using another person’s Account, misrepresenting yourself or Contractor Services Offered through Gabazzo, will be misrepresenting your identity and qualifications as well. , misrepresent a project or other information in a quote request, or post Content in any inappropriate category or areas on the Platform. You may not publish or post other people’s personal information. Any exchange of personal information required for the completion of a Service must be provided in the Gabazzo Messaging System. Contractors further understand that whatever information they receive from the Member Buyer, which is not public domain, shall not be used for any purpose whatsoever other than for the delivery of the work to the Member Buyer. Any users who engage and communicate off of Gabazzo grid will not be protected by our Terms of Service.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Abuse & Spam</h4>
+					<div class="sub_single_part">
+						<h5>Section 1 (C) - Delivered Files:</h5>
+						<p>Our Users’ Security is Gabazzo’s Top priority. If you Advertise or solicit a Contractor Services not related to or appropriate for the Platform including, but not limited to any Contractor Service that (i) is not in supported categories or provides only products; (ii) provides directories or referrals; (iii) offers lending; (IV) offers rental space; (V) Any attempts to publish or send malicious content with the intent to compromise another member’s account or computer environment; (VI) promotes events (Such as a party or professional convention); (VII) Competes with the Business of Gabazzo; is based outside of the United States; (VIII) promotes or offers Junk Mail, Chain Letters, Ponzi Schemes, Spam, Pyramid Schemes, affiliate marketing or unsolicited commercial content, credit counseling, discount cards, online surveys or contests, raffles, prizes, bonuses, games of chance or giveaways; or even offer a contracting Service not reasonably available to a Customer Member or other individual in that customer member or individuals location. Please respect our Members privacy, by not contacting them with offers, questions, suggestions, or anything which is not directly related to their Contracting Services or Orders made through Gabazzo messaging system.</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (B) - Adult Services or Content:</h5>
+						<p>Gabazzo will not permit any exchange of adult oriented or Adult Content materials, services, and other activities.</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (C) - Inappropriate Behavior & Language:</h5>
+						<p>The Gabazzo messaging system should be friendly, constructive, and professional. Gabazzo will condemn any sorts of bullying, harassment, hate speech, illegal, profane, obscene, defamatory, threatening, or discriminatory, of that advocates, promotes, and encourages inappropriate activity, conduct that would be considered a criminal offense, or conduct that would give rise to civil liability or violate any other law.</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (E) - Multiple Accounts:</h5>
+						<p>To prevent fraud and abuse, users are limited to one Active Gabazzo Member Account and one Active Gabazzo’s Contractor Account. Any additional account determined to be created to circumvent guidelines, promote competitive advantages, or mislead the Gabazzo community will be suspended. Mass Account creation may result in disabling of all related accounts. (NOTE: Any violation of Gabazzo’s Terms of Service is a cause of permanent suspension of all accounts.)</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (F) - Targeted Abuse:</h5>
+						<p>We will not tolerate users who are engaging in targeted abuse or harassment towards other users on Gabazzo. This includes creating</p>
+					</div>
+					<div class="sub_single_part">
+						<h5>Section 1 (G) - Selling Accounts:</h5>
+						<p>You may not buy nor sell Gabazzo Accounts, your account may result in suspension.</p>
+					</div>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Non-Permitted Usage</h4>
+					<p>Section 2 (A) - Intellectual Property Claims: Gabazzo will respond to clear and complete the notices of alleged violations toward Copyright or Trademark infringement, and/or violation of third party’s terms of service, Our Intellectual claims can be emailed at support@gabazzo.com</p>
+					<p>Section 2 (B) - Fraud/Unlawful Use: By using Gabazzo you will not use it for any unlawful purposes or to conduct illegal activities.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Extra Prohibitions/Violations</h4>
+					<div class="checked_items">
+						<ul>
+							<li>You may not take any actions that (I) may unreasonably encumber the Platforn’s infrastructure; (ii) interfere with or attempts to interfere with the proper working of the Platform or any third-party participation; (iii) bypasses measures that are used to prevent or restrict access to the Platform; (iv) disables, circumvents or otherwise interferes with security features of the platform; (v) distributes viruses or any other technologies that may hard Gabazzo or users; (vi) uses the Platform in away that vuiokates cioyrightds, trade secrets, or other rights of any third party, including privacy or publicity rights; or (vii) circumvents or manipulations Fee structure, billing, or Fees owed.</li>
+							<li>Gabazzo does not allow Submit User Content that damages the experience of any user including but not limited to (i) requests to download non-Gabazzo mobile applications and/or links that direct the user to mirrored websites where the user must enter information that is redundant with what has already been entered on Gabazzo, (ii) offers to purchase a Pro Service or any other service outside of Gabazzo, or (iii) using a profile page or user name to promote services not offered on or through the Platform;</li>
+							<li>You cannot take any action that may undermine the efficacy or accuracy of reviews or rating systems; (i) you cannot leave a fake review under a Contractor Company; (ii) you cannot write any sort of Review with any inappropriate comments.</li>
+							<li>As a Contractor if you fail to perform your own contracting services purchased from a Client Member, unless the Contractor or other individual fails to materially meet the terms of the mutually agreed-upon agreement for Contracting service or refuse to pay, or a clear typographical error is made, or you cannot authenticate the customer member or other individuals identity. You will receive an email and explain why you couldn’t complete service.</li>
+							<li>Engaging in fraudulent conduct including but not limited to offering to make money transfers with intent to request a refund of any portion of the payment or soliciting users to mail cash or use other payment methods prohibited by Gabazzo</li>
+							<li>Sign up for, negotiate a price for, use, or otherwise solicit a Pro Service with no intention of following through with your use of or payment for the Pro Service; Agree to purchase a Contractor Service when you do not meet a Client Member Requirements</li>
+							<li>Undertake any activity or engage in any conduct that is inconsistent with the business or purpose of the Platform</li>
+							<li>Attempt to indirectly undertake any of the following.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>ACCOUNT SUSPENSION OR TERMINATION Gabazzo</h4>
+					<p>We may, in our discretion, with or without cause, with or without prior notice and at any time, decide to limit, block, suspend, deactivate or cancel your Gabazzo Account in whole or in part. If we exercise our discretion under these Terms to do so, any or all of the following can occur with or without prior notice or explanation to you: (a) your Account will be deactivated or suspended, your password will be disabled, and you will not be able to access the Platform or your User Content, or receive assistance from Gabazzo support teams; (b) if appropriate in our sole discretion, we may communicate to other users that your Account has been terminated, blocked, suspended, deactivated, cancelled, or otherwise penalized in any way, and why this action has been taken; and (c) you will not be entitled to any compensation for Platform services or Contracting Services cancelled or delayed as a result of Account termination. You may cancel your use of the Platform and/or terminate your Account at any time by following the "Settings" link in your profile, clicking "Account," and clicking "Deactivate Account." Please note that if your Account is cancelled, we do not have an obligation to delete or return to you any Content you have posted to the Platform, including, but not limited to, any reviews.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Disclaimer Warranties</h4>
+					<p>Your use of gabazzo, gabazzo contractors account, its content, and any services or items obtained through the gabazzo platform is at your own risk. Gabazzo, gabazzo contractors account, its content, and any services or items obtained through the gabazzo platform are provided on an "as is" and "as available" basis, without any warranties of any kind, either express or implied. Neither gabazzo nor any person associated with gabazzo makes any warranty or representation with respect to the completeness, security, reliability, quality, accuracy or availability of the website. The foregoing does not affect any warranties which cannot be excluded or limited under applicable law.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Jurisdiction</h4>
+					<p>The Terms and the relationship between you and Gabazzo shall be governed in all respects by the laws of the State of Illinois, without regard to its conflict of law provisions. You agree that any claim or dispute you may have against Gabazzo that is not subject to arbitration must be resolved by a court located in Cook County, Illinois except as otherwise agreed by the parties. You agree to submit to the personal jurisdiction of the courts located within Cook County, Illinois for the purpose of litigating all such claims or disputes that are not subject to arbitration. You hereby waive any and all jurisdictional and venue defenses otherwise available.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Disputes & Resolutions Among Users</h4>
+					<p>Gabazzo values our Contractors and Customers, and we understand that occasionally disputes arise between or among them. Our Goal is to eliminate Con-Artist, and other bad reputable clients so we provide tools to help users resolve any disputes independently. In the rare event that a dispute regarding an interaction related to the Platform cannot be resolved independently, you agree, at Gabazzo’s Request, to participate in good faith, to the extent you are reasonably able to do so by contacting us at <a href="mailto:support@gabazzo.com">support@gabazzo.com</a>. Notwithstanding the foregoing, you acknowledge and agree that Gabazzo is under no obligation to become involved in or impose resolution in any dispute between or among users or any third party. We highly recommend Contractors and Client Members to try and settle conflicts amongst themselves. If for any reason this fails after contacting the Support Team or if you encounter non-permitted usage on the Site, users can Contact Gabazzo’s Support Team for assistance at <a href="mailto:support@gabazzo.com">support@gabazzo.com</a>.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Confidentiality</h4>
+					<p>Contractors should recognize that there might be a need for Client Member to disclose certain confidential information to be used by Contractors for the purpose of delivering the ordered work, and to protect such confidential information from unauthorized use and disclosure. Therefore,</p>
+					<p>Contractors agree to treat any information received from Client Members as highly sensitive, top secret and classified material. Without derogating from the generality of the above, Sellers specifically agree to (i) maintain all such information in strict confidence; (ii) not disclose the information to any third parties; (iii) not use the information for any purpose except for delivering the ordered work; and (vi) not to copy or reproduce any of the information without the Buyer’s permission.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>INDEMNIFICATION AND RELEASE</h4>
+					<p>You agree to release, defend, indemnify, and hold Gabazzo and its affiliates and subsidiaries, and their respective officers, directors, employees and agents, harmless from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable legal and accounting fees, arising out of or in any way connected with (i) your violation of these Terms; (ii) your User Content; (iii) your interaction with any Member or user; and (iv) the request or receipt or offer or provision of Pro Services by you, including but not limited to any injuries, losses, or damages (compensatory, direct, incidental, consequential or otherwise) of any kind arising in connection with such Pro Services.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Ports</h4>
+					<p>Ports and/or users may be removed by Gabazzo from the Site for violations of these Terms of Service, which may include (but are not limited to) the following violations and/or materials:</p>
+					<div class="checked_items mb-3">
+						<ul>
+							<li>Illegal or Fraudulent services</li>
+							<li>Copyright Infringement, Trademark Infringement, and violation of a third party's</li>
+							<li>Terms of service reported through our Intellectual Property Claims</li>
+							<li>Adult oriented services, Pornographic, Inappropriate/Obscene</li>
+							<li>Intentional copies of Service Ports</li>
+							<li>Spam, nonsense, or violent or deceptive Service Ports</li>
+							<li>Ports misleading to Client Members or others</li>
+							<li>Reselling of regulated goods</li>
+							<li>Offering to prepare academic works on behalf of Client Members</li>
+							<li>Exceedingly low quality Ports</li>
+							<li>Promoting Gabazzo and/or Gabazzo Ports through activities that are prohibited by any laws, regulations, and/or third parties' terms of service, as well as through any marketing activity that negatively affects our relationships with our users or partners.</li>
+						</ul>
+					</div>
+					<p>Ports that are removed for violations mentioned above, may result in the suspension of the Seller’s account.</p>
+					<p>Ports that are removed for violations are not eligible to be restored or edited.</p>
+					<p>Ports may be removed from our Search feature due to poor performance and/or user misconduct.</p>
+					<p>Ports may include pre-approved website URLs contained within the Port description and requirements box. Ports containing websites promoting content, which violates Gabazzo’s Terms of Service will be removed.</p>
+					<p>Ports are required to have an appropriate Port image related to the service offered. An option to upload two additional Port images is available to all Contractors. Contractors must deliver the same quality of service as shown on their Port images. Recurring deliveries that don’t match the quality shown on the Port images may lead to the Seller’s account losing Seller status or becoming permanently disabled.</p>
+					<p>Ports may contain an approved Service Port Video uploaded through the Service Port management tools available on Gabazzo.</p>
+					<p>Statements on the Port Page that undermine or circumvent these Terms of Service are prohibited</p>
+					<p>Eligible Ports in select Categories may set up Ports Packages to offer their services in structured formats with multiple price points for the selected Port.</p>
+					<p>Certain categories are available only to Contractors to create Ports. If you are not a Contractor, creating a Port for services available to Contractor only may result in removal of your Port.</p>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Legal Pages" Ends Here =====-->
+
+		<!--===== Markup For "Registration Counter" Starts From Here =====-->
+		<div class="registration_counter_wrap">
+			<div class="container">
+				<div class="registration_counter">
+					<div class="single_count">
+						<div class="heading">
+							<h2><%= total.length %>+</h2>
+						</div>
+						<p>Registered Companies</p>
+					</div>
+	
+					<div class="single_count">
+						<div class="heading">
+							<h2><%= members %>+</h2>
+						</div>
+						<p>Registered Members</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===== Markup For "Registration Counter" Ends Here =====-->
+	
+	
+		<!--===== Markup For "Footer" Starts From Here =====-->
+    <footer class="footer_wrap">
+      <div class="footer_top">
+        <div class="container">
+          <div class="footer">
+            <div class="single_part">
+              <div class="footer_logo">
+                <a href="/"
+                  ><img
+                    src="images/layout/gabazzo_logo_white.png"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/contact-us">Contact Us</a></li>
+                  <li><a href="/about-us">About</a></li>
+                  <li><a href="/site-map">Sitemap</a></li>
+                  <li><a href="/partnerships">Partnerships</a></li>
+		  <li><a href="/investor-relations">Investor Relations</a></li>
+		  <li><a href="/jobs-and-opportunities">Jobs & Opportunities</a></li>
+		  <li><a href="/press-and-news">Press & News</a></li>
+                </ul>
+              </div>
+              <div class="social_links">
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/gabazzoBCT"
+                      target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/gabazzo/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+		  <li>
+                    <a
+                      href="https://discord.gg/RTDhKw4r99" target="_blank"><i class="fab fa-discord"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Members</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/sign-up">Sign Up</a></li>
+		  <li><a href="/trust-and-safety-members">Trust & Safety</a></li>
+		  <li><a href="/ranking-system-members">Ranking System</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Business</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/company-sign-up-home">Register Business</a>
+                  </li>
+		  <li><a href="/study-buyer">Study Buyer</a>
+                  </li>
+		   <li><a href="/seller-league-system">League System</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Support</h4>
+              <div class="site_links">
+                <ul>
+		  <li><a href="/help-center-buyer">Help Center</a></li>
+                  <li><a href="/terms-and-conditions">Terms of Use</a></li>
+                  <li><a href="/privacy-policy">Privacy Policy</a></li>
+                  <li><a href="/cookie-policy">Cookie Policy</a></li>
+                  <li><a href="/safety-for-members">Safety</a></li>
+		  <li><a href="/covid-info">Covid-19 Info</a></li>
+		  <li><a href="/intellectual-property-claims">IP Claims</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <p>
+            Copyright &copy; 2021 Gabazzo. All Rights Reserved. Patent Pending
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!--===== Markup For "Footer" Ends Here =====-->
+    
+	
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+		<script src="js/classie.js" type="text/javascript"></script>
+		<!--Owl Carousel JS File-->
+		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="js/updatedCustom.js" type="text/javascript"></script>
+		<script src="js/autocomplete.js" type="text/javascript"></script>
+			
+	</body>
+
+</html>

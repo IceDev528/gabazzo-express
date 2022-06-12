@@ -1,0 +1,1338 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background:#FFFFFF;
+}
+:root{
+	--baseColor: #14BBB6;
+	--lightColor: #FFFFFF;
+	--darkColor: #232323;
+	--borderColor: #E4E5E7;
+	--grayColor: #F7F7F7;
+	--greenColor: #5DC560;
+	--orangeColor: #FF9126;
+	--redColor: #FF4D4D;
+	
+	--baseFont: 'Nunito', sans-serif;
+}
+
+/* ========== Custom CSS Starts ========== */
+
+
+/* ===== CSS For "Gabazzo Buttons" Starts Here ===== */
+.gbtn{
+	color: var(--lightColor);
+	background: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 18px;
+	display: inline-block;
+	text-align: center;
+	border: 1px solid var(--baseColor);
+	border-radius: 3.5px;
+	padding: 10px 15px;
+	min-width: 125px;
+	text-decoration: none;
+	cursor: pointer;
+	line-height: 1;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.gbtn:hover{
+	color: var(--lightColor);
+	text-decoration: none;
+	-webkit-transform: scale(1.025);
+	-ms-transform: scale(1.025);
+	transform: scale(1.025);
+}
+.gbtn_green{
+	background: var(--greenColor);
+	border: 1px solid var(--greenColor);
+}
+.gbtn_green_bdr{
+	color: var(--greenColor);
+	background: var(--lightColor);
+	border: 1px solid var(--greenColor);
+}
+.gbtn_green_bdr:hover{
+	color: var(--lightColor);
+	background: var(--greenColor);
+}
+
+.gbtn_orange{
+	background: var(--orangeColor);
+	border: 1px solid var(--orangeColor);
+}
+.gbtn_orange_bdr{
+	color: var(--orangeColor);
+	background: var(--lightColor);
+	border: 1px solid var(--orangeColor);
+}
+.gbtn_orange_bdr:hover{
+	color: var(--lightColor);
+	background: var(--orangeColor);
+}
+
+.gbtn_red{
+	background: var(--redColor);
+	border: 1px solid var(--redColor);
+}
+.gbtn_red_bdr{
+	color: var(--redColor);
+	background: var(--lightColor);
+	border: 1px solid var(--redColor);
+}
+.gbtn_red_bdr:hover{
+	color: var(--lightColor);
+	background: var(--redColor);
+}
+
+.gbtn_gray{
+	color: var(--darkColor);
+	background: var(--grayColor);
+	border: 1px solid #999999;
+}
+.gbtn_gray:hover{
+	color: var(--darkColor);
+	background: #F4F4F4;
+}
+.gbtn_gray_bdr{
+	color: var(--darkColor);
+	background: var(--lightColor);
+	border: 1px solid var(--darkColorColor);
+}
+.gbtn_gray_bdr:hover{
+	color: var(--lightColor);
+	background: var(--grayColor);
+}
+/* ===== CSS For "Gabazzo Buttons" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Chat Common CSS" Starts Here ===== */
+.gb_chat_wrap{
+	height: calc(100vh - 120px);
+	padding: 25px;
+	overflow: hidden;
+	background: var(--grayColor);
+}
+.gb_chat{
+	border: 1px solid var(--borderColor);
+	background: var(--lightColor);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 325px 0px 1fr 0px 285px;
+    grid-template-columns: 325px 1fr 285px;
+    grid-auto-rows: auto;
+    gap: 0px;
+}
+.gb_chat img{
+	max-width: 100%;
+}
+/* ===== CSS For "Chat Common CSS" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "List Header" Starts Here ===== */
+.gb_chat .list_header{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+    -ms-grid-columns: 1fr 15px 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+	height: 65px;
+	padding: 15px;
+	border-bottom: 1px solid var(--borderColor);
+	border-right: 1px solid var(--borderColor);
+}
+.gb_chat .list_header .conversation_category a{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	text-decoration: none;
+}
+.gb_chat .list_header .search_form .search_icon{
+	text-align: right;
+}
+.gb_chat .list_header .search_form .search_icon i{
+	color: var(--baseColor);
+	font-size: 18px;
+}
+/* ===== CSS For "List Header" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Contact List" Starts Here ===== */
+.gb_chat .contact_list{
+	height: calc(100vh - 235px);
+	overflow-y: scroll;
+	border-right: 1px solid #DEE2E6;
+}
+.gb_chat .contact_list ul{
+	margin: 0px;
+	padding: 0px;
+}
+.gb_chat .contact_list ul li{
+	list-style: none;
+}
+.gb_chat .contact_list ul li a{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50px 10px 1fr;
+    grid-template-columns: 50px 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+	padding: 10px;
+	border-bottom: 1px solid var(--borderColor);
+	text-decoration: none;
+}
+.gb_chat .contact_list ul li.active a{
+	background: #E5F8E6;
+}
+.gb_chat .contact_list .profile_pic{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;	
+}
+.gb_chat .contact_list .profile_pic img{
+	width: 50px;
+	height: 50px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.gb_chat .contact_list .profile_info h6{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 16px;
+	margin-bottom: 0px;
+	line-height: 1.3;
+}
+.gb_chat .contact_list .profile_info p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 14px;
+	margin-bottom: 0px;
+	line-height: 1.3;
+}
+.gb_chat .contact_list .profile_info p span{
+	font-weight: 600;
+}
+.gb_chat .contact_list .profile_info time{
+	color: #999999;
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 1.2;
+	display: block;
+}
+/* ===== CSS For "Contact List" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Message Header" Starts Here ===== */
+.gb_chat .gb_messages{
+	border-right: 1px solid var(--borderColor);	
+}
+.gb_chat .gb_messages .message_header{
+	height: 65px;
+	border-bottom: 1px solid var(--borderColor);
+	padding: 10px 15px;
+	
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+    -ms-grid-columns: 1fr 15px 100px;
+    grid-template-columns: 1fr 100px;
+    grid-auto-rows: auto;
+    gap: 15px;
+}
+.gb_chat .gb_messages .message_header .user_name h5{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 18px;
+	margin-bottom: 0px;
+	line-height: 1.3;	
+}
+.gb_chat .gb_messages .message_header .user_name time{
+	color: #999999;
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 1.2;
+	display: block;	
+}
+.gb_chat .gb_messages .message_header .user_actions{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+	text-align: right;
+}
+.gb_chat .gb_messages .message_header .user_actions a{
+	text-decoration: none;
+}
+.gb_chat .gb_messages .message_header .user_actions a span{
+	background: var(--baseColor);
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	display: inline-block;
+	margin: 0px 1px;
+}
+/* ===== CSS For "Message Header" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Sent & Received SMS" Starts Here ===== */
+.gb_chat .gb_messages .msg_flow{
+	height: calc(100vh - 362px);
+	overflow-y: scroll;	
+	padding: 20px;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs{
+	
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50px 10px 1fr;
+    grid-template-columns: 50px 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+	margin-bottom: 20px;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap:last-child{
+	margin-bottom: 0px;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .profile_link_image img{
+	width: 50px;
+	height: 50px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_header h6{
+	color: #999999;
+	line-height: 1.3;
+	margin-bottom: 5px;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_header h6 .msg_sender{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 16px;
+	text-transform: capitalize;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_header h6 time{
+	color: #999999;
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 12px;
+	display: inline-block;	
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_body p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_body p:last-child{
+	margin-bottom: 0px;
+}
+/* ===== CSS For "Sent & Received SMS" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Message Actions" Starts Here ===== */
+.gb_chat .conversation_footer{
+	border-top: 5px solid var(--baseColor);
+	padding: 10px;
+	background: var(--grayColor);
+}
+.gb_chat .conversation_footer .message_box textarea{
+	border: 1px solid var(--borderColor);
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	resize: vertical;
+	padding: 10px;
+	box-sizing: border-box;
+	color: var(--darkColor);
+	background: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+}
+.gb_chat .conversation_footer .message_box textarea:focus,
+.gb_chat .conversation_footer .message_box textarea:active{
+	outline: none;
+}
+.gb_chat .conversation_footer .sending_actions{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 125px;
+    grid-template-columns: 1fr 125px;
+    grid-auto-rows: auto;
+    gap: 15px;
+	margin-top: 10px;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul{
+	margin-bottom: 0px;
+	/* font-size: 0px; */
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 10px;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li:last-child{
+	margin-right: 0px;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li a{
+	color: var(--baseColor);
+	background: var(--lightColor);
+	border: 1px solid var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	display: inline-block;
+	border-radius: 5px;
+	padding: 5px 15px;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li a i{
+	font-size: 20px;
+	position: relative;
+	top: 2px;
+	margin-right: 5px;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li a:hover{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+.gb_chat .conversation_footer .sending_actions .send_btn{
+	text-align: right;
+}
+.gb_chat .conversation_footer .sending_actions .send_btn button{
+	color: var(--lightColor);
+	background: var(--greenColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	display: inline-block;
+	border-radius: 5px;
+	padding: 5px 25px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;	
+}
+.gb_chat .conversation_footer .sending_actions .send_btn button:active,
+.gb_chat .conversation_footer .sending_actions .send_btn button:focus{
+	box-shadow: none;
+}
+/* ===== CSS For "Message Actions" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "User Info" Starts Here ===== */
+.gb_chat .gb_info .user_info_title{
+	height: 65px;
+	padding: 10px 15px;
+	border-bottom: 1px solid var(--borderColor);
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+}
+.gb_chat .gb_info .user_info_title h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 700;
+	font-size: 22px;
+	text-align: center;
+	margin-bottom: 0px;
+}
+.gb_chat .gb_info .user_info{
+	height: calc(100vh - 235px) !important;
+	overflow-y: scroll;
+	padding: 20px;
+}
+
+.gb_chat .gb_info .user_info .s_user_info{
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid var(--borderColor);
+}
+.gb_chat .gb_info .user_info .s_user_info:last-child{
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	border-bottom: none;
+}
+.gb_chat .gb_info .user_info .s_user_info h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+.gb_chat .gb_info .user_info .profile_link_image{
+	text-align: center;
+}
+.gb_chat .gb_info .user_info .profile_link_image img{
+	width: 90px;
+	height: 90px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.gb_chat .gb_info .user_info .profile_user_link{
+	text-align: center;
+}
+.gb_chat .gb_info .user_info .profile_user_link a{
+	color: var(--darkColor);
+	text-decoration: none;
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	display: inline-block;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.gb_chat .gb_info .user_info .profile_user_link a:hover{
+	color: var(--baseColor);
+}
+.gb_chat .gb_info .user_info .social_media ul{
+	margin-bottom: 0px;
+	text-align: center;
+}
+.gb_chat .gb_info .user_info .social_media ul li{
+	list-style: none;
+	display: inline-block;
+	margin: 0px 7.5px;
+}
+.gb_chat .gb_info .user_info .social_media ul li i{
+	color: #666666;
+	background: var(--lightColor);
+	border: 1px solid var(--borderColor);
+	border-radius: 2.5px;
+	width: 36px;
+	height: 36px;
+	box-sizing: border-box;
+	line-height: 36px;
+	font-size: 16px;
+	text-align: center;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.gb_chat .gb_info .user_info .social_media ul li i:hover{
+
+}
+.gb_chat .gb_info .user_info .location_info ul{
+	margin-bottom: 0px;
+}
+.gb_chat .gb_info .user_info .location_info ul li{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 16px;
+	list-style: none;
+	margin-bottom: 0px;
+	position: relative;
+	padding-left: 20px;
+}
+.gb_chat .gb_info .user_info .location_info ul li:last-child{
+	margin-bottom: 0px;
+}
+.gb_chat .gb_info .user_info .location_info ul li:before{
+	content: "\f041";
+	font: 18px FontAwesome;
+	color: #4F4F4F;
+	position: absolute;
+	left: 0px;
+	top: 1px;
+}
+
+.gb_chat .gb_info .user_info .language_info ul{
+	margin-bottom: 0px;
+}
+.gb_chat .gb_info .user_info .language_info ul li{
+	list-style: none;
+	margin-bottom: 10px;
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+}
+.gb_chat .gb_info .user_info .language_info ul li img{
+	max-width: 32px;
+	display: inline-block;
+	margin-right: 5px;
+}
+.gb_chat .gb_info .user_info .language_info ul li:last-child{
+	margin-bottom: 0px;
+}
+
+.gb_chat .gb_info .user_info .payment_accept_info ul{
+	margin-bottom: 0px;
+	text-align: center;
+	font-size: 0px;
+}
+.gb_chat .gb_info .user_info .payment_accept_info ul li{
+	display: inline-block;
+	list-style: none;
+	margin: 5px;
+}
+.gb_chat .gb_info .user_info .payment_accept_info ul li i{
+	color: var(--greenColor);
+	font-size: 30px;
+}
+
+.gb_chat .gb_info .user_info .review_address_info ul{
+	margin-bottom: 0px;
+}
+.gb_chat .gb_info .user_info .review_address_info ul li{
+	list-style: none;
+	margin-bottom: 10px;
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.2;
+}
+.gb_chat .gb_info .user_info .review_address_info ul li:last-child{
+	margin-bottom: 0px;
+}
+.gb_chat .gb_info .user_info .review_address_info ul li .overall_ratings{
+	display: inline-block;
+	float: right;
+	font-size: 15px;
+	font-weight: 700;
+}
+.gb_chat .gb_info .user_info .review_address_info ul li .yellow_color{
+	color: #FFC108;
+}
+.gb_chat .gb_info .user_info .review_address_info ul li .full_address{
+	margin-left: 5px;
+	font-size: 15px;
+	font-weight: 700;
+}
+/* ===== CSS For "User Info" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Create Offer Common" Starts Here ===== */
+.create_offer_modal [type='radio'] {
+	display: none; 
+}
+.create_offer_modal .modal-header{
+	background: var(--baseColor);
+}
+.create_offer_modal .modal-header h3{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 24px;
+	margin-bottom: 0px;
+}
+.create_offer_modal .modal-header h3 a{
+	color: var(--lightColor);
+}
+/* ===== CSS For "Create Offer Common" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Select Services" Starts Here ===== */
+.create_offer_modal .select_services ul{
+	margin-bottom: 0px;
+}
+.create_offer_modal .select_services .btn{
+	padding: 0px;
+	margin-bottom: 15px;
+	display: block;
+	text-align: left;
+}
+.create_offer_modal .select_services .btn:last-child{
+	margin-bottom: 0px;
+}
+.create_offer_modal .select_services .single_service{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 90px 15px 1fr;
+    grid-template-columns: 90px 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    gap: 15px;
+	padding: 15px;
+	border: 1px solid var(--borderColor);
+	border-radius: 5px;
+}
+.create_offer_modal .select_services .btn.active .single_service{
+	border: 1px solid var(--greenColor);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.25);
+	position: relative;
+}
+.create_offer_modal .select_services .btn.active .single_service:after{
+	content: "\f058";
+	font: 25px FontAwesome;
+	color: var(--greenColor);
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+.create_offer_modal .select_services .single_service .service_image img{
+	width: 100%;
+	height: 60px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 3.5px;
+}
+.create_offer_modal .select_services .single_service .service_title{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;	
+}
+.create_offer_modal .select_services .single_service .service_title h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 0px;	
+}
+/* ===== CSS For "Select Services" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Payment Way" Starts Here ===== */
+.create_offer_modal .select_payment ul{
+	margin-bottom: 0px;
+}
+.create_offer_modal .select_payment .btn{
+	padding: 0px;
+	margin-bottom: 15px;
+	display: block;
+	text-align: left;
+}
+.create_offer_modal .select_payment .btn:last-child{
+	margin-bottom: 0px;
+}
+.create_offer_modal .select_payment .single_payment{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 90px 15px 1fr;
+    grid-template-columns: 90px 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    gap: 15px;
+	padding: 15px;
+	border: 1px solid var(--borderColor);
+	border-radius: 5px;
+}
+.create_offer_modal .select_payment .btn.active .single_payment{
+	border: 1px solid var(--greenColor);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.25);
+	position: relative;
+}
+.create_offer_modal .select_payment .btn.active .single_payment:after{
+	content: "\f058";
+	font: 25px FontAwesome;
+	color: var(--greenColor);
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+.create_offer_modal .select_payment .single_payment .icon{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;	
+}
+.create_offer_modal .select_payment .single_payment .icon img{
+
+}
+.create_offer_modal .select_payment .single_payment .texts{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;	
+}
+.create_offer_modal .select_payment .single_payment .texts h2{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 30px;
+	margin-bottom: 10px;	
+}
+.create_offer_modal .select_payment .single_payment .texts p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 0px;	
+}
+.create_offer_modal .top_texts p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 20px;	
+}
+.create_offer_modal .top_texts p i{
+	color: var(--greenColor);
+}
+/* ===== CSS For "Payment Way" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Creating Offer" Starts Here ===== */
+.payment_method_modal .modal-lg{
+	max-width: 960px;
+}
+.creating_offer .title h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 22px;
+	margin-bottom: 5px;
+}
+.creating_offer .proposal_wrap{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 210px 15px 1fr;
+    grid-template-columns: 210px 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    gap: 15px;
+	margin-bottom: 25px;
+}
+.creating_offer .proposal_wrap .service_image img{
+	width: 100%;
+	height: 135px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+/* ============================== */
+
+.creating_offer .offer_box{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 1fr 15px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 15px;
+	margin-bottom: 1rem;
+	background: #F4F4F4;
+	border: 1px solid var(--borderColor);
+	border-radius: 5px;
+	padding: 15px;
+}
+.creating_offer .set_offer{
+    -ms-grid-columns: 1fr 15px 1fr 15px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+}
+.creating_offer .delivery_revisions{
+    -ms-grid-columns: 1fr 15px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+}
+.creating_offer .pricing_details{
+    -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+    grid-template-columns: repeat(4, 1fr);
+}
+.creating_offer .set_milestones{
+    -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ============================== */
+
+.creating_offer label{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 18px;
+	margin-bottom: 3.5px;
+}
+.creating_offer label i{
+	color: var(--greenColor);
+}
+.creating_offer label span{
+	font-weight: 300;
+}
+.creating_offer .form-control{
+	color: var(--darkColor);
+	border: 1px solid var(--borderColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	padding: 10px 15px;
+	height: inherit;
+	border-radius: 5px;
+}
+.creating_offer .pricing_details .form-control:disabled {
+	background: var(--lightColor);
+	text-align: center;
+	font-weight: 700;
+	font-size: 18px;
+	padding: 8.5px 15px;
+}
+.creating_offer .input_icon{
+	position: relative;
+}
+.creating_offer .input_icon .form-control{
+	padding-left: 55px;
+}
+.creating_offer .input_icon i{
+	color: #121212;
+	font-size: 20px;
+	background: var(--grayColor);
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	border-radius: 5px 0px 0px 5px;
+}
+
+/* ============================== */
+
+.creating_offer .add_create_btns ul{
+	margin-bottom: 0px;
+	text-align: right;
+}
+.creating_offer .add_create_btns ul li{
+	list-style: none;
+	margin-left: 10px;
+	display: inline-block;
+}
+.creating_offer .add_create_btns ul li:first-child{
+	margin-left: 0px;
+}
+
+/* ============================== */
+
+.create_offer_modal .modal_actions{
+	margin-left: auto;
+}
+.create_offer_modal .modal_actions ul{
+	margin-bottom: 0px;
+}
+.create_offer_modal .modal_actions ul li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 10px;
+}
+.create_offer_modal .modal_actions ul li:first-child{
+	margin-left: 0px;
+}
+
+/* ============================== */
+
+.created_milestones{
+	border: 1px solid var(--borderColor);
+	border-radius: 5px;
+	margin-bottom: 1rem;
+}
+.created_milestones .single_item {
+	border-bottom: 1px solid var(--borderColor);	
+}
+.created_milestones .single_item:last-child{
+	border-bottom: none;
+}
+.created_milestones .click_item a{
+	color: var(--darkColor);
+	background: #F7F7F7;
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 20px;
+	display:block;
+	text-decoration:none;
+	text-transform: capitalize;
+	padding:12.5px 15px;
+	position:relative;
+	padding-right: 40px;
+}
+.created_milestones .click_item a:after{
+	content:"\f0d8";
+	font: 18px FontAwesome;
+	color: #333333;
+	position:absolute;
+	right: 15px;
+	top: 50%;
+	-webkit-transform: translate(-0%, -50%);	
+	-ms-transform: translate(-0%, -50%);	
+	transform: translate(-0%, -50%);	
+}
+.created_milestones .click_item a.collapsed:after{
+	content:"\f0d7";
+	font: 18px FontAwesome;
+	color: #333333;
+	position:absolute;
+	right: 15px;
+	top: 50%;
+	-webkit-transform: translate(-0%, -50%);
+	-ms-transform: translate(-0%, -50%);
+	transform: translate(-0%, -50%);
+}
+.created_milestones .milestone_name_price{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 0px 125px;
+    grid-template-columns: 1fr 125px;
+    grid-auto-rows: auto;
+    gap: 0px;	
+}
+.created_milestones .milestone_name_price h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 0px;	
+}
+.created_milestones .milestone_name_price .milestone_price h4{
+	font-weight: 700;
+	text-align: right;
+}
+
+/* ============================== */
+
+.created_milestone_box{
+	background: var(--lightColor);
+	padding: 15px;
+	padding-top: 5px;
+}
+.created_milestone_box .service_title h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.created_milestone_box .service_img_descrip{
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 210px 15px 1fr;
+	grid-template-columns: 210px 1fr;
+	-ms-grid-rows: auto;
+	grid-template-rows: auto;
+	gap: 15px;
+	margin-bottom: 15px;	
+}
+.created_milestone_box .service_img_descrip .service_image img{
+	width: 100%;
+	height: 135px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 5px;
+}
+.created_milestones .offer_box{
+	margin-bottom: 0px;
+}
+/* ===== CSS For "Creating Offer" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Sent Offer" Starts Here ===== */
+.sent_offer .indicator_texts h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.sent_offer .indicator_texts h4 a{
+	color: var(--baseColor);
+}
+
+/* ============================== */
+
+.sent_offer .offer_box_wrap{
+	border: 1px solid var(--borderColor);
+	border-radius: 5px;
+}
+.sent_offer .payment_type{
+	background: var(--baseColor);
+	padding: 7.5px 15px;
+	border-radius: 5px 5px 0px 0px;
+}
+.sent_offer .payment_type h4{
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+/* ============================== */
+
+.sent_offer .sent_offer_box{
+	padding: 10px;
+}
+.sent_offer .sent_offer_box .title h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 10px;	
+}
+
+/* ============================== */
+
+.sent_offer .sent_offer_box .service_img_descrip{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 160px 15px 1fr;
+    grid-template-columns: 160px 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+}
+.sent_offer .sent_offer_box .service_img_descrip .service_image img{
+	border-radius: 5px;
+}
+
+/* ============================== */
+
+.sent_offer .offer_facts{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 10px;
+	background: #F4F4F4;
+	border: 1px solid var(--borderColor);
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 10px;
+}
+.sent_offer .total_facts{
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
+    grid-template-columns: repeat(5, 1fr);	
+}
+.sent_offer .milestone_facts{
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr;
+    grid-template-columns: repeat(4, 1fr);	
+}
+.sent_offer .offer_facts_buttons{
+	padding: 15px 10px;
+	padding-top: 5px;
+}
+.sent_offer .offer_facts h6{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+.sent_offer .offer_facts .tiny_box{
+	background: var(--lightColor);
+	border: 1px solid var(--borderColor);
+	border-radius: 3.5px;
+	padding: 7.5px 10px;
+}
+.sent_offer .offer_facts .tiny_box_usd{
+	position: relative;
+	padding-left: 36px;
+}
+.sent_offer .offer_facts .tiny_box_usd i{
+	color: var(--darkColor);
+	font-size: 16px;
+	background: var(--grayColor);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 30px;
+	height: 34.2px;
+	line-height: 34.2px;
+	text-align: center;
+	border-radius: 3.5px 0px 0px 3.5px;
+}
+.sent_offer .offer_facts .tiny_box h5{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom: 0px;	
+}
+
+/* ============================== */
+
+.sent_offer .offer_buttons{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+	margin-top: 15px;
+}
+.sent_offer .offer_buttons .gbtn{
+	font-size: 16px;
+}
+.sent_offer .offer_buttons .left_buttons ul{
+	margin-bottom: 0px;
+}
+.sent_offer .offer_buttons .left_buttons ul li{
+	list-style: none;
+	margin-right: 10px;
+	display: inline-block;
+}
+.sent_offer .offer_buttons .left_buttons ul li:last-child{
+	margin-right: 0px;
+}
+
+.sent_offer .offer_buttons .right_buttons ul{
+	text-align: right;
+	margin-bottom: 0px;
+}
+.sent_offer .offer_buttons .right_buttons ul li{
+	list-style: none;
+	margin-right: 10px;
+	display: inline-block;
+}
+.sent_offer .offer_buttons .right_buttons ul li:last-child{
+	margin-right: 0px;
+}
+
+/* ============================== */
+
+.all_milestones .single_item {
+	border-bottom:1px solid #DADCE0;	
+}
+.all_milestones .single_item:first-child{
+	border-top:1px solid #DADCE0;
+}
+.all_milestones .single_item .click_item a{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 20px;
+	display:block;
+	text-decoration:none;
+	text-transform: capitalize;
+	padding:10px 15px;
+	position:relative;
+	padding-right: 40px;
+}
+.all_milestones .single_item .click_item a:after{
+	content:"\f0d8";
+	font: 18px FontAwesome;
+	color: #333333;
+	position:absolute;
+	right: 15px;
+	top: 50%;
+	-webkit-transform: translate(-0%, -50%);	
+	-ms-transform: translate(-0%, -50%);	
+	transform: translate(-0%, -50%);	
+}
+.all_milestones .single_item .click_item a.collapsed:after{
+	content:"\f0d7";
+	font: 18px FontAwesome;
+	color: #333333;
+	position:absolute;
+	right: 15px;
+	top: 50%;
+	-webkit-transform: translate(-0%, -50%);
+	-ms-transform: translate(-0%, -50%);
+	transform: translate(-0%, -50%);
+}
+.all_milestones .contents{
+	border-top: 1px dashed #666666;
+}
+.all_milestones .single_item .milestone_name_price{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 10px 90px;
+    grid-template-columns: 1fr 90px;
+    grid-auto-rows: auto;
+    gap: 10px;	
+}
+.all_milestones .single_item .milestone_name_price h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 0px;	
+}
+.all_milestones .single_item .milestone_name_price .milestone_price h4{
+	text-align: right;
+	font-weight: 700;
+}
+/* ===== CSS For "Sent Offer" Ends Here ===== */
+
+

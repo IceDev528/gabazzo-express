@@ -1,0 +1,2741 @@
+<% var counter=1%>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <!--Metatags-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatble" content="ie=edge" />
+
+        <!-- Google Tag Manager -->
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-T23WPNV');</script>
+        <!-- End Google Tag Manager -->
+
+        <!--Website Title-->
+        <title>Gabazzo | Inbox</title>
+        <!--Calling Favicon-->
+        <link rel="icon" href="../images/favicon.png" />
+        <link rel="shortcut icon" href="../images/favicon.ico" />
+        <!--FontAwesome CDN-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <!--Bootstrap v4.5.3 CSS FILE-->
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Fonts Are Loads From Here-->
+        <link href="../fonts/fonts.css" rel="stylesheet" type="text/css" />
+        <!--Normalize CSS File-->
+        <link rel="stylesheet" href="../css/normalize.css" />
+        <!--Main Stylesheet-->
+        <link href="../css/chatStyles.css" rel="stylesheet" type="text/css" />
+        <!--Stylesheet For The Responsiveness-->
+        <link rel="stylesheet" href="../css/chatResponsive.css" />
+
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <link href="../css/night-mode.css" rel="stylesheet" type="text/css" />
+        <link href="../css/responsive.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T23WPNV" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <div class="members_inbox_page_body">
+            <header class="main_header dashboard_header">
+                <nav class="navbar navbar-expand-sm navbar-dark topbar bs_dash_topbar">
+                    <div class="main_logo_for_mobile ml-auto">
+                        <a href="/"><img src="../images/gabazzo_logo_white.png" alt="" /></a>
+                    </div>
+
+                    <ul class="navbar-nav flex-row header-class">
+
+                        <li class="night_mode_image mr-0 "><a href="javascript:void(0)" class="night_mode_icon"></a>
+                        </li>
+                        <li class="nav-item my_account ml-auto">
+                            <a class="nav-link" id="myAcActionLink" href="javascript:void(0)">
+                                <span class="dash_nav_icon dash_nav_image">
+                                    <% if (currentUser.isCompany) { %>
+                                        <% if(currentUser.logo) { %>
+                                            <img src="<%= currentUser.logo %>" class="profile-photo"
+                                                alt="<%= currentUser.username %>">
+                                            <% } else {%>
+                                                <img src="../images/man.png" class="profile-photo"
+                                                    alt="<%= currentUser.username %>">
+                                                <% }%>
+                                                    <% } else { %>
+                                                        <% if(currentUser.profilePicture) {%>
+                                                            <img src="<%= currentUser.profilePicture %>"
+                                                                class="profile-photo mr-2" alt="Profile Picture">
+                                                            <%} else {%>
+                                                                <img src="../images/man.png" class="profile-photo mr-2"
+                                                                    alt="Profile Picture">
+                                                                <% }%>
+                                                                    <% } %>
+                                                                        <span class="dash_nav_text">My Account</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="navbar navbar-expand-lg navbar-light middlebar busi_owner_settings">
+                    <a class="navbar-brand main_logo_for_desktop" href="/">
+                        <img src="../images/gabazzo_logo_black.png" class="img-fluid gabazzo_logo black_logo" alt="" />
+                        <img src="../images/gabazzo_logo_white.png" class="img-fluid gabazzo_logo white_logo" alt="" />
+                    </a>
+
+                    <div class="services_menu_bar">
+                        <button class="navbar-toggler services_responsive_bar border-0" type="button"
+                            data-toggle="collapse" data-target="#responsive-bar">
+                            <div class="animated-icon1"><span></span><span></span><span></span> <b class="">Settings</b>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="members_menu_bar">
+                        <ul class="navbar-nav mx-auto mr-sm-0 align-items-center text-center flex-row">
+                            <li>
+                                <button class="navbar-togglerr" type="button" data-toggle="collapse"
+                                    data-target="#navb">
+                                    <div class="animated-icon2"><span></span><span></span><span></span></div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+
+            <section class="gb_chat_wrap">
+                <div class="gb_chat">
+                    <div class="gb_list">
+                        <!--===== Markup For "List Header" Starts From Here =====-->
+                        <div class="list_header">
+                            <div class="conversation_category">
+                                <a href="javascript:void(0)">All Conversations</a>
+                            </div>
+                            <div class="search_form">
+                                <div class="search_icon">
+                                    <a class="contact_search_icon" href="javascript:void(0)"><i class="fa fa-search"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--===== Markup For "List Header" Ends Here =====-->
+
+                        <!--===== Markup For "Contact List" Starts From Here =====-->
+                        <div class="contact_list">
+                            <ul id="conversation_messages">
+                                <% if(chat !==undefined && chat.length) { %>
+                                    <% chat.forEach(function(conv, i) { %>
+                                        <% if(conv[conv.length -
+                                            1].messages.sender.id._id.toString()===user._id.toString() ) {%>
+                                            <li id="<%=conv[conv.length-1].messages.receiver.id.username %>">
+                                                <% if(conv[conv.length-1].messages.receiver.id._id.toString()===otherUser._id.toString())
+                                                    {%>
+                                                    <a href="/inbox/<%= conv[conv.length-1].messages.receiver.id._id %>"
+                                                        style="background-color: #E5F8E6">
+                                                        <%} else {%>
+                                                            <a
+                                                                href="/inbox/<%= conv[conv.length-1].messages.receiver.id._id %>">
+                                                                <% }%>
+
+                                                                    <div class="profile_pic">
+                                                                        <%if(conv[conv.length-1].messages.receiver.id.isCompany)
+                                                                            { %>
+                                                                            <%if(conv[conv.length-1].messages.receiver.id.logo){
+                                                                                %>
+                                                                                <img src="<%=conv[conv.length-1].messages.receiver.id.logo %>"
+                                                                                    alt="" />
+
+                                                                                <%} else {%>
+                                                                                    <img src="../images/man.png"
+                                                                                        alt="" />
+                                                                                    <% }%>
+                                                                                        <%} else {%>
+                                                                                            <%if(conv[conv.length-1].messages.receiver.id.profilePicture){
+                                                                                                %>
+                                                                                                <img src="<%=conv[conv.length-1].messages.receiver.id.profilePicture %>"
+                                                                                                    alt="" />
+
+                                                                                                <%} else {%>
+                                                                                                    <img src="../images/man.png"
+                                                                                                        alt="" />
+                                                                                                    <% } } %>
+                                                                    </div>
+                                                                    <div id="<%= conv[conv.length-1].messages.receiver.id._id %>"
+                                                                        class="profile_info">
+                                                                        <div class="user_name">
+                                                                            <%if(conv[conv.length-1].messages.receiver.id.isCompany)
+                                                                                { %>
+                                                                                <h6>
+                                                                                    <%= conv[conv.length-1].messages.receiver.id.companyName
+                                                                                        %>
+                                                                                </h6>
+                                                                                <%} else {%>
+                                                                                    <h6>
+                                                                                        <%= conv[conv.length-1].messages.receiver.id.firstName
+                                                                                            + ' ' +
+                                                                                            conv[conv.length-1].messages.receiver.id.lastName
+                                                                                            %>
+                                                                                    </h6>
+                                                                                    <% }%>
+                                                                        </div>
+                                                                        <p><span>Me:</span>
+                                                                            <%= conv[conv.length - 1].messages.text %>
+                                                                        </p>
+                                                                        <time>
+                                                                            <%= timeAgo[i] %>
+                                                                        </time>
+                                                                    </div>
+
+                                                            </a>
+                                            </li>
+                                            <%} else if(conv[conv.length -
+                                                1].messages.receiver.id._id.toString()===user._id.toString() ) {%>
+                                                <li id="<%=conv[conv.length-1].messages.sender.id.username %>">
+                                                    <% if(conv[conv.length-1].messages.sender.id._id.toString()===otherUser._id.toString())
+                                                        {%>
+                                                        <a href="/inbox/<%= conv[conv.length-1].messages.sender.id._id %>"
+                                                            style="background-color: #E5F8E6;">
+                                                            <%} else {%>
+                                                                <a
+                                                                    href="/inbox/<%= conv[conv.length-1].messages.sender.id._id %>">
+                                                                    <% }%>
+                                                                        <div class="profile_pic">
+                                                                            <%if(conv[conv.length-1].messages.sender.id.isCompany)
+                                                                                { %>
+                                                                                <%if(conv[conv.length-1].messages.sender.id.logo){
+                                                                                    %>
+                                                                                    <img src="<%=conv[conv.length-1].messages.sender.id.logo %>"
+                                                                                        alt="<%= user.username %>" />
+
+                                                                                    <%} else {%>
+                                                                                        <img src="../images/man.png"
+                                                                                            alt="" />
+                                                                                        <% } } else {%>
+                                                                                            <%if(conv[conv.length-1].messages.sender.id.profilePicture){
+                                                                                                %>
+                                                                                                <img src="<%=conv[conv.length-1].messages.sender.id.profilePicture %>"
+                                                                                                    alt="<%= user.username %>" />
+
+                                                                                                <%} else {%>
+                                                                                                    <img src="../images/man.png"
+                                                                                                        alt="" />
+                                                                                                    <% } }%>
+                                                                        </div>
+                                                                        <div id="<%= conv[conv.length-1].messages.sender.id._id %>"
+                                                                            class="profile_info">
+                                                                            <div class="user_name">
+                                                                                <%if(conv[conv.length-1].messages.sender.id.isCompany)
+                                                                                    { %>
+                                                                                    <h6>
+                                                                                        <%= conv[conv.length-1].messages.sender.id.companyName
+                                                                                            %>
+                                                                                    </h6>
+                                                                                    <%} else {%>
+                                                                                        <h6>
+                                                                                            <%= conv[conv.length-1].messages.sender.id.firstName
+                                                                                                + ' ' +
+                                                                                                conv[conv.length-1].messages.sender.id.lastName
+                                                                                                %>
+                                                                                        </h6>
+                                                                                        <% }%>
+                                                                            </div>
+                                                                            <p><span></span>
+                                                                                <%= conv[conv.length - 1].messages.text
+                                                                                    %>
+                                                                            </p>
+                                                                            <time>
+                                                                                <%= timeAgo[i] %>
+                                                                            </time>
+                                                                        </div>
+
+                                                                </a>
+                                                </li>
+                                                <%}; %>
+                                                    <% }); %>
+                                                        <% } %>
+                            </ul>
+                        </div>
+                        <!--===== Markup For "Contact List" Ends Here =====-->
+                    </div>
+
+                    <div class="gb_messages">
+                        <!--===== Markup For "Message Header" Starts From Here =====-->
+                        <div class="message_header">
+                            <div class="activity_info">
+                                <div class="user_name">
+                                    <h5>
+                                        <% if (otherUser.status) { %>
+                                            <i class="fa fa-circle" aria-hidden="true" style="color: green;"></i>
+                                            <% } else {%>
+                                                <i class="fa fa-circle" aria-hidden="true" style="color: red;"></i>
+                                                <%} %>
+                                                    <% if(otherUser.isCompany) {%>
+                                                        <%= otherUser.companyName %>
+                                                            <%} else {%>
+                                                                <%= otherUser.firstName + ' ' + otherUser.lastName %>
+                                                                    <% }%>
+                                    </h5>
+                                    <time>
+
+                                        <% if (otherUser.status) { %>
+                                            <span>Online |</span>
+                                            <% } else { %>
+                                                <span class="seen_info">Last Seen: <%=
+                                                        moment(otherUser.loggedOut).fromNow() %> |</span>
+                                                <% } %>
+                                                    <span class="local_time">Local Time:<%= usaTime %></span>
+                                    </time>
+                                </div>
+                            </div>
+
+                            <div class="user_actions">
+                                <a href="javascript:void(0)">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <!--===== Markup For "Message Header" Ends Here =====-->
+
+                        <div class="gb_msgs">
+                            <!--===== Markup For "Sent & Received SMS" Starts From Here =====-->
+                            <div class="msg_flow">
+                                <div class="all_msgs" id="chat-message">
+                                    <% messages?.forEach(function(message){ %>
+                                        <%if(message.messages.sender.id.isCompany) { %>
+                                            <div class="msg_wrap">
+                                                <div class="profile_link_image">
+                                                    <%if(message.messages.sender.id.logo){ %>
+                                                        <a href="javascript:void(0)"><img
+                                                                src="<%=message.messages.sender.id.logo %>"
+                                                                alt="" /></a>
+                                                        <%} else { %>
+                                                            <a href="javascript:void(0)"><img src="../images/man.png"
+                                                                    alt="" /></a>
+                                                            <% }%>
+                                                </div>
+                                                <div class="msg_content">
+                                                    <div class="msg_header">
+                                                        <% if(message.messages.sender.id.companyName) {%>
+                                                            <h6><span class="msg_sender">
+                                                                    <%= message.messages.sender.id.companyName %>
+                                                                </span> | <time>
+                                                                    <%= message.timeAgo %>
+                                                                </time></h6>
+                                                            <%} else {%>
+                                                                <h6><span class="msg_sender">
+                                                                        <%= message.messages.sender.id.username %>
+                                                                    </span> | <time>
+                                                                        <%= message.timeAgo %>
+                                                                    </time></h6>
+                                                                <% }%>
+                                                    </div>
+                                                    <div class="msg_body">
+                                                        <p>
+                                                            <%= message.messages.text %>
+                                                        </p>
+                                                        <div class="msg_attachments_files">
+                                                            <% if(message.messages.attachments !=undefined) {%>
+                                                                <% message.messages.attachments.forEach(function(file)
+                                                                    {%>
+                                                                    <% if(file.type==='jpg' || file.type==='jpeg' ||
+                                                                        file.type==='png' || file.type==='gif' ) {%>
+                                                                        <div class="msg_attachment_items"> <a
+                                                                                href="<%=file.url%>"
+                                                                                rel="noopener noreferrer"
+                                                                                target="_blank" download><img
+                                                                                    src="<%=file.url%>" height="200px"
+                                                                                    width="160px" loading="lazy"
+                                                                                    style="object-fit: cover" /></a>
+                                                                        </div>
+                                                                        <% } else {%>
+                                                                            <div class="msg_attachment_items">
+                                                                                <video width="100%" height="100%"
+                                                                                    controls>
+                                                                                    <source src="<%=file.url%>"
+                                                                                        type="video/mp4"
+                                                                                        style="height: 200px !important; width: 160px;">
+                                                                                    <source src="<%=file.url%>"
+                                                                                        type="video/ogg"
+                                                                                        style="height: 200px !important; width: 160px;">
+                                                                                </video>
+                                                                            </div>
+                                                                            <% }%>
+                                                                                <% }); } %>
+                                                        </div>
+
+                                                        <% if(message.offerID) {%>
+                                                            <div class="sent_offer">
+                                                                <div class="indicator_texts">
+                                                                    <h4>Sent Custom Offer <a href="javascript:void(0)"
+                                                                            title="A unique offer sent by a contractor according to your request."
+                                                                            data-toggle="tooltip"
+                                                                            data-placement="left"><i
+                                                                                class="fa fa-info-circle"
+                                                                                aria-hidden="true"></i></a></h4>
+                                                                </div>
+
+                                                                <div class="offer_box_wrap">
+                                                                    <div class="payment_type">
+                                                                        <% if(message.offerID.type==='singlepayment' ){
+                                                                            %>
+                                                                            <h4>Single Payment Offer</h4>
+                                                                            <%} else {%>
+                                                                                <h4>Milestone Payment Offer</h4>
+                                                                                <%}%>
+                                                                    </div>
+
+                                                                    <div class="all_milestones" id="allMilestone">
+                                                                        <% for(let i=0; i<
+                                                                            message.offerID.tasks?.length; i++) {%>
+                                                                            <div class="single_item">
+                                                                                <div class="click_item">
+                                                                                    <a href="javascript:void(0)"
+                                                                                        data-target="#mileTask<%= i + message.offerID._id %>"
+                                                                                        class="collapsed"
+                                                                                        data-toggle="collapse">
+                                                                                        <div
+                                                                                            class="milestone_name_price">
+                                                                                            <div class="milestone_name">
+                                                                                                <% if(message.offerID.type==='singlepayment'
+                                                                                                    ){ %>
+                                                                                                    <h4>Description #<%=
+                                                                                                            i+1 %>
+                                                                                                    </h4>
+                                                                                                    <%} else {%>
+                                                                                                        <h4>Milestone #
+                                                                                                            <%= i+1 %>
+                                                                                                        </h4>
+                                                                                                        <%}%>
+
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="milestone_price">
+                                                                                                <h4>$<%= message.offerID.tasks[i].totalPrice
+                                                                                                        %>
+                                                                                                </h4>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div id="mileTask<%= i + message.offerID._id %>"
+                                                                                    class="collapse fade contents"
+                                                                                    data-parent="#allMilestone">
+                                                                                    <div class="sent_offer_box">
+                                                                                        <div class="title">
+                                                                                            <h4>
+                                                                                                <%= message.offerID.service?.title
+                                                                                                    %>
+                                                                                            </h4>
+                                                                                        </div>
+
+                                                                                        <div
+                                                                                            class="service_img_descrip">
+                                                                                            <div class="service_image">
+                                                                                                <img src="<%= message.offerID.service?.images[0].url %>"
+                                                                                                    class="img-fluid"
+                                                                                                    alt="" />
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="service_descrip">
+                                                                                                <p>
+                                                                                                    <%= message.offerID.tasks[i]?.description
+                                                                                                        %>
+                                                                                                </p>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div
+                                                                                            class="offer_facts milestone_facts">
+                                                                                            <div class="single_fact">
+                                                                                                <h6>QTY</h6>
+                                                                                                <div class="tiny_box">
+                                                                                                    <h5>
+                                                                                                        <%= message.offerID.tasks[i]?.quantity
+                                                                                                            %>
+                                                                                                    </h5>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <% if(message.offerID.type==='singlepayment'
+                                                                                                ){ %>
+                                                                                                <div
+                                                                                                    class="single_fact">
+                                                                                                    <h6>Delivery</h6>
+                                                                                                    <div
+                                                                                                        class="tiny_box">
+                                                                                                        <h5>
+                                                                                                            <%= message.offerID.tasks[i].delivery
+                                                                                                                %> Days
+                                                                                                        </h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <%} %>
+
+                                                                                                    <div
+                                                                                                        class="single_fact">
+                                                                                                        <h6>Unit Price
+                                                                                                        </h6>
+                                                                                                        <div
+                                                                                                            class="tiny_box tiny_box_usd">
+                                                                                                            <h5>
+                                                                                                                <%= message.offerID.tasks[i].unitPrice
+                                                                                                                    %>
+                                                                                                            </h5>
+                                                                                                            <i class="fa fa-usd"
+                                                                                                                aria-hidden="true"></i>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div
+                                                                                                        class="single_fact">
+                                                                                                        <h6>Total</h6>
+                                                                                                        <div
+                                                                                                            class="tiny_box tiny_box_usd">
+                                                                                                            <h5>
+                                                                                                                <%= message.offerID.tasks[i].totalPrice
+                                                                                                                    %>
+                                                                                                            </h5>
+                                                                                                            <i class="fa fa-usd"
+                                                                                                                aria-hidden="true"></i>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <% }%>
+                                                                    </div>
+
+                                                                    <div class="offer_facts_buttons">
+                                                                        <div class="offer_facts total_facts">
+                                                                            <div class="single_fact">
+                                                                                <h6>Sub Total</h6>
+                                                                                <div class="tiny_box tiny_box_usd">
+                                                                                    <h5>
+                                                                                        <%= message.offerID.subTotal %>
+                                                                                    </h5>
+                                                                                    <i class="fa fa-usd"
+                                                                                        aria-hidden="true"></i>
+                                                                                </div>
+                                                                            </div>
+									    
+									    	<div class="single_fact">
+											<h6>Discount</h6>
+											<div class="tiny_box tiny_box_usd">
+											<h5></h5>
+											<i class="fas fa-dollar-sign"></i>
+										  </div>
+									       </div>
+
+                                                                            <div class="single_fact">
+                                                                                <h6>Delivery</h6>
+                                                                                <div class="tiny_box">
+                                                                                    <h5>
+                                                                                        <%= message.offerID.totalDuration
+                                                                                            %> Days
+                                                                                    </h5>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="single_fact">
+                                                                                <h6>Gabazzo Fee</h6>
+                                                                                <div class="tiny_box">
+                                                                                    <h5>2.4%</h5>
+                                                                                </div>
+                                                                            </div>
+									    
+									    <div class="single_fact">
+											<h6>Tax</h6>
+											<div class="tiny_box">
+											<h5>%</h5>
+										</div>
+									      </div>
+
+                                                                            <div class="single_fact">
+                                                                                <h6>Revisions</h6>
+                                                                                <div class="tiny_box">
+                                                                                    <h5>
+                                                                                        <%= message.offerID.revision %>
+                                                                                    </h5>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="single_fact">
+                                                                                <h6>Quote Total</h6>
+                                                                                <div class="tiny_box tiny_box_usd">
+                                                                                    <h5>
+                                                                                        <%= message.offerID.totalCost %>
+                                                                                    </h5>
+                                                                                    <i class="fa fa-usd"
+                                                                                        aria-hidden="true"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <%
+                                                                            if(message.messages.sender.id._id.toString()===user._id.toString()){%>
+                                                                            <div class="offer_buttons">
+                                                                                <div class="left_buttons">
+                                                                                    <ul>
+                                                                                        <li><a href="https://s3.amazonaws.com/assets.gabazzo.com/<%= message.offerID._id %>.pdf"
+                                                                                                class="gbtn gbtn_orange_bdr">View
+                                                                                                PDF File</a></li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                                <div class="right_buttons">
+                                                                                    <% if(message.offerID.status==='withdrawn'
+                                                                                        ) { %>
+                                                                                        <ul>
+                                                                                            <li>
+                                                                                                <h3
+                                                                                                    style="font-family: fangsong;">
+                                                                                                    Offer Withdrawn</h3>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                        <%} else
+                                                                                            if(message.offerID.status==='accepted'
+                                                                                            ) {%>
+                                                                                            <ul>
+                                                                                                <li>
+                                                                                                    <h3
+                                                                                                        style="font-family: fangsong; color:green">
+                                                                                                        Offer Accepted
+                                                                                                    </h3>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                            <%} else
+                                                                                                if(message.offerID.status==='declined'
+                                                                                                ) {%>
+                                                                                                <ul>
+                                                                                                    <li>
+                                                                                                        <h3
+                                                                                                            style="font-family: fangsong; color:red">
+                                                                                                            Offer
+                                                                                                            Declined
+                                                                                                        </h3>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                                <%} else {%>
+                                                                                                    <ul>
+                                                                                                        <li><button
+                                                                                                                id='<%= message.offerID._id %>'
+                                                                                                                class="btn gbtn gbtn_gray btnWithdraw">Withdraw
+                                                                                                                Offer</button>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                    <% }%>
+                                                                                </div>
+                                                                            </div>
+                                                                            <% } else {%>
+                                                                                <div class="offer_buttons">
+                                                                                    <div class="left_buttons">
+                                                                                        <ul>
+                                                                                            <li><a href="https://s3.amazonaws.com/assets.gabazzo.com/<%= message.offerID._id %>.pdf"
+                                                                                                    class="gbtn gbtn_orange_bdr">View
+                                                                                                    PDF File</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="right_buttons">
+                                                                                        <% if(message.offerID.status==='withdrawn'
+                                                                                            ) { %>
+                                                                                            <ul>
+                                                                                                <li>
+                                                                                                    <h3
+                                                                                                        style="font-family: fangsong;">
+                                                                                                        Offer Withdrawn
+                                                                                                    </h3>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                            <%} else
+                                                                                                if(message.offerID.status==='accepted'
+                                                                                                ) {%>
+                                                                                                <ul>
+                                                                                                    <li>
+                                                                                                        <h3
+                                                                                                            style="font-family: fangsong; color:green">
+                                                                                                            Offer
+                                                                                                            Accepted
+                                                                                                        </h3>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                                <%} else
+                                                                                                    if(message.offerID.status==='declined'
+                                                                                                    ) {%>
+                                                                                                    <ul>
+                                                                                                        <li>
+                                                                                                            <h3
+                                                                                                                style="font-family: fangsong; color:red">
+                                                                                                                Offer
+                                                                                                                Declined
+                                                                                                            </h3>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                    <%} else {%>
+                                                                                                        <ul id="acptdec<%= message.offerID._id %>"
+                                                                                                            class="btnacceptdecline">
+                                                                                                            <li><button
+                                                                                                                    id="decline<%= message.offerID._id %>"
+                                                                                                                    class="btn gbtn gbtn_red_bdr">Decline
+                                                                                                                    Offer</button>
+                                                                                                            </li>
+                                                                                                            <li><button
+                                                                                                                    id="accept<%= message.offerID._id %>"
+                                                                                                                    class="btn gbtn gbtn_green_bdr">Accept
+                                                                                                                    Offer</button>
+                                                                                                            </li>
+                                                                                                        </ul>
+                                                                                                        <% }%>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <% }%>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <% }%>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } else {%>
+                                                <div class="msg_wrap">
+                                                    <div class="profile_link_image">
+                                                        <%if(message.messages.sender.id.profilePicture){ %>
+                                                            <a href="javascript:void(0)"><img
+                                                                    src="<%=message.messages.sender.id.profilePicture %>"
+                                                                    alt="" /></a>
+                                                            <%} else { %>
+                                                                <a href="javascript:void(0)"><img
+                                                                        src="../images/man.png" alt="" /></a>
+                                                                <% }%>
+                                                    </div>
+                                                    <div class="msg_content">
+                                                        <div class="msg_header">
+                                                            <% if(message.messages.sender.id.profilePicture) {%>
+                                                                <h6><span class="msg_sender">
+                                                                        <%= message.messages.sender.id.firstName + ' ' +
+                                                                            message.messages.sender.id.lastName %>
+                                                                    </span> | <time>
+                                                                        <%= message.timeAgo %>
+                                                                    </time></h6>
+                                                                <%} else {%>
+                                                                    <h6><span class="msg_sender">
+                                                                            <%= message.messages.sender.id.username %>
+                                                                        </span> | <time>
+                                                                            <%= message.timeAgo %>
+                                                                        </time></h6>
+                                                                    <% }%>
+                                                        </div>
+                                                        <div class="msg_body">
+                                                            <p>
+                                                                <%= message.messages.text %>
+                                                            </p>
+                                                            <div class="msg_attachments_files">
+                                                                <% if(message.messages.attachments !=undefined) {%>
+                                                                    <% message.messages.attachments.forEach(function(file)
+                                                                        {%>
+                                                                        <% if(file.type==='jpg' || file.type==='jpeg' ||
+                                                                            file.type==='png' || file.type==='gif' ) {%>
+                                                                            <div class="msg_attachment_items"> <a
+                                                                                    href="<%=file.url%>"
+                                                                                    rel="noopener noreferrer"
+                                                                                    target="_blank" download><img
+                                                                                        src="<%=file.url%>"
+                                                                                        height="200px" width="160px"
+                                                                                        loading="lazy"
+                                                                                        style="object-fit: cover" /></a>
+                                                                            </div>
+                                                                            <% } else {%>
+                                                                                <div class="msg_attachment_items">
+                                                                                    <video width="100%" height="100%"
+                                                                                        controls>
+                                                                                        <source src="<%=file.url%>"
+                                                                                            type="video/mp4"
+                                                                                            style="height: 200px !important; width: 160px;">
+                                                                                        <source src="<%=file.url%>"
+                                                                                            type="video/ogg"
+                                                                                            style="height: 200px !important; width: 160px;">
+                                                                                    </video>
+                                                                                </div>
+                                                                                <% }%>
+                                                                                    <% }); } %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <% } }) %>
+
+
+
+                                </div>
+                            </div>
+
+                            <!--===== Markup For "Sent & Received SMS" Ends Here =====-->
+
+                            <!--===== Markup For "Message Actions" Starts From Here =====-->
+                            <div class="conversation_footer">
+                                <div class="message_box">
+                                    <textarea name="" id="textarea" cols="30" rows="3"></textarea>
+                                </div>
+                                <div class="sending_actions">
+                                    <div class="left_btns">
+                                        <ul id="sending_options">
+                                            <li id="upload_widget"><a href="javascript:void(0)"><i
+                                                        class="fa fa-paperclip" aria-hidden="true"></i> Attach File</a>
+                                            </li>
+                                            <% if(currentUser.isCompany) { %>
+                                                <li><a id="makeOfferbtn" href="javascript:void(0)"
+                                                        data-target="#selectService" data-toggle="modal">Create
+                                                        Offer</a></li>
+                                                <%}%>
+                                                    <li id="status"></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="send_btn">
+                                        <button type="submit" id="sendMsgBtn" class="btn">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--===== Markup For "Message Actions" Ends Here =====-->
+                        </div>
+                    </div>
+
+                    <!--===== Markup For "User Info" Starts From Here =====-->
+                    <div class="gb_info">
+                        <div class="user_info_title">
+                            <h4>User Info</h4>
+                        </div>
+                        <div class="user_info">
+                            <div class="profile_info s_user_info">
+                                <h4>About</h4>
+                                <% if(otherUser.isCompany) {%>
+                                    <% if(otherUser.logo) {%>
+                                        <div class="profile_link_image">
+                                            <a href="../company-profile/<%= otherUser._id %>"><img
+                                                    src="<%= otherUser.logo %>" alt="" /></a>
+                                        </div>
+                                        <%} else {%>
+                                            <div class="profile_link_image">
+                                                <a href="../company-profile/<%= otherUser._id %>"><img
+                                                        src="../images/man.png" alt="" /></a>
+                                            </div>
+                                            <% }%>
+                                                <div class="profile_user_link">
+                                                    <a href="../company-profile/<%= otherUser._id %>">
+                                                        <%= otherUser.companyName %>
+                                                    </a>
+                                                </div>
+                                                <%} else { %>
+                                                    <% if(otherUser.profilePicture) {%>
+                                                        <div class="profile_link_image">
+                                                            <a href="../company-profile/<%= otherUser._id %>"><img
+                                                                    src="<%= otherUser.profilePicture %>" alt="" /></a>
+                                                        </div>
+                                                        <%} else {%>
+                                                            <div class="profile_link_image">
+                                                                <a href="../company-profile/<%= otherUser._id %>"><img
+                                                                        src="../images/man.png" alt="" /></a>
+                                                            </div>
+                                                            <% }%>
+                                                                <div class="profile_user_link">
+                                                                    <a href="../member-profile/<%= otherUser._id %>">
+                                                                        <%= otherUser.firstName + ' ' +
+                                                                            otherUser.lastName %>
+                                                                    </a>
+                                                                </div>
+                                                                <% }%>
+                            </div>
+
+                            <% if(otherUser.isCompany) {%>
+
+                                <div class="review_address_info s_user_info">
+                                    <ul>
+                                        <li>Reviews: <span class="overall_ratings"><span class="yellow_color"><i
+                                                        class="fa fa-star" aria-hidden="true"></i>
+                                                    <%= otherUser?.averageReview %>
+                                                </span>(<%= review.length %>)</span></li>
+                                        <li>Address: <span class="full_address">
+                                                <%= otherUser?.location %>
+                                            </span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="language_info s_user_info">
+                                    <h4>Languages</h4>
+                                    <ul>
+                                        <li>
+                                            <%= otherUser.language %>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="social_media s_user_info">
+                                    <h4>Social Media Connected</h4>
+                                    <ul>
+                                        <% if(otherUser?.facebookUrl) { %>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-facebook"
+                                                        aria-hidden="true"></i></a></li>
+                                            <% } %>
+
+                                                <% if(otherUser?.twitterUrl) { %>
+                                                    <li><a href="javascript:void(0)"><i class="fa fa-twitter"
+                                                                aria-hidden="true"></i></a></li>
+                                                    <% } %>
+
+                                                        <% if(otherUser?.linkedinUrl) { %>
+                                                            <li><a href="javascript:void(0)"><i class="fa fa-linkedin"
+                                                                        aria-hidden="true"></i></a></li>
+                                                            <% } %>
+
+                                                                <% if(otherUser?.instagramUrl) { %>
+                                                                    <li><a href="javascript:void(0)"><i
+                                                                                class="fa fa-instagram"
+                                                                                aria-hidden="true"></i></a></li>
+                                                                    <% } %>
+                                    </ul>
+                                </div>
+
+                                <div class="payment_accept_info s_user_info">
+                                    <h4>Payment Accepted</h4>
+                                    <ul>
+                                        <% if(otherUser.paymentMethod?.america) { %>
+                                            <li><a href="javascript:void(0)"><i data-toggle="tooltip"
+                                                        title="American Express" class="fa fa-cc-amex"
+                                                        aria-hidden="true"></i></a></li>
+                                            <%} if(otherUser.paymentMethod?.discover) { %>
+                                                <li><a href="javascript:void(0)"><i data-toggle="tooltip"
+                                                            title="Discover" class="fa fa-cc-discover"
+                                                            aria-hidden="true"></i></a></li>
+                                                <%} if(otherUser.paymentMethod?.master) { %>
+                                                    <li><a href="javascript:void(0)"><i data-toggle="tooltip"
+                                                                title="Master Card" class="fa fa-cc-mastercard"
+                                                                aria-hidden="true"></i></a></li>
+                                                    <%} if(otherUser.paymentMethod?.paypal) { %>
+                                                        <li><a href="javascript:void(0)"><i data-toggle="tooltip"
+                                                                    title="Paypal" class="fa fa-cc-paypal"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <%} if(otherUser.paymentMethod?.visa) { %>
+                                                            <li><a href="javascript:void(0)"><i data-toggle="tooltip"
+                                                                        title="Visa" class="fa fa-cc-visa"
+                                                                        aria-hidden="true"></i></a></li>
+                                                            <%} if(otherUser.paymentMethod?.visa) { %>
+                                                                <li><a href="javascript:void(0)"><i
+                                                                            data-toggle="tooltip" title="Cash"
+                                                                            class="fa fa-money"
+                                                                            aria-hidden="true"></i></a></li>
+                                                                <% }%>
+                                    </ul>
+                                </div>
+
+                                <%} else { %>
+                                    <div class="social_media s_user_info">
+                                        <h4>Social Media Connected</h4>
+                                        <ul>
+                                            <% if(otherUser?.facebookUrl) { %>
+                                                <li><a href="javascript:void(0)"><i class="fa fa-facebook"
+                                                            aria-hidden="true"></i></a></li>
+                                                <% } %>
+
+                                                    <% if(otherUser?.twitterUrl) { %>
+                                                        <li><a href="javascript:void(0)"><i class="fa fa-twitter"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <% } %>
+
+                                                            <% if(otherUser?.linkedinUrl) { %>
+                                                                <li><a href="javascript:void(0)"><i
+                                                                            class="fa fa-linkedin"
+                                                                            aria-hidden="true"></i></a></li>
+                                                                <% } %>
+
+                                                                    <% if(otherUser?.instagramUrl) { %>
+                                                                        <li><a href="javascript:void(0)"><i
+                                                                                    class="fa fa-instagram"
+                                                                                    aria-hidden="true"></i></a></li>
+                                                                        <% } %>
+                                        </ul>
+                                    </div>
+
+                                    <div class="location_info s_user_info">
+                                        <h4>Location</h4>
+                                        <ul>
+                                            <li>
+                                                <%= otherUser?.city + ", " + otherUser?.state %>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <% }%>
+
+                        </div>
+                    </div>
+                    <!--===== Markup For "User Info" Ends Here =====-->
+                </div>
+            </section>
+
+        </div>
+
+
+        <!-- My Account SideMenu For Desktop -->
+        <div class="" id="myAcContents">
+            <div id="dismissMyAcActionLink">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="my_account_menu">
+                <div class="top_part">
+                    <% if (currentUser.isCompany) { %>
+                        <% if(currentUser.logo) { %>
+                            <img src="<%= currentUser.logo %>" class="profile-photo" alt="<%= currentUser.username %>">
+                            <% } else {%>
+                                <img src="../images/man.png" class="profile-photo" alt="<%= currentUser.username %>">
+                                <% }%>
+                                    <div class="profile_name">
+                                        <%= currentUser.companyName %>
+                                    </div>
+                                    <% } else { %>
+                                        <% if(currentUser.profilePicture) {%>
+                                            <img src="<%= currentUser.profilePicture %>" class="profile-photo"
+                                                alt="<%= currentUser.username %>">
+
+                                            <%} else {%>
+                                                <img src="../images/man.png" class="profile-photo"
+                                                    alt="<%= currentUser.username %>">
+                                                <% }%>
+                                                    <div class="profile_name">
+                                                        <%= currentUser.username %>
+                                                    </div>
+                                                    <% } %>
+                </div>
+                <div class="bottom_part">
+                    <ul>
+                        <% if (currentUser.isCompany) { %>
+                            <li><a href="/company-dashboard" target="_self"><i class="fa fa-fw fa-user"></i><span>View
+                                        Dashboard</span></a></li>
+                            <% } else { %>
+                                <li><a href="/member-profile/<%= currentUser._id %>" target="_self"><i
+                                            class="fa fa-fw fa-user"></i><span>View Profile</span></a></li>
+                                <% } %>
+                                    <li><a href="/company-settings/account"><i
+                                                class="fa fa-fw fa-cog"></i><span>Settings</span></a>
+                                    </li>
+
+                                    <li><a href="/logout" target="_self"><i
+                                                class="fa fa-fw fa-power-off"></i><span>Logout</span></a>
+                                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- My Account SideMenu For Desktop -->
+
+        <!-- My Account SideMenu For Mobile -->
+        <div class="" id="myAcContentsMB">
+            <div id="dismissMyAcActionLinkMB">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="my_account_menu">
+                <div class="top_part">
+                    <% if (currentUser.isCompany) { %>
+                        <% if(currentUser.logo) { %>
+                            <img src="<%= currentUser.logo %>" class="profile-photo" alt="<%= currentUser.username %>">
+                            <% } else {%>
+                                <img src="../images/man.png" class="profile-photo" alt="<%= currentUser.username %>">
+                                <% }%>
+                                    <div class="profile_name">
+                                        <%= currentUser.companyName %>
+                                    </div>
+                                    <% } else { %>
+                                        <% if(currentUser.profilePicture) {%>
+                                            <img src="<%= currentUser.profilePicture %>" class="profile-photo"
+                                                alt="<%= currentUser.username %>">
+
+                                            <%} else {%>
+                                                <img src="../images/man.png" class="profile-photo"
+                                                    alt="<%= currentUser.username %>">
+                                                <% }%>
+                                                    <div class="profile_name">Hi <%= currentUser.username %>
+                                                    </div>
+                                                    <% } %>
+                </div>
+                <div class="bottom_part">
+                    <ul>
+                        <% if (currentUser.isCompany) { %>
+                            <li><a href="/company-dashboard" target="_self"><i class="fa fa-fw fa-user"></i><span>View
+                                        Dashboard</span></a></li>
+                            <% } else { %>
+                                <li><a href="/member-profile<%= currentUser._id %>" target="_self"><i
+                                            class="fa fa-fw fa-user"></i><span>View Profile</span></a></li>
+                                <% } %>
+                                    <li><a href="/company-settings/account"><i
+                                                class="fa fa-fw fa-cog"></i><span>Settings</span></a>
+                                    </li>
+                                    <!-- <li><a href="../footer-pages/help-center-buyer.html"><i
+                                class="fa fa-fw fa-comments"></i><span>Buyer Help Center</span></a></li> -->
+                                    <li><a href="/logout" target="_self"><i
+                                                class="fa fa-fw fa-power-off"></i><span>Logout</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- My Account SideMenu For Mobile -->
+
+        <input id="getServicesLength" style="display: none;" value="<%= services.length %>" />
+
+        <!--===== Markup For "Select Service Modal" Starts From Here =====-->
+        <div class="modal fade create_offer_modal" id="selectService">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Select Service</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="select_services">
+                            <form id="selectServiceForm" action="">
+                                <ul data-toggle="buttons" id="servicesList">
+                                    <% services.forEach((service, i)=> { %>
+                                        <li class="btn" id="<%= service.title[0] + i%>">
+                                            <input type="radio" name="theService" autocomplete="off">
+                                            <div class="single_service">
+                                                <div class="service_image">
+                                                    <% if(service.images.length) {%>
+                                                        <img src="<%= service.images[0].url %>" class="img-fluid"
+                                                            alt="<%= service.title %>" />
+                                                        <%} else {%>
+                                                            <img src="images/Roofing_Services.jpg" class="img-fluid"
+                                                                alt="<%= service.title %>" />
+                                                            <% }%>
+                                                </div>
+                                                <div class="service_title">
+                                                    <h4 id="<%= service._id %>">
+                                                        <%= service.title %>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <% }) %>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <div style="margin-right: 10px;" id="selectService_val"></div>
+                    <div class="modal-footer">
+                        <div class="modal_actions">
+                            <ul>
+                                <li><a id="selectServiceCancelBtn" href="javascript:void(0)" class="gbtn gbtn_red"
+                                        data-dismiss="modal">Cancel</a></li>
+                                <li><a href="javascript:void(0)" class="gbtn gbtn_green" id="stopSelectService"
+                                        data-toggle="modal">Continue</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--===== Markup For "Select Service Modal" Ends Here =====-->
+
+        <!--===== Markup For "Payment Way Modal" Starts From Here =====-->
+        <div data-backdrop="static" data-keyboard="false" class="modal fade create_offer_modal" id="singleMilestones">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>How would <a href="javascript:void(0)">
+                                <%= user.companyName %>
+                            </a> get paid?</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="top_texts">
+                            <p>Get paid in full to work on Project or break it into smaller chunks to get paid as you
+                                work along the the way <a href="javascript:void(0)"
+                                    title="Milestones allow you to work through large projects in small steps with pre-defined deadlines, deliverables, and payments. It's a great way to build trust with your buyer, step-by-step."
+                                    data-toggle="tooltip"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                            </p>
+                        </div>
+                        <div class="select_payment">
+                            <form id="singleMilestonesForm" action="">
+                                <ul data-toggle="buttons">
+                                    <li class="btn" id="singlepaymentbtn">
+                                        <input type="radio" name="paymentSystem" autocomplete="off">
+                                        <div class="single_payment">
+                                            <div class="icon">
+                                                <img src="../images/single_payment.png" class="img-fluid" alt="" />
+                                            </div>
+                                            <div class="texts">
+                                                <h2>Single Payment</h2>
+                                                <p>Receive one payment for the entire project once completed.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="btn" id="milestonepaymentbtn">
+                                        <input type="radio" name="paymentSystem" autocomplete="off">
+                                        <div class="single_payment">
+                                            <div class="icon">
+                                                <img src="../images/milestones_payment.png" class="img-fluid" alt="" />
+                                            </div>
+                                            <div class="texts">
+                                                <h2>Milestones</h2>
+                                                <p>Work on gradual steps & get paid for each completed milestone.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <div style="margin-right: 10px;" id="selectMethod_val"></div>
+                    <div class="modal-footer">
+                        <div class="go_back_button">
+                            <a href="javascript:void(0)" class="gbtn gbtn_orange" id="backSelectService"
+                                data-target="#selectService" data-toggle="modal">Go Back</a>
+                        </div>
+                        <div class="modal_actions">
+                            <ul>
+                                <li><a href="javascript:void(0)" class="gbtn gbtn_red" data-dismiss="modal"
+                                        id="selectmethodCancelbtn">Cancel</a></li>
+                                <li><a href="javascript:void(0)" class="gbtn gbtn_green" id="stopMilestonesSingle"
+                                        data-toggle="modal">Continue</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--===== Markup For "Payment Way Modal" Ends Here =====-->
+
+        <!--===== Markup For "Milestone Payment Modal" Starts From Here =====-->
+        <div data-backdrop="static" data-keyboard="false" class="modal fade create_offer_modal payment_method_modal"
+            id="milestonePaymentSt1">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Create Milestone Offers</h3>
+                    </div>
+                    <div class="modal-body" id="createOfferBody">
+                        <div class="creating_offer">
+                            <form id="milestonePaymentSt1Form" action="">
+                                <div class="title">
+                                    <h4 id="milestonePaymentSt1ServiceName">Service Name/Service Title</h4>
+                                </div>
+                                <div class="proposal_wrap">
+                                    <div class="service_image">
+                                        <img src="" id="milestoneModalImage" class="img-fluid" alt="serviceimage" />
+                                    </div>
+                                    <div class="describe_offer">
+                                        <textarea name="milestoneDesc" class="form-control" id="milestoneDesc" cols="30"
+                                            rows="4" placeholder="Describe Your System..."></textarea>
+                                        <p id="desc_val_error" style="color: red;"></p>
+                                    </div>
+                                </div>
+
+                                <div class="set_offer_wrap">
+                                    <div class="title">
+                                        <h4>Set Up Offer</h4>
+                                    </div>
+
+                                    <div class="offer_box set_milestones">
+                                        <div class="single_field">
+                                            <label for="milestoneQty">QTY</label>
+                                            <select name="milestoneQty" id="milestoneQty" class="form-control">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="single_field">
+                                            <label for="milestoneDelivery">Delivery <a href="javascript:void(0)"
+                                                    title="The order duration might change depending on the back and forth communications between buyer and seller."
+                                                    data-toggle="tooltip"><i class="fa fa-question-circle"
+                                                        aria-hidden="true"></i></a></label>
+                                            <select name="milestoneDelivery" id="milestoneDelivery"
+                                                class="form-control">
+                                                <option value="1">1 Day</option>
+                                                <option value="2">2 Days</option>
+                                                <option value="3">3 Days</option>
+                                                <option value="4">4 Days</option>
+                                                <option value="5">5 Days</option>
+                                                <option value="6">6 Days</option>
+                                                <option value="7">7 Days</option>
+                                                <option value="8">8 Days</option>
+                                                <option value="9">9 Days</option>
+                                                <option value="10">10 Days</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="single_field">
+                                            <label for="milestonePrice">Unit Price</label>
+                                            <div class="input_icon">
+                                                <input name="milestonePrice" id="milestonePrice" type="text"
+                                                    class="form-control" placeholder="25,000 Max" />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                            <p id="unit_val_error" style="color: red;"></p>
+                                        </div>
+
+                                        <div class="single_field">
+                                            <label for="milestoneTotalPrice">Total</label>
+                                            <div class="input_icon">
+                                                <input name="milestoneTotalPrice" id="milestoneTotalPrice" type="text"
+                                                    class="form-control" placeholder="1,00,000 Max" disabled />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                            <p id="total_val_error" style="color: red;"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="created_milestones" id="createdMilestones">
+                                    </div>
+
+                                    <div class="add_create_btns">
+                                        <ul>
+                                            <li><a href="javascript:void(0)" id="addMilestoneBtn"
+                                                    class="gbtn gbtn_green_bdr">Add +</a></li>
+                                        </ul>
+                                        <p id="milestone_continue_val"
+                                            style="color: red; margin-top: 10px; text-align: right;"></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="go_back_button">
+                            <a href="#singleMilestones" class="gbtn gbtn_orange" id="backToSingleMilestones"
+                                data-toggle="modal">Go Back</a>
+                        </div>
+                        <div class="modal_actions">
+                            <ul>
+                                <li><a href="javascript:void(0)" id="createMilestoneCancelbtn" class="gbtn gbtn_red"
+                                        data-dismiss="modal">Cancel</a></li>
+                                <li><a href="#milestonePaymentSt2" id="stopMilestonePaymentSt1"
+                                        class="gbtn gbtn_green">Continue</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-backdrop="static" data-keyboard="false" class="modal fade create_offer_modal payment_method_modal"
+            id="milestonePaymentSt2">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Milestone Payment Final Details</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="creating_offer">
+                            <form id="milestonePaymentSt2Form" action="">
+                                <div class="final_offer">
+                                    <div class="title">
+                                        <h4>Offer Final Details</h4>
+                                    </div>
+
+                                    <div class="offer_box delivery_revisions">
+                                        <div class="single_field">
+                                            <label for="finalDelivery">Delivery <a href="javascript:void(0)"
+                                                    title="The order duration might change depending on the back and forth communications between buyer and seller."
+                                                    data-toggle="tooltip"><i class="fa fa-question-circle"
+                                                        aria-hidden="true"></i></a></label>
+
+                                            <select name="finalDelivery" id="finalDelivery" class="form-control"
+                                                disabled>
+                                                <option value="1">1 Day</option>
+                                                <option value="2">2 Days</option>
+                                                <option value="3">3 Days</option>
+                                                <option value="4">4 Days</option>
+                                                <option value="5">5 Days</option>
+                                                <option value="6">6 Days</option>
+                                                <option value="7">7 Days</option>
+                                                <option value="8">8 Days</option>
+                                                <option value="9">9 Days</option>
+                                                <option value="10">10 Days</option>
+                                                <option value="11">11 Days</option>
+                                                <option value="12">12 Days</option>
+                                                <option value="13">13 Days</option>
+                                                <option value="14">14 Days</option>
+                                                <option value="15">15 Days</option>
+                                                <option value="16">16 Days</option>
+                                                <option value="17">17 Days</option>
+                                                <option value="18">18 Days</option>
+                                                <option value="19">19 Days</option>
+                                                <option value="20">20 Days</option>
+                                            </select>
+                                        </div>
+                                        <div class="single_field">
+                                            <label for="finalRevision">Revisions <span>(Optional)</span></label>
+
+                                            <select name="finalRevision" id="finalRevision" class="form-control">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="offer_box pricing_details">
+                                        <div class="single_field">
+                                            <label for="finalSubTotalMilestone">Sub-Total</label>
+                                            <div class="input_icon">
+                                                <input id="finalSubTotalMilestone" type="text" class="form-control"
+                                                    placeholder="" disabled />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <div class="single_field">
+                                            <label for="finalDiscountMilestone">Discount</label>
+                                            <div class="input_icon">
+                                                <input id="finalDiscountMilestone" type="text" class="form-control"
+                                                    placeholder="" />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <div class="single_field">
+                                            <label for="gabazzoRate">Gabazzo Rate</label>
+                                            <input id="gabazzoRate" type="text" class="form-control" disabled
+                                                value="2.4%" placeholder="" />
+                                        </div>
+                                        <div class="single_field">
+                                            <label for="finalTotalMilestone">Quote Total</label>
+                                            <div class="input_icon">
+                                                <input id="finalTotalMilestone" type="text" class="form-control"
+                                                    placeholder="" disabled />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="notes">
+                                        <div class="title">
+                                            <h4>Notes</h4>
+                                        </div>
+                                        <textarea name="finalNotes" id="finalNotes" cols="30" rows="4"
+                                            placeholder="If you have any additional notes for the estimate you can add them here..."
+                                            class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="go_back_button">
+                            <a href="javascript:void(0)" class="gbtn gbtn_orange" id="backMilestonePaymentSt1"
+                                data-target="#milestonePaymentSt1" data-toggle="modal">Go Back</a>
+                        </div>
+                        <div class="modal_actions">
+                            <ul>
+                                <li><a href="javascript:void(0)" id="milestoneFinalCancelbtn" class="gbtn gbtn_red"
+                                        data-dismiss="modal">Cancel</a></li>
+                                <li><a href="javascript:void(0)" id="sendOfferMilestone" data-dismiss="modal"
+                                        class="gbtn gbtn_green">Send Offer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--===== Markup For "Milestone Payment Modal" Ends Here =====-->
+
+        <!--===== Markup For "Single Payment Modal" Starts From Here =====-->
+        <div data-backdrop="static" data-keyboard="false" class="modal fade create_offer_modal payment_method_modal"
+            id="singlePaymentSt1">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Create Single Payment Offer</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="creating_offer">
+                            <form id="singlePaymentSt1Form">
+                                <div class="title">
+                                    <h4 id="singlePaymentSt1ServiceName">Service Name/Service Title</h4>
+                                </div>
+                                <div class="proposal_wrap">
+                                    <div class="service_image">
+                                        <img src="" id="paymentModalImage" class="img-fluid" alt="paymentimage" />
+                                    </div>
+                                    <div class="describe_offer">
+                                        <textarea name="paymentDesc" class="form-control" id="paymentDesc" cols="30"
+                                            rows="4" placeholder="Describe Your System..."></textarea>
+                                        <p id="pay_desc_val_error" style="color: red;"></p>
+                                    </div>
+                                </div>
+
+                                <div class="set_offer_wrap">
+                                    <div class="title">
+                                        <h4>Set Up Offer</h4>
+                                    </div>
+                                    <div class="offer_box set_offer">
+                                        <div class="single_field">
+                                            <label for="paymentQty">QTY</label>
+
+                                            <select name="paymentQty" id="paymentQty" class="form-control">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                        <div class="single_field">
+                                            <label for="paymentPrice">Unit Price</label>
+                                            <div class="input_icon">
+                                                <input name="paymentPrice" id="paymentPrice" type="text"
+                                                    class="form-control" placeholder="25,000 Max" />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                            <p id="pay_unit_val_error" style="color: red;"></p>
+                                        </div>
+                                        <div class="single_field">
+                                            <label for="paymentTotalPrice">Total</label>
+                                            <div class="input_icon">
+                                                <input name="paymentTotalPrice" id="paymentTotalPrice" type="text"
+                                                    class="form-control" placeholder="1,00,000 Max" disabled />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                            <p id="pay_total_val_error" style="color: red;"></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="created_milestones" id="single_payments">
+
+                                </div>
+
+                                <div class="add_create_btns">
+                                    <ul>
+                                        <li><a href="javascript:void(0)" id="paymentAddBtn"
+                                                class="gbtn gbtn_green_bdr">Add +</a></li>
+                                    </ul>
+                                    <p id="continue_singlepay_val"
+                                        style="color: red; text-align: right; margin-top: 10px;"></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="go_back_button">
+                            <a href="javascript:void(0)" class="gbtn gbtn_orange" id="backSingleMilestones"
+                                data-target="#singleMilestones" data-toggle="modal">Go Back</a>
+                        </div>
+                        <div class="modal_actions">
+                            <ul>
+                                <li><a href="javascript:void(0)" id="paymentCreateCancelbtn" class="gbtn gbtn_red"
+                                        data-dismiss="modal">Cancel</a></li>
+                                <li><a href="#singlePaymentSt2" id="stopSinglePaymentSt1"
+                                        class="gbtn gbtn_green">Continue</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-backdrop="static" data-keyboard="false" class="modal fade create_offer_modal payment_method_modal"
+            id="singlePaymentSt2">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Single Payment Final Details</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="creating_offer">
+                            <form id="singlePaymentSt2Form" action="">
+                                <div class="final_offer">
+                                    <div class="title">
+                                        <h4>Offer Final Details</h4>
+                                    </div>
+
+                                    <div class="offer_box delivery_revisions">
+                                        <div class="single_field">
+                                            <label for="finalDeliveryPayment">Delivery <a href="javascript:void(0)"
+                                                    title="The order duration might change depending on the back and forth communications between buyer and seller."
+                                                    data-toggle="tooltip"><i class="fa fa-question-circle"
+                                                        aria-hidden="true"></i></a></label>
+                                            <select name="finalDeliveryPayment" id="finalDeliveryPayment"
+                                                class="form-control">
+                                                <option value="1">1 Day</option>
+                                                <option value="2">2 Days</option>
+                                                <option value="3">3 Days</option>
+                                                <option value="4">4 Days</option>
+                                                <option value="5">5 Days</option>
+                                                <option value="6">6 Days</option>
+                                                <option value="7">7 Days</option>
+                                            </select>
+                                        </div>
+                                        <div class="single_field">
+                                            <label for="finalRevisionPayment">Revisions <span>(Optional)</span></label>
+                                            <select name="finalRevisionPayment" id="finalRevisionPayment"
+                                                class="form-control">
+                                                <option value="0">Select</option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="offer_box pricing_details">
+                                        <div class="single_field">
+                                            <label for="finalSubTotalPayment">Sub-Total</label>
+                                            <div class="input_icon">
+                                                <input id="finalSubTotalPayment" type="text" class="form-control"
+                                                    placeholder="" disabled />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <div class="single_field">
+                                            <label for="finalDiscountPayment">Discount</label>
+                                            <div class="input_icon">
+                                                <input id="finalDiscountPayment" type="text" class="form-control"
+                                                    placeholder="" />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <div class="single_field">
+					<div class="label_wrap">
+					<label for="">Tax</label>
+					</div>
+					<div class="input_icon">
+					<input type="text" class="form-control" placeholder="" />
+					<i class="fas fa-percentage"></i>
+					</div>
+				       </div>
+                                        <div class="single_field">
+                                            <label for="gabazzoRatePayment">Gabazzo Rate</label>
+                                            <input id="gabazzoRatePayment" type="text" class="form-control" disabled
+                                                value="2.4%" placeholder="" />
+                                        </div>
+                                        <div class="single_field">
+                                            <label for="finalTotalPayment">Quote Total</label>
+                                            <div class="input_icon">
+                                                <input id="finalTotalPayment" type="text" class="form-control"
+                                                    placeholder="" disabled />
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="notes">
+                                        <div class="title">
+                                            <h4>Notes</h4>
+                                        </div>
+
+                                        <textarea name="finalNotesPayment" id="finalNotesPayment" cols="30" rows="4"
+                                            placeholder="If you have any additional notes for the estimate you can add them here..."
+                                            class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="go_back_button">
+                            <a href="javascript:void(0)" class="gbtn gbtn_orange" id="backSinglePaymentSt1"
+                                data-target="#singlePaymentSt1" data-toggle="modal">Go Back</a>
+                        </div>
+                        <div class="modal_actions">
+                            <ul>
+                                <li><a href="javascript:void(0)" id="paymentFinalCancelbtn" class="gbtn gbtn_red"
+                                        data-dismiss="modal">Cancel</a></li>
+                                <li><a href="javascript:void(0)" id="sendPaymentOffer" class="gbtn gbtn_green">Send
+                                        Offer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--===== Markup For "Single Payment Modal" Ends Here =====-->
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <script src="../js/classie.js" type="text/javascript"></script>
+        <script src="../js/timeline.min.js" type="text/javascript"></script>
+        <script src="../js/lightcase.js" type="text/javascript"></script>
+
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.31.0/js/vendor/jquery.ui.widget.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.31.0/js/jquery.iframe-transport.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.31.0/js/jquery.fileupload.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-jquery-file-upload/2.11.4/cloudinary-jquery-file-upload.js"></script>
+        <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+        <script src="../js/custom.js" type="text/javascript"></script>
+
+
+        <!--Custom JavaScript-->
+        <script>
+            $(document).ready(function () {
+                $("#makeOfferbtn").click(function () {
+                    $("#selectService").modal({
+                        backdrop: 'static',
+                        keyboard: false
+                    });
+                });
+            });
+        </script>
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $('.contact_list > ul > li > a').click(function () {
+                    $('.member_inbox').addClass('mobile_chat_layout');
+                });
+
+                $('.mobile_chat_layout_cancel').click(function () {
+                    $('.member_inbox').removeClass('mobile_chat_layout');
+                });
+            });
+
+            $(document).ready(function () {
+                $('.contact_search_icon').click(function () {
+                    $('.member_inbox').addClass('search_layout');
+                });
+
+                $('.search_layout_cancel').click(function () {
+                    $('.member_inbox').removeClass('search_layout');
+                });
+            });
+
+
+            $(document).ready(function () {
+                $('#action_menu_btn').click(function () {
+                    $('.action_menu').toggle();
+                });
+            });
+
+        </script>
+
+        <script>
+            var element = function (id) {
+                return document.getElementById(id);
+            }
+
+            function scrollToBottom() {
+                let msg = element("chat-message");
+                $("div.msg_flow").scrollTop(msg.scrollHeight)
+            }
+
+            window.onload = scrollToBottom();
+
+        </script>
+
+        <script>
+            (function () {
+                var paymentmethod = '', serviceID = '', serviceImage = '', selectedService = '', payload = [], counter = 1, isAdd = false, subtotal = 0, discount = 0, totalPrice = 0, revision = 0, totalDuration = 0, finalNotes = '';
+
+                $(document).ready(function () {
+                    // ==================================================================================
+                    //Handlers for cancel button - resetting the data
+                    $("#selectmethodCancelbtn").on("click", function () {
+                        $("#singlepaymentbtn").removeClass("active")
+                        $("#milestonepaymentbtn").removeClass("active")
+                        $('#milestonePaymentSt1Form').trigger("reset")
+                        $('#milestonePaymentSt2Form').trigger("reset")
+                        $('#singlePaymentSt1Form').trigger("reset")
+                        $('#singlePaymentSt2Form').trigger("reset")
+
+                        let length = parseInt($("#getServicesLength").val())
+                        for (let i = 0; i < length; i++) {
+                            $("#" + selectedService[0] + i).removeClass("active")
+                        }
+                        $("#created_milestones").empty();
+                        $("#single_payments").empty();
+                        $("#pay_unit_val_error").html("")
+                        $("#pay_total_val_error").html("")
+                        $("#pay_desc_val_error").html("")
+                        $("#continue_singlepay_val").html("")
+                        $("#unit_val_error").html("")
+                        $("#total_val_error").html("")
+                        $("#desc_val_error").html("")
+                        $("#milestone_continue_val").html("")
+                        $("#selectService_val").html("");
+                        $("#selectMethod_val").html("");
+                        paymentmethod = '', serviceID = '', serviceImage = '', selectedService = '', payload = [];
+                        counter = 1, isAdd = false, subtotal = 0, discount = 0, totalPrice = 0, revision = 0, totalDuration = 0, finalNotes = '';
+                    })
+
+                    $("#selectServiceCancelBtn").on("click", function () {
+                        $("#singlepaymentbtn").removeClass("active")
+                        $("#milestonepaymentbtn").removeClass("active")
+                        $('#milestonePaymentSt1Form').trigger("reset")
+                        $('#milestonePaymentSt2Form').trigger("reset")
+                        $('#singlePaymentSt1Form').trigger("reset")
+                        $('#singlePaymentSt2Form').trigger("reset")
+
+                        let length = parseInt($("#getServicesLength").val())
+                        for (let i = 0; i < length; i++) {
+                            $("#" + selectedService[0] + i).removeClass("active")
+                        }
+                        $("#created_milestones").empty();
+                        $("#single_payments").empty();
+                        $("#pay_unit_val_error").html("")
+                        $("#pay_total_val_error").html("")
+                        $("#pay_desc_val_error").html("")
+                        $("#continue_singlepay_val").html("")
+                        $("#unit_val_error").html("")
+                        $("#total_val_error").html("")
+                        $("#desc_val_error").html("")
+                        $("#milestone_continue_val").html("")
+                        $("#selectService_val").html("");
+                        $("#selectMethod_val").html("");
+                        paymentmethod = '', serviceID = '', serviceImage = '', selectedService = '', payload = [];
+                        counter = 1, isAdd = false, subtotal = 0, discount = 0, totalPrice = 0, revision = 0, totalDuration = 0, finalNotes = '';
+                    })
+
+                    $("#createMilestoneCancelbtn").on("click", function () {
+                        $("#singlepaymentbtn").removeClass("active")
+                        $("#milestonepaymentbtn").removeClass("active")
+                        $('#milestonePaymentSt1Form').trigger("reset")
+                        $('#milestonePaymentSt2Form').trigger("reset")
+                        $('#singlePaymentSt1Form').trigger("reset")
+                        $('#singlePaymentSt2Form').trigger("reset")
+
+                        let length = parseInt($("#getServicesLength").val())
+                        for (let i = 0; i < length; i++) {
+                            $("#" + selectedService[0] + i).removeClass("active")
+                        }
+                        $("#created_milestones").empty();
+                        $("#single_payments").empty();
+                        $("#pay_unit_val_error").html("")
+                        $("#pay_total_val_error").html("")
+                        $("#pay_desc_val_error").html("")
+                        $("#continue_singlepay_val").html("")
+                        $("#unit_val_error").html("")
+                        $("#total_val_error").html("")
+                        $("#desc_val_error").html("")
+                        $("#milestone_continue_val").html("")
+                        $("#selectService_val").html("");
+                        $("#selectMethod_val").html("");
+                        paymentmethod = '', serviceID = '', serviceImage = '', selectedService = '', payload = [];
+                        counter = 1, isAdd = false, subtotal = 0, discount = 0, totalPrice = 0, revision = 0, totalDuration = 0, finalNotes = '';
+                    })
+
+                    $("#milestoneFinalCancelbtn").on("click", function () {
+                        $("#singlepaymentbtn").removeClass("active")
+                        $("#milestonepaymentbtn").removeClass("active")
+                        $('#milestonePaymentSt1Form').trigger("reset")
+                        $('#milestonePaymentSt2Form').trigger("reset")
+                        $('#singlePaymentSt1Form').trigger("reset")
+                        $('#singlePaymentSt2Form').trigger("reset")
+
+                        let length = parseInt($("#getServicesLength").val())
+                        for (let i = 0; i < length; i++) {
+                            $("#" + selectedService[0] + i).removeClass("active")
+                        }
+                        $("#created_milestones").empty();
+                        $("#single_payments").empty();
+                        $("#pay_unit_val_error").html("")
+                        $("#pay_total_val_error").html("")
+                        $("#pay_desc_val_error").html("")
+                        $("#continue_singlepay_val").html("")
+                        $("#unit_val_error").html("")
+                        $("#total_val_error").html("")
+                        $("#desc_val_error").html("")
+                        $("#milestone_continue_val").html("")
+                        $("#selectService_val").html("");
+                        $("#selectMethod_val").html("");
+                        paymentmethod = '', serviceID = '', serviceImage = '', selectedService = '', payload = [];
+                        counter = 1, isAdd = false, subtotal = 0, discount = 0, totalPrice = 0, revision = 0, totalDuration = 0, finalNotes = '';
+                    })
+
+                    $("#paymentCreateCancelbtn").on("click", function () {
+                        $("#singlepaymentbtn").removeClass("active")
+                        $("#milestonepaymentbtn").removeClass("active")
+                        $('#milestonePaymentSt1Form').trigger("reset")
+                        $('#milestonePaymentSt2Form').trigger("reset")
+                        $('#singlePaymentSt1Form').trigger("reset")
+                        $('#singlePaymentSt2Form').trigger("reset")
+
+                        let length = parseInt($("#getServicesLength").val())
+                        for (let i = 0; i < length; i++) {
+                            $("#" + selectedService[0] + i).removeClass("active")
+                        }
+                        $("#created_milestones").empty();
+                        $("#single_payments").empty();
+                        $("#pay_unit_val_error").html("")
+                        $("#pay_total_val_error").html("")
+                        $("#pay_desc_val_error").html("")
+                        $("#continue_singlepay_val").html("")
+                        $("#unit_val_error").html("")
+                        $("#total_val_error").html("")
+                        $("#desc_val_error").html("")
+                        $("#milestone_continue_val").html("")
+                        $("#selectService_val").html("");
+                        $("#selectMethod_val").html("");
+                        paymentmethod = '', serviceID = '', serviceImage = '', selectedService = '', payload = [];
+                        counter = 1, isAdd = false, subtotal = 0, discount = 0, totalPrice = 0, revision = 0, totalDuration = 0, finalNotes = '';
+                    })
+
+                    $("#paymentFinalCancelbtn").on("click", function () {
+                        $("#singlepaymentbtn").removeClass("active")
+                        $("#milestonepaymentbtn").removeClass("active")
+                        $('#milestonePaymentSt1Form').trigger("reset")
+                        $('#milestonePaymentSt2Form').trigger("reset")
+                        $('#singlePaymentSt1Form').trigger("reset")
+                        $('#singlePaymentSt2Form').trigger("reset")
+
+                        let length = parseInt($("#getServicesLength").val())
+                        for (let i = 0; i < length; i++) {
+                            $("#" + selectedService[0] + i).removeClass("active")
+                        }
+                        $("#created_milestones").empty();
+                        $("#single_payments").empty();
+                        $("#pay_unit_val_error").html("")
+                        $("#pay_total_val_error").html("")
+                        $("#pay_desc_val_error").html("")
+                        $("#continue_singlepay_val").html("")
+                        $("#unit_val_error").html("")
+                        $("#total_val_error").html("")
+                        $("#desc_val_error").html("")
+                        $("#milestone_continue_val").html("")
+                        $("#selectService_val").html("");
+                        $("#selectMethod_val").html("");
+                        paymentmethod = '', serviceID = '', serviceImage = '', selectedService = '', payload = [];
+                        counter = 1, isAdd = false, subtotal = 0, discount = 0, totalPrice = 0, revision = 0, totalDuration = 0, finalNotes = '';
+                    })
+
+                    // ==================CANCEL BUTTON HANDLERS END HERE===========================================
+
+                    //Saving the selected list	
+                    $("#servicesList").children().each(function (index, element) {
+                        let serviceName = $(this).find(".service_title").text().trim()
+
+                        $("#" + serviceName[0] + index).click(function () {
+                            serviceID = $(this).find(".service_title").children()[0].id;
+                            serviceImage = $(this).find(".service_image").children()[0].src;
+                            selectedService = serviceName;
+                        })
+                    })
+
+                    //Saving the states
+                    $("#singlepaymentbtn").click(function () {
+                        paymentmethod = "singlepayment"
+                    })
+
+                    $("#milestonepaymentbtn").click(function () {
+                        paymentmethod = "milestonepayment"
+                    })
+
+                    //Setting Payment Way
+                    $("#stopSelectService").on("click", function () {
+
+                        if (selectedService.length === 0) {
+                            $("#selectService_val").html("<p style='color: red; text-align: right'>Please select the service</p>")
+                        } else {
+                            $('#selectService').modal('hide');
+                            $("#singleMilestones").modal('show')
+                        }
+                    });
+
+                    $("#backSelectService").on("click", function () {
+                        $('#singleMilestones').modal('hide');
+                        $('#selectService').modal('show');
+                    });
+
+                    //Setting Single Payment Modals
+
+                    $("#backSingleMilestones").on("click", function () {
+                        $('#singlePaymentSt1').modal('hide');
+                        $('#singleMilestones').modal('show');
+                    });
+
+                    $("#finalDeliveryPayment").on("change", function () {
+                        totalDuration = $("#finalDeliveryPayment").val();
+                    });
+
+                    $("#finalRevisionPayment").on("change", function () {
+                        revision = $("#finalRevisionPayment").val();
+                    })
+
+                    $("#finalNotesPayment").on("change", function () {
+                        finalNotes = $("#finalNotesPayment").val()
+                    })
+
+                    $("#stopSinglePaymentSt1").on("click", function () {
+                        subtotal = 0;
+                        totalDuration = 0;
+                        let delivery = $("#finalDeliveryPayment").val();
+
+                        if (isAdd) {
+                            for (let i = 1; i < counter; i++) {
+                                let qty = $("#milestone" + i + "Qty").val();
+                                let unitPrice = $("#milestone" + i + "Price").val();
+                                let totalPrice = $("#milestone" + i + "TotalPrice").val();
+                                let description = $("#milestone" + i + "Desc").val();
+
+                                payload.push({
+                                    quantity: qty,
+                                    unitPrice: unitPrice,
+                                    totalPrice: totalPrice,
+                                    description: description
+                                });
+
+                                subtotal += Number(totalPrice);
+
+                            }
+
+                            // console.log(payload, subtotal)
+                            totalDuration = Number(delivery)
+
+                            $("#finalSubTotalPayment").val(subtotal)
+
+                            $('#singlePaymentSt1').modal('hide');
+                            $('#singlePaymentSt2').modal('show');
+
+                        }
+                        else {
+                            $("#continue_singlepay_val").html("Please add your offer by clicking Add button")
+                        }
+                    });
+
+                    $("#finalDiscountPayment").on("change", function () {
+                        let tempdiscount = $("#finalDiscountPayment").val()
+                        let amount = ((Number(subtotal) - Number(tempdiscount)) + ((Number(subtotal) - Number(tempdiscount)) * 0.024));
+
+                        // console.log(amount)
+                        $("#finalTotalPayment").val(amount.toFixed(2));
+                        discount = tempdiscount;
+                        totalPrice = amount.toFixed(2);
+                    })
+
+                    $("#backSinglePaymentSt1").on("click", function () {
+                        $('#singlePaymentSt2').modal('hide');
+                        $('#singlePaymentSt1').modal('show');
+                    });
+
+                    //Setting Milestone Payment Modals
+                    $("#stopMilestonesSingle").on("click", function () {
+                        if (paymentmethod === 'singlepayment') {
+                            $('#singleMilestones').modal('hide');
+                            $("#paymentModalImage").attr("src", serviceImage);
+                            $("#singlePaymentSt1ServiceName").html(selectedService)
+                            $('#singlePaymentSt1').modal('show');
+
+                        }
+                        else if (paymentmethod === 'milestonepayment') {
+                            $('#singleMilestones').modal('hide');
+                            $("#milestoneModalImage").attr("src", serviceImage);
+                            $("#milestonePaymentSt1ServiceName").html(selectedService)
+                            $('#milestonePaymentSt1').modal('show');
+                        }
+                        else {
+                            $("#selectMethod_val").html("<p style='text-align: right; color: red'>Please select the Payment Type</p>")
+                        }
+
+                    });
+
+                    $("#paymentPrice").on("change", function () {
+                        let qty = $("#paymentQty").val();
+                        let unitPrice = $("#paymentPrice").val();
+
+                        $("#paymentTotalPrice").val(qty * unitPrice)
+                    })
+
+                    $("#paymentQty").on("change", function () {
+                        let qty = $("#paymentQty").val();
+                        let unitPrice = $("#paymentPrice").val();
+
+                        $("#paymentTotalPrice").val(qty * unitPrice)
+                    })
+
+                    $("#paymentAddBtn").on("click", function () {
+
+                        let qty = $("#paymentQty").val();
+                        let unitPrice = $("#paymentPrice").val();
+                        let totalPrice = $("#paymentTotalPrice").val();
+                        let description = $("#paymentDesc").val();
+
+                        // console.log("Called", qty, unitPrice, totalPrice, description)
+
+                        if (unitPrice.length === 0) {
+                            $("#pay_unit_val_error").html("<p>Unit Price is required!</p>")
+                        }
+
+                        if (totalPrice.length === 0) {
+                            $("#pay_total_val_error").html("<p>Total Price is required!</p>")
+                        }
+
+                        if (description.length === 0) {
+                            $("#pay_desc_val_error").html("<p>Description is required!</p>")
+                        }
+
+                        if (unitPrice == "0")
+                            $("#pay_unit_val_error").html("<p>Unit Price cannot be zero!</p>")
+
+                        if (unitPrice.length !== 0 && totalPrice.length !== 0 && description.length !== 0 && unitPrice !== "0") {
+                            isAdd = true;
+                            $("#pay_unit_val_error").html("")
+                            $("#pay_total_val_error").html("")
+                            $("#pay_desc_val_error").html("")
+                            $("#continue_singlepay_val").html("")
+
+                            $("#single_payments").append('<div class="single_item"><div class="click_item"><a href="javascript:void(0)" data-target="#payment' + counter + '" class="collapsed" data-toggle="collapse"><div class="milestone_name_price"><div class="milestone_name"><h4>Description #' + counter + '</h4></div><div class="milestone_price"><h4>$' + totalPrice + '</h4></div></div></a></div><div id="payment' + counter + '" class="collapse fade contents" data-parent="#createdMilestones"><div class="created_milestone_box"><div class="service_title"><h4>' + selectedService + '</h4></div><div class="service_img_descrip"><div class="service_image"><img src="' + serviceImage + '" class="img-fluid" alt="selectedserviceImage" /></div><div class="service_descrip"><textarea name="milestone' + counter + 'Desc" id="milestone' + counter + 'Desc" cols="30" rows="4" class="form-control" placeholder="Describe Your System..." disabled>' + description + '</textarea></div></div><div class="offer_box set_offer"><div class="single_field"><label for="milestone' + counter + 'Qty">QTY</label><input id="milestone' + counter + 'Qty" type="text" class="form-control" placeholder="1,00,000 Max" value="' + qty + '" disabled/></div><div class="single_field"><label for="milestone' + counter + 'Price">Unit Price</label><div class="input_icon"><input type="text" id="milestone' + counter + 'Price" class="form-control" placeholder="25,000 Max" value="' + unitPrice + '" disabled /><i class="fa fa-usd" aria-hidden="true"></i></div></div><div class="single_field"><label for="milestone' + counter + 'TotalPrice">Total</label><div class="input_icon"><input id="milestone' + counter + 'TotalPrice" type="text" class="form-control" placeholder="1,00,000 Max" value="' + totalPrice + '" disabled/><i class="fa fa-usd" aria-hidden="true"></i></div></div></div></div></div></div>');
+                            $("#payment" + counter + "Qty").val(qty);
+                            counter = counter + 1;
+
+                            // Resetting the values to null
+                            $("#paymentQty").val(1);
+                            $("#paymentPrice").val('');
+                            $("#paymentTotalPrice").val('');
+                            $("#paymentDesc").val('');
+                        }
+
+                    });
+
+                    $("#milestoneQty").on("change", function () {
+                        let qty = $("#milestoneQty").val();
+                        let unitPrice = $("#milestonePrice").val();
+
+                        if (qty.length !== 0 && unitPrice.length !== 0)
+                            $("#milestoneTotalPrice").val(qty * unitPrice);
+                    })
+
+                    $("#milestonePrice").on("change", function () {
+                        let qty = $("#milestoneQty").val();
+                        let unitPrice = $("#milestonePrice").val();
+
+                        if (qty.length !== 0 && unitPrice.length !== 0)
+                            $("#milestoneTotalPrice").val(qty * unitPrice);
+                    })
+
+                    $("#addMilestoneBtn").on("click", function () {
+                        let qty = $("#milestoneQty").val();
+                        let delivery = $("#milestoneDelivery").val();
+                        let unitPrice = $("#milestonePrice").val();
+                        let totalPrice = $("#milestoneTotalPrice").val();
+                        let description = $("#milestoneDesc").val();
+
+                        if (unitPrice.length === 0) {
+                            $("#unit_val_error").html("<p>Unit Price is required!</p>")
+                        }
+
+                        if (totalPrice.length === 0) {
+                            $("#total_val_error").html("<p>Total Price is required!</p>")
+                        }
+
+                        if (description.length === 0) {
+                            $("#desc_val_error").html("<p>Description is required!</p>")
+                        }
+
+                        if (unitPrice.length !== 0 && totalPrice.length !== 0 && description.length !== 0) {
+                            isAdd = true;
+                            $("#unit_val_error").html("")
+                            $("#total_val_error").html("")
+                            $("#desc_val_error").html("")
+                            $("#milestone_continue_val").html("")
+
+                            $("#createdMilestones").append('<div class="single_item"><div class="click_item"><a href="javascript:void(0)" data-target="#milestone' + counter + '" class="collapsed" data-toggle="collapse"><div class="milestone_name_price"><div class="milestone_name"><h4>Milestone #' + counter + '</h4></div><div class="milestone_price"><h4>$' + totalPrice + '</h4></div></div></a></div><div id="milestone' + counter + '" class="collapse fade contents" data-parent="#createdMilestones"><div class="created_milestone_box"><div class="service_title"><h4>' + selectedService + '</h4></div><div class="service_img_descrip"><div class="service_image"><img src="' + serviceImage + '"  class="img-fluid" alt="selectedserviceImage" /></div><div class="service_descrip"><textarea name="milestone' + counter + 'Desc" id="milestone' + counter + 'Desc" cols="30" rows="4" class="form-control" placeholder="Describe Your System..." disabled>' + description + '</textarea></div></div><div class="offer_box set_milestones"><div class="single_field"><label for="milestone' + counter + 'Qty">QTY</label><select name="milestone' + counter + 'Qty" id="milestone' + counter + 'Qty" class="form-control" disabled><option value="1">1</option><option value="2">2</option><option value="3" >3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div><div class="single_field"><label for="milestone' + counter + 'Delivery">Delivery <a href="javascript:void(0)" title="The order duration might change depending on the back and forth communications between buyer and seller." data-toggle="tooltip"><i class="fa fa-question-circle" aria-hidden="true"></i></a></label><select name="milestone' + counter + 'Delivery" id="milestone' + counter + 'Delivery" class="form-control" disabled><option value="1">1 Day</option><option value="2">2 Days</option><option value="3">3 Days</option><option value="4">4 Days</option><option value="5">5 Days</option><option value="6">6 Days</option><option value="7">7 Days</option><option value="8">8 Days</option><option value="9">9 Days</option><option value="10">10 Days</option></select></div><div class="single_field"><label for="milestone' + counter + 'Price">Unit Price</label><div class="input_icon"><input type="text" id="milestone' + counter + 'Price" class="form-control" placeholder="25,000 Max" value="' + unitPrice + '" disabled/><i class="fa fa-usd" aria-hidden="true"></i></div></div><div class="single_field"><label for="milestone' + counter + 'TotalPrice">Total</label><div class="input_icon"><input id="milestone' + counter + 'TotalPrice" type="text" class="form-control" placeholder="1,00,000 Max" value="' + totalPrice + '" disabled/><i class="fa fa-usd" aria-hidden="true"></i></div></div></div></div></div></div>');
+                            $("#milestone" + counter + "Qty").val(qty);
+                            $("#milestone" + counter + "Delivery").val(delivery);
+                            counter = counter + 1;
+
+                            // Resetting the values to null
+                            $("#milestoneQty").val(1);
+                            $("#milestoneDelivery").val(1);
+                            $("#milestonePrice").val('');
+                            $("#milestoneTotalPrice").val('');
+                            $("#milestoneDesc").val('');
+                        }
+
+                    })
+
+                    $("#backToSingleMilestones").on("click", function () {
+                        $('#milestonePaymentSt1').modal('hide');
+                        $('#singleMilestones').modal('show');
+                    });
+
+                    $("#stopMilestonePaymentSt1").on("click", function () {
+                        subtotal = 0;
+                        totalDuration = 0;
+                        if (isAdd) {
+                            for (let i = 1; i < counter; i++) {
+                                let qty = $("#milestone" + i + "Qty").val();
+                                let delivery = $("#milestone" + i + "Delivery").val();
+                                let unitPrice = $("#milestone" + i + "Price").val();
+                                let totalPrice = $("#milestone" + i + "TotalPrice").val();
+                                let description = $("#milestone" + i + "Desc").val();
+
+                                payload.push({
+                                    quantity: qty,
+                                    delivery: delivery,
+                                    unitPrice: unitPrice,
+                                    totalPrice: totalPrice,
+                                    description: description
+                                });
+
+                                subtotal += Number(totalPrice);
+                                totalDuration += Number(delivery)
+                            }
+
+                            // console.log(payload, subtotal, totalDuration)
+
+                            $("#finalSubTotalMilestone").val(subtotal)
+                            $("#finalDelivery").val(totalDuration);
+
+                            $('#milestonePaymentSt1').modal('hide');
+                            $('#milestonePaymentSt2').modal('show');
+                        } else {
+                            $("#milestone_continue_val").html("Please add atleast one milestone by clicking Add button")
+                        }
+
+                    });
+
+                    $("#finalDiscountMilestone").on("change", function () {
+                        let tempdiscount = $("#finalDiscountMilestone").val();
+                        let amount = ((Number(subtotal) - Number(tempdiscount)) + ((Number(subtotal) - Number(tempdiscount)) * 0.024));
+
+                        $("#finalTotalMilestone").val(amount.toFixed(2));
+                        discount = tempdiscount;
+                        totalPrice = amount.toFixed(2);
+                    })
+
+                    $("#finalRevision").on("change", function () {
+                        revision = $("#finalRevision").val()
+                    })
+
+                    $("#finalNotes").on("change", function () {
+                        finalNotes = $("#finalNotes").val()
+                    })
+
+                    $("#backMilestonePaymentSt1").on("click", function () {
+                        $('#milestonePaymentSt2').modal('hide');
+                        $('#milestonePaymentSt1').modal('show');
+                    });
+                    $("#stopMilestonePaymentSt2").on("click", function () {
+                        $('#milestonePaymentSt2').modal('hide');
+                        $('#milestonePaymentSt3').modal('show');
+                    });
+                    $("#backMilestonePaymentSt2").on("click", function () {
+                        $('#milestonePaymentSt3').modal('hide');
+                        $('#milestonePaymentSt2').modal('show');
+                    });
+
+                });
+
+                // Bootstrap Tooltip & Popover Activation
+                $(document).ready(function () {
+                    $('[data-toggle="tooltip"]').tooltip();
+                    $('[data-toggle="popover"]').popover();
+                })
+
+                // =================================================================================
+
+                var element = function (id) {
+                    return document.getElementById(id);
+                }
+
+                // Get Elements
+                var status = element('status');
+                var messages = element('chat-message');
+                var textarea = element('textarea');
+
+                // Set default status
+                var statusDefault = status.textContent;
+
+                var setStatus = function (s) {
+                    // Set status
+                    status.textContent = s;
+
+                    if (s !== statusDefault) {
+                        var delay = setTimeout(function () {
+                            setStatus(statusDefault);
+                        }, 4000);
+                    }
+                }
+
+                // Connect to socket.io
+                var socket = io.connect();
+
+                socket.on("connect_error", (err) => {
+                    console.log(`connect_error due to ${err.message}`);
+                });
+
+                socket.on("connect", () => {
+                    console.log(socket.connected); // true
+                });
+
+                socket.on("disconnect", () => {
+                    console.log(socket.connected); // false
+                });
+
+                // Check for connection
+                if (socket !== undefined) {
+                    console.log('Connected to socket...');
+                    let fileURL = [];
+
+                    var myWidget = cloudinary.createUploadWidget({
+                        cloudName: 'gabazzo',
+                        uploadPreset: 'message_attachments'
+                    }, (error, result) => {
+                        if (!error && result && result.event === "success") {
+                            console.log('Done! Here is the info: ', result.info);
+                            fileURL.push({ url: result.info.secure_url, type: result.info.format });
+                            $("#file_success").remove();
+                            $("#sending_options").append('<li id="file_success" style="color: green"><span>Files are attached successfully.</span><li>')
+                        }
+                        if (error) {
+                            console.log(error);
+                        }
+                        console.log(fileURL)
+
+                    }
+                    )
+
+                    document.getElementById("upload_widget").addEventListener("click", function () {
+                        myWidget.open();
+                    }, false);
+
+                    $(".btnWithdraw").on('click', function () {
+                        console.log($(this)[0].id)
+
+                        // $.post("/offer/3312323321", )
+                        // .done(function() {
+                        // alert( "second success" );
+                        // window.location.reload();
+                        // })
+                        // .fail(function() {
+                        //     alert( "error" );
+                        //     $.post("/offer/3312323321", {payload: payload})
+                        // })
+                        socket.emit('withdrawOffer', $(this)[0].id)
+
+                    })
+
+                    // $(".btnacceptdecline").on('click', function(){
+                    //     console.log(.append("<span> - 2nd!</span>"))
+                    //     console.log($(this))
+                    // })
+
+
+                    socket.on('withdrawOfferSuccess', async function (data) {
+                        console.log("withdrawOfferSuccess", data)
+                        // if(window.location.href.includes(data.receiverID)){
+                        //     console.log("sender")
+                        //     window.location.reload();
+                        // }
+                        // else{
+                        //     console.log("receiver")
+                        //     window.location.reload();
+                        // }
+
+                        //window.location.reload();
+
+                        //Removing the accept-decline buttons - buyer view
+                        $("#acptdec" + data).html("<li><h3 style='font-family: fangsong;'>Offer Withdrawn</h3></li>")
+                        //Removing the withdrawn button - seller view
+                        $("#" + data).replaceWith("<h3 style='font-family: fangsong;'>Offer Withdrawn</h3>")
+                    });
+
+
+                    $("ul.btnacceptdecline li:nth-child(1)").on('click', function () {
+                        let id = $(this)[0].firstChild.id.substr(7)
+                        // console.log(id)
+                        socket.emit('acceptDeclineOffer', { status: 'declined', id })
+
+                    })
+                    $("ul.btnacceptdecline li:nth-child(2)").on('click', function () {
+                        let id = $(this)[0].lastChild.id.substr(6)
+                        console.log(id)
+                        socket.emit('acceptDeclineOffer', { status: 'accepted', id })
+                    })
+
+
+                    socket.on('acceptDeclineSuccess', async function (obj) {
+                        console.log("acceptDeclineSuccess", obj)
+
+                        if (obj.status === 'accepted') {
+                            //Removing the accept-decline buttons - buyer view
+                            $("#acptdec" + obj.id).html("<li><h3 style='font-family: fangsong; color:green'>Offer Accepted</h3></li>")
+                            //Removing the withdrawn button - seller view
+                            $("#" + obj.id).replaceWith("<h3 style='font-family: fangsong; color:green'>Offer Accepted</h3></h3>")
+                        }
+                        else if (obj.status === 'declined') {
+                            //Removing the accept-decline buttons - buyer view
+                            $("#acptdec" + obj.id).html("<li><h3 style='font-family: fangsong; color:red'>Offer Declined</h3></li>")
+                            //Removing the withdrawn button - seller view
+                            $("#" + obj.id).replaceWith("<h3 style='font-family: fangsong; color:red'>Offer Declined</h3></h3>")
+                        }
+                    });
+
+                    // Handle Output
+                    socket.on('output', async function (data) {
+                        console.log("asdasdsa")
+                        if (data.length) {
+                            if (window.location.href.includes(data[0].from.id) || window.location.href.includes(data[0].to.id)) {
+                                // console.log("Current Chat opened on both the users")
+                                for (var x = 0; x < data.length; x++) {
+                                    // Build out message div
+                                    if (data[x].message != undefined || data[x].attachments != undefined) {
+
+                                        let html = '<div class="msg_wrap"><div class="profile_link_image">';
+
+                                        if (data[x].from.isCompany) {
+                                            if (data[x].from.logo) {
+                                                //Appending the image part
+                                                html = html + '<a href="javascript:void(0)"><img src="' + data[x].from.logo + '" alt="profilePicture" /></a></div>'
+                                            }
+                                            else {
+                                                //Appending the image part
+                                                html = html + '<a href="javascript:void(0)"><img src="../images/man.png" alt="profilePicture" /></a></div>'
+                                            }
+                                            //Appending the Name part
+                                            html = html + '<div class="msg_content"><div class="msg_header"><h6><span class="msg_sender">' + data[x].from.companyName + '</span> | <time>' + data[x].timeAgo + '</time></h6></div>';
+                                            //Appending the msg body - actual msg part
+                                            html = html + '<div class="msg_body"><p>' + data[x].message + '</p>'
+                                        }
+
+                                        else {
+                                            if (data[x].from.profilePicture) {
+                                                //Appending the image part
+                                                html = html + '<a href="javascript:void(0)"><img src="' + data[x].from.profilePicture + '" alt="profilePicture" /></a></div>'
+                                            }
+                                            else {
+                                                //Appending the image part
+                                                html = html + '<a href="javascript:void(0)"><img src="../images/man.png" alt="profilePicture" /></a></div>'
+                                            }
+                                            //Appending the Name part
+                                            html = html + '<div class="msg_content"><div class="msg_header"><h6><span class="msg_sender">' + data[x].from.firstName + ' ' + data[x].from.lastName + '</span> | <time>' + data[x].timeAgo + '</time></h6></div>';
+                                            //Appending the msg body - actual msg part
+                                            html = html + '<div class="msg_body"><p>' + data[x].message + '</p>'
+                                        }
+
+                                        if (data[x].attachments != undefined) {
+                                            if (data[x].attachments.length)
+                                                html = html + '<div class="msg_attachments_files">'
+                                            for (let i = 0; i < data[x].attachments.length; i++) {
+                                                if (data[x].attachments[i].type === 'jpg' || data[x].attachments[i].type === 'jpeg' || data[x].attachments[i].type === 'png' || data[x].attachments[i].type === 'gif')
+                                                    html = html + '<div class="msg_attachment_items" ><a href="' + data[x].attachments[i].url + '"><img src="' + data[x].attachments[i].url + '" height="200px" width="160px" loading="lazy" style="object-fit: cover"/></a></div>'
+                                                else
+                                                    html = html + '<div class="msg_attachment_items" ><video width="100%" height="100%" controls><source src="' + data[x].attachments[i].url + '" type="video/mp4" style="height: 200px !important; width: 160px;"<source src="' + + data[x].attachments[i].url + '" type="video/ogg" style="height: 200px !important; width: 160px;"></video></div>';
+                                            }
+                                            html = html + '</div>';
+                                        }
+
+                                        //CUSTOM OFFER PART
+                                        if (data[x].offer) {
+                                            console.log("offer is present")
+                                            let counter = 0;
+
+                                            //IF THE PAYMENT IS IN MILESTONES
+                                            if (data[x].offer.type === 'milestonepayment') {
+                                                html = html + '<div class="sent_offer"><div class="indicator_texts"><h4>Sent Custom Offer <a href="javascript:void(0)" title="A unique offer sent by a contractor according to your request." data-toggle="tooltip" data-placement="left"><i class="fa fa-info-circle" aria-hidden="true"></i></a></h4></div><div class="offer_box_wrap"><div class="payment_type"><h4>Milestone Payment Offer</h4></div><div class="all_milestones" id="allMilestone">'
+                                                for (let i = 0; i < data[x].offer.tasks.length; i++) {
+                                                    counter = i + 1;
+                                                    html = html + '<div class="single_item"><div class="click_item"><a href="javascript:void(0)" data-target="#task' + data[x].offer.id + counter + '" class="collapsed" data-toggle="collapse" aria-expanded="false"><div class="milestone_name_price"><div class="milestone_name"><h4>Milestone #' + counter + '</h4></div><div class="milestone_price"><h4>$' + data[x].offer.tasks[i].totalPrice + '</h4></div></div></a></div><div id="task' + data[x].offer.id + counter + '" class="collapse fade contents" data-parent="#allMilestone"><div class="sent_offer_box">	<div class="title"><h4>' + data[x].offer.service.title + '</h4></div><div class="service_img_descrip"><div class="service_image"><img src="' + data[x].offer.service.image + '" class="img-fluid" alt="" /></div><div class="service_descrip"><p>' + data[x].offer.tasks[i].description + '</p>	</div></div><div class="offer_facts milestone_facts"><div class="single_fact"><h6>QTY</h6><div class="tiny_box">	<h5>' + data[x].offer.tasks[i].quantity + '</h5></div></div><div class="single_fact"><h6>Delivery</h6>	<div class="tiny_box">	<h5>' + data[x].offer.tasks[i].delivery + ' Days</h5></div></div><div class="single_fact"><h6>Unit Price</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.tasks[i].unitPrice + '</h5>	<i class="fa fa-usd" aria-hidden="true"></i></div></div><div class="single_fact"><h6>Total</h6><div class="tiny_box tiny_box_usd">	<h5>' + data[x].offer.tasks[i].totalPrice + '</h5><i class="fa fa-usd" aria-hidden="true"></i></div></div></div></div></div></div>';
+                                                }
+                                            }
+
+                                            // IF THE PAYMENT IS SINGLE
+                                            if (data[x].offer.type === 'singlepayment') {
+                                                html = html + '<div class="sent_offer"><div class="indicator_texts"><h4>Sent Custom Offer <a href="javascript:void(0)" title="A unique offer sent by a contractor according to your request." data-toggle="tooltip" data-placement="left"><i class="fa fa-info-circle" aria-hidden="true"></i></a></h4></div><div class="offer_box_wrap"><div class="payment_type"><h4>Single Payment Offer</h4></div><div class="all_milestones" id="allPayments">'
+                                                for (let i = 0; i < data[x].offer.tasks.length; i++) {
+                                                    counter = i + 1;
+                                                    html = html + '<div class="single_item"><div class="click_item"><a href="javascript:void(0)" data-target="#task' + data[x].offer.id + counter + '" class="collapsed" data-toggle="collapse" aria-expanded="false"><div class="milestone_name_price"><div class="milestone_name"><h4>Description #' + counter + '</h4></div><div class="milestone_price"><h4>$' + data[x].offer.tasks[i].totalPrice + '</h4></div></div></a></div><div id="task' + data[x].offer.id + counter + '" class="collapse fade contents" data-parent="#allPayments"><div class="sent_offer_box">	<div class="title"><h4>' + data[x].offer.service.title + '</h4></div><div class="service_img_descrip"><div class="service_image"><img src="' + data[x].offer.service.image + '" class="img-fluid" alt="" /></div><div class="service_descrip"><p>' + data[x].offer.tasks[i].description + '</p>	</div></div><div class="offer_facts milestone_facts"><div class="single_fact"><h6>QTY</h6><div class="tiny_box">	<h5>' + data[x].offer.tasks[i].quantity + '</h5></div></div><div class="single_fact"><h6>Unit Price</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.tasks[i].unitPrice + '</h5>	<i class="fa fa-usd" aria-hidden="true"></i></div></div><div class="single_fact"><h6>Total</h6><div class="tiny_box tiny_box_usd">	<h5>' + data[x].offer.tasks[i].totalPrice + '</h5><i class="fa fa-usd" aria-hidden="true"></i></div></div></div></div></div></div>';
+                                                }
+                                            }
+
+                                            // SENDER VIEW - APPENDING THE BTNS
+                                            if (window.location.href.includes(data[0].receiverID)) {
+                                                html += '<div class="offer_facts_buttons"><div class="offer_facts total_facts"><div class="single_fact"><h6>Sub Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.subTotal + '</h5><i class="fa fa-usd" aria-hidden="true"></i></div></div><div class="single_fact"><h6>Delivery</h6><div class="tiny_box"><h5>' + data[x].offer.totalDuration + ' Days</h5></div></div><div class="single_fact"><h6>Gabazzo Fee</h6><div class="tiny_box"><h5>2.4%</h5></div></div><div class="single_fact"><h6>Revisions</h6><div class="tiny_box"><h5>' + data[x].offer.revision + '</h5></div></div><div class="single_fact"><h6>Quote Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalCost + ' </h5><i class="fa fa-usd" aria-hidden="true"></i></div></div></div><div class="offer_buttons"><div class="left_buttons"><ul><li><a href="https://s3.amazonaws.com/assets.gabazzo.com/' + data[0].offer.id + '.pdf" class="gbtn gbtn_orange_bdr">View PDF File</a></li></ul></div><div class="right_buttons"><ul><li><button id="' + data[0].offer.id + '" class="btn gbtn gbtn_gray btnWithdraw" >Withdraw Offer</button></li></ul></div></div></div>';
+
+                                                $('body').on('click', '.btnWithdraw', async function () { // Make your changes here
+                                                    // await socket.emit('withdrawOffer', data[0])   
+                                                    console.log($(this)[0].id)
+                                                    socket.emit('withdrawOffer', $(this)[0].id)
+                                                });
+                                            }
+                                            // RECV VIEW - APPENDING THE BTNS
+                                            else {
+                                                html += '<div class="offer_facts_buttons"><div class="offer_facts total_facts"><div class="single_fact"><h6>Sub Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.subTotal + '</h5><i class="fa fa-usd" aria-hidden="true"></i></div></div><div class="single_fact"><h6>Delivery</h6><div class="tiny_box"><h5>' + data[x].offer.totalDuration + ' Days</h5></div></div><div class="single_fact"><h6>Gabazzo Fee</h6><div class="tiny_box"><h5>2.4%</h5></div></div><div class="single_fact"><h6>Revisions</h6><div class="tiny_box"><h5>' + data[x].offer.revision + '</h5></div></div><div class="single_fact"><h6>Quote Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalCost + ' </h5><i class="fa fa-usd" aria-hidden="true"></i></div></div></div><div class="offer_buttons"><div class="left_buttons"><ul><li><a href="https://s3.amazonaws.com/assets.gabazzo.com/' + data[0].offer.id + '.pdf"  class="gbtn gbtn_orange_bdr">View PDF File</a></li></ul></div><div class="right_buttons"><ul id="acptdec' + data[0].offer.id + '" class="btnacceptdecline"><li><button id="decline' + data[0].offer.id + '" class="btn gbtn gbtn_red_bdr">Decline Offer</button></li><li><button id="accept' + data[0].offer.id + '"  class="btn gbtn gbtn_green_bdr">Accept Offer</button></li></ul></div></div></div>';
+                                                $('body').on('click', 'ul.btnacceptdecline li:nth-child(1)', async function () { // Make your changes here
+                                                    let id = $(this)[0].firstChild.id.substr(7)
+                                                    console.log(id)
+                                                    socket.emit('acceptDeclineOffer', { status: 'declined', id })
+                                                });
+                                                $('body').on('click', 'ul.btnacceptdecline li:nth-child(2)', async function () { // Make your changes here
+                                                    let id = $(this)[0].lastChild.id.substr(6)
+                                                    console.log(id)
+                                                    socket.emit('acceptDeclineOffer', { status: 'accepted', id })
+                                                });
+                                            }
+                                        }
+
+
+
+                                        html = html + '</div></div></div>'
+                                        $("#chat-message").append(html);
+
+
+                                        function scrollToBottom() {
+                                            let msg = element("chat-message");
+                                            $("div.msg_flow").scrollTop(msg.scrollHeight)
+                                        }
+                                        scrollToBottom();
+                                    }
+
+                                }
+
+                                let senderID = data[0].senderID, receiverID = data[0].receiverID;
+                                let isUserSender = false, conversationTag;
+
+                                //If the URL is same as of the id of Reciever - Conversation is opened (The window of the sender PC)
+                                if (window.location.href.includes(receiverID)) {
+                                    let tempTag = $("#" + data[0].to.username).clone();
+                                    $("#" + data[0].to.username).remove();
+                                    $("#conversation_messages").prepend(tempTag)
+                                    let tag;
+
+                                    if (data[0].to.isCompany)
+                                        tag = '<h6 style="text-transform: capitalize;">' + data[0].to.companyName + '</h6><small class="last_message">Me: ' + data[0].message + '</small>';
+                                    else
+                                        tag = '<h6 style="text-transform: capitalize;">' + data[0].to.firstName + ' ' + data[0].to.lastName + '</h6><small class="last_message">Me: ' + data[0].message + '</small>';
+
+                                    $("#" + receiverID).html(tag);
+                                }
+                                //If the Reciever has opened the conversation of the sender
+                                else if (window.location.href.includes(senderID)) {
+                                    let tempTag = $("#" + data[0].from.username).clone();
+                                    $("#" + data[0].from.username).remove();
+                                    $("#conversation_messages").prepend(tempTag)
+                                    let tag;
+
+                                    if (data[0].from.isCompany)
+                                        tag = '<h6 style="text-transform: capitalize;">' + data[0].from.companyName + '</h6><small class="last_message">' + data[0].message + '</small>';
+                                    else
+                                        tag = '<h6 style="text-transform: capitalize;">' + data[0].from.firstName + ' ' + data[0].from.lastName + '</h6><small class="last_message">' + data[0].message + '</small>';
+
+                                    $("#" + senderID).html(tag);
+
+                                }
+
+                            }
+                            else {
+
+                                let senderID = data[0].senderID, receiverID = data[0].receiverID;
+                                let isUserSender = false, conversationTag;
+
+                                console.log("This is called when some other user msgs and its conv does not exist", senderID, receiverID, window.location.href)
+
+                                if ($("#" + data[0].from.username).length === 0) {
+                                    console.log("LENGTH IS ZERO")
+                                    let tag = '<li id="' + data[0].from.username + '"class="active"><a href="/inbox/' + data[0].from.id + '"><div class="row"><div class="col-3 pr-0 user_pic">'
+
+                                    if (data[0].from.isCompany) {
+                                        if (data[0].from.logo)
+                                            tag = tag + '<img src= " ' + data[0].from.logo + ' "class="img-fluid profile-photo" alt="" />'
+                                        else
+                                            tag = tag + '<img src="../images/man.png" class="img-fluid profile-photo" alt="" />'
+
+                                        tag = tag + '</div> <div id="' + data[0].from.id + '"class="col-9 pl-0"><h6>' + data[0].from.companyName + '</h6><small class="last_message"> ' + data[0].message + '</small></div> </div></a></li>'
+                                    }
+                                    else {
+                                        if (data[0].from.profilePicture)
+                                            tag = tag + '<img src= " ' + data[0].from.profilePicture + ' "class="img-fluid profile-photo" alt="" />'
+                                        else
+                                            tag = tag + '<img src="../images/man.png" class="img-fluid profile-photo" alt="" />'
+
+                                        tag = tag + '</div> <div id="' + data[0].from.id + '"class="col-9 pl-0"><h6>' + data[0].from.firstName + ' ' + data[0].from.lastName + '</h6><small class="last_message"> ' + data[0].message + '</small></div> </div></a></li>'
+                                    }
+
+
+                                    $("#conversation_messages").prepend(tag);
+                                }
+                                else {
+
+                                    console.log("LENGTH IS NOT ZERO")
+
+                                    let tempTag = $("#" + data[0].from.username).clone();
+                                    $("#" + data[0].from.username).remove();
+                                    $("#conversation_messages").prepend(tempTag)
+
+                                    let tag = '<h6>' + data[0].from.username + '</h6><small class="last_message">' + data[0].message + '</small>';
+
+                                    $("#" + data[0].from.id).html(tag);
+                                }
+                            }
+                        }
+                    });
+
+                    // Get Status From Server
+                    socket.on('status', function (data) {
+                        // get message status
+                        setStatus((typeof data === 'object') ? data.message : data);
+
+                        // If status is clear, clear text
+                        if (data.clear) {
+                            textarea.value = '';
+                        }
+                    });
+
+                    // Handle Input
+                    textarea.addEventListener('keydown', async function (event) {
+
+                        if (event.which === 13 && event.shiftKey == false) {
+                            // Emit to server input
+                            await socket.emit('input', {
+                                attachment: fileURL,
+                                message: textarea.value
+
+                            });
+
+                            textarea.value = '';
+                            fileURL = [];
+
+                            event.preventDefault();
+                        }
+                    })
+
+                    window.onunload = async function () {
+                        await socket.emit("disconnected");
+                    };
+
+                    //SINGLE PAYMENT
+                    $("#sendPaymentOffer").click(async function () {
+
+                        await socket.emit('sendOffer', {
+                            offer: {
+                                paymentType: paymentmethod,
+                                service: serviceID,
+                                tasks: payload,
+                                subTotal: subtotal,
+                                revision,
+                                totalPrice,
+                                totalDuration,
+                                discount,
+                                finalNotes
+                            }
+                        })
+
+                        $("#singlePaymentSt2").modal('hide')
+                        $("#singlepaymentbtn").removeClass("active")
+                        $("#milestonepaymentbtn").removeClass("active")
+                        $('#milestonePaymentSt1Form').trigger("reset")
+                        $('#milestonePaymentSt2Form').trigger("reset")
+                        $('#singlePaymentSt1Form').trigger("reset")
+                        $('#singlePaymentSt2Form').trigger("reset")
+
+                        let length = parseInt($("#getServicesLength").val())
+                        for (let i = 0; i < length; i++) {
+                            $("#" + selectedService[0] + i).removeClass("active")
+                        }
+                        $("#created_milestones").empty();
+                        $("#single_payments").empty();
+                        $("#pay_unit_val_error").html("")
+                        $("#pay_total_val_error").html("")
+                        $("#pay_desc_val_error").html("")
+                        $("#continue_singlepay_val").html("")
+                        $("#unit_val_error").html("")
+                        $("#total_val_error").html("")
+                        $("#desc_val_error").html("")
+                        $("#milestone_continue_val").html("")
+                        $("#selectService_val").html("");
+                        $("#selectMethod_val").html("");
+                        paymentmethod = '', serviceID = '', serviceImage = '', selectedService = '', payload = [];
+                        counter = 1, isAdd = false, subtotal = 0, discount = 0, totalPrice = 0, revision = 0, totalDuration = 0, finalNotes = '';
+                    })
+
+                    //MILESTONE PAYMENT
+                    $("#sendOfferMilestone").click(async function () {
+                        await socket.emit('sendOffer', {
+                            offer: {
+                                paymentType: paymentmethod,
+                                service: serviceID,
+                                tasks: payload,
+                                subTotal: subtotal,
+                                revision,
+                                totalPrice,
+                                totalDuration,
+                                discount,
+                                finalNotes
+                            }
+                        })
+
+                        $("#milestonePaymentSt2").modal('hide')
+                        $("#singlepaymentbtn").removeClass("active")
+                        $("#milestonepaymentbtn").removeClass("active")
+                        $('#milestonePaymentSt1Form').trigger("reset")
+                        $('#milestonePaymentSt2Form').trigger("reset")
+                        $('#singlePaymentSt1Form').trigger("reset")
+                        $('#singlePaymentSt2Form').trigger("reset")
+
+                        let length = parseInt($("#getServicesLength").val())
+                        for (let i = 0; i < length; i++) {
+                            $("#" + selectedService[0] + i).removeClass("active")
+                        }
+                        $("#created_milestones").empty();
+                        $("#single_payments").empty();
+                        $("#pay_unit_val_error").html("")
+                        $("#pay_total_val_error").html("")
+                        $("#pay_desc_val_error").html("")
+                        $("#continue_singlepay_val").html("")
+                        $("#unit_val_error").html("")
+                        $("#total_val_error").html("")
+                        $("#desc_val_error").html("")
+                        $("#milestone_continue_val").html("")
+                        $("#selectService_val").html("");
+                        $("#selectMethod_val").html("");
+                        paymentmethod = '', serviceID = '', serviceImage = '', selectedService = '', payload = [];
+                        counter = 1, isAdd = false, subtotal = 0, discount = 0, totalPrice = 0, revision = 0, totalDuration = 0, finalNotes = '';
+                    })
+
+                    $("#sendMsgBtn").click(async function () {
+                        // Emit to server input
+                        await socket.emit('input', {
+                            attachment: fileURL,
+                            message: textarea.value,
+                        });
+                        fileURL = [];
+                        textarea.value = '';
+
+                    });
+                }
+            })();
+        </script>
+
+    </body>
+
+    </html>

@@ -1,0 +1,526 @@
+<% layout('layouts/oneDepthPageBoilerplate') -%>
+
+	<!--===== Markup For "View Offer" Starts From Here =====-->
+    <section class="view_offers_wrap">
+        <!--===== Markup For "Offer Header" Starts From Here =====-->
+        <div class="view_offers_header">
+            <div class="container">
+                <div class="view_offer_head">
+                    <div class="title">
+                        <h3>View Offers <span>(<%= offers.length %> Offers)</span></h3>
+                    </div>
+                    <div class="back_link grid_item">
+                        <a class="anchor_link" href="../view-request"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to View Request</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--===== Markup For "Offer Header" Ends Here =====-->
+        
+        
+        <div class="view_offer">
+            <div class="container">
+                <!--===== Markup For "Member's Request" Starts From Here =====-->
+                <div class="members_request_wrap">
+                    <div class="members_request">
+                        <div class="members_info grid_item">
+                            <div class="profile_pic">
+                                <% if(project.owner.profilePicture) { %>
+                                    <a href="javascript:void(0)"><img src="<%= project.owner.profilePicture %>" class="img-fluid" alt="profile picture" /></a>
+                                <% } else { %>
+                                    <img src="../images/man.png" class="img-fluid" alt="" />
+                                <% } %>
+                            </div>
+                            <div class="profile_name">
+                                <a href="javascript:void(0)"><%= project.owner.name %></a>
+                            </div>
+                        </div>
+
+                        <div class="request grid_item">
+                            <div class="request_head">
+                                <div class="request_title">
+                                    <h4><%= project.title %></h4>
+                                </div>
+                                <div class="request_method">
+                                    <% if(!project.isOpenToBid ) { %>
+                                        <h2>Budget: $<%= project.budget %></h2>
+                                    <% } else { %>
+                                        <span class="gbtn">Open to Bids</span>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <p><%= project.description %><a href="javascript:void(0)">See More...</a></p>
+                            <div class="tags">
+                                <ul>
+                                    <li><%= project.mainCategory %></li>
+                                    <li><%= project.subCategory %></li>
+                                    <li><%= project.type %></li>
+                                    <li><%= project.language %></li>
+                                    <li>Date: <%= project.date %></li>
+                                    <li>Time: <%= project.time %></li>
+                                    <li>Location: <%= project?.address %></li>
+                                </ul>
+                            </div>
+                            <div class="download_files">
+                                <ul>
+                                    <% for(let j = 0; j < project.media.length ; j++) { %>
+                                        <li><a href="<%= project.media[j].path %>"><i class="far fa-arrow-alt-circle-down"></i> <span class="file_name"><%= project.media[j].key %> </span></a></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--===== Markup For "Member's Request" Ends Here =====-->
+                
+
+                <!--===== Markup For "Offer Sort By" Starts From Here =====-->
+                <div class="company_offers_head">
+                    <div class="offer_sort_by">
+                        <!-- <div class="sort_by_label grid_item">
+                            <h5>Sort Offer By:</h5>
+                        </div>
+                        <div class="sort_filters">
+                            <form action="">
+                                <div class="select_field">
+                                    <select name="" id="" class="form-control">
+                                        <option value="">Default</option>
+                                        <option value="">Price</option>
+                                        <option value="">Delivery Time</option>
+                                        <option value="">Seller Online</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div> -->
+                    </div>
+                </div>
+                <!--===== Markup For "Offer Sort By" Ends Here =====-->
+                
+
+                <!--===== Markup For "Company Offers" Starts From Here =====-->
+                <div class="company_offers">
+
+                    <% for(let i = 0; i< offers.length; i++){ %> 
+                        <div class="single_company_offer">
+                            <div class="service_image">
+                                <div class="image_wrap">
+                                    <% if(offers[i].service?.images[0]?.url) { %>
+                                        <img src="<%= offers[i].service?.images[0]?.url %>" class="img-fluid" alt="" />
+                                    <% } else { %>
+                                        <img src="images/Roofing_Services.jpg" class="img-fluid" alt="" />
+                                    <% } %>
+                                </div>
+                            </div>
+
+                            <div class="service_info">
+                                <div class="company_info_wrap">
+                                    <div class="company_info">
+                                        <div class="company_logo">
+                                            <a href="javascript:void(0)">
+                                                <% if(offers[i].sender.logo) { %>
+                                                    <img src="<%= offers[i].sender.logo %>" class="img-fluid" alt="" />
+                                                <% } else { %>
+                                                    <img src="../images/man.png" class="img-fluid" alt="" />
+                                                <% } %>
+                                            </a>
+                                            <span class="activity_status online_status"></span>
+                                        </div>
+                                        <div class="company_name grid_item">
+                                            <h5><%= offers[i].sender.companyName %></h5>
+                                            <h6>Online</h6>
+                                        </div>
+                                    </div>
+                                    <div class="offered_price grid_item">
+                                        <h2>$<%= offers[i].totalCost %></h2>
+                                    </div>
+                                </div>
+                                <div class="offer">
+                                    <h4><%= offers[i].service.title %></h4>
+                                    <p>
+                                        <% for(let j = 0; j< offers[i].tasks.length; j++) {%> 
+                                            <%= offers[i].tasks[j].description %>
+                                        <% } %>
+                                    <a href="javascript:void(0)">See More...</a></p>
+                                    <div class="tags">
+                                        <ul>
+                                            <li>Delivery: <span><%= offers[i].totalDuration %> Days</span></li>
+                                            <li>Revisions: <span><%= offers[i].revision %></span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="schedule_actions">
+                                        <div class="schedule grid_item">
+                                            <ul>
+                                                <li>Schedule: <span>Aug 05, 2021</span></li>
+                                                <li>Time: <span>10:00 AM</span></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="actions">
+                                            <ul>
+                                                <li><a class="gbtn gbtn_orange" href="javascript:void(0)" data-target="#theMessagePopup<%= i %>" data-toggle="modal">Contact Us</a></li>
+                                                <li><a class="gbtn gbtn_red" href="javascript:void(0)" data-target="#deleteOffer<%= i %>" data-toggle="modal">Remove Offer</a></li>
+                                                <li><form action="/order-details-single-payment-page/<%= offers[i]._id %>" method="GET">
+                                                    <button 
+                                                    style="
+                                                    font-size: 14px;
+                                                    font-weight: 400;
+                                                    padding: 10px 15px;
+                                                    border-radius: 3px;" 
+                                                    class="gbtn gbtn_green" 
+                                                    type="submit">Order Now</button>
+                                                </form></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %> 
+                </div>
+                <!--===== Markup For "Company Offers" Ends Here =====-->
+            </div>
+        </div>
+    </section>
+    <!--===== Markup For "View Offer" Ends Here =====-->
+
+
+    <!--===== Markup For "Delete Leads" Starts From Here =====-->
+    <% for(let i = 0; i< offers.length; i++){ %> 
+    <div class="modal fade delete_leads_modal" id="deleteOffer<%= i %>">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="delete_leads_wrap">
+                        <a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+
+                        <div class="delete_leads">
+                            <p>Are you sure you want to delete this <span class="bold_texts">"Offer"</span>?<span class="break"></span> You cannot get this offer back once it is deleted.</p>
+
+                            <ul>
+                                <li><a class="gbtn gbtn_bdr" href="javascript:void(0)" data-dismiss="modal">No</a></li>
+                               <li>
+                                <form action="/view-offer/<%= offers[i]._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="gbtn">Yes</button>
+                                </form>
+                               </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <!--===== Markup For "Delete Leads" Ends Here =====-->
+
+
+
+    <!--===== Markup For "Message Popup" Starts From Here =====-->
+    <% for(let i = 0; i< offers.length; i++){ %> 
+    <div class="modal fade msg_popup_modal" id="theMessagePopup<%= i %>">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Send a Message</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="msg_pop_box">
+                        <div class="company_info">
+                            <div class="company_logo_name">
+                                <div class="company_logo">
+                                    <% if(offers[i].sender.logo) { %>
+                                        <a href="javascript:void(0)"><img src="<%= offers[i].sender.logo %>" class="img-fluid" alt="" /></a>
+                                    <% } else { %>
+                                        <a href="javascript:void(0)"><img src="../images/man.png" class="img-fluid" alt="" /></a>
+                                    <% } %>
+                                    
+                                    <% if(offers[i].sender.companyStatus) {%>
+                                        <span class="activity_status online_status"></span>
+                                    <% } else {%>
+                                        <span class="activity_status offline_status"></span>
+                                    <% }%>
+                                </div>
+                                <div class="company_name">
+                                    <h5><%= offers[i].sender.companyName %></h5>
+
+                                    <% if(offers[i].sender.companyStatus) {%>
+                                        <h6>Online</h6>
+                                    <% } else {%>
+                                        <h6>Away</h6>
+                                    <% }%>
+                                </div>
+                            </div>
+
+                            <div class="need_requirements">
+                                <h5>Please Include:</h5>
+
+                                <ul>
+                                    <li>Project Description</li>
+                                    <li>Specific Instructions</li>
+                                    <li>Relevant Files</li>
+                                    <li>Your Budget</li>
+                                    <li>Delivery Time</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="msg_box_wrap">
+                            <div class="time_zone">
+                                <h5>Time Zone: <span>10:53 AM</span></h5>
+                            </div>
+
+                            <form action="../message/<%= offers[i].sender._id %>"  enctype="multipart/form-data"  method="POST">
+                                <div class="msg_box">
+                                    <textarea name="message" id="myText" placeholder="Type your message..." cols="30" rows="10" class="form-control"></textarea>
+
+                                    <div class="indicator_attach">
+                                        <div class="character_indicator grid_item">
+                                            <h6>0/2,500</h6>
+                                        </div>
+                                        <div class="attach_button">
+                                            <div class="attach_file">
+                                                <label class="attachment">
+                                                    <input
+                                                    type="file"
+                                                    name="attachments"
+                                                    id="<%= offers[i].sender._id %>"
+                                                    class="inputfile inputfile-1"
+                                                    data-multiple-caption="{count} files selected"
+                                                    multiple
+                                                    />
+                                                    <label
+                                                        id="<%= offers[i].sender._id+2 %>"
+                                                        for="<%= offers[i].sender._id %>"
+                                                        ><i class="fa fa-paperclip" aria-hidden="true"></i
+                                                    ></label>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="submit_button">
+                                    <button class="btn gbtn" type="submit">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <!--===== Markup For "Message Popup" Ends Here =====-->
+
+
+
+
+    <!--===== Markup For "Post Project Modal" Starts From Here =====-->
+    <div class="modal fade post_project_modal" id="postProject">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!--===== Markup For "Logo & Slogan" Starts From Here =====-->
+                <div class="modal-header">
+                    <div class="gabazzo_logo">
+                        <h6><img src="images/gabazzo_logo_white.png" class="img-fluid" alt=""> <span class="slogan">Building Communities Together</span></h6>
+                    </div>
+
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!--===== Markup For "Logo & Slogan" Ends Here =====-->
+                
+                <div class="modal-body">
+                    <div class="form_wrap">
+                        <form action="">
+                            <!--===== Markup For "Top Inputs" Starts From Here =====-->
+                            <div class="top_inputs">
+                                <div class="inputs_row">
+                                    <div class="input_field">
+                                        <label for="">Project Title:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input_field">
+                                        <label for="">Service Location:</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input_field">
+                                        <label for="">Budget</label>
+                                        <div class="budget_openbids">
+                                            <div class="input_icon_wrap">
+                                                <div class="input_icon">
+                                                    <input type="text" class="form-control">
+                                                    <i class="fas fa-dollar-sign"></i>
+                                                </div>
+                                            </div>
+                                            <div class="or grid_item">
+                                                <h5>OR</h5>
+                                            </div>
+                                            <div class="open_to_bids">
+                                                <ul data-toggle="buttons">
+                                                    <li class="btn">
+                                                        <input type="radio" name="options" autocomplete="off"> 
+                                                        <span class="gbtn gbtn_bdr" title="Companies will bid on your project & give you quotes." data-toggle="tooltip">Open to Bids</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="inputs_row">
+                                    <div class="input_field">
+                                        <label for="">Service Category:</label>
+                                        <div class="select_field">
+                                            <select name="" id="" class="form-control">
+                                                <option value="">Roofing</option>
+                                                <option value="">Landscaping</option>
+                                                <option value="">Junk Removal</option>
+                                                <option value="">Masonry</option>
+                                                <option value="">Plumbing</option>
+                                                <option value="">HVAC</option>
+                                                <option value="">Pest Control</option>
+                                                <option value="">Painting</option>
+                                                <option value="">Flooring</option>
+                                                <option value="">Electrical</option>
+                                                <option value="">Moving</option>
+                                                <option value="">Appliance</option>
+                                                <option value="">Locksmith</option>
+                                                <option value="">Towing</option>
+                                                <option value="">Vehicle Repair</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input_field">
+                                        <label for="">Service Sub-Category:</label>
+                                        <div class="select_field">
+                                            <select name="" id="" class="form-control">
+                                                <option value="">Select Sub-Category 1</option>
+                                                <option value="">Select Sub-Category 2</option>
+                                                <option value="">Select Sub-Category 3</option>
+                                                <option value="">Select Sub-Category 4</option>
+                                                <option value="">Select Sub-Category 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input_field">
+                                        <label for="">Property Type:</label>
+                                        <div class="select_field">
+                                            <select name="" id="" class="form-control">
+                                                <option value="">Single Family Home</option>
+                                                <option value="">Co-Op</option>
+                                                <option value="">Town House</option>
+                                                <option value="">Duplex</option>
+                                                <option value="">Triple Decker</option>
+                                                <option value="">QuadPlex</option>
+                                                <option value="">High - Value Home</option>
+                                                <option value="">Multi - Generational Home</option>
+                                                <option value="">Vacation Home</option>
+                                                <option value="">Shopping Center</option>
+                                                <option value="">Strip Mall</option>
+                                                <option value="">Medical Building</option>
+                                                <option value="">Educational Building</option>
+                                                <option value="">Hotel</option>
+                                                <option value="">Office</option>
+                                                <option value="">Multi-Apartment Building</option>
+                                                <option value="">Warehouse</option>
+                                                <option value="">Manufacturing Facility</option>
+                                                <option value="">Refrigeration Storage</option>
+                                                <option value="">Flex</option>
+                                                <option value="">Research & Development Facility</option>
+                                                <option value="">Working Farm</option>
+                                                <option value="">Ranch</option>
+                                                <option value="">Outdoor Project</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="inputs_row">
+                                    <div class="input_field">
+                                        <label for="">Preferred Seller Language:</label>
+                                        <div class="select_field">
+                                            <select name="" id="" class="form-control">
+                                                <option value="">English</option>
+                                                <option value="">Español</option>
+                                                <option value="">Français</option>
+                                                <option value="">Pусский</option>
+                                                <option value="">Polskie</option>
+                                                <option value="">Deutsch</option>
+                                                <option value="">Italiano</option>
+                                                <option value="">中國人</option>
+                                                <option value="">Português</option>
+                                                <option value="">한국인</option>
+                                                <option value="">日本</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input_field">
+                                        <label for="">Select Date:</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="input_field">
+                                        <label for="">Select Time:</label>
+                                        <input type="time" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--===== Markup For "Top Inputs" Ends Here =====-->
+                            
+
+                            <!--===== Markup For "Texts Box" Starts From Here =====-->
+                            <div class="texts_box">
+                                <div class="texts_box_info">
+                                    <h6>Tell us more about service you are looking to purchase.</h6>
+                                    <p>Note: Leave this details as possible.</p>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="" placeholder="Describe What You Are Looking For Here..." id="" cols="30" rows="4" class="form-control"></textarea>
+                                </div>
+                                <div class="character_indicator">
+                                    <h5>0/2500</h5>
+                                </div>
+                            </div>
+                            <!--===== Markup For "Texts Box" Ends Here =====-->
+                            
+
+                            <!--===== Markup For "Upload Box" Starts From Here =====-->
+                            <div class="upload_box">
+                                <label class="label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span class="title">Drag & Drop Images, Videos or Documents That will help what you Need.</span>
+                                    <input type="file" class="form-control">
+                                </label>
+                            </div>
+                            <!--===== Markup For "Upload Box" Ends Here =====-->
+                            
+
+                            <!--===== Markup For "Post Project" Starts From Here =====-->
+                            <div class="post_project_button">
+                                <button class="btn gbtn" type="submit">Post Project</button>
+                            </div>
+                            <!--===== Markup For "Post Project" Ends Here =====-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===== Markup For "Post Project Modal" Ends Here =====-->
+
+    <!--Custom JavaScript-->
+    <script type="text/javascript">
+    // Select Open to Bids or Left an Amount Toggler
+    $(document).ready(function(){
+        $('.budget_openbids .form-control').focus(function () {
+            $('.open_to_bids .btn').removeClass('active');
+        });
+    })
+
+    // Profile Links
+    $(document).ready(function () {
+        $('.membersProfileLinks ul li a').on('click', function () {
+            $('.membersProfileLinks').removeClass('show');
+        });
+    });
+    </script>

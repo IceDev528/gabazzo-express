@@ -1,0 +1,421 @@
+<% layout('layouts/companyServiceBoilerplate') -%>
+
+<% var alph = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] %>
+<% var alpha = ["aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii", "jj", "kk", "ll", "mm", "nn", "oo", "pp", "qq", "rr", "ss", "tt", "uu", "vv", "wx", "xx", "yy", "zz"] %>
+
+
+<section class="dashboard_banner">
+	<div class="overlay">
+		<div class="container">
+			<h1>Dashboard <b>/</b> <span>Services</span></h1>
+		</div>
+	</div>
+</section>
+
+
+<section class="dashboard_middle">
+	<div class="container_gbz">
+		<div class="dash_services_products dashboard_wrap">
+			<div class="">
+				<div class="single_part">
+					<h3>Post New Services & Manage Your Services</h3>
+					<div class="inner_part">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+								<div class="dash_single_sp add_new_sp">
+									<div class="text-center">
+										<a class="" href="/company-dashboard/createservice" >
+											<i class="fa fa-plus" aria-hidden="true"></i>
+											<div class=""><span>Create a New Service</span></div>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<% for (var i = 0; i < service.length; i++) { %>
+							<div class="col-lg-3 col-md-6">
+								<div class="dash_single_sp">
+									<div class="action_button">
+										<ul>
+											<button style="display: contents;" onclick="changeCategory('<%= i%>category','<%= i%>ctg')"><li><a href="#<%= alph[i] %>" data-toggle="modal" ><i title="Edit"
+														data-toggle="tooltip" class="fa fa-pencil-square-o"
+														aria-hidden="true"></i></a></li></button>
+											<li><a href="#<%= alpha[i] %>" data-toggle="modal"><i title="Delete"
+														data-toggle="tooltip" class="fa fa-trash-o"
+														aria-hidden="true"></i></a></li>
+										</ul>
+									</div>
+									<div class="single_sp_wrapper">
+										<div class="sp_image">
+											<img src="<%= service[i].images[0].url %>" class="img-fluid" alt="" />
+
+										</div>
+										<div class="sp_title">
+											<h5><%= service[i].title %></h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							<% } %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Create New Services Modal Starts From Here -->
+<div class="modal dash_sp_modal dashboard_wrap fade" id="createNewService">
+	<div class="modal-dialog modal-lg modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3>Create New Service</h3>
+				<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"
+						aria-hidden="true"></i></button>
+			</div>
+			<div class="modal-body">
+		
+				<form id="CreateService" action="/services" method="POST" enctype="multipart/form-data">
+					<div class="form">
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<input type="text" name="title" placeholder="Enter a Service Title"
+									class="form-control"/>
+							</div>
+						</div>
+
+						<div class="single_upload">
+							<div class="upload_header">
+								<h5>Upload Service Related Photos/Videos <small>(Max: 10 Items)</small></h5>
+							</div>
+							<div class="upload_area">
+								<div class="form-group mb-2">
+									
+									<label for="file-1">
+										<div class="upload_fils">
+											<div class="icon">
+												<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+											</div>
+											<h5>Drag & Drop a Photos Here <br /> or <br /> Click to Upload</h5>
+										</div>
+										<input type="file" name="images" id="file-1" class="inputfile inputfile-1"
+										data-multiple-caption="{count} files selected" multiple/>
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<select name="serviceType" id="service" class="form-control" required>
+									<option value="">--Select Service--</option>
+									<option>Outdoor Work</option>
+									<option>Indoor Work</option>
+									<option>Vehicle Services</option>
+									<option>Other Services</option>
+								</select>
+							</div>
+							<div class="form-group col-md-6">
+								<select name="category" id="category" class="form-control" required>
+									<option value="">--Select Service--</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<textarea name="description" placeholder="Write a Description..." id="myText" cols="30"
+								rows="7" class="form-control" maxlength="1200" required></textarea>
+							<div class="form-text text-right">
+								<span id="wordCount">0</span>/<span>1200</span>
+							</div>
+						</div>
+
+						<hr class="my-4" />
+
+						<div class="boxes_wrapper">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="single_box">
+										<h4>Set Price Range & Delivery</h4>
+										<div class="box_inner">
+											<div class="price_ranges">
+												<label for="">Price Range:</label>
+												<div class="form-row"> 
+													<div class="form-group col-md-6">
+														<small>From:</small>
+														<div class="dollar_input">
+															<input type="number" name="priceFrom"
+																class="form-control" required/>
+															<i class="fa fa-usd" aria-hidden="true"></i>
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<small>To:</small>
+														<div class="dollar_input">
+															<input type="number" name="priceTo" class="form-control" required/>
+															<i class="fa fa-usd" aria-hidden="true"></i>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="">Estimated Time:</label>
+												<input type="number" name="time" placeholder="In Days"
+													class="form-control">
+											</div>
+											<div class="form-group mb-0">
+												<label for="">More Info</label>
+												<input type="text" id="priceInfo" name="priceInfo" class="form-control" />
+												<div id="alertmsg"  role="alert">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="single_box">
+										<h4>Team Requirements</h4>
+										<div class="box_inner">
+											<div class="form-group">
+												<label for="">Number of Team Members:</label>
+												<input type="number" name="teamMembers" class="form-control" />
+											</div>
+											<div class="form-group mb-0">
+												<label for="">More Info</label>
+												<input type="text" name="teamInfo" class="form-control" />
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="single_box">
+										<h4>Tags</h4>
+										<div class="box_inner">
+											<div class="form">
+												<div class="form-row">
+													<div class="form-group col-9">
+														<input type="text" name="tags" placeholder="Type Tags"
+															class="form-control" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="save_button text-right">
+							<button type="submit" class="btn btn-gbz-success">Save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Create New Services Modal Ends Here -->
+
+
+
+<!-- Edit Services Modal Starts From Here -->
+<% for (var i = 0; i < service.length; i++) { %>
+<div class="modal dash_sp_modal dashboard_wrap fade" id="<%= alph[i] %>">
+	<div class="modal-dialog modal-lg modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3>Edit Your Service</h3>
+				<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"
+						aria-hidden="true"></i></button>
+			</div>
+			<div class="modal-body">
+				<form id="EditService" action="/services/<%= service[i].id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+					<div class="form">
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<input type="text" name="title" value="<%= service[i].title %>" class="form-control"
+									placeholder="Enter Service Title" />
+							</div>
+						</div>
+						<div class="single_upload">
+							<div class="upload_header">
+								<h5>Upload Service Related Photos/Videos <small>(Max: 10 Items)</small></h5>
+							</div>
+							<div class="upload_area">
+								<div class="form-group mb-2">
+									<input type="file" name="images" id="file-2" class="inputfile inputfile-1"
+										data-multiple-caption="{count} files selected" multiple />
+									<label for="file-2">
+										<div class="upload_fils">
+											<div class="icon">
+												<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+											</div>
+											<h5>Drag & Drop a Photos Here <br /> or <br /> Click to Upload</h5>
+										</div>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="uploaded_sp_photo">
+							<% for (var x = 0; x < service[i].images.length; x++) { %>
+							<div class="single_uploaded_port">
+								<img src="<%= service[i].images[x].url %>" class="img-fluid" alt="" />
+								<div class="action_button">
+									<input type="checkbox" name="deleteImages[]"
+										value="<%= service[i].images[x].public_id %>"> </div>
+							</div>
+							<% } %>
+
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<select onclick="changeCategory('<%= i%>category','<%= i%>ctg')"  name="serviceType" id="<%=i%>ctg" class="form-control" def required>				
+									<% if(service[i].serviceType === 'Outdoor Work') { %>
+									<option selected>Outdoor Work</option>
+									<option>Indoor Work</option>
+									<option>Vehicle Services</option>
+									<option>Other Services</option>		
+									<%} else if(service[i].serviceType === 'Indoor Work') {%>
+									<option >Outdoor Work</option>
+									<option selected>Indoor Work</option>
+									<option>Vehicle Services</option>
+									<option>Other Services</option>		
+									<% } else if(service[i].serviceType === 'Vehicle Services') {%>
+									<option >Outdoor Work</option>
+									<option >Indoor Work</option>
+									<option selected>Vehicle Services</option>
+									<option>Other Services</option>		
+									<%} else {%>
+									<option >Outdoor Work</option>
+									<option >Indoor Work</option>
+									<option >Vehicle Services</option>
+									<option selected>Other Services</option>			
+									<% }%>
+								</select>
+							</div>
+							<div class="form-group col-md-6">
+								<!-- <select  id="temp-category" class="form-control" required>
+									<option id="temp-category" name="temp-category" value="+ service[i].category +"><%=service[i].category%></option>
+								</select> -->
+								<select name="category2" id="<%= i%>category" class="form-control" required">
+									<option id="<%= i %>service" name="temp-category" value="<%=service[i].category%>"><%=service[i].category%></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<textarea name="description" placeholder="Write a Description..." id="myText2" cols="30"
+								rows="7" class="form-control" maxlength="1200" required><%= service[i].description %></textarea>
+							<div class="form-text text-right">
+								<span id="wordCount2"><%= service[i].description.length %></span>/<span>1200</span>
+							</div>
+						</div>
+
+						<hr class="my-4" />
+
+						<div class="boxes_wrapper">
+							<div class="row">				
+								<div class="col-md-6">
+									<div class="single_box">
+										<h4>Set Price Range & Delivery</h4>
+										<div class="box_inner">
+											<div class="price_ranges">
+												<label>Price Range:</label>
+												<div class="form-row">
+													<div class="form-group col-md-6">
+														<small>From:</small>
+														<div class="dollar_input">
+															<input type="number" name="priceFrom"
+																value="<%= service[i].priceFrom %>"
+																class="form-control" required/>
+															<i class="fa fa-usd" aria-hidden="true"></i>
+														</div>
+													</div>
+													<div class="form-group col-md-6">
+														<small>To:</small>
+														<div class="dollar_input">
+															<input type="number" name="priceTo"
+																value="<%= service[i].priceTo %>"
+																class="form-control" required/>
+															<i class="fa fa-usd" aria-hidden="true"></i>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label>Estimated Time:</label>
+												<input type="number" name="time" value="<%=service[i].time%>" placeholder="In Days"
+													class="form-control">
+											</div>
+											<div class="form-group mb-0">
+												<label>More Info</label>
+												<input type="text" name="priceInfo" id="priceInfo" value="<%= service[i].priceInfo %>"
+													class="form-control" />
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="single_box">
+										<h4>Team Requirements</h4>
+										<div class="box_inner">
+											<div class="form-group">
+												<label>Number of Team Members:</label>
+												<input type="number" name="teamMembers"
+													value="<%= service[i].teamMembers %>" class="form-control" />
+											</div>
+											<div class="form-group mb-0">
+												<label>More Info</label>
+												<input id="teamInfo" type="text" name="teamInfo" value="<%= service[i].teamInfo %>"
+													class="form-control"/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="save_button text-right">
+							<button type="submit" class="btn btn-gbz-success">Save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>
+<!-- Edit Services Modal Ends Here -->
+
+<!-- Delete Services Modal Starts From Here -->
+<% for (var i = 0; i < service.length; i++) { %>
+<div class="modal dash_sp_modal dashboard_wrap fade" id="<%= alpha[i] %>">
+	<div class="modal-dialog modal-lg modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3>Delete Your Service</h3>
+				<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"
+						aria-hidden="true"></i></button>
+			</div>
+			<div class="modal-body">
+				<form action="/services/<%= service[i].id %>?_method=DELETE" method="POST"
+					enctype="multipart/form-data">
+					<div class="form">
+
+						<div class="form-group">
+							<h2>Are You sure you want to delete this service?</h2>
+						</div>
+
+						<div class="save_button text-right">
+							<button type="submit" class="btn btn-danger">Delete</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>
+<!-- Delete Services Modal Ends Here -->

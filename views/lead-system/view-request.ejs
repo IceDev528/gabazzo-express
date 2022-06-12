@@ -1,0 +1,608 @@
+<% layout('layouts/generalBoilerplate') -%>
+
+		<!--===== Markup For "View Request" Starts From Here =====-->
+		<div class="view_requests">
+			<div class="view_requests_tab">
+				<section id="viewRequestTab">
+					<!--===== Markup For "Request Header" Starts From Here =====-->
+					<div class="tabs_menu">
+						<div class="container">
+							<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								<a class="nav-item nav-link active" id="view_request_active_tab" data-toggle="tab" href="#view_request_active" role="tab" aria-controls="view_request_active" aria-selected="true">Active</a>
+																				
+								<a class="nav-item nav-link" id="view_request_paused_tab" data-toggle="tab" href="#view_request_paused" role="tab" aria-controls="view_request_paused" aria-selected="false">Paused</a>
+							</div>
+						</div>
+					</div>
+					<!--===== Markup For "Request Header" Ends Here =====-->
+			
+
+					<div class="tab-content" id="nav-tabContent">
+						<!--===== Markup For "Active Request" Starts From Here =====-->
+						<div class="tab-pane fade show active" id="view_request_active" role="tabpanel" aria-labelledby="view_request_active_tab">
+							<div class="container">
+								<div class="table-responsive">
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th class="date">Date Posted</th>
+												<th class="request">Request</th>
+												<th class="offers">Offers</th>
+												<th class="action">Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<% for(let i = 0; i < projects.length; i++) { %>
+												<% if(projects[i].isActive) { %>
+													<tr>
+														<td class="date"><%= new Date(projects[i].createdAt).toDateString() %></td>
+														<td class="request">
+															<h4><%= projects[i].title %></h4>
+															<p><%= projects[i].description %><a href="javascript:void(0)">See More...</a></p>
+															<div class="tags">
+																<ul>
+																	<li><%= projects[i].mainCategory %></li>
+																	<li><%= projects[i].subCategory %></li>
+																	<% if(!projects[i].isOpenToBid ) { %>
+																	<li>Budget: $<%= projects[i].budget %></li>
+																	<% } %>
+																	<li><%= projects[i].type %></li>
+																	<li><%= projects[i].language %></li>
+																	<li>Date: <%= projects[i].date %></li>
+																	<li>Time: <%= projects[i].time %></li>
+																	<% if(projects[i].isOpenToBid ) { %>
+																		<li>Open to Bids</li>
+																	<% } %>
+																	<li>Location: <%= projects[i]?.address %></li>
+																</ul>
+															</div>
+															<div class="download_files">
+																<ul>
+																	<% for(let j = 0; j < projects[i].media.length ; j++) { %>
+																		<li><a href="<%= projects[i].media[j].path %>"><i class="far fa-arrow-alt-circle-down"></i> <span class="file_name"><%= projects[i].media[j].key %> </span></a></li>
+																	<% } %>
+																</ul>
+															</div>
+														</td>
+														<td class="offers">
+															<ul>
+																<li><a class="gbtn" href="services-based-on-request.html">Gabazzo's Offers</a></li>
+																<li><a class="gbtn gbtn_bdr" href="/view-offer/<%= projects[i]._id %>"> Review Offers</a></li>
+															</ul>
+														</td>
+														<td class="action">
+															<div class="dropdown">
+																<a class="dropdown_icon" href="javascript:void(0)" id="requestActions" data-toggle="dropdown"><i class="fas fa-caret-down"></i></a>
+															
+																<div class="dropdown-menu" aria-labelledby="requestActions">
+																	<ul>
+																		<li>
+																			<form action="/view-request/<%= projects[i]._id %>?status=pause" method="POST">
+																				<button type="submit" class="btn" style="width: 100%; display: flex;">Pause</button>
+																			</form>
+																		</li>
+																		
+																		<li>
+																			<form action="/view-request/<%= projects[i]._id %>?_method=DELETE" method="POST">
+																				<button type="submit" class="btn" style="width: 100%; display: flex;">Delete</button>
+																			</form>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</td>
+													</tr>
+												<% } %>
+											<% } %>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--===== Markup For "Active Request" Ends Here =====-->
+						
+						
+						<!--===== Markup For "Paused Request" Starts From Here =====-->
+						<div class="tab-pane fade" id="view_request_paused" role="tabpanel" aria-labelledby="view_request_paused_tab">
+							<div class="container">
+								<div class="table-responsive">
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th class="date">Date Posted</th>
+												<th class="request">Request</th>
+												<th class="offers">Offers</th>
+												<th class="action">Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<% for(let i = 0; i < projects.length; i++) { %>
+												<% if(projects[i].isActive == false) { %>
+													<tr>
+														<td class="date"><%= new Date(projects[i].createdAt).toDateString() %></td>
+														<td class="request">
+															<h4><%= projects[i].title %></h4>
+															<p><%= projects[i].description %><a href="javascript:void(0)">See More...</a></p>
+															<div class="tags">
+																<ul>
+																	<li><%= projects[i].mainCategory %></li>
+																	<li><%= projects[i].subCategory %></li>
+																	<% if(!projects[i].isOpenToBid ) { %>
+																	<li>Budget: $<%= projects[i].budget %></li>
+																	<% } %>
+																	<li><%= projects[i].type %></li>
+																	<li><%= projects[i].language %></li>
+																	<li>Date: <%= projects[i].date %></li>
+																	<li>Time: <%= projects[i].time %></li>
+																	<% if(projects[i].isOpenToBid ) { %>
+																		<li>Open to Bids</li>
+																	<% } %>
+																	<li>Location: <%= projects[i]?.address %></li>
+																</ul>
+															</div>
+															<div class="download_files">
+																<ul>
+																	<% for(let j = 0; j < projects[i].media.length ; j++) { %>
+																		<li><a href="<%= projects[i].media[j].path %>"><i class="far fa-arrow-alt-circle-down"></i> <span class="file_name"><%= projects[i].media[j].key %> </span></a></li>
+																	<% } %>
+																</ul>
+															</div>
+														</td>
+														<td class="offers">
+															<ul>
+																<li><a class="gbtn" href="services-based-on-request.html">Gabazzo's Offers</a></li>
+																<li><a class="gbtn gbtn_bdr" href="/view-offer/<%= projects[i]._id %>">6 Review Offers</a></li>
+															</ul>
+														</td>
+														<td class="action">
+															<div class="dropdown">
+																<a class="dropdown_icon" href="javascript:void(0)" id="requestActions" data-toggle="dropdown"><i class="fas fa-caret-down"></i></a>
+															
+																<div class="dropdown-menu" aria-labelledby="requestActions">
+																	<ul>
+																		<li>
+																			<form action="/view-request/<%= projects[i]._id %>?status=active" method="POST">
+																				<button type="submit" class="btn" style="width: 100%; display: flex;">Active</button>
+																			</form>
+																		</li>
+																		
+																		<li>
+																			<form action="/view-request/<%= projects[i]._id %>?_method=DELETE" method="POST">
+																				<button type="submit" class="btn" style="width: 100%; display: flex;">Delete</button>
+																			</form>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</td>
+													</tr>
+												<% } %>
+											<% } %>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--===== Markup For "Paused Request" Ends Here =====-->
+					</div>
+				</section>
+			</div>
+		</div>
+		<!--===== Markup For "View Request" Ends Here =====-->
+
+
+		<!--===== Markup For "Post Project Modal" Starts From Here =====-->
+		<div class="modal fade post_project_modal" id="postProject">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<!--===== Markup For "Logo & Slogan" Starts From Here =====-->
+					<div class="modal-header">
+						<div class="gabazzo_logo">
+							<h6><img src="images/gabazzo_logo_white.png" class="img-fluid" alt=""> <span class="slogan">Building Communities Together</span></h6>
+						</div>
+
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<!--===== Markup For "Logo & Slogan" Ends Here =====-->
+					<div class="modal-body">
+						<div class="form_wrap">
+							<form action="/post-project" method="post" class="needs-validation" novalidate  enctype="multipart/form-data"> 
+								<!--===== Markup For "Top Inputs" Starts From Here =====-->
+								<div class="top_inputs">
+									<div class="inputs_row">
+										<div class="input_field">
+											<label for="title">Project Title:</label>
+											<input name="title" type="text" class="form-control" required>
+											<div class="invalid-feedback">
+												Please write a project title.
+											</div>
+										</div>
+										<div class="input_field">
+											<label for="location">Service Location:</label>
+											<input name="location" type="text" class="form-control" required>
+											<div class="invalid-feedback">
+												Please write a service location.
+											</div>
+										</div>
+										<div class="input_field">
+											<label for="budget">Budget</label>
+											<div class="budget_openbids">
+												<div class="input_icon_wrap">
+													<div class="input_icon">
+														<input type="number" name="budget" class="form-control">
+														<i class="fas fa-dollar-sign"></i>
+													</div>
+												</div>
+												<div class="or grid_item">
+													<h5>OR</h5>
+												</div>
+												<div class="open_to_bids">
+													<ul data-toggle="buttons">
+														<li class="btn">
+															<input type="radio" name="openBids" autocomplete="off"> 
+															<span class="gbtn gbtn_bdr" title="Companies will bid on your project & give you quotes." data-toggle="tooltip">Open to Bids</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+		
+									<div class="inputs_row">
+										<div class="input_field">
+											<label for="mainCategory">Service Category:</label>
+											<div class="select_field">
+												<select name="mainCategory" id="mainCategory" class="form-control" required>
+													<option value="">Choose</option>
+													<option value="Construction Services">Construction Services</option>
+													<option value="Vehicle Services">Vehicle Services</option>
+												</select>
+											</div>
+											<div class="invalid-feedback">
+												Please select a category.
+											</div>
+										</div>
+										<div class="input_field">
+											<label for="subCategory">Service Sub-Category:</label>
+											<div class="select_field">
+												<select name="subCategory" id="subCategory" class="form-control" required>
+													<option value="">Choose</option>
+												</select>
+											</div>
+											<div class="invalid-feedback">
+												Please select a category.
+											</div>
+										</div>
+										<div id="propertyTypeParent" class="input_field">
+											<label for="propertyType" id="propertyTypeLabel">Property Type:</label>
+											<div class="select_field">
+												<select name="propertyType" id="propertyType" class="form-control" required>
+													<option value="">Choose</option>
+												</select>
+												<div class="invalid-feedback">
+													Please select a property type.
+												</div>
+											</div>
+										</div>
+									</div>
+		
+									<div class="inputs_row">
+										<div class="input_field">
+											<label for="language">Preferred Seller Language:</label>
+											<div class="select_field">
+												<select name="language" id="language" class="form-control" required>
+													<option value="English">English</option>
+													<option value="Español">Español</option>
+													<option value="Français">Français</option>
+													<option value="Pусский">Pусский</option>
+													<option value="Polskie">Polskie</option>
+													<option value="Deutsch">Deutsch</option>
+													<option value="Italiano">Italiano</option>
+													<option value="中國人">中國人</option>
+													<option value="Português">Português</option>
+													<option value="한국인">한국인</option>
+													<option value="日本">日本</option>
+												</select>
+											</div>
+											<div class="invalid-feedback">
+												Please select a language.
+											</div>
+										</div>
+										<div class="input_field">
+											<label for="date">Select Date:</label>
+											<input type="date" name="date" class="form-control" required>
+											<div class="invalid-feedback">
+												Please select a date.
+											</div>
+										</div>
+										<div class="input_field">
+											<label for="time">Select Time:</label>
+											<input type="time" name="time" class="form-control" required>
+											<div class="invalid-feedback">
+												Please select a time.
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--===== Markup For "Top Inputs" Ends Here =====-->
+								
+	
+								<!--===== Markup For "Texts Box" Starts From Here =====-->
+								<div class="texts_box">
+									<div class="texts_box_info">
+										<h6>Tell us more about service you are looking to purchase.</h6>
+										<p>Note: Leave this details as possible.</p>
+									</div>
+									<div class="form-group">
+										<textarea name="description" placeholder="Describe What You Are Looking For Here..." id="" cols="30" rows="4" class="form-control" required></textarea>
+										<div class="invalid-feedback">
+											Please write a description.
+										</div>
+									</div>
+									<div class="character_indicator">
+										<h5>0/2500</h5>
+									</div>
+								</div>
+								<!--===== Markup For "Texts Box" Ends Here =====-->
+								
+
+								<!--===== Markup For "Upload Box" Starts From Here =====-->
+								<div class="upload_box">
+									<label class="label">
+										<i class="fas fa-cloud-upload-alt"></i>
+										<span class="title">Drag & Drop Images, Videos or Documents That will help what you Need.</span>
+										<input
+											type="file"
+											name="attachments"
+											id="file-attachment"
+											class="form-control"
+											data-multiple-caption="{count} files selected"
+											multiple
+											required
+									  	/>
+										<div class="invalid-feedback">
+											Please attach the images.
+										</div>
+										<div class="valid-feedback" id="attachment-msg">
+											
+										</div>
+									</label>
+								</div>
+								<!--===== Markup For "Upload Box" Ends Here =====-->
+								
+	
+								<!--===== Markup For "Post Project" Starts From Here =====-->
+								<div class="post_project_button">
+									<button class="btn gbtn" type="submit">Post Project</button>
+								</div>
+								<!--===== Markup For "Post Project" Ends Here =====-->
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===== Markup For "Post Project Modal" Ends Here =====-->
+		
+		<!--jQuery Main Libraty Latest Version-->
+		<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				const projects = <%- JSON.stringify(projects) %>;
+				
+				for(let i = 0; i<projects.length; i++){
+					console.log("#" + projects[i]._id + "pause")
+					$("#" + projects[i]._id + "pause").click(function(){
+						$.ajax({
+							url: `view-request/${projects[i]._id}`,
+							type: 'post',
+							success: function(result) {
+								console.log("API CALLED PAUSE")
+							}
+						});
+					})
+					$("#" + projects[i]._id + "delete").click(function(){
+						$.ajax({
+							url: `view-request/${projects[i]._id }`,
+							type: 'DELETE',
+							success: function(result) {
+								console.log("API CALLED DELTE")
+							}
+						});
+					})
+				}
+			})
+		</script>
+
+		<script type="text/javascript">
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function () {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.prototype.slice.call(forms)
+				.forEach(function (form) {
+				form.addEventListener('submit', function (event) {
+					if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+					}
+
+					form.classList.add('was-validated')
+				}, false)
+				})
+			})()
+		</script>
+		
+        <!--Custom JavaScript-->
+		<script type="text/javascript">
+		
+		// File attachment manuplator
+		$(document).ready(function(){
+			
+			// Image upload preview
+			async function readURL(input) {
+				console.log(input)
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+
+					reader.readAsDataURL(input.files[0]);
+
+					$("#attachment-msg").css("display", "block");
+					$("#attachment-msg").html(
+						"Files attached successfully."
+					);
+				}
+			}
+
+			$("#file-attachment").change(function () {
+				console.log("File attachment called")
+				readURL(this);
+			});
+		})
+
+		// Select Open to Bids or Left an Amount Toggler
+		$(document).ready(function(){
+			$('.budget_openbids .form-control').focus(function () {
+				$('.open_to_bids .btn').removeClass('active');
+			});
+		})
+
+		// Profile Links
+		$(document).ready(function () {
+			$('.membersProfileLinks ul li a').on('click', function () {
+				$('.membersProfileLinks').removeClass('show');
+			});
+		});
+
+		$(document).ready(function(){
+			const filters = <%- JSON.stringify(services) %>;
+			let subCategory, propertyType;
+
+			$("#mainCategory").change(function(){
+				const selectedText = $(this).val()
+				const filteredResult = filters.filter((val) => val.parent == selectedText);
+
+				subCategory = filteredResult.map((val) => {
+					return `<option value="${val.title}" style="text-transform: capitalize">${val.title}</option>`
+				})
+
+				$("#subCategory").html(subCategory);
+				$("#subCategory").prepend('<option value="" selected>Choose</option>');
+
+			})
+
+			$("#subCategory").change(function(){
+				const selectedText = $(this).val()
+				const filteredResult = filters.filter((val) => val.title == selectedText);
+
+				// Removing the property type div for towing services because it's a vehicle
+				if(selectedText == "towing services"){
+					// Implementing on other type because towing has no vehicle type field in DB
+					const tempFilter = filters.filter((val) => val.title == "vehicle repair");
+					$("#propertyTypeLabel").html("Vehicle Type");
+
+					tempFilter[0].attributes.forEach(val => {
+						if(val.attributeName == "Vehicle Type"){
+								propertyType = val.possibleValues;
+							};
+					});
+
+					propertyType = propertyType.map((val) => {
+						return `<option value="${val}" style="text-transform: capitalize">${val}</option>`
+					})
+
+					$("#propertyType").html(propertyType);
+					$("#propertyType").prepend('<option value="" selected>Choose</option>');
+				}
+				else{
+					$("#propertyTypeParent").show();
+					
+					// Special case - Vehicle Type
+					if(selectedText == "vehicle repair" || selectedText == "moving services"){
+						
+						$("#propertyTypeLabel").html("Vehicle Type");
+
+						filteredResult[0].attributes.forEach(val => {
+							if(val.attributeName == "Vehicle Type"){
+								 propertyType = val.possibleValues;
+							 };
+						});
+
+						propertyType = propertyType.map((val) => {
+							return `<option value="${val}" style="text-transform: capitalize">${val}</option>`
+						})
+
+						$("#propertyType").html(propertyType);
+						$("#propertyType").prepend('<option value="" selected>Choose</option>');
+
+					}
+
+					else if(selectedText == "appliance services" ){
+
+						$("#propertyTypeLabel").html("Appliance Type");
+
+						filteredResult[0].attributes.forEach(val => {
+							if(val.attributeName == "Appliance Type"){
+								 propertyType = val.possibleValues;
+							 };
+						});
+
+						propertyType = propertyType.map((val) => {
+							return `<option value="${val}" style="text-transform: capitalize">${val}</option>`
+						})
+
+						$("#propertyType").html(propertyType);
+						$("#propertyType").prepend('<option value="" selected>Choose</option>');
+
+					}
+
+					else if(selectedText == "locksmith services" ){
+						
+						$("#propertyTypeLabel").html("Lock Type");
+
+						filteredResult[0].attributes.forEach(val => {
+							if(val.attributeName == "Lock Type"){
+								 propertyType = val.possibleValues;
+							 };
+						});
+
+						propertyType = propertyType.map((val) => {
+							return `<option value="${val}" style="text-transform: capitalize">${val}</option>`
+						})
+
+						$("#propertyType").html(propertyType);
+						$("#propertyType").prepend('<option value="" selected>Choose</option>');
+
+					}
+				
+					else{
+						
+						$("#propertyTypeLabel").html("Property Type");
+
+						let result = [];
+						filteredResult[0].attributes.forEach(val => {
+							if(val.parentAttribute == "Property Type"){
+								 result.push(...val.possibleValues);
+							 };
+						});
+						
+						propertyType = result.map((val) => {
+							return `<option value="${val}" style="text-transform: capitalize">${val}</option>`
+						})
+
+						$("#propertyType").html(propertyType);
+						$("#propertyType").prepend('<option value="" selected>Choose</option>');
+
+					}
+				}
+			});
+
+		})
+		</script>
+			

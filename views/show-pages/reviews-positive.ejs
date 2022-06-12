@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-T23WPNV');</script>
+	<!-- End Google Tag Manager -->
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatble" content="ie=edge" />
+    <title>Gabazzo | Reviews</title>
+    <link href="/images/favicon.png" rel="icon" />
+    <link href="/images/favicon.ico" rel="shortcut icon" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/fonts/fonts.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/lightcase.css" rel="stylesheet" type="text/css" />
+    <link href="/css/timeline.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/night-mode.css" rel="stylesheet" type="text/css" />
+    <link href="/css/starability-basic.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/responsive.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T23WPNV"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+  <header class="main_header">
+		<!-- <% include ../partials/flash-messages %> -->
+
+		<% if(!currentUser) { %>
+		<nav class="navbar navbar-dark topbar align-items-center">
+			
+			<div class="main_logo_for_mobile ml-auto">
+				<a href="/"><img src="/images/gabazzo_logo_white.png" alt="" /></a>
+			</div>
+			
+			<ul class="navbar-nav mr-sm-0 align-items-center flex-row header-class ">
+				<li class="night_mode_image mr-0"><a href="javascript:void(0)" class="night_mode_icon"></a></li>
+			</ul>
+			<div style="margin: 0 auto">
+				<% include ../partials/flash-messages %>
+			</div>
+		</nav>
+		<nav class="navbar navbar-expand-lg navbar-light middlebar">
+			<a class="navbar-brand main_logo_for_desktop" href="/">
+				<img src="/images/gabazzo_logo_black.png" class="img-fluid gabazzo_logo black_logo" alt="" />
+				<img src="/images/gabazzo_logo_white.png" class="img-fluid gabazzo_logo white_logo" alt="" />
+			</a>
+
+			<div class="services_menu_bar">
+				<button class="navbar-toggler services_responsive_bar border-0" type="button" data-toggle="collapse"
+					data-target="#responsive-bar">
+					<div class="animated-icon1"><span></span><span></span><span></span> <b class="">Services</b></div>
+				</button>
+			</div>
+
+			<div class="members_menu_bar">
+				<ul class="navbar-nav mr-sm-0 align-items-center text-center flex-row">
+					<li>
+						<button class="navbar-togglerr" type="button" data-toggle="collapse" data-target="#navb">
+							<div class="animated-icon2"><span></span><span></span><span></span></div>
+						</button>
+					</li>
+				</ul>
+			</div>
+
+			<div class="collapse nav_item_wrap navbar-collapse" id="navb">
+				<ul class="navbar-nav member_menu_portion_for_desktop ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/become-a-seller-overview">Become a Seller</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/login">Sign In</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link btn btn-outline-gbz-success join_butotn" href="/sign-up">Join</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<% } else { %>
+
+		<nav class="navbar navbar-expand-sm navbar-dark topbar align-items-center">
+			
+			<div class="main_logo_for_mobile ml-auto">
+				<a href="/"><img src="/images/gabazzo_logo_white.png" alt="" /></a>
+			</div>
+			<ul class="navbar-nav mx-auto mr-sm-0 align-items-center text-center flex-row header-class">
+				<li class="night_mode_image ml-0"><a href="javascript:void(0)" class="night_mode_icon"></a></li>
+				<div style="margin: 0 auto;">
+					<% include ../partials/flash-messages %>
+				</div>
+				<li class="nav-item my_account my_account_for_desktop mx-2">
+					<a class="nav-link" id="myAcActionLink" href="javascript:void(0)">
+						<% if (currentUser.isCompany === true) { %>
+							<% if(currentUser.logo) { %>
+								<img src="<%= currentUser.logo %>" class="profile-photo" alt="<%= currentUser.username %>">
+							<% } else {%>
+								<img src="/images/man.png" class="profile-photo" alt="<%= currentUser.username %>">
+							<% }%>
+						<% } else if (currentUser.isCompany === false) { %>
+							<% if(currentUser.profilePicture) {%>
+							<img src="<%= currentUser.profilePicture %>" class="profile-photo" alt="Profile Picture">
+							<%} else {%>
+							<img src="/images/man.png" class="profile-photo" alt="Profile Picture">
+							<% }%>
+						<% } %> My Account
+					</a>
+				</li>
+		</nav>
+		<nav class="navbar navbar-expand-lg navbar-light middlebar">
+			<a class="navbar-brand main_logo_for_desktop text-dark" href="/" target="_self">
+				<img src="/images/gabazzo_logo_black.png" class="img-fluid gabazzo_logo black_logo" alt="" />
+				<img src="../images/gabazzo_logo_white.png" class="img-fluid gabazzo_logo white_logo" alt="" />
+			</a>
+
+			<div class="services_menu_bar">
+				<button class="navbar-toggler services_responsive_bar border-0" type="button" data-toggle="collapse"
+					data-target="#responsive-bar">
+					<div class="animated-icon1"><span></span><span></span><span></span> <b class="">Services</b></div>
+				</button>
+			</div>
+
+			<div class="members_menu_bar">
+				<ul class="navbar-nav mx-auto mr-sm-0 align-items-center text-center flex-row">
+					<li class="nav-item my_account_for_mobile">
+						<a class="nav-link" id="myAcActionLinkMB" href="javascript:void(0)">
+							<% if (currentUser.isCompany === true) { %>
+							<img src="<%= currentUser.logo %>" style="width:30px;" class="profile-photo" alt="">
+							<% } else if (currentUser.isCompany === false) { %>
+							<% if(currentUser.profilePicture){ %>
+							<img src="<%= currentUser.profilePicture %>" style="width:30px;" class="profile-photo"
+								alt="" class="img-fluid mr-1">
+
+							<% } else { %>
+							<img src="../images/man.png" style="width:30px;" class="profile-photo" alt=""
+								class="img-fluid mr-1">
+
+							<% } %>
+							<% } %>
+						</a>
+					</li>
+					<li>
+						<button class="navbar-togglerr" type="button" data-toggle="collapse" data-target="#navb">
+							<div class="animated-icon2"><span></span><span></span><span></span></div>
+						</button>
+					</li>
+				</ul>
+			</div>
+
+			<div class="collapse nav_item_wrap navbar-collapse" id="navb">
+				<% if (currentUser ) { %>
+				<ul class="navbar-nav ml-auto">
+					<!-- Messages -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown"
+							href="javascript:void(0)">Messages</a>
+						<div class="dropdown-menu messages_dropdown">
+							<div class="header">
+								<i class="fa fa-comment-o" aria-hidden="true"></i> Inbox
+							</div>
+
+							<ul class="scrolling_item">
+								<% if(conversations !==undefined && conversations.length) { %>
+									<% conversations.forEach(function(conv) { %>
+										<% if(conv[conv.length - 1].messages.sender.id._id.toString() === user._id.toString() ) {%>
+											<li>										
+												<a href="/inbox/<%= conv[conv.length-1].messages.receiver.id._id %>">
+													<div class="row">
+														<div class="col-2 user_pic">
+															<%if(conv[conv.length-1].messages.receiver.id.isCompany) { %>
+																<%if(conv[conv.length-1].messages.receiver.id.logo){ %>
+																	<img src="<%=conv[conv.length-1].messages.receiver.id.logo %>" class="img-fluid profile-photo" alt="" />
+																	
+																<%} else {%>
+																	<img src="/images/man.png" class="img-fluid profile-photo" alt="" />
+																<% }%>
+															<%} else {%>
+															<%if(conv[conv.length-1].messages.receiver.id.profilePicture){ %>
+																<img src="<%=conv[conv.length-1].messages.receiver.id.profilePicture %>" class="img-fluid profile-photo" alt="" />
+																
+															<%} else {%>
+																<img src="/images/man.png" class="img-fluid profile-photo" alt="" />
+															<% } } %>
+														</div>
+														<div class="col-10 title">
+															<%if(conv[conv.length-1].messages.receiver.id.isCompany) { %>        
+																<h5><%= conv[conv.length-1].messages.receiver.id.companyName %></h5>
+															<%} else {%>
+																<h5><%= conv[conv.length-1].messages.receiver.id.firstName + ' ' +  conv[conv.length-1].messages.receiver.id.lastName%></h5>
+															<% }%>
+															<p>ME: <%= conv[conv.length - 1].messages.text %></p>
+														</div>
+													</div>
+												</a>
+											</li>
+									
+								
+								<% }else if(conv[conv.length - 1].messages.receiver.id._id.toString() === user._id.toString() ) {%>
+									<li>										
+										<a href="/inbox/<%= conv[conv.length-1].messages.sender.id._id %>">
+											<div class="row">
+												<div class="col-2 user_pic">
+													<%if(conv[conv.length-1].messages.sender.id.isCompany) { %>
+														<%if(conv[conv.length-1].messages.sender.id.logo){ %>
+															<img src="<%=conv[conv.length-1].messages.sender.id.logo %>" class="img-fluid profile-photo" alt="" />
+															
+														<%} else {%>
+															<img src="/images/man.png" class="img-fluid profile-photo" alt="" />
+														<% }%>
+													<%} else {%>
+													<%if(conv[conv.length-1].messages.sender.id.profilePicture){ %>
+														<img src="<%=conv[conv.length-1].messages.sender.id.profilePicture %>" class="img-fluid profile-photo" alt="" />
+														
+													<%} else {%>
+														<img src="/images/man.png" class="img-fluid profile-photo" alt="" />
+													<% } } %>
+												</div>
+												<div class="col-10 title">
+													<%if(conv[conv.length-1].messages.sender.id.isCompany) { %>        
+														<h5><%= conv[conv.length-1].messages.sender.id.companyName %></h5>
+													<%} else {%>
+														<h5><%= conv[conv.length-1].messages.sender.id.firstName + ' ' +  conv[conv.length-1].messages.sender.id.lastName%></h5>
+													<% }%>
+													<p><%= conv[conv.length - 1].messages.text %></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									
+									<%}; %>
+									<% }); %>
+									<% } %>
+								
+							</ul>
+							<div class="tabsss_footer">
+								<div class="row">
+									<!-- <div class="col-6">
+										<ul class="icon">
+											<li><a href="javascript:void(0)"><i class="fa fa-volume-up"
+														aria-hidden="true"></i></a></li>
+											<li><a href="javascript:void(0)"><i class="fa fa-cog"
+														aria-hidden="true"></i></a></li>
+										</ul>
+									</div> -->
+									<div class="col-6 see_all">
+										<% if(conversations !==undefined && conversations.length) { %>
+											<% if(conversations[0][conversations[0].length - 1].messages.sender.id._id.toString() === user._id.toString() ) {%>
+											<a href="/inbox/<%= conversations[0][conversations[0].length - 1].messages.receiver.id._id %>" target="_self">See All In Inbox</a>
+										<%} else if(conversations[0][conversations[0].length - 1].messages.receiver.id._id.toString() === user._id.toString() ) {%>
+											<a href="/inbox/<%= conversations[0][conversations[0].length - 1].messages.sender.id._id %>" target="_self">See All In Inbox</a>
+										<% }}%>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- Messages -->
+
+					<% if (currentUser.isCompany === false) { %>
+					<!-- Notifications -->
+					<!-- <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown"
+							href="javascript:void(0)">Notifications</a>
+						<div class="dropdown-menu notification_down messages_dropdown">
+							<div class="header">
+								<div class="row">
+									<div class="col-5">
+										<h5>Notifications</h5>
+									</div>
+									<div class="col-7">
+										<ul>
+											<li><a href="javascript:void(0)">Mark All as Read</a></li>
+											<li><a href="javascript:void(0)">Setting</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<ul class="scrolling_item">
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title related_photo">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="hit">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="emoji">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title related_photo">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="hit">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="others">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title related_photo">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="hit">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="emoji">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title related_photo">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="hit">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">
+										<div class="row">
+											<div class="col-2 user_pic">
+												<img src="../images/man.png" class="img-fluid" alt="" />
+											</div>
+											<div class="col-10 not_title">
+												<h5>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.
+												</h5>
+												<div class="time">
+													<h6 class="others">2h</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+							<div class="notification_down_footer">
+								<div class="text-cen see_all">
+									<a href="notifications.html" target="_self">See All Notifications</a>
+								</div>
+							</div>
+						</div>
+					</li> -->
+					<!-- Notifications -->
+					<% }%>
+
+					<li class="nav-item"><a href="/saved-list" class="nav-link">Saved List</a></li>
+				</ul>
+				<% } %>
+			</div>
+		</nav>
+
+		<!-- My Account SideMenu For Desktop -->
+		<div class="" id="myAcContents">
+			<div id="dismissMyAcActionLink">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</div>
+			<div class="my_account_menu">
+				<div class="top_part">
+					<% if (currentUser.isCompany) { %>
+						<% if(currentUser.logo) { %>
+							<img src="<%= currentUser.logo %>" class="profile-photo" alt="<%= currentUser.username %>">
+						<% } else {%>
+							<img src="/images/man.png" class="profile-photo" alt="<%= currentUser.username %>">
+						<% }%>
+						<div class="profile_name"><%= currentUser.companyName %></div>
+					<% } else { %>
+						<% if(currentUser.profilePicture) {%>
+						<img src="<%= currentUser.profilePicture %>" class="profile-photo"  alt="<%= currentUser.username %>">
+	
+						<%} else {%>
+						<img src="/images/man.png" class="profile-photo" alt="<%= currentUser.username %>">
+						<% }%>
+						<div class="profile_name"><%= currentUser.username %></div>
+					<% } %>
+				</div>
+				<div class="bottom_part">
+					<ul>
+						<% if (currentUser.isCompany) { %>
+						<li><a href="/company-dashboard" target="_self"><i class="fa fa-fw fa-user"></i><span>View
+									Dashboard</span></a></li>
+						<% } else { %>
+						<li><a href="/member-profile/<%= currentUser._id %>" target="_self"><i
+									class="fa fa-fw fa-user"></i><span>View Profile</span></a></li>
+						<% } %>
+						<li><a href="/company-settings/account"><i class="fa fa-fw fa-cog"></i><span>Settings</span></a>
+						</li>
+						
+						<li><a href="/logout" target="_self"><i
+									class="fa fa-fw fa-power-off"></i><span>Logout</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- My Account SideMenu For Desktop -->
+
+		<!-- My Account SideMenu For Mobile -->
+		<div class="" id="myAcContentsMB">
+			<div id="dismissMyAcActionLinkMB">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</div>
+			<div class="my_account_menu">
+				<div class="top_part">
+					<% if (currentUser.isCompany) { %>
+						<% if(currentUser.logo) { %>
+							<img src="<%= currentUser.logo %>" class="profile-photo" alt="<%= currentUser.username %>">
+						<% } else {%>
+							<img src="/images/man.png" class="profile-photo" alt="<%= currentUser.username %>">
+						<% }%>
+						<div class="profile_name"><%= currentUser.companyName %></div>
+					<% } else { %>
+						<% if(currentUser.profilePicture) {%>
+						<img src="<%= currentUser.profilePicture %>" class="profile-photo"  alt="<%= currentUser.username %>">
+	
+						<%} else {%>
+						<img src="/images/man.png" class="profile-photo" alt="<%= currentUser.username %>">
+						<% }%>
+						<div class="profile_name">Hi <%= currentUser.username %></div>
+					<% } %>
+				</div>
+				<div class="bottom_part">
+					<ul>
+						<% if (currentUser.isCompany) { %>
+						<li><a href="/company-dashboard" target="_self"><i class="fa fa-fw fa-user"></i><span>View
+									Dashboard</span></a></li>
+						<% } else { %>
+						<li><a href="/member-profile/<%= currentUser._id %>" target="_self"><i
+									class="fa fa-fw fa-user"></i><span>View Profile</span></a></li>
+						<% } %>
+						<li><a href="/company-settings/account"><i class="fa fa-fw fa-cog"></i><span>Settings</span></a>
+						</li>
+						<!-- <li><a href="../footer-pages/help-center-buyer.html"><i
+									class="fa fa-fw fa-comments"></i><span>Buyer Help Center</span></a></li> -->
+						<li><a href="/logout" target="_self"><i
+									class="fa fa-fw fa-power-off"></i><span>Logout</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- My Account SideMenu For Mobile -->
+
+		<% } %>
+
+
+		<nav class="navbar main_navbar navbar-expand-lg bottombar">
+			<div class="collapse nav_item_wrap navbar-collapse" id="responsive-bar">
+				<ul class="nav navbar-nav">
+					<li class="nav-item dropdown mega-dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Outdoor
+							Work</a>
+						<div class="dropdown-menu mega-dropdown-menu shadow">
+							<div class="container">
+								<h5 class="footer-title text-dark text-center">Outdoor Work</h5>
+								<ul class="row link_with_image list-unstyled text-center">
+									<li class="col-md-2">
+										<img src="/images/outdoor-work/Roofing.jpg" alt="" class="img-fluid mb-2" />
+										<p><a href="/services/roofing-services">Roofing Services</a></p>
+									</li>
+									<li class="col-md-2">
+										<img src="../images/outdoor-work/landscaping.jpg" alt=""
+											class="img-fluid mb-2" />
+										<p><a href="/services/landscaping-services">Landscaping Services</a>
+										</p>
+									</li>
+								 
+									<li class="col-md-2">
+										<img src="/images/outdoor-work/junk_removal_services.jpg" alt=""
+											class="img-fluid mb-2" />
+										<p><a href="/services/junk-removal">Junk Removal</a></p>
+									</li>
+									 
+								</ul>
+								<hr class="mb-4" />
+								<h5 class="footer-title text-dark text-center">More in Outdoor Work</h5>
+								<ul class="row menu_bottom_links">
+									<li class="col-md-2 single_list">
+										<ul>
+										 
+											<li><a href="/services/masonry-services">Masonry Services</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="nav-item dropdown mega-dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Indoor
+							Work</a>
+						<div class="dropdown-menu mega-dropdown-menu shadow">
+							<div class="container">
+								<h5 class="footer-title text-dark text-center">Indoor Works</h5>
+								<ul class="row link_with_image list-unstyled justify-content-center text-center">
+									<li class="col-md-2">
+										<img src="/images/indoor-work/Plumbing Services.jpg" alt=""
+											class="img-fluid mb-2" />
+										<p><a href="/services/plumbing-services">Plumbing Services</a></p>
+									</li>
+									<li class="col-md-2">
+										<img src="/images/indoor-work/HVAC Services.jpg" alt=""
+											class="img-fluid mb-2" />
+										<p><a href="/services/hvac-services">HVAC Services</a></p>
+									</li>
+									 
+									<li class="col-md-2">
+										<img src="/images/indoor-work/Pest Control Services.jpg" alt=""
+											class="img-fluid mb-2" />
+										<p><a href="/services/pest-control">Pest Control</a></p>
+									</li>
+									 
+									<li class="col-md-2">
+										<img src="/images/indoor-work/Painting Services.jpg" alt=""
+											class="img-fluid mb-2" />
+										<p><a href="/services/painting-services">Painting Services</a></p>
+									</li>
+								</ul>
+								<hr class="mb-4" />
+								<h5 class="footer-title text-dark text-center">More in Indoor Works</h5>
+								<ul class="row menu_bottom_links">
+									<li class="col-md-2 single_list">
+										<ul>
+											 
+											<li><a href="/services/flooring-services">Flooring Services</a>
+											</li>
+										 
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="nav-item dropdown mega-dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Vehicle
+							Services</a>
+						<div class="dropdown-menu mega-dropdown-menu shadow">
+							<div class="container">
+								<h5 class="footer-title text-dark text-center">Vehicle Services</h5>
+								<ul class="row link_with_image list-unstyled justify-content-center text-center">
+									<li class="col-md-2">
+										<img src="/images/vehicle-services/tow.jpg" alt="" class="img-fluid mb-2" />
+										<p><a href="/services/towing-services">Towing Services</a></p>
+									</li>
+									<li class="col-md-2">
+										<img src="/images/vehicle-services/vehicle-repair-shop.jpg" alt=""
+											class="img-fluid mb-2" />
+										<p><a href="/services/vehicle-repair-services">Vehicle Repair Shops</a></p>
+									</li>
+								</ul>
+								 
+							</div>
+						</div>
+					</li>
+
+
+					<li class="nav-item dropdown mega-dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Other
+							Services</a>
+						<div class="dropdown-menu mega-dropdown-menu shadow">
+							<div class="container">
+								<h5 class="footer-title text-dark text-center">Other Services</h5>
+								<ul class="row link_with_image list-unstyled justify-content-center text-center">
+									<li class="col-md-2">
+										<img src="/images/other-services/eletrical_services.jpg" alt=""
+											class="img-fluid mb-2" />
+										<p><a href="/services/electrical-services">Electrical Services</a>
+										</p>
+									</li>
+									<li class="col-md-2">
+										<img src="/images/other-services/moving_services.jpg" alt=""
+											class="img-fluid mb-2" />
+										<p><a href="/services/moving-services">Moving Services</a></p>
+									</li>
+									 
+								</ul>
+								<hr class="mb-4">
+								<h5 class="footer-title text-dark text-center">More in Other Services</h5>
+								<ul class="row menu_bottom_links">
+									<li class="col-md-2 single_list">
+										<ul>
+											<li><a href="/services/appliance-repairs">Appliance
+													Services
+											<li><a href="/services/locksmith-services">Locksmith Services</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+  <section class="main_search_bar_mobile">
+      <form autocomplete="off" action="/pages" method="POST">
+          <div class="search_bar autocomplete">
+              <input id="myInput2" name="service" type="text" placeholder="Search...." />
+              <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+      </form>
+  </section>
+
+
+
+    <section class="company_profile_banner">
+        <div class="overlay">
+            <div class="container_gbz">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="profile">
+                            <div class="profile_pic">
+                                <img src="<%= company.logo %>" alt="Logo" />
+                            </div>
+                            <div class="profile_info">
+                                <div class="status">
+                                    <ul>
+                                       
+                                        <li>Verified</li>
+                                    </ul>
+                                </div>
+                                <div class="company_info">
+                                    <h2><%= company.companyName %></h2>
+                                    <h5><%= company.slogan %></h5>
+                                    <h4 class="reviews_ratings">
+
+                                        <div class="star-ratings-css">
+                                            <div class="star-ratings-css-top" style="width: <%= (average/5) * 100 %>%">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                            <div class="star-ratings-css-bottom">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                        </div>
+
+                                        <span class="star"><%= average %></span>
+                                        <span class="amount">(<%= company.reviews.length %> Reviews)</span>
+                                    </h4>
+                                    <div class="company_status">
+                                        <h3 class="company_online_status">Status: <span class="online_status"><i
+                                                    class="fa fa-circle" aria-hidden="true"></i> Online</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="appoinment_message_btns">
+                            <ul>
+                                <li><a class="btn btn-gbz-success" href="#findMessageSeller"
+                                        data-toggle="modal">Message</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company_nav company_nav_for_desktop_only">
+                    <ul>
+                        <li><a href="/company-profile/<%= company._id %>">Home</a></li>
+                        <li><a href="/company-profile/<%= company._id %>/about">About</a></li>
+                        
+                        
+                        <li><a href="/company-profile/<%= company._id %>/portfolio">Portfolio</a></li>
+                        <li><a href="/company-profile/<%= company._id %>/services-products">Services</a></li>
+                        <li><a href="/company-profile/<%= company._id %>/reviews">Reviews</a></li>
+                        <li><a href="/company-profile/<%= company._id %>/faq">FAQ's</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="company_nav_for_mobile_only">
+        <div class="container_gbz">
+            <div class="horizontal_mobile_menu">
+                <ul>
+                    <li><a href="/company-profile/<%= company._id %>">Home</a></li>
+                    <li><a href="/company-profile/<%= company._id %>/about">About</a></li>
+                    
+                    
+                    <li><a href="/company-profile/<%= company._id %>/portfolio">Portfolio</a></li>
+                    <li><a href="/company-profile/<%= company._id %>/services-products">Services</a></li>
+                    <li><a href="/company-profile/<%= company._id %>/reviews">Reviews</a></li>
+                    <li><a href="/company-profile/<%= company._id %>/faq">FAQ's</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="cp_banner_bottom">
+
+    </div>
+
+    <section class="cp_like_share_breadcrumb">
+        <div class="container_gbz">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="breadcrumb-wrap">
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="reviews_amount_part">
+                        <div class="like_share_menu">
+                            <ul>
+                                <% if(currentUser && currentUser.likes.includes(company._id)) { %>
+                                <li>
+                                    <form class="" action="/unlike/<%= company._id %>" method="POST">
+                                        <button type="submit" class="like">Unlike</button>
+                                    </form>
+                                </li>
+                                <% } else { %>
+                             
+                                <% } %>
+
+                                <li><a href="javascript:void(0)" onclick="copyToClipboard()">Share</a></li>
+                                <input type="hidden" id="input-url" value="Copied!">
+                                <% if (currentUser && !currentUser.isCompany) { %>
+                									<li>
+                										<div class="popup" onclick="myFunction()">
+                											<div class="popuptext" id="myPopup">
+                												<form style="margin-bottom: 3px;" action="/default-list/<%= company._id %>"
+                													method="POST">
+                													<input type="hidden" name="company" value="company">
+                													<button style="margin: auto;" type="submit" class="like">Default
+                														List</button>
+                												</form>
+                												<% if (currentUser && lists.length) { %>
+                												<% lists.forEach(function(list){ %>
+                												<form style="margin-bottom: 3px;"
+                													action="/save-to-list/<%= company._id %>/<%= list._id %>" method="POST">
+                													<button style="margin: auto;" type="submit"
+                														class="like"><%= list.title %></button>
+                												</form>
+                												<% }); %>
+                												<% } %>
+                											</div>
+                											<button type="" class="like">Save To List</button>
+                										</div>
+                									</li>
+                								<% } %>
+                                <li><a id="export" href="#" onclick="window.print()">Print Page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cp_middle_content cp_middle_content_reviews">
+        <div class="container_gbz">
+            <div class="cp_reviews_wrapper">
+                <div class="cp_review_part">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="main_ratings_count">
+                                <div class="main_ratings_count_inner">
+
+                                    <h3>Average Rating: <%= average %></h3>
+                                    <div class="star-ratings-css mb-2">
+                                        <div class="star-ratings-css-top" style="width: <%= (average/5) * 100 %>%">
+                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                        </div>
+                                        <div class="star-ratings-css-bottom">
+                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                        </div>
+                                    </div>
+                                    <h6>[<%= review.length %> Reviews]</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="details_ratings">
+                                <div class="single_details_ratings">
+                                    <ul>
+                                        <li class="how_stars">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li class="amount_lists">[<%= fiveReview.length %>]</li>
+                                    </ul>
+                                </div>
+                                <div class="single_details_ratings">
+                                    <ul>
+                                        <li class="how_stars">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li class="amount_lists">[<%= fourReview.length %>]</li>
+
+                                    </ul>
+                                </div>
+                                <div class="single_details_ratings">
+                                    <ul>
+                                        <li class="how_stars">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li class="amount_lists">[<%= threeReview.length %>]</li>
+                                    </ul>
+                                </div>
+                                <div class="single_details_ratings">
+                                    <ul>
+                                        <li class="how_stars">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li class="amount_lists">[<%= twoReview.length %>]</li>
+                                    </ul>
+                                </div>
+                                <div class="single_details_ratings">
+                                    <ul>
+                                        <li class="how_stars">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li class="amount_lists">[<%= oneReview.length %>]</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr class="my-4" />
+
+                <!-- Review Section Starts From Here -->
+                <div class="cp_split_reviews">
+                    <div class="header">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>Reviews <span class="star"><i class="fa fa-star" aria-hidden="true"></i>
+                                        <%= average %></span>
+                                    <span class="amount">(<%= review.length %>)</span></h3>
+
+                            </div>
+                            <div class="col-sm-2">
+                                <a class="btn btn-gbz-success" href="#createReview" data-toggle="modal">
+                                    <span>Add Review</span>
+                                </a>
+                            </div>
+                            <div class="col-sm-4">
+                                <form action="/company-profile/<%= company._id %>/reviews" method="POST">
+                                    <select name="filter" id="" class="form-control" onchange="this.form.submit()">
+                                        <option value="recent">Most Recent</option>
+                                        <option value="positive" selected>Positive Reviews</option>
+                                        <option value="neutral">Neutral Reviews</option>
+                                        <option value="negative">Negative Reviews</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews_wrapper" id="list">
+                        <% if(review.length > 0) { %>
+                        <% for (let i = 0; i < review.length; i++) {%>
+                        <% if (i > 4) {break;} %>
+                        <div class="single_review">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h6><%= review[i].author.username %> <span class="star"><i class="fa fa-star"
+                                                aria-hidden="true"></i> <%= review[i].rating %>.0</span></h6>
+                                    <p><%= review[i].text %></p>
+                                    <span class="review_time"><%= moment(review[i].createdAt).fromNow() %></span>
+                                    <% if (review[i].reply) { %>
+                                    <p><strong>Reply From <%= company.companyName %>:</strong></p>
+                                    <p><img src="<%= company.logo%>" alt="Company Logo"
+                                            style="width: 30px; border-radius: 50%;"><%= review[i].reply %></p>
+                                    <% } %>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="review_related_image_slider">
+                                        <div id="reviewsSlider1<%= [i] %>" class="carousel slider_part_inner slide"
+                                            data-ride="carousel">
+                                            <!-- Indicators -->
+                                            <!-- <ul class="carousel-indicators">
+												<li data-target="#reviewsSlider1" data-slide-to="0" class="active"></li>
+												<li data-target="#reviewsSlider1" data-slide-to="1"></li>
+												<li data-target="#reviewsSlider1" data-slide-to="2"></li>
+											</ul> -->
+
+                                            <!-- The slideshow -->
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item text-center active">
+                                                    <a class="lightcase" href="<%= review[i].images[0].url %>"
+                                                        data-rel="reviewsSlider1<%= [i] %>_img:carousel">
+                                                        <img src="<%= review[i].images[0].url %>" class="img-fluid"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                                <% if(review[i].images.length) { %>
+                                                <% review[i].images.forEach(function(image) { %>
+                                                <div class="carousel-item text-center">
+                                                    <a class="lightcase" href="<%= image.url %>"
+                                                        data-rel="reviewsSlider1<%= [i] %>_img:carousel">
+                                                        <img src="<%= image.url %>" class="img-fluid" alt="" />
+                                                    </a>
+                                                </div>
+                                                <% }); %>
+                                                <% } %>
+                                            </div>
+
+                                            <!-- Left and right controls -->
+                                            <a class="carousel-control-prev" href="#reviewsSlider1<%= [i] %>"
+                                                data-slide="prev">
+                                                <span class="carousel-control-prev-icon"></span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#reviewsSlider1<%= [i] %>"
+                                                data-slide="next">
+                                                <span class="carousel-control-next-icon"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }; %>
+                        <% } %>
+
+
+                        <div class="see_more pb-3">
+                            <a href="javascript:void(0)" onclick="myFunction()"><i class="fa fa-plus"
+                                    aria-hidden="true"></i> Show More</a>
+                        </div>
+
+                        <% if(review.length > 5){ %>
+                        <div id="hiddenDiv" style="display:none;">
+                            <% for (let i = 5; i < review.length; i++) {%>
+                            <div class="single_review">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <h6><%= review[i].author.username %> <span class="star"><i class="fa fa-star"
+                                                    aria-hidden="true"></i> <%= review[i].rating %>.0</span></h6>
+                                        <p><%= review[i].text %></p>
+                                        <span class="review_time"><%= moment(review[i].createdAt).fromNow() %></span>
+                                        <% if (review[i].reply) { %>
+                                        <p><strong>Reply From <%= company.companyName %>:</strong></p>
+                                        <p><img src="<%= company.logo%>" alt="Company Logo"
+                                                style="width: 30px; border-radius: 50%;"><%= review[i].reply %></p>
+                                        <% } %>
+
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="review_related_image_slider">
+                                            <div id="reviewsSlider1<%= [i] %>" class="carousel slider_part_inner slide"
+                                                data-ride="carousel">
+                                                <!-- Indicators -->
+                                                <!-- <ul class="carousel-indicators">
+													<li data-target="#reviewsSlider1" data-slide-to="0" class="active">
+													</li>
+													<li data-target="#reviewsSlider1" data-slide-to="1"></li>
+													<li data-target="#reviewsSlider1" data-slide-to="2"></li>
+												</ul> -->
+
+                                                <!-- The slideshow -->
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item text-center active">
+                                                        <a class="lightcase" href="<%= review[i].images[0].url %>"
+                                                            data-rel="reviewsSlider1<%= [i] %>_img:carousel">
+                                                            <img src="<%= review[i].images[0].url %>" class="img-fluid"
+                                                                alt="" />
+                                                        </a>
+                                                    </div>
+                                                    <% review[i].images.forEach(function(image) { %>
+                                                    <div class="carousel-item text-center">
+                                                        <a class="lightcase" href="<%= image.url %>"
+                                                            data-rel="reviewsSlider1<%= [i] %>_img:carousel">
+                                                            <img src="<%= image.url %>" class="img-fluid" alt="" />
+                                                        </a>
+                                                    </div>
+                                                    <% }); %>
+                                                </div>
+
+                                                <!-- Left and right controls -->
+                                                <a class="carousel-control-prev" href="#reviewsSlider1<%= [i] %>"
+                                                    data-slide="prev">
+                                                    <span class="carousel-control-prev-icon"></span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#reviewsSlider1<%= [i] %>"
+                                                    data-slide="next">
+                                                    <span class="carousel-control-next-icon"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }; %>
+                        </div>
+                        <% } %>
+
+                    </div>
+                </div>
+                <!-- Review Section Ends Here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Review Modal Starts From Here -->
+    <div class="modal dash_port_modal dashboard_wrap fade" id="createReview">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Create New Review</h3>
+                    <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"
+                            aria-hidden="true"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/create-review/<%= company._id %>" method="POST" enctype="multipart/form-data">
+                        <div class="form">
+                            <div class="single_upload">
+                                <div class="upload_header">
+                                    <h5>Upload Portfolio Photos/Videos</h5>
+                                </div>
+                                <div class="upload_area">
+                                    <div class="form-group mb-2">
+                                        <input type="file" name="images" id="file-1" class="inputfile inputfile-1"
+                                            data-multiple-caption="{count} files selected" multiple required />
+                                        <label for="file-1">
+                                            <div class="upload_fils">
+                                                <div class="icon">
+                                                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                                </div>
+                                                <h5>Drag & Drop a Photos Here <br /> or <br /> Click to Upload</h5>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <fieldset class="starability-basic">
+                                    <legend>Rating:</legend>
+                                    <input type="radio" id="first-rate1" name="rating" value="1" checked />
+                                    <label for="first-rate1" title="Terrible">1 star</label>
+                                    <input type="radio" id="first-rate2" name="rating" value="2" />
+                                    <label for="first-rate2" title="Not good">2 stars</label>
+                                    <input type="radio" id="first-rate3" name="rating" value="3" />
+                                    <label for="first-rate3" title="Average">3 stars</label>
+                                    <input type="radio" id="first-rate4" name="rating" value="4" />
+                                    <label for="first-rate4" title="Very good">4 stars</label>
+                                    <input type="radio" id="first-rate5" name="rating" value="5" />
+                                    <label for="first-rate5" title="Amazing">5 stars</label>
+                                </fieldset> <textarea name="text" placeholder="Write a Review..." cols="30" rows="3"
+                                    class="form-control"></textarea>
+                                <div class="form-text text-right">
+                                    <span>0/600</span>
+                                </div>
+                            </div>
+                            <div class="save_button text-right">
+                                <button type="submit" class="btn btn-gbz-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Review Modal Ends Here -->
+
+
+      <!-- Message Seller Modal Starts From Here -->
+      <div class="modal message_seller_modal fade" id="findMessageSeller">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Send a Message</h3>
+                    <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"
+                            aria-hidden="true"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile_info_left">
+                                <div class="top">
+                                    <div class="profile_pic">
+                                        <img src="<%= company.logo %>" class="img-fluid"
+                                            alt="" />
+                                    </div>
+                                    <div class="profile_name">
+                                        <h5><%= company.companyName %></h5>
+                                    </div>
+                                    <div class="related_text">
+                                        
+                                            <% if(company.companyStatus) {%>
+                                              <h6>Online</h6>
+                                              <%} else {%>
+                                              <h6>Away</h6>
+                                              <% }%>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="bottom">
+                                    <h5>Please Include:</h5>
+                                    <ul>
+                                        <li>Project Description</li>
+                                        <li>Specific Instructions</li>
+                                        <li>Relevant Files</li>
+                                        <li>Your Budget</li>
+                                        <li>Delivery Time</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="message_area">
+                                <div class="message_header">
+                                  <span class="status_online">Status: <i class="fa fa-circle"
+                                    aria-hidden="true"></i></span> <b><%= usaTime %></b>
+                                </div>
+                                <div class="message_body">
+                                    <form action="/message/<%= company.id %>"  enctype="multipart/form-data" method="POST">
+                                        <div class="form">
+                                            <div class="body_top_part">
+                                              <textarea name="message" id="myText" cols="30" rows="10" class="form-control" maxlength="2500" required></textarea>
+                                            </div>
+                                            <div class="body_bottom_part">
+                                                <div class="form-row">
+                                                    <div class="form-group col-6">
+                                                      <span id="wordCount">0</span>/<span>2500</span>
+                                                    </div>
+                                                    <div class="form-group text-right col-6">
+                                                        <input type="file" name="file-1[]" id="file-1"
+                                                            class="inputfile inputfile-1"
+                                                            data-multiple-caption="{count} files selected" multiple />
+                                                        <label for="file-1"><i class="fa fa-paperclip"
+                                                                aria-hidden="true"></i></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="message_send_button text-right mt-3">
+                                                <button type="submit" class="btn btn-gbz-success">Send</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Message Seller Modal Ends Here -->
+  
+
+    <footer class="footer_upper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="single_part">
+              <h3>Number of Registered Companies </h3>
+              <ul>
+                <li><a href="javascript:void(0)"><%= total.length %></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="single_part">
+              <h3>Mobile App Coming Soon</h3>
+              <ul class="mobile_apps_part">
+                <li><a href="javascript:void(0)"><img src="/images/apple_store.png" class="img-fluid"
+                      alt="" /></a></li>
+                <li><a href="javascript:void(0)"><img src="/images/google_play_store.png" class="img-fluid"
+                      alt="" /></a></li>
+              </ul>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </footer>
+    <footer class="footer_top">
+        <div class="container">
+          <div class="upper_part">
+            <div class="row">
+              <div class="col-md-6 col-lg-3">
+                <div class="single_part">
+                  <nav class="navbar navbar-expand-md">
+                    <div class="container">
+                      <a class="footer_nav_togger1 footer_mobile_links" href="#gbzBuildTogether"
+                        data-toggle="collapse">
+                        <div class="heading gabazzo_headings">
+                          <h3>Gabazzo</h3>
+                          <h6>Building Communities Together</h6>
+                        </div>
+                      </a>
+                      <div class="collapse navbar-collapse" id="gbzBuildTogether">
+                        <div class="heading gabazzo_headings heading_for_desktop">
+                          <h3>Gabazzo</h3>
+                          <h6>Building Communities Together</h6>
+                        </div>
+                        <ul class="">
+                          <li><a href="/about-us">About Us</a></li>
+                          <li><a href="/covid-info">Covid-19 Info</a></li>
+                          <li><a href="/site-map">Sitemap</a></li>
+                          <li><a href="/how-it-works-members">How It Works</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+    
+              <div class="col-md-6 col-lg-3">
+                <div class="single_part">
+                  <nav class="navbar navbar-expand-md">
+                    <div class="container">
+                      <a class="footer_nav_togger2 footer_mobile_links" href="#customerBar"
+                        data-toggle="collapse">
+                        <div class="heading">
+                          <h3>Customers</h3>
+                        </div>
+                      </a>
+                      <div class="collapse navbar-collapse" id="customerBar">
+                        <div class="heading heading_for_desktop">
+                          <h3>Customers</h3>
+                        </div>
+                        <ul class="">
+                          <li><a href="/sign-up">Sign Up</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="single_part">
+                  <nav class="navbar navbar-expand-md">
+                    <div class="container">
+                      <a class="footer_nav_togger3 footer_mobile_links" href="#serviceCompaniesBar"
+                        data-toggle="collapse">
+                        <div class="heading">
+                          <h3>Service Companies</h3>
+                        </div>
+                      </a>
+                      <div class="collapse navbar-collapse" id="serviceCompaniesBar">
+                        <div class="heading heading_for_desktop">
+                          <h3>Service Companies</h3>
+                        </div>
+                        <ul class="">
+                          <li><a href="/company-sign-up-home">Sign Up as a Company</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="single_part">
+                  <nav class="navbar navbar-expand-md">
+                    <div class="container">
+                      <a class="footer_nav_togger4 footer_mobile_links" href="#supportBar"
+                        data-toggle="collapse">
+                        <div class="heading">
+                          <h3>Support</h3>
+                        </div>
+                      </a>
+                      <div class="collapse navbar-collapse" id="supportBar">
+                        <div class="heading heading_for_desktop">
+                          <h3>Support</h3>
+                        </div>
+                        <ul class="">
+                          <li><a href="/contact-us">Contact Us</a></li>
+                          <li><a href="/safety-buyer">Safety</a></li>
+                          <li><a href="/terms-and-conditions">Terms of Use</a></li>
+                          <li><a href="/privacy-policy">Privacy Policy</a></li>
+                          <li><a href="/cookie-policy">Cookie Policy</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom_part">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="single_part footer_logo_part">
+                  <div class="footer_logo">
+                    <a href="/"><img src="images/gabazzo_logo_white.png" class="img-fluid" alt="" /></a>
+                  </div>
+                  <ul>
+                    <li>Chicago, IL 60623-1325</li>
+                    <li>support@gabazzo.com</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="single_part">
+                  <div class="catch_phrase">
+                    <p>Based in Chicago, Illinois Gabazzo is a platform created for the community in finding
+                      trusted and reliable services online. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="single_part">
+                  <h2>Stay Connected:</h2>
+                  <h5>Subscribe to Gabazzo.com by entering your email below. You'll receive real-time updates
+                    when we Publish Newsletters, Website/Mobile App Updates, and much more.</h5>
+                  <form action="">
+                    <div class="form">
+                      <div class="form-group mb-1">
+                        <div class="subscribe_section">
+                          <input type="email" placeholder="Enter Your Email Here*" required
+                            class="form-control" />
+                          <button type="submit" class="btn btn-info">Subscribe</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="stay_connected">
+                    <div class="social_medis_links">
+                      <ul>
+                        <li><a href="https://www.facebook.com/gabazzoBCT" target="_blank"><i
+                              class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/gabazzo/" target="_blank"><i
+                              class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/gabazzokam" target="_blank"><i
+                              class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCKBhvVJYd_HhDHJ3KAnrFLQ?view_as=subscriber"
+                            target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <footer class="main_footer">
+      <div class="container">
+        <p class="mb-0">Copyright:&copy; 2021 Gabazzo. All Rights Reserved. Patent Pending</p>
+      </div>
+    </footer>
+
+    <!-- Markup For Chat Widgets Starts From Here -->
+    <!-- <div class="chat-widget-wrap shadow">
+        <div class="chat-widget-header bg-primary px-3 py-2">
+            <h5 class="m-0 text-white font-weight-bold">Members Chat <i class="fa fa-angle-down float-right"></i></h5>
+        </div>
+        <div class="chat-widget-body">
+            <div class="chat-widget-body-inner chat-widget-service-list">
+                <div class="chat-widget-body-header border-bottom-1 bg-light-1 p-3">
+                    <h6 class="m-0 font-weight-bold"><i class="fa fa-user-circle fa-lg text-primary mr-1"></i> Gabazzo
+                        Support Chat</h6>
+                </div>
+                <div class="chat-widget-body-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="text-dark">Outdoor Work <i
+                                    class="fa fa-angle-right mt-1 float-right"></i></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark">Indoor Work <i
+                                    class="fa fa-angle-right mt-1 float-right"></i></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark">Vehicle Services <i
+                                    class="fa fa-angle-right mt-1 float-right"></i></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark">Other Services <i
+                                    class="fa fa-angle-right mt-1 float-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chat-widget-body-inner chat-widget-service-list-1">
+                <div class="chat-widget-body-header border-bottom-1 bg-light-1 p-3">
+                    <a href="#" class="link-back"><i class="fa fa-angle-left fa-2x text-dark"></i></a>
+                </div>
+                <div class="chat-widget-body-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="text-dark">Roofing Services <i
+                                    class="fa fa-angle-right mt-1 float-right"></i></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark">Landscaping Services <i
+                                    class="fa fa-angle-right mt-1 float-right"></i></a></li>
+                       
+                        
+                        <li class="list-group-item"><a href="#" class="text-dark">Junk Removal <i
+                                    class="fa fa-angle-right mt-1 float-right"></i></a></li>
+                       
+                        <li class="list-group-item"><a href="#" class="text-dark">Exterior Painting <i
+                                    class="fa fa-angle-right mt-1 float-right"></i></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark">Garage Services <i
+                                    class="fa fa-angle-right mt-1 float-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chat-widget-body-inner chat-widget-chat-list">
+                <div class="chat-widget-body-header border-bottom-1 bg-light-1 p-3">
+                    <a href="#" class="link-back"><i class="fa fa-angle-left fa-2x text-dark"></i></a>
+                </div>
+                <div class="chat-widget-body-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title <small
+                                    class="float-right text-muted mt-1">08/03/19</small></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title <small
+                                    class="float-right text-muted mt-1">07/02/19</small></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title <small
+                                    class="float-right text-muted mt-1">06/01/19</small></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title <small
+                                    class="float-right text-muted mt-1">06/01/19</small></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title <small
+                                    class="float-right text-muted mt-1">06/01/19</small></a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title <small
+                                    class="float-right text-muted mt-1">06/01/19</small></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chat-widget-body-inner chat-widget-chat-profile">
+                <div class="chat-widget-body-header text-center p-3 border-bottom-1">
+                    <a href="#" class="link-back"><i class="fa fa-angle-left fa-2x text-dark"></i></a>
+                    <i class="fa fa-user-circle-o fa-5x text-muted mb-3"></i>
+                    <h6 class="text-primary font-weight-bold m-0">Quick Key Locksmith</h6>
+                </div>
+                <div class="chat-widget-body-body px-3 py-2 d-flex flex-column flex-column-reverse">
+                    <div class="chat-bubble-wrap chat-bubble-left">
+                        <i class="fa fa-user-circle fa-lg text-muted"></i>
+                        <span class="chat-bubble">We're here</span>
+                    </div>
+                    <div class="chat-bubble-wrap chat-bubble-right">
+                        <span class="chat-bubble">Okay</span>
+                        <i class="fa fa-user-circle fa-lg text-muted"></i>
+                    </div>
+                    <div class="chat-bubble-wrap chat-bubble-left">
+                        <i class="fa fa-user-circle fa-lg text-muted"></i>
+                        <span class="chat-bubble">Okay, we will comeby</span>
+                    </div>
+                    <div class="chat-bubble-wrap chat-bubble-left">
+                        <i class="fa fa-user-circle fa-lg text-muted"></i>
+                        <span class="chat-bubble">We're here</span>
+                    </div>
+                    <div class="chat-bubble-wrap chat-bubble-right">
+                        <span class="chat-bubble">Okay</span>
+                        <i class="fa fa-user-circle fa-lg text-muted"></i>
+                    </div>
+                    <div class="chat-bubble-wrap chat-bubble-left">
+                        <i class="fa fa-user-circle fa-lg text-muted"></i>
+                        <span class="chat-bubble">Okay, we will comeby</span>
+                    </div>
+                </div>
+                <div class="chat-widget-body-footer">
+                    <input type="text" class="form-control border border-right-0 border-left-0 rounded-0"
+                        placeholder="Type a message ...">
+                    <ul class="list-unstyled d-flex justify-content-end mb-0 px-3 py-1">
+                        <li><a href="javascript:void(0)"><i class="fa fa-paperclip text-muted"></i></a></li>
+                        <li><a class="btn btn-gbz-success" href="javascript:void(0)">Send</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chat-widget-body-inner chat-widget-new-chat">
+                <div class="chat-widget-body-header bg-primary px-3 pt-2">
+                    <h5 class="m-0 text-white font-weight-bold mb-2">New Chat <small class="mt-1 float-right"><a
+                                href="#" class="link-cancel text-white">Cancel</a></small></h5>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn bg-white border border-right-0 border-left-0 rounded-0" type="button"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
+                        <input type="text" class="form-control border border-right-0 border-left-0 rounded-0"
+                            placeholder="Search for a business">
+                    </div>
+                </div>
+                <div class="chat-widget-body-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title</a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title</a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title</a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title</a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title</a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title</a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title</a></li>
+                        <li class="list-group-item"><a href="#" class="text-dark"><i
+                                    class="fa fa-user-circle text-muted align-middle mr-1"></i> Company Title</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="chat-widget-footer px-3 py-2 text-center border-top-1">
+            <a href="#" class="btn btn-sm btn-outline-primary"><i class="fa fa-plus"></i> New Chat</a>
+        </div>
+    </div> -->
+    <!-- Markup For Chat Widget Ends Here -->
+
+    <script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="/js/classie.js" type="text/javascript"></script>
+    <script src="/js/lightcase.js" type="text/javascript"></script>
+    <script src="/js/custom.js" type="text/javascript"></script>
+    <script src="/js/autocomplete.js" type="text/javascript"></script>
+    <script src="/js/read_more.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+
+        $('.reply_reviews_button').click(function () {
+            //$('.hideme').hide();
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $('.reply_fields').slideUp();
+            } else {
+                $('.reply_fields').slideUp();
+                $('.reply_reviews_button').removeClass('active');
+                $(this).addClass('active');
+                $(this).next().filter('.reply_fields').slideDown();
+            }
+        });
+
+
+        $(document).ready(function () {
+            $('.reply_reviews_cancel_button').click(function () {
+                $('.reply_fields').slideUp();
+                $('.reply_reviews_button').removeClass('active');
+            })
+        })
+
+        $('.carousel').carousel({
+            interval: false,
+        })
+
+        // For Slider Popups
+        $(document).ready(function () {
+            var lightcase = $(".lightcase");
+
+            if (lightcase.length) {
+                $('a[data-rel^=reviewsSlider1_img]').lightcase();
+            }
+            if (lightcase.length) {
+                $('a[data-rel^=reviewsSlider2_img]').lightcase();
+            }
+            if (lightcase.length) {
+                $('a[data-rel^=reviewsSlider3_img]').lightcase();
+            }
+            if (lightcase.length) {
+                $('a[data-rel^=reviewsSlider4_img]').lightcase();
+            }
+        })
+
+
+    </script>
+
+    <script type="text/javascript">
+        function copyToClipboard() {
+            const el = document.createElement('textarea');
+            el.value = window.location.href;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert("URL Copied!");
+        };
+    </script>
+
+    <script>
+        // When the user clicks on div, open the popup
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+
+    <script>
+        function myFunction() {
+            let x = document.getElementById("hiddenDiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

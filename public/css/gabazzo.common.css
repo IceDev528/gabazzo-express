@@ -1,0 +1,750 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background:#FFFFFF;
+}
+:root{
+	--baseColor: #13bbb6;
+	--baseLightColor: #D0F1F0;
+	--secondaryColor: #343A40;
+	--lightColor: #FFFFFF;
+	--darkColor: #212529;
+	--blackColor: #000000;
+	--borderColor: #E5E6E7;
+	--grayColor: #F7F7F7;
+	--greenColor: #00AB07;
+	--orangeColor: #EE7600;
+	--redColor: #DC3545;
+	--purpleColor: #800080;
+
+	--nightTextColor: #F0F0F0;
+	--nightBoxColor: #2A2A2A;
+	--nightBodyColor: #181A1B;
+	
+	--baseFont: 'Poppins', sans-serif;
+}
+iframe{
+	vertical-align: middle;
+}
+
+/* ========== Custom CSS Starts ========== */
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Common Cases" Starts Here ===== */
+.gabazzo_logo img {
+	max-width: 250px;
+}
+/* ======================= */
+.grid_item{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+}
+/* ======================= */
+html[data-lc-type="image"] #lightcase-content,
+html[data-lc-type="video"] #lightcase-content{
+	background: transparent;
+	box-shadow: none;
+}
+#lightcase-info {
+	position: absolute;
+	padding-top: 25px;
+}
+#lightcase-info #lightcase-sequenceInfo {
+	color: var(--lightColor);
+	font-size: 14px;
+	font-family: var(--baseFont);
+	font-weight: 500;
+	color: #aaa;
+}
+/* ======================= */
+/* ===== CSS For "Common Cases" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Gabazzo Buttons" Starts Here ===== */
+.gbtn{
+	color: var(--lightColor);
+	background: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 15px;
+	display: inline-block;
+	text-align: center;
+	border: 1px solid var(--baseColor);
+	border-radius: 0px;
+	padding: 15px 25px;
+	text-decoration: none;
+	cursor: pointer;
+	line-height: 1;
+	margin-bottom: 0px;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.gbtn:hover{
+	color: var(--lightColor);
+	text-decoration: none;
+	-webkit-transform: scale(1.025);
+	-ms-transform: scale(1.025);
+	transform: scale(1.025);
+}
+.gbtn:focus,
+.gbtn:active{
+	box-shadow: none;
+}
+
+.gbtn_bdr{
+	color: var(--baseColor);
+	background: transparent;
+	border: 1px solid var(--baseColor);
+}
+.gbtn_bdr:hover{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+
+.gbtn_white{
+	color: var(--baseColor);
+	background: var(--lightColor);
+	border: 1px solid var(--lightColor);
+}
+.gbtn_white:hover{
+	color: var(--baseColor);
+}
+
+.gbtn_white_bdr{
+	color: var(--lightColor);
+	background: transparent;
+	border: 1px solid var(--lightColor);
+}
+.gbtn_white_bdr:hover{
+	background: var(--baseColor);
+	border: 1px solid var(--baseColor);
+}
+
+.gbtn_dark{
+	color: var(--lightColor);
+	background: var(--darkColor);
+	border: 1px solid var(--darkColor);
+}
+.gbtn_dark_bdr{
+	color: var(--darkColor);
+	background: transparent;
+	border: 1px solid var(--darkColor);
+}
+.gbtn_dark_bdr:hover{
+	color: var(--lightColor);
+	background: var(--baseColor);
+	border: 1px solid var(--baseColor);
+}
+
+.gbtn_green{
+	background: var(--greenColor);
+	border: 1px solid var(--greenColor);
+}
+.gbtn_green_bdr{
+	color: var(--greenColor);
+	background: var(--lightColor);
+	border: 1px solid var(--greenColor);
+}
+.gbtn_green_bdr:hover{
+	color: var(--lightColor);
+	background: var(--greenColor);
+}
+
+.gbtn_orange{
+	background: var(--orangeColor);
+	border: 1px solid var(--orangeColor);
+}
+.gbtn_orange_bdr{
+	color: var(--orangeColor);
+	background: var(--lightColor);
+	border: 1px solid var(--orangeColor);
+}
+.gbtn_orange_bdr:hover{
+	color: var(--lightColor);
+	background: var(--orangeColor);
+}
+
+.gbtn_red{
+	background: var(--redColor);
+	border: 1px solid var(--redColor);
+}
+.gbtn_red_bdr{
+	color: var(--redColor);
+	background: transparent;
+	border: 1px solid var(--redColor);
+}
+.gbtn_red_bdr:hover{
+	color: var(--lightColor);
+	background: var(--redColor);
+}
+
+.gbtn_gray{
+	color: var(--darkColor);
+	background: var(--grayColor);
+	border: 1px solid #999999;
+}
+.gbtn_gray:hover{
+	color: var(--darkColor);
+	background: #F4F4F4;
+}
+.gbtn_gray_bdr{
+	color: var(--darkColor);
+	background: var(--lightColor);
+	border: 1px solid var(--darkColorColor);
+}
+.gbtn_gray_bdr:hover{
+	color: var(--lightColor);
+	background: var(--grayColor);
+}
+/* ===== CSS For "Gabazzo Buttons" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Gabazzo Badges" Starts Here ===== */
+.gbadge{
+	color: var(--lightColor);
+	background: var(--baseColor);
+	display: inline-block;
+	border-radius: 20px;
+	text-align: center;
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 14px;
+	text-transform: capitalize;
+	padding: 5px 10px;
+}
+.gbadge a{
+	color: var(--lightColor);
+	margin-left: 5px;
+}
+.gbadge_orange{
+	background: var(--orangeColor);
+}
+.gbadge_purple{
+	background: var(--purpleColor);
+}
+.gbadge_red{
+	background: var(--redColor);
+}
+.gbadge_green{
+	background: var(--greenColor);
+}
+/* ===== CSS For "Gabazzo Badges" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Activity Status" Starts Here ===== */
+.activity_status{
+	position: relative;
+	display: inline-block;
+	padding-left: 17.5px;
+}
+.activity_status:before{
+	content: "";
+	background: var(--baseColor);
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	position: absolute;
+	left: 0px;
+	top: 1.5px;
+}
+.online_status:before{
+	background: var(--greenColor);
+}
+.offline_status:before{
+	background: var(--redColor);
+}
+/* ===== CSS For "Activity Status" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Input Field" Starts Here ===== */
+.form-control{
+	height: inherit;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.form-control:active,
+.form-control:focus{
+	box-shadow: none;
+	border: 1px solid var(--baseColor) !important;
+}
+/* ===== CSS For "Input Field" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Heading" Starts Here ===== */
+.heading{
+	margin-bottom: 30px;
+}
+.heading h2{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 1.3;
+	margin-bottom: 0px;
+}
+.heading h3{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 1.3;
+	margin-bottom: 0px;
+}
+.heading .head_line{
+	line-height: 1;
+}
+.heading .head_line span{
+	width: 75px;
+	height: 2px;
+	display: inline-block;
+	background: var(--baseColor);
+}
+
+.heading p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 0px;
+	margin-top: 10px;
+}
+/* ===== CSS For "Heading" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Paragraph" Starts Here ===== */
+.para_texts p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.5;
+	margin-bottom: 10px;
+}
+.para_texts p:last-child{
+	margin-bottom: 0px;
+}
+.para_texts p a{
+	color: var(--baseColor);
+	font-weight: 500;
+}
+/* ===== CSS For "Paragraph" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Action Buttons" Starts Here ===== */
+.action_buttons ul{
+	margin-bottom: 0px;
+	font-size: 0px;
+}
+.action_buttons ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 15px;
+}
+.action_buttons ul li:last-child{
+	margin-right: 0px;
+}
+/* ===== CSS For "Action Buttons" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Company Category" Starts Here ===== */
+.service_category ul{
+	margin-bottom: 0px;
+	font-size: 0px;
+}
+.service_category ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 15px;
+}
+.service_category ul li:last-child{
+	margin-right: 0px;
+}
+/* ===== CSS For "Company Category" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Page Indicator" Starts Here ===== */
+.page_indicator{
+	padding: 35px 0px;
+}
+.page_indicator ul{
+	margin-bottom: 0px;
+}
+.page_indicator ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 15px;
+}
+.page_indicator ul li.active a{
+	color: var(--baseColor);
+}
+.page_indicator ul li a{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.5;
+	display: block;
+	padding-right: 15px;
+	position: relative;
+	text-decoration: none;
+}
+.page_indicator ul li a::after {
+	content: "\f054";
+	font-family: "Font Awesome 5 Free";
+	color: var(--darkColor);
+	font-weight: 700;
+	position: absolute;
+	right: -6px;
+	top: 0.5px;
+}
+.page_indicator ul li:last-child a:after{
+	display: none;
+}
+/* ===== CSS For "Page Indicator" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Logo Info" Starts Here ===== */
+.logo_info {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 85px 15px 1fr;
+	grid-template-columns: 85px 1fr;
+	grid-auto-rows: auto;
+	gap: 15px;
+}
+.logo_info .logo {
+	position: relative;
+}
+.logo_info .logo img {
+	width: 85px;
+	height: 85px;
+	border: 2px solid var(--baseColor);
+	border-radius: 50%;
+}
+.logo_info .logo .activity_status {
+	right: 10px;
+	top: 0px;
+	position: absolute;
+}
+/* ===== CSS For "Logo Info" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Ratings" Starts Here ===== */
+.ratings .rating_point{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	margin-right: 5px;
+}
+.ratings .review_amount{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+	margin-left: 5px;
+}
+.ratings i{
+	color: var(--baseColor);
+	font-size: 12px;
+}
+/* ===== CSS For "Ratings" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Pagination" Starts Here ===== */
+.pagination{
+	border-radius: 0px;
+	justify-content: center;
+	margin-top: 50px;
+	margin-bottom: -40px;
+}
+.pagination .page-link{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 14px;
+	border-radius: 0px;
+	border: 1px solid var(--baseColor);
+	border-left: 0px;
+	border-right: 0px;
+	padding: 10px 15px;
+}
+.pagination .page-link i{
+	font-size: 12px;
+	margin-left: 3.5px;
+}
+.page-item.active .page-link{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+.page-item.disabled .page-link{
+	color: var(--darkColor);
+	background: var(--grayColor);
+}
+.pagination .page-item:first-child .page-link{
+	border-left: 1px solid var(--baseColor);
+	border-right: 1px solid var(--baseColor);
+	border-radius: 0px;
+}
+.pagination .page-item:last-child .page-link{
+	border-left: 1px solid var(--baseColor);
+	border-right: 1px solid var(--baseColor);
+	border-radius: 0px;
+}
+/* ===== CSS For "Pagination" Ends Here ===== */
+
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/*	Extra small devices (portrait phones, less than 576px)	*/
+@media (max-width: 575.98px) {
+	
+	.gbtn:hover{
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+	/* ============================== */
+	.gbadge{
+		font-size: 12px;
+	}
+	/* ============================== */
+	.heading h2{
+		font-size: 24px;
+	}
+	.heading h3{
+		font-size: 16px;
+	}
+	.heading p{
+		font-size: 14px;
+	}
+	/* ============================== */
+	.para_texts p{
+		font-size: 13px;
+	}
+	/* ============================== */
+	.action_buttons ul li {
+		margin-right: 10px;
+	}
+	/* ============================== */
+	.page_indicator {
+		padding: 20px 0px;
+	}
+	.page_indicator ul li{
+		margin-right: 10px;
+	}
+	.page_indicator ul li a{
+		font-size: 12px;
+		padding-right: 10px;
+	}
+	/* ============================== */
+	.service_category ul li {
+		margin-right: 10px;
+	}
+	/* ============================== */
+	.pagination {
+		margin-bottom: 0px;
+		margin-top: 30px;
+	}
+	.pagination .page-link {
+		font-size: 12px;
+		padding: 8px 12px;
+	}
+	/* ============================== */
+	.ratings .rating_point{
+		font-size: 13px;
+	}
+	.ratings .review_amount{
+		font-size: 11px;
+	}
+	/* ============================== */
+
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+	
+}
+
+/*	Small devices (landscape phones, 576px and up)	*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+	.gbtn:hover{
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+	/* ============================== */
+	.gbadge{
+		font-size: 12px;
+	}
+	/* ============================== */
+	.heading h2{
+		font-size: 28px;
+	}
+	.heading h3{
+		font-size: 18px;
+	}
+	.heading p{
+		font-size: 16px;
+	}
+	/* ============================== */
+	.para_texts p{
+		font-size: 13px;
+	}
+	/* ============================== */
+	.page_indicator{
+		padding: 20px 0px;
+	}
+	/* ============================== */
+	.action_buttons ul li {
+		margin-right: 10px;
+	}
+	/* ============================== */
+	.ratings .rating_point{
+		font-size: 15px;
+	}
+	.ratings .review_amount{
+		font-size: 12px;
+	}
+	/* ============================== */
+	
+}
+
+/*	Medium devices (tablets, 768px and up)	*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	
+	.gbtn:hover{
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+	/* ============================== */
+	.gbadge{
+		font-size: 12px;
+	}
+	/* ============================== */
+	.heading h2{
+		font-size: 32px;
+	}
+	.heading h3{
+		font-size: 18px;
+	}
+	.heading p{
+		font-size: 16px;
+	}
+	/* ============================== */
+	.para_texts p{
+		font-size: 13px;
+	}
+	/* ============================== */
+	.page_indicator{
+		padding: 30px 0px;
+	}
+	.page_indicator ul li{
+		margin-right: 10px;
+	}
+	.page_indicator ul li a{
+		padding-right: 10px;
+	}
+	/* ============================== */
+	.pagination {
+		margin-bottom: 0px;
+	}
+	
+}
+
+/*	Large devices (desktops, 992px and up)	*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	
+	.heading h2{
+		font-size: 36px;
+	}
+	.heading h3{
+		font-size: 20px;
+	}
+	.gbadge{
+		font-size: 12px;
+	}
+
+}

@@ -1,0 +1,2421 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<!--Metatags-->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatble" content="ie=edge" />
+	<!--Website Title-->
+	<title>Gabazzo - Company Profile</title>
+	<!--Calling Favicon-->
+	<link rel="icon" href="../images/favicon.png" />
+	<link rel="shortcut icon" href="../images/favicon.ico" />
+	<!--FontAwesome CDN-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+	<!--Normalize v8.0.1 CSS FILE-->
+	<link rel="stylesheet" href="../css/normalize.css" />
+	<!--Bootstrap v4.6.0 CSS FILE-->
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<!--Fonts Are Loads From Here-->
+	<link rel="stylesheet" href="../fonts/fonts.css" />
+	<!--Owl Carousel CSS File-->
+	<link rel="stylesheet" href="../css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="../css/owl.theme.default.min.css" />
+
+	<!--Splide Slider CSS File-->
+	<link rel="stylesheet" href="../css/splide.min.css" />
+	<!--Lightcase CSS File-->
+	<link rel="stylesheet" href="../css/lightcase.css" />
+	<!--Gabazzo Common CSS File-->
+	<link rel="stylesheet" href="../css/gabazzo.common.css" />
+	<!--Main Stylesheet-->
+	<link rel="stylesheet" href="../css/updatedStyles.css" />
+	<!--Stylesheet For The Responsiveness-->
+	<link rel="stylesheet" href="../css/responsive.css" />
+	<!--Stylesheet For The Night Mode-->
+	<link rel="stylesheet" href="../css/night.mode.css" />
+</head>
+
+<body data-spy="scroll" data-target="#fixedMenu" data-offset="80">
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T23WPNV" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<!--===== Markup For "Header" Starts From Here =====-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="logo_mode_switching">
+        <ul>
+          <li>
+            <a href="/" class="navbar-brand"
+              ><img
+                src="../images/layout/gabazzo_logo_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+          </li>
+          <li>
+            <a class="mode_icon" href="javascript:void(0)">
+              <img
+                src="../images/layout/mode_icon_night.png"
+                class="img-fluid night_icon"
+                title="Night Mode"
+                data-toggle="tooltip"
+                alt=""
+              />
+              <img src="../images/layout/mode_icon_day.png" class="img-fluid day_icon" title="Day Mode" data-toggle="tooltip" alt=""/>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="members_navbar">
+        <div class="mobile_search_btn_menubar">
+          <div class="cp_search_btn dropdown">
+            <a
+              href="javascript:void(0)"
+              data-target="#companySearchBar"
+              data-toggle="dropdown"
+              class="nav-link"
+              ><img
+                src="../images/layout/search_icon_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+
+            <div
+              class="dropdown-menu company_search_down"
+              aria-labelledby="companySearchBar"
+            >
+              <form action="">
+                <div class="company_search_field">
+                  <input
+                    id="myInput"
+                    type="search"
+                    placeholder="Search..."
+                    class="form-control"
+                  />
+                  <button class="btn" type="submit">
+                    <img
+                      src="../images/layout/search_icon_black.png"
+                      class="black_icon"
+                      alt=""
+                    />
+                    <img
+                      src="../images/layout/search_icon_white.png"
+                      class="white_icon"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            data-target="#responsive-bar"
+            data-toggle="collapse"
+          >
+            <div class="humbergur_icon">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </button>
+
+          <% if(currentUser) { %>
+          <a
+            href="javascript:void(0)"
+            class="nav-link profile_pic_link membersProfilePic"
+          >
+            <div class="profile_pic">
+              <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) {
+              %>
+              <img src="<%= currentUser.logo %>" class="img-fluid" alt="" />
+              <% } else {%>
+              <img src="../images/man.png" class="img-fluid" alt="" />
+              <% }%> <% } else { %> <% if(currentUser?.profilePicture) {%>
+              <img
+                src="<%= currentUser.profilePicture %>"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <%} else {%>
+              <img
+                src="../images/man.png"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <% }%> <% } %>
+              <span class="activity_status online_status"></span>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="responsive-bar">
+        <div class="menus ml-auto">
+          <ul class="navbar-nav services_menu">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Construction Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=roofing services"
+                      class="dropdown-item"
+                      >Roofing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=landscaping services"
+                      class="dropdown-item"
+                      >Landscaping</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=junk removal"
+                      class="dropdown-item"
+                      >Junk Removal</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=masonry services"
+                      class="dropdown-item"
+                      >Masonry</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=plumbing services"
+                      class="dropdown-item"
+                      >Plumbing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=hvac services"
+                      class="dropdown-item"
+                      >HVAC</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=pest control"
+                      class="dropdown-item"
+                      >Pest Control</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=painting services"
+                      class="dropdown-item"
+                      >Painting</a
+                    >
+                  </li>
+                </ul>
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=flooring services"
+                      class="dropdown-item"
+                      >Flooring</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=electrical services"
+                      class="dropdown-item"
+                      >Electrical</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=moving services"
+                      class="dropdown-item"
+                      >Moving</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=appliance services"
+                      class="dropdown-item"
+                      >Appliance</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=locksmith services"
+                      class="dropdown-item"
+                      >Locksmith</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Vehicle Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=towing services"
+                      class="dropdown-item"
+                      >Towing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=vehicle repair"
+                      class="dropdown-item"
+                      >Vehicle Repair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav access_menu">
+            <li
+              class="nav-item cp_search_btn cp_search_btn_desktop dropdown"
+            >
+              <a
+                href="javascript:void(0)"
+                data-target="#companySearchBar"
+                data-toggle="dropdown"
+                class="nav-link"
+                ><img
+                  src="../images/layout/search_icon_white.png"
+                  class="img-fluid"
+                  alt=""
+              /></a>
+              <div
+                class="dropdown-menu company_search_down"
+                aria-labelledby="companySearchBar"
+              >
+                <form action="">
+                  <div class="company_search_field">
+                    <input
+                      id="myInput"
+                      type="search"
+                      placeholder="Search..."
+                      class="form-control"
+                    />
+                    <button class="btn" type="submit">
+                      <img
+                        src="../images/layout/search_icon_black.png"
+                        class="black_icon"
+                        alt=""
+                      />
+                      <img
+                        src="../images/layout/search_icon_white.png"
+                        class="white_icon"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <% if(currentUser) { %>
+            <li class="nav-item desktop_only_link">
+              <a
+                href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+                class="nav-link"
+                >Messages</a
+              >
+            </li>
+            <% if(currentUser && !currentUser.isCompany) { %>
+            <li class="nav-item desktop_only_link">
+              <a href="/saved-list" class="nav-link">Saved List</a>
+            </li>
+            <% } %>
+            <li class="nav-item profile_pic_desktop">
+              <a
+                href="javascript:void(0)"
+                class="nav-link profile_pic_link membersProfilePic"
+              >
+                <div class="profile_pic">
+                  <% if (currentUser?.isCompany) { %> <%
+                  if(currentUser.logo) { %>
+                  <img
+                    src="<%= currentUser.logo %>"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <% } else {%>
+                  <img src="../images/man.png" class="img-fluid" alt="" />
+                  <% }%> <% } else { %> <% if(currentUser.profilePicture)
+                  {%>
+                  <img
+                    src="<%= currentUser.profilePicture %>"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <%} else {%>
+                  <img
+                    src="../images/man.png"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <% }%> <% } %>
+                  <span class="activity_status online_status"></span>
+                </div>
+              </a>
+            </li>
+            <% } else {%>
+            <li class="nav-item">
+              <a href="/login" class="nav-link sign_in">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a href="/sign-up" class="nav-link gbtn gbtn_white_bdr"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/become-a-seller-overview" class="nav-link gbtn"
+                >Become a Seller</a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--===== Markup For "Header" Ends Here =====-->
+<% if(currentUser) { %>
+<!--===== Markup For "Members Profile Link" Starts From Here =====-->
+<div class="membersProfileLinks">
+  <div class="dismissMembersProfileLinks">
+    <i class="fa fa-times"></i>
+  </div>
+  <div class="members_profile_pic">
+    <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) { %>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.logo %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <% } else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile Picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.companyName %></h6>
+    <% } else { %> <% if(currentUser?.profilePicture) {%>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.profilePicture %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <%} else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.firstName + " " + currentUser.lastName %></h6>
+    <% } %>
+  </div>
+  <div class="profile_links">
+    <% if (currentUser.isCompany) { %>
+    <ul>
+      <li>
+        <i class="fas fa-user"></i>
+        <a href="/company-dashboard">View Dashboard</a>
+      </li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } else { %>
+    <ul>
+      <li><i class="fas fa-user"></i><a href="/member-profile/<%= currentUser._id %>">View Profile</a></li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+          >Messages</a
+        >
+      </li>
+      <% if(currentUser && !currentUser.isCompany) { %>
+      <li class="mobile_only"><i class="fas fa-list-alt"></i> <a href="/saved-list">Saved List</a></li>
+      <% } %>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } %>
+  </div>
+</div>
+<!--===== Markup For "Members Profile Link" Ends Here =====-->
+<% } %>
+
+
+			<!--===== Markup For "Page Indicator" Starts From Here =====-->
+			<!-- <section class="company_page_indicator" id="companyProfilePage">
+				<div class="container-fluid">
+					<div class="page_indicator">
+						<ul>
+							<li><a href="javascript:void(0)">Construction Services</a></li>
+							<li><a href="javascript:void(0)">Roofing Services</a></li>
+							<li><a href="javascript:void(0)">Roofing Installation</a></li>
+							<li class="active"><a href="javascript:void(0)">Chucks Mechanic & Detail</a></li>
+						</ul>
+					</div>
+				</div>
+			</section> -->
+			<!--===== Markup For "Page Indicator" Ends Here =====-->
+			<!--===== Markup For "Company Banner" Starts From Here =====-->
+			<section class="company_banner">
+				<div class="overlay">
+					<div class="container-fluid">
+						<div class="cp_info_legals_m_wrap">
+							<div class="cp_info_legals_m">
+								<div class="menubar grid_item">
+									<a id="companyInfoLink" href="javascript:void(0)"><img
+											src="../images/layout/menubar_icon.png" class="img-fluid" alt="" /></a>
+									<div class="cp_info_mobile" id="companyInfoMobile">
+										<div id="dismissCompanyInfoLink">
+											<i class="fa fa-times"></i>
+										</div>
+										<div class="company_logo">
+											<div class="company_logo_wrap">
+												<a href="javascript:void(0)"><img src="<%= company.logo %>"
+														class="img-fluid" alt="Company Logo" /></a>
+												<h6 style="text-transform: capitalize;">
+													<%= company.companyName %>
+												</h6>
+											</div>
+										</div>
+										<div class="basic_info">
+											<ul>
+												<li>
+													<%= company.location %>
+												</li>
+												<li>
+													<a class="see_number" href="javascript:void(0)">See Phone Number</a>
+													<h6 class="the_number"><a href="tel:">
+															<%= company.phoneNumber %>
+														</a></h6>
+												</li>
+												<li><a href="<%= company.website %>" target="_blank">
+														<%= company.website %>
+													</a></li>
+												<li>
+													<%= company.language %>
+												</li>
+												<li>
+													<%= company.entityType %> | <%= company.noOfEmployees %> Employees
+												</li>
+												<li>
+													<%= company.yearsInBusiness %> in Business
+												</li>
+											</ul>
+										</div>
+										<div class="legal_documents">
+											<div class="action_buttons">
+												<ul>
+													<% if(company.isLicensed) { %>
+														<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+																data-target="#licensedCertificate"
+																data-toggle="modal"><img
+																	src="../images/layout/licensed_icon.png"
+																	class="img-fluid" alt="" /> Licensed</a></li>
+														<% } %>
+															<% if(company.isInsured) { %>
+																<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+																		data-target="#insuredCertificate"
+																		data-toggle="modal"><img
+																			src="../images/layout/insured_icon.png"
+																			class="img-fluid" alt="" /> Insured</a></li>
+																<% } %>
+																	<% if(company.isEmailVerified) { %>
+																		<li><a class="gbtn gbtn_dark"
+																				href="javascript:void(0)"
+																				data-target="#verifiedCertificate"
+																				data-toggle="modal"><img
+																					src="../images/layout/verified_icon.png"
+																					class="img-fluid" alt="" />
+																				Verified</a></li>
+																		<% } %>
+																			<% if(company.isBonded) { %>
+																				<li><a class="gbtn gbtn_dark"
+																						href="javascript:void(0)"
+																						data-target="#bondedCertificate"
+																						data-toggle="modal"><img
+																							src="../images/layout/bonded_icon.png"
+																							class="img-fluid" alt="" />
+																						Bonded</a></li>
+																				<% } %>
+																				
+																				<li class="seller_badges_link"><a class="gbtn gbtn_dark" href="javascript:void(0)" data-target="#sellerBadges" data-toggle="modal"><img src="../images/seller_badges_icon.png" alt=""> Seller Badges</a></li>
+																				
+																				
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="save_to_list_share">
+									<div class="action_buttons">
+										<ul>
+											<% if(currentUser && !currentUser.isCompany) { %>
+												<li class="dropdown">
+													<a class="gbtn gbtn_bdr" href="javascript:void(0)"
+														data-target="#savedListDown" data-toggle="dropdown">Save to
+														List</a>
+													<div class="dropdown-menu saved_list_down"
+														aria-labelledby="savedListDown">
+														<div class="saved_list_wrap">
+															<div class="saved_list">
+																<ul>
+																	<% lists.forEach(function(list){ %>
+																		<form id="<%= company._id %>/<%= list._id %>"
+																			action="/save-to-list/<%= company._id %>/<%= list._id %>"
+																			method="POST">
+																			<li><a href="#"
+																					onclick="document.getElementById('<%= company._id %>/<%= list._id %>').submit();">
+																					<%= list.title %>
+																				</a></li>
+																		</form>
+																		<% }); %>
+																</ul>
+															</div>
+															<div class="creating_new_list">
+																<a href="javascript:void(0)"
+																	data-target="#creatingSavedList"
+																	data-toggle="modal"><i class="fas fa-plus"></i>
+																	Create List</a>
+															</div>
+														</div>
+													</div>
+												</li>
+												<% }%>
+													<li>
+														<a class="gbtn gbtn_dark" href="javascript:void(0)"
+															data-target="#shareTheCompany" data-toggle="modal">Save to
+															List</a>
+														<a class="gbtn gbtn_dark" href="javascript:void(0)"
+															data-target="#shareTheCompany" data-toggle="modal">Share</a>
+													</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="legal_documents desktop_only">
+							<div class="action_buttons">
+								<ul>
+									<% if(company.isLicensed) { %>
+										<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+												data-target="#licensedCertificate" data-toggle="modal"><img
+													src="../images/layout/licensed_icon.png" class="img-fluid" alt="" />
+												Licensed</a></li>
+										<% } %>
+											<% if(company.isInsured) { %>
+												<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+														data-target="#insuredCertificate" data-toggle="modal"><img
+															src="../images/layout/insured_icon.png" class="img-fluid"
+															alt="" /> Insured</a></li>
+												<% } %>
+													<% if(company.isEmailVerified) { %>
+														<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+																data-target="#verifiedCertificate"
+																data-toggle="modal"><img
+																	src="../images/layout/verified_icon.png"
+																	class="img-fluid" alt="" /> Verified</a></li>
+														<% } %>
+															<% if(company.isBonded) { %>
+																<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+																		data-target="#bondedCertificate"
+																		data-toggle="modal"><img
+																			src="../images/layout/bonded_icon.png"
+																			class="img-fluid" alt="" /> Bonded</a></li>
+																<% } %>
+																
+																<li><a class="gbtn gbtn_dark" href="javascript:void(0)" data-target="#sellerBadges" data-toggle="modal"><img src="../images/seller_badges_icon.png" alt=""> Seller Badges</a></li>
+																
+															
+								</ul>
+							</div>
+						</div>
+						<div class="company_highlight">
+							<div class="company_name">
+								<h2>
+									<%= company.companyName %>
+								</h2>
+							</div>
+							<div class="working_hours">
+								<h4><span class="bold_texts">
+										<%= day %>
+									</span>
+									<% if(startTime && endTime) { %>
+										<%= startTime %> - <%= endTime %>
+												<% } else { %> - Closed <%}%>
+								</h4>
+							</div>
+							<div class="ratings">
+								<% let intValue=parseInt(averageRating), flagValue=false; leftOver=0 %>
+									<% for(let i=0; i< intValue; i++){ %>
+										<i class="fas fa-star"></i>
+										<% }%>
+											<% leftOver=5 - intValue %>
+												<% if(!Number.isInteger(averageRating)){ %>
+													<% let decimalPart=averageRating % 1; %>
+														<% if(decimalPart==0.5){ %>
+															<i class="fas fa-star-half-alt"></i>
+															<% flagValue=true %>
+																<% } else if(Math.round(decimalPart)> 0.5) { %>
+																	<i class="fas fa-star"></i>
+																	<% flagValue=true %>
+																		<% } %>
+																			<% }%>
+																				<% if(flagValue) {%>
+																					<% leftOver=leftOver - 1 %>
+																						<% } %>
+																							<% for(let i=0; i< leftOver;
+																								i++){ %>
+																								<i
+																									class="far fa-star"></i>
+																								<% }%>
+																									<span
+																										class="review_amount">(
+																										<%= review.length
+																											%>
+																											reviews)
+																									</span>
+							</div>
+							<div class="request_quote_message">
+								<div class="action_buttons">
+									<ul>
+										<% if(currentUser){ %>
+											<li><a class="gbtn" href="javascript:void(0)" data-target="#messageModal"
+													data-toggle="modal">Message</a></li>
+											<% if(!currentUser.isCompany) { %>
+												<li class="mobile_flag_btn"><a class="gbtn gbtn_white"
+														href="javascript:void(0)" data-target="#reportTheCompany"
+														data-toggle="modal"><i class="fas fa-flag"></i></a></li>
+												<% } %>
+													<% } else { %>
+														<li><a class="gbtn" href="javascript:void(0)"
+																data-target="#loginForm" data-toggle="modal">Message</a>
+														</li>
+														<li class="mobile_flag_btn"><a class="gbtn gbtn_white"
+																href="javascript:void(0)" data-target="#loginForm"
+																data-toggle="modal"><i class="fas fa-flag"></i></a></li>
+														<% } %>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="save_to_list_share desktop_only">
+							<div class="action_buttons">
+								<ul>
+									<li><a class="gbtn gbtn_dark" href="javascript:void(0)">Save to
+											List</a></li>
+									<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+											data-target="#shareTheCompany" data-toggle="modal">Share</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--===== Markup For "Company Banner" Ends Here =====-->
+			<!--===== Markup For "Fixed Menu" Starts From Here =====-->
+			<div class="cp_fixed_menu_wrap">
+				<div class="container-fluid">
+					<div class="cp_fixed_menu">
+						<div class="page_links grid_item">
+							<ul class="nav" id="fixedMenu">
+								<li class="nav-item"><a class="nav-link" href="#companyProfilePage">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="#theServices">Services</a></li>
+								<li class="nav-item"><a class="nav-link" href="#thePortfolio">Portfolio</a></li>
+								<li class="nav-item"><a class="nav-link" href="#companyReviews">Reviews</a></li>
+							</ul>
+						</div>
+						<div class="action_links">
+							<ul>
+								<% if(!currentUser) { %>
+									<li><a class="gbtn" href="javascript:void(0)" data-target="#loginForm"
+											data-toggle="modal">Message</a></li>
+									<li><a class="gbtn gbtn_bdr" href="javascript:void(0)" data-target="#loginForm"
+											data-toggle="modal"><i class="fas fa-flag"></i></a></li>
+									<% } if(currentUser) { %>
+										<li><a class="gbtn" href="javascript:void(0)" data-target="#messageModal"
+												data-toggle="modal">Message</a></li>
+										<% if(!currentUser.isCompany) { %>
+											<li class="mobile_flag_btn"><a class="gbtn gbtn_white"
+													href="javascript:void(0)" data-target="#reportTheCompany"
+													data-toggle="modal"><i class="fas fa-flag"></i></a></li>
+											<li class="dropdown">
+												<a class="gbtn gbtn_bdr" href="javascript:void(0)"
+													data-target="#savedListDown" data-toggle="dropdown">Save to List</a>
+												<div class="dropdown-menu saved_list_down"
+													aria-labelledby="savedListDown">
+													<div class="saved_list_wrap">
+														<div class="saved_list">
+															<ul>
+																<% lists.forEach(function(list){ %>
+																	<form id="<%= company._id %>/<%= list._id %>"
+																		action="/save-to-list/<%= company._id %>/<%= list._id %>"
+																		method="POST">
+																		<li><a href="#"
+																				onclick="document.getElementById('<%= company._id %>/<%= list._id %>').submit();">
+																				<%= list.title %>
+																			</a></li>
+																	</form>
+																	<% }); %>
+															</ul>
+														</div>
+														<div class="creating_new_list">
+															<a href="javascript:void(0)"
+																data-target="#creatingSavedList" data-toggle="modal"><i
+																	class="fas fa-plus"></i> Create List</a>
+														</div>
+													</div>
+												</div>
+											</li>
+											<% } %>
+												<% } %>
+													<li><a class="gbtn" href="javascript:void(0)"
+															data-target="#shareTheCompany" data-toggle="modal"><i
+																class="fas fa-share-square"></i> Share</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===== Markup For "Fixed Menu" Ends Here =====-->
+			<!--===== Markup For "Saved to List" Starts From Here =====-->
+			<div class="modal fade creating_list_modal" id="creatingSavedList">
+				<div class="modal-dialog modal-md modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4>Name Your New List</h4>
+							<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+						</div>
+						<div class="modal-body">
+							<form action="/create-list" method="POST">
+								<div class="form-group">
+									<input name="title" type="text" placeholder="List Name" class="form-control">
+								</div>
+								<div class="submit_button">
+									<button class="btn gbtn" type="submit">Create List</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===== Markup For "Saved to List" Ends Here =====-->
+			<!--===== Markup For "Company Info & Details" Starts From Here =====-->
+			<section class="cp_info_details_wrap">
+				<div class="container-fluid">
+					<div class="cp_info_details">
+						<div class="cp_info">
+							<div class="company_logo">
+								<div class="company_logo_wrap">
+									<a href="javascript:void(0)"><img src="<%= company.logo %>" class="img-fluid"
+											alt="Company Logo" /></a>
+									<% if(!company.isOffline) {%>
+										<span class="activity_status online_status"></span>
+										<% }%>
+								</div>
+							</div>
+							<div class="basic_info">
+								<ul>
+									<li>
+										<%= company.location %>
+									</li>
+									<li>
+										<a class="see_number" href="javascript:void(0)">See Phone Number</a>
+										<h6 class="the_number"><a href="tel: <%= company.phoneNumber %>">
+												<%= company.phoneNumber %>
+											</a></h6>
+									</li>
+									<li><a href="<%= company.website %>" target="_blank">
+											<%= company.website %>
+										</a></li>
+									<li>
+										<%= company.language %>
+									</li>
+									<li>
+										<%= company.entityType %> | <%= company.noOfEmployees %> Employees
+									</li>
+									<li>
+										<%= company.yearsInBusiness %> in Business
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cp_details">
+							<div class="cp_menu">
+								<ul>
+									<li> class="active"><a href="#companyProfilePage">Home</a></li>
+									<li><a href="#theServices">Services</a></li>
+									<li><a href="#thePortfolio">Portfolio</a></li>
+									<li><a href="#companyReviews">Reviews</a></li>
+								</ul>
+							</div>
+							<div class="areas_services">
+								<div class="about_company">
+									<div class="heading">
+										<h3>About:</h3>
+									</div>
+									<div class="para_texts">
+										<p>
+											<%= company.about %>
+										</p>
+									</div>
+								</div>
+								<div class="service_areas_wrap">
+									<div class="heading">
+										<h3>Service Areas:</h3>
+									</div>
+									<div class="service_areas">
+										<div class="area_map">
+											<!-- <iframe
+												src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232633.36269179682!2d90.82399055752151!3d24.35010498046716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3756bcb4fb21875f%3A0xf87604c5118c4b06!2sNikli%20Upazila!5e0!3m2!1sen!2sbd!4v1631185851149!5m2!1sen!2sbd"
+												width="" height="" style="border:0;" allowfullscreen=""
+												loading="lazy"></iframe> -->
+											<div style="width: 100%"><iframe width="100%" height="500" frameborder="0"
+													scrolling="no" marginheight="0" marginwidth="0"
+													src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=<%= company.location %>+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+											</div>
+										</div>
+										<div class="all_areas" style="display: flex;">
+											<span style="display: flex; width: fit-content;" id="hide">
+												<% company.serviceAreas.slice(0, 3).map((image,i)=> { %>
+													<p style="margin-right: 5px;">
+														<%= image %>
+													</p>
+													<% }) %>
+											</span>
+											<span id="show"></span>
+											<% if((company.serviceAreas.join(',').match(/,/g) || []).length>1) { %>
+												<a id="hidebtn" style="margin-left: 5px;"
+													onclick="seemoreseeless('<%= company.serviceAreas %>')"
+													href="javascript:void(0)">See More...</a>
+												<% } %>
+													<a id="showbtn" style="display: none; margin-left: 5px;"
+														onclick="seelessClick()" href="javascript:void(0)">See
+														Less...</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--===== Markup For "Company Info & Details" Ends Here =====-->
+			<!--===== Markup For "Services" Starts From Here =====-->
+			<section class="services_wrap owl_controls_outer" id="theServices">
+				<div class="container-fluid">
+					<div class="heading">
+						<h2>Services</h2>
+						<!-- <p>Oil & fluid, Suspension Service, Brake Change, and Wheels & Tire Service</p> -->
+					</div>
+					<div class="company_services">
+						<div class="owl-carousel">
+							<% for (var i=0; i < service.length; i++) { %>
+								<div class="single_service">
+									<div class="service_image">
+										<img class="img-fluid" src="<%= service[i].images[0]?.url %>"
+											alt="Service image" />
+										<h6>
+											<%= service[i].category %>
+										</h6>
+									</div>
+									<div class="service_details">
+										<div class="logo_info">
+											<div class="logo">
+												<img src="<%= service[i].owner.id.logo %>" class="img-fluid" alt="" />
+											</div>
+											<div class="info">
+												<h5>
+													<%= service[i].owner.id.companyName %>
+												</h5>
+												<h6>$<%= service[i].priceFrom %> - $<%= service[i].priceTo%>
+												</h6>
+												<div class="overall_ratings">
+													<% let intVal=parseInt(service[i].owner.id.averageReview),
+														flag=false; leftOver=0 %>
+														<% for(let i=0; i< intVal; i++){ %>
+															<i class="fas fa-star"></i>
+															<% }%>
+																<% leftOver=5 - intVal %>
+																	<% if(!Number.isInteger(service[i].owner.id.averageReview)){
+																		%>
+																		<% let
+																			decimalPart=service[i].owner.id.averageReview
+																			% 1; %>
+																			<% if(decimalPart==0.5){ %>
+																				<i class="fas fa-star-half-alt"></i>
+																				<% flag=true %>
+																					<% } else
+																						if(Math.round(decimalPart)> 0.5)
+																						{ %>
+																						<i class="fas fa-star"></i>
+																						<% flag=true %>
+																							<% } %>
+																								<% }%>
+																									<% if(flag) {%>
+																										<% leftOver=leftOver
+																											- 1 %>
+																											<% } %>
+																												<% for(let
+																													i=0;
+																													i<
+																													leftOver;
+																													i++){
+																													%>
+																													<i
+																														class="far fa-star"></i>
+																													<%
+																														}%>
+																														<span>
+																															<%= service[i].owner.id.reviews?.length
+																																%>
+																																Reviews
+																														</span>
+												</div>
+											</div>
+										</div>
+										<div class="action_buttons">
+											<ul>
+												<% if(currentUser){ %>
+													<li><a class="gbtn" href="javascript:void(0)"
+															data-target="#serviceModal<%= i %>"
+															data-toggle="modal">Message</a></li>
+													<%} else {%>
+														<li><a class="gbtn" href="javascript:void(0)"
+																data-target="#loginForm" data-toggle="modal">Message</a>
+														</li>
+														<% } %>
+															<li><a class="gbtn gbtn_dark_bdr"
+																	href="/service/<%= service[i]._id %>">View More</a>
+															</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<% }%>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--===== Markup For "Services" Ends Here =====-->
+			<!--===== Markup For "Portfolio" Starts From Here =====-->
+			<section class="portfolio_wrap splide_controls" id="thePortfolio">
+				<div class="container-fluid">
+					<div class="heading">
+						<h2>Portfolio</h2>
+					</div>
+					<div class="portfolio_slider">
+						<div class="splide">
+							<div class="splide__track">
+								<div class="splide__list">
+									<% portfolio.map((item, i)=> { %>
+										<div class="splide__slide">
+											<div class="portfolio_carousel owl_controls_inner">
+												<div class="owl-carousel">
+													<% for(let i=0; i< item.images.length; i++) { %>
+														<% if(item.images[i].url.includes("jpg") ||
+															item.images[i].url.includes("jpeg") ||
+															item.images[i].url.includes("png") ||
+															item.images[i].url.includes("gif")) {%>
+															<div class="portfolio_media">
+																<a href="<%= item.images[i].url %>" class="portfolio_2"
+																	data-rel="portfolio_2:theSlider">
+																	<img src="<%= item.images[i].url %>"
+																		class="img-fluid" alt="portfolio" />
+																</a>
+															</div>
+															<% } else if(item.images[i].url.includes("mp4") ||
+																item.images[i].url.includes("oog")){ %>
+																<div class="portfolio_media">
+																	<div class="video_poster">
+																		<a href="<%= item.images[i].url %>"
+																			class="portfolio_1"
+																			data-rel="portfolio_1:theSlider">
+																			<img src="<%= item.images[i].url %>"
+																				class="img-fluid"
+																				alt="Portfolio video" />
+																		</a>
+																	</div>
+																</div>
+																<% } %>
+																	<% } %>
+												</div>
+											</div>
+											<div class="location_media_info">
+												<div class="location">
+													<h4><img src="images/location_icon_white.png" class="img-fluid"
+															alt="" />
+														<%= company.city %>, <%= company.state %>
+													</h4>
+												</div>
+												<div class="media_info">
+													<h6>
+														<%= item.images.length %> Items
+													</h6>
+												</div>
+											</div>
+										</div>
+										<% }) %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--===== Markup For "Portfolio" Ends Here =====-->
+			<!--===== Markup For "Company Ratings" Starts From Here =====-->
+			<section class="cp_ratings_wrap" id="companyReviews">
+				<div class="container">
+					<div class="heading">
+						<h2>Reviews</h2>
+					</div>
+					<div class="cp_average_ratings">
+						<div class="summary grid_item">
+							<h1>
+								<%= averageRating %>
+							</h1>
+							<div class="five_stars">
+								<% let intVal=parseInt(averageRating), flag=false; leftOver=0 %>
+									<% for(let i=0; i< intVal; i++){ %>
+										<i class="fas fa-star"></i>
+									<% } %>
+
+									<% leftOver=5 - intVal %>
+
+									<% if(!Number.isInteger(averageRating)){ %>
+										<% let decimalPart=averageRating % 1; %>
+											<% if(decimalPart==0.5){ %>
+												<i class="fas fa-star-half-alt"></i>
+											<% flag=true %>
+											<% } else if(Math.round(decimalPart)> 0.5) { %>
+												<i class="fas fa-star"></i>
+												<% flag=true %>
+												<% } %>
+											<% }%>
+											<% if(flag) {%>
+												<% leftOver=leftOver - 1 %>
+										<% } %>
+
+										<% for(let i=0; i< leftOver;i++){ %>
+											<i class="far fa-star"></i>
+										<% }%>
+						</div>
+							<h6>Average Ratings</h6>
+						</div>
+						<div class="the_progress">
+							<div class="single_bar">
+								<div class="progress_bar">
+									<% let fiveStar=Number.isNaN(fiveStarPercentage) ? 0 : fiveStarPercentage + "%" %>
+										<div class="filled" style="max-width: <%= fiveStar %> ">
+										</div>
+								</div>
+								<div class="info">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<span>
+										<%= Number.isNaN(fiveStarPercentage) ? 0 : fiveStarPercentage %>%
+									</span>
+								</div>
+							</div>
+							<div class="single_bar">
+								<div class="progress_bar">
+									<% let fourStar=Number.isNaN(fourStarPercentage) ? 0 : fourStarPercentage + "%" %>
+										<div class="filled" style="max-width: <%= fourStar %> ">
+										</div>
+								</div>
+								<div class="info">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<span>
+										<%= Number.isNaN(fourStarPercentage) ? 0 : fourStarPercentage %>%
+									</span>
+								</div>
+							</div>
+							<div class="single_bar">
+								<div class="progress_bar">
+									<% let threeStar=Number.isNaN(threeStarPercentage) ? 0 : threeStarPercentage + "%"
+										%>
+										<div class="filled" style="max-width: <%= threeStar %> ">
+										</div>
+								</div>
+								<div class="info">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<span>
+										<%= Number.isNaN(threeStarPercentage) ? 0 : threeStarPercentage %>%
+									</span>
+								</div>
+							</div>
+							<div class="single_bar">
+								<div class="progress_bar">
+									<% let twoStar=Number.isNaN(twoStarPercentage) ? 0 : twoStarPercentage + "%" %>
+										<div class="filled" style="max-width: <%= twoStar %> ">
+										</div>
+								</div>
+								<div class="info">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<span>
+										<%= Number.isNaN(twoStarPercentage) ? 0 : twoStarPercentage %>%
+									</span>
+								</div>
+							</div>
+							<div class="single_bar">
+								<div class="progress_bar">
+									<% let oneStar=Number.isNaN(oneStarPercentage) ? 0 : oneStarPercentage + "%" %>
+										<div class="filled" style="max-width: <%= oneStar %> ">
+										</div>
+								</div>
+								<div class="info">
+									<i class="fas fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<span>
+										<%= Number.isNaN(oneStarPercentage) ? 0 : oneStarPercentage %>%
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="reviews_actions">
+						<div class="shows_reviews grid_item">
+							<h4>Reviews <span class="star_rating_amount"><i class="fas fa-star"></i>
+									<%= averageRating %>
+								</span> <span class="review_amount">(<%= review.length %>)</span></h4>
+						</div>
+						<div class="add_filter">
+							<!-- <div class="add_review">
+							<a class="gbtn" href="javascript:void(0)" data-target="#createReview" data-toggle="modal">Add Review</a>
+						</div> -->
+							<div class="filter_review">
+								<form action="">
+									<div class="form-group">
+										<select name="" id="" class="form-control">
+											<option value="">Most Recent</option>
+											<option value="">Positive Reviews</option>
+											<option value="">Neutral Reviews</option>
+											<option value="">Negative Reviews</option>
+										</select>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="cp_got_reviews">
+						<% review.map((item,i)=> { %>
+							<div class="single_review">
+								<div class="review_texts">
+									<div class="clients_review">
+										<div class="profile_info">
+											<div class="profile_pic">
+												<% if(item.author.id?.profilePicture) { %>
+													<img src="<%= item.author.id?.profilePicture %>" class="img-fluid"	alt="Profile Picture" />
+												<% } else { %>
+														<img src="../images/man.png" class="img-fluid" alt="Profile Picture" />
+												<% } %>
+											
+											</div>
+											<div class="profile_name">
+												<h6>
+													<%= item.author.id?.firstName + " " + item.author.id?.lastName %>
+														<span class="star_rating_amount"><i class="fas fa-star"></i>
+															<%= item.rating %>.0
+														</span>
+												</h6>
+											</div>
+										</div>
+										<div class="provided_review">
+											<p>
+												<%= item.text %>
+											</p>
+											<h6><%=  moment(item.createdAt).format("MMMM Do h:mm A") %></h6>
+										</div>
+									</div>
+									<% if(item.reply) { %> 
+										<div class="review_reply">
+											<div class="profile_info">
+												<div class="profile_pic">
+													<% if(item.owner.id?.logo ) { %>
+														<img src="<%= item.owner.id?.logo  %>" class="img-fluid"	alt="Company logo" />
+													<% } else { %>
+															<img src="../images/man.png" class="img-fluid" alt="Company logo" />
+													<% } %>
+												</div>
+												<div class="profile_name">
+													<h6>Replay from Company:</h6>
+												</div>
+											</div>
+											<div class="replied_review">
+												<p>
+													<%= item?.reply %>
+												</p>
+											</div>
+										</div>
+									<% } %>
+								</div>
+								<div class="review_carousel owl_controls_inner">
+									<div class="owl-carousel">
+										<% item.images.map((image)=> { %>
+											<div class="reviews_media">
+												<a href="<%= image.url %>" class="reviews_1"
+													data-rel="reviews_1:theSlider">
+													<img src="<%= image.url %>" class="img-fluid" alt="Review Image" />
+												</a>
+											</div>
+											<% }) %>
+									</div>
+								</div>
+							</div>
+							<% })%>
+					</div>
+				</div>
+			</section>
+			<!--===== Markup For "Company Ratings" Ends Here =====-->
+			<!--===== Markup For "Registration Counter" Starts From Here =====-->
+			<div class="registration_counter_wrap">
+				<div class="container">
+					<div class="registration_counter">
+						<div class="single_count">
+							<div class="heading">
+								<h2>
+									<%= total.length %>+
+								</h2>
+							</div>
+							<p>Registered Companies</p>
+						</div>
+						<div class="single_count">
+							<div class="heading">
+								<h2>
+									<%= members %>+
+								</h2>
+							</div>
+							<p>Registered Members</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===== Markup For "Registration Counter" Ends Here =====-->
+			<!--===== Markup For "Footer" Starts From Here =====-->
+			<footer class="footer_wrap">
+				<div class="footer_top">
+					<div class="container">
+						<div class="footer">
+							<div class="single_part">
+								<div class="footer_logo">
+									<a href="/"><img src="../images/layout/gabazzo_logo_white.png" class="img-fluid"
+											alt="" /></a>
+								</div>
+								<div class="site_links">
+									<ul>
+										<li><a href="/contact-us">Contact Us</a></li>
+										<li><a href="/about-us">About</a></li>
+										<li><a href="/site-map">Sitemap</a></li>
+										<li><a href="/partnerships">Partnerships</a></li>
+										<li><a href="/investor-relations">Investor Relations</a></li>
+										<li><a href="/jobs-and-opportunities">Jobs & Opportunities</a></li>
+										<li><a href="/press-and-news">Press & News</a></li>
+									</ul>
+								</div>
+								<div class="social_links">
+									<ul>
+										<li>
+											<a href="https://www.facebook.com/gabazzoBCT" target="_blank"><i
+													class="fab fa-facebook-f"></i></a>
+										</li>
+										<li>
+											<a href="https://www.linkedin.com/company/gabazzo/" target="_blank"><i
+													class="fab fa-linkedin-in"></i></a>
+										</li>
+										<li>
+											<a href="https://discord.gg/RTDhKw4r99" target="_blank"><i
+													class="fab fa-discord"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="single_part">
+								<h4>Members</h4>
+								<div class="site_links">
+									<ul>
+										<li><a href="/sign-up">Sign Up</a></li>
+										<li><a href="/trust-and-safety-members">Trust & Safety</a></li>
+										<li><a href="/ranking-system-members">Ranking System</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="single_part">
+								<h4>Business</h4>
+								<div class="site_links">
+									<ul>
+										<li><a href="/company-sign-up-home">Register Business</a>
+										</li>
+										<li><a href="/study-buyer">Study Buyer</a>
+										</li>
+										<li><a href="/seller-league-system">League System</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="single_part">
+								<h4>Support</h4>
+								<div class="site_links">
+									<ul>
+										<li><a href="/help-center-buyer">Help Center</a></li>
+										<li><a href="/terms-and-conditions">Terms of Use</a></li>
+										<li><a href="/privacy-policy">Privacy Policy</a></li>
+										<li><a href="/cookie-policy">Cookie Policy</a></li>
+										<li><a href="/safety-for-members">Safety</a></li>
+										<li><a href="/covid-info">Covid-19 Info</a></li>
+										<li><a href="/intellectual-property-claims">IP Claims</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="copyright">
+					<div class="container">
+						<p>
+							Copyright &copy; 2021 Gabazzo. All Rights Reserved. Patent Pending
+						</p>
+					</div>
+				</div>
+			</footer>
+			<!--===== Markup For "Footer" Ends Here =====-->
+			<!--===== Markup For "Message Popup" Starts From Here =====-->
+			<div class="modal fade msg_popup_modal" id="messageModal">
+				<div class="modal-dialog modal-lg modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3>Send a Message</h3>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<div class="msg_pop_box">
+								<div class="company_info">
+									<div class="company_logo_name">
+										<div class="company_logo">
+											<div class="company_logo_wrap">
+												<a href="javascript:void(0)"><img src="<%= company.logo %>"
+														class="img-fluid" alt="Company Logo" /></a>
+												<% if(company.status) {%>
+													<span class="activity_status online_status"></span>
+													<% }%>
+											</div>
+										</div>
+										<div class="company_name">
+											<h5>
+												<%= company.companyName %>
+											</h5>
+										</div>
+									</div>
+									<div class="need_requirements">
+										<h5>Please Include:</h5>
+										<ul>
+											<li>Project Description</li>
+											<li>Specific Instructions</li>
+											<li>Relevant Files</li>
+											<li>Your Budget</li>
+											<li>Delivery Time</li>
+										</ul>
+									</div>
+								</div>
+								<div class="msg_box_wrap">
+									<div class="time_zone">
+										<h5>Time Zone: <span>10:53 AM</span></h5>
+									</div>
+									<form action="../message/<%= company._id %>" enctype="multipart/form-data"
+										method="POST">
+										<div class="msg_box">
+											<textarea name="message" id="myText" placeholder="Type your message..."
+												cols="30" rows="10" class="form-control"></textarea>
+											<div class="indicator_attach">
+												<div class="character_indicator grid_item">
+													<h6>0/2,500</h6>
+												</div>
+												<div class="attach_button">
+													<div class="attach_file">
+														<label class="attachment">
+															<input type="file" name="attachments"
+																id="service<%= company._id %>"
+																class="inputfile inputfile-1"
+																data-multiple-caption="{count} files selected"
+																multiple />
+															<label id="service<%= company._id+2 %>"
+																for="service<%= company._id %>"><i
+																	class="fa fa-paperclip"
+																	aria-hidden="true"></i></label>
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="submit_button">
+											<button class="btn gbtn" type="submit">Send</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===== Markup For "Message Popup" Ends Here =====-->
+			<% for(let i=0; i< service.length; i++) { %>
+				<!--===== Markup For "Message Popup" Starts From Here =====-->
+				<div class="modal fade msg_popup_modal" id="serviceModal<%=i%>">
+					<div class="modal-dialog modal-lg modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h3>Send a Message</h3>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<div class="msg_pop_box">
+									<div class="company_info">
+										<div class="company_logo_name">
+											<div class="company_logo">
+												<div class="company_logo_wrap">
+													<a href="javascript:void(0)"><img src="<%= company.logo %>"
+															class="img-fluid" alt="Company Logo" /></a>
+													<% if(company.status) {%>
+														<span class="activity_status online_status"></span>
+														<% }%>
+												</div>
+											</div>
+											<div class="company_name">
+												<h5>
+													<%= company.companyName %>
+												</h5>
+											</div>
+										</div>
+										<div class="need_requirements">
+											<h5>Please Include:</h5>
+											<ul>
+												<li>Project Description</li>
+												<li>Specific Instructions</li>
+												<li>Relevant Files</li>
+												<li>Your Budget</li>
+												<li>Delivery Time</li>
+											</ul>
+										</div>
+									</div>
+									<div class="msg_box_wrap">
+										<div class="time_zone">
+											<h5>Time Zone: <span>10:53 AM</span></h5>
+										</div>
+										<form action="../message/<%= company._id %>" enctype="multipart/form-data"
+											method="POST">
+											<div class="msg_box">
+												<textarea name="message" id="myText" placeholder="Type your message..."
+													cols="30" rows="10" class="form-control"></textarea>
+												<div class="indicator_attach">
+													<div class="character_indicator grid_item">
+														<h6>0/2,500</h6>
+													</div>
+													<div class="attach_button">
+														<div class="attach_file">
+															<label class="attachment">
+																<input type="file" name="attachments"
+																	id="service<%= company._id %>"
+																	class="inputfile inputfile-1"
+																	data-multiple-caption="{count} files selected"
+																	multiple />
+																<label id="service<%= company._id+2 %>"
+																	for="service<%= company._id %>"><i
+																		class="fa fa-paperclip"
+																		aria-hidden="true"></i></label>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="submit_button">
+												<button class="btn gbtn" type="submit">Send</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--===== Markup For "Message Popup" Ends Here =====-->
+				<% } %>
+				
+				<!--===== Markup For "Seller Badges" Starts From Here =====-->
+		<div class="modal fade user_badges_modal" id="sellerBadges">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3>Seller Badges</h3>
+						<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+					</div>
+					<div class="modal-body">
+						<div class="user_badges_earned">
+							<section id="userBadgesTabs" class="user_badges_tabs">
+								<div class="all_years">
+									<h4>Year</h4>
+									<div class="nav" id="nav-tab" role="tablist">
+										<a class="active" href="javascript:void(0)" id="tweentytwo_tab" data-toggle="tab" data-target="#tweentytwo" role="tab" aria-controls="tweentytwo" aria-selected="true">2022</a>
+																						
+										<a href="javascript:void(0)" id="tweentythree_tab" data-toggle="tab" data-target="#tweentythree" role="tab" aria-controls="tweentythree" aria-selected="false">2023</a>
+									</div>
+								</div>	
+									
+								<div class="tab-content" id="nav-tabContent">
+									<div class="tab-pane fade show active" id="tweentytwo" role="tabpanel" aria-labelledby="tweentytwo_tab">
+									
+										<div class="all_badges_wrap">
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/badge_new_contractor.png" class="img-fluid" alt="" />
+
+												</a>
+												<h6>New Contractor</h6>
+											</div>
+											
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/layout/Company_Profile_Screen_Verified.png" class="img-fluid" alt="" />
+												</a>
+
+												<h6>Company Verified</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Bronze_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Bronze League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Silver_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Silver League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Gold_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Gold League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Platinum_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Platinum League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Diamond_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Diamond League</h6>
+											</div>
+											
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Master Titan League Seller Badge.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Master Titan League</h6>
+											</div>
+										</div>										
+									</div>
+																					
+									<div class="tab-pane fade" id="tweentythree" role="tabpanel" aria-labelledby="tweentythree_tab">
+										<div class="all_badges_wrap">
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Gold_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Gold League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Platinum_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Platinum League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Diamond_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Diamond League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Master Titan League Seller Badge.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Master Titan League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Platinum_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Platinum League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Diamond_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Diamond League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Master Titan League Seller Badge.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Master Titan League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Platinum_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Platinum League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Badge_Diamond_League.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Diamond League</h6>
+											</div>
+
+											<div class="single_badge">
+												<a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+													<img src="../images/levels/images/Master Titan League Seller Badge.png" class="img-fluid" alt="" />
+												</a>
+												<h6>Master Titan League</h6>
+											</div>
+										</div>
+									</div>												
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===== Markup For "Seller Badges" Ends Here =====-->
+		
+		
+					<!--===== Markup For "State License" Starts From Here =====-->
+					<div class="modal fade legal_doc_modal" id="licensedCertificate">
+						<div class="modal-dialog modal-lg modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-body">
+									<div class="certificate_wrap">
+										<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+										<div class="the_certificate licensed_certificate">
+											<div class="certificate_texts">
+												<h1>State License</h1>
+												<ul>
+													<li>State: <%= company.licenseState %>
+													</li>
+													<li>License #: <%= company.licenseNo %>
+													</li>
+													<li>Expiration: <%= company.licenseExpiration %>
+													</li>
+												</ul>
+											</div>
+											<div class="certificate_image">
+												<img src="<%= company.licenseCertificateImage %>" class="img-fluid"
+													alt="" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--===== Markup For "State License" Ends Here =====-->
+					<!--===== Markup For "Bonded" Starts From Here =====-->
+					<div class="modal fade legal_doc_modal" id="bondedCertificate">
+						<div class="modal-dialog modal-lg modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-body">
+									<div class="certificate_wrap">
+										<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+										<div class="the_certificate bonded_certificate">
+											<div class="certificate_texts">
+												<h1>Bonded</h1>
+												<h3>State:<%= company.bondState %>
+												</h3>
+												<p>
+													<%= company.bondInfo %>
+												</p>
+											</div>
+											<div class="certificate_image">
+												<img src="<%= company.bondImage %>" class="img-fluid" alt="" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--===== Markup For "Bonded" Ends Here =====-->
+					<!--===== Markup For "Insurance" Starts From Here =====-->
+					<div class="modal fade legal_doc_modal" id="insuredCertificate">
+						<div class="modal-dialog modal-lg modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-body">
+									<div class="certificate_wrap">
+										<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+										<div class="the_certificate insurance_certificate">
+											<div class="certificate_texts grid_item">
+												<h1>Insurance</h1>
+												<h3 class="mb-4">Expiration: <%= company.insuranceExpiration %>
+												</h3>
+												<ul>
+													<li>State: <%= company.insuranceState %>
+													</li>
+													<li>Company: <%= company.insuranceCompany %>
+													</li>
+													<li>Insurance #: <%= company.insuranceNo %>
+													</li>
+													<li>
+														Covered: <%= company.insuranceCovered %>
+													</li>
+												</ul>
+											</div>
+											<div class="certificate_image">
+												<img src="<%= company.insuranceImage %>" class="img-fluid" alt="" />
+												<div class="certificate_pdf">
+													<a href="javascript:void(0)">Insurance Certificate.pdf</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--===== Markup For "Insurance" Ends Here =====-->
+					<!--===== Markup For "Verified" Starts From Here =====-->
+		<div class="modal fade legal_doc_modal" id="verifiedCertificate">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="verification_process_wrap">
+							<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+
+							<div class="verification_process">
+								<div class="top_part">
+									<div class="single_process">
+										<h3>
+											<img src="../images/layout/gabazzo_logo_black.png" class="img-fluid gabazzo_logo black_logo" alt="" />
+											<img src="../images/layout/gabazzo_logo_white.png" class="img-fluid gabazzo_logo white_logo" alt="" />
+											Verification Process
+										</h3>
+										<div class="verifi_process_txt_img">
+											<div class="verifi_process_text">
+												<p>Gabazzo may use Third-Party Services that conduct a Rigorous Screen Process to Screen Company Owners or Contractors/Technicians/Principal and Companies State Filings. We only perform this Screening when a Company applies to Join our Network and gets Verified through Email. If you have any Concerns that the Service Provider in our Network doesn't meet these requirements, please Contact Us to issue an Investigation Report. We're Highly committed to keeping Good Standards on a network for Consumers purchasing Services. Those who DO NOT meet our requirements will be rejected or removed from the Network.</p>
+											</div>
+
+											<div class="verifi_process_img grid_item">
+												<div class="gb_badge_wrap">
+													<img src="../images/layout/Company_Profile_Screen_Verified.png" class="img-fluid" alt="" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="bottom_part">
+									<div class="single_process">
+										<h3><img src="../images/layout/fingerprint_icon.png" class="img-fluid" alt="" /> Criminal Background Check</h3>
+
+										<div class="sub_process">
+											<h5>Who does Gabazzo background check?</h5>
+											<p>The Company Owner or Contractor/Technician/Principal of each Company in Gabazzo's Network must pass a Required Background Check. Within the Expansion Gabazzo in the near future we will be requesting Companies to send us Background Checks on every Employee if the Company is receiving a low star rating on our Platform or get Reported by one of our Members. We highly recommend that Owners or Contractor/Technician/Principal work with a Third-Party to background check their own Employees.</p>
+										</div>
+
+										<div class="sub_process">
+											<h5>What does the background check cover?</h5>
+											<p>We are currently using a Third-Party Service to exploit criminal records search in the State in which the Business Owner or Contractor/Technician/principal works at. The Third-Party Service operates a National Criminal Database ("NCD") to Screen Service Contractors/Technicians/Principal. Companies will not get in the Platform if the Owner or Contractor/Technician/Principal have the following felonies or other Charges in their Criminal Background Records:</p>
+											<ul>
+												<li>Assault/Domestic Violence/Battery Charges</li>
+												<li>Arson</li>
+												<li>Child Abuse</li>
+												<li>Intimidation/Terrorist Threats</li>
+												<li>Kidnapping/Abduction</li>
+												<li>Lewd and Lasvicious Behavior</li>
+												<li>Manslaughter/Murder/Homicide/Vehicular Homicide</li>
+												<li>Rape/Incest</li>
+												<li>Robbery/Carjacking</li>
+												<li>Sex Offenses</li>
+												<li>Other Felonies or Charges not listed above that occurred in the past three years</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="single_process">
+										<h3><img src="../images/layout/ratings_icon.png" class="img-fluid" alt="" /> Ratings</h3>
+										<p>Companies may receive Ratings from Consumers through Gabazzo's Tracking Service System. Once the Company is rated, we are required to maintain an overall average of 3 stars or greater. Gabazzo may also check other Third-Party platforms ratings before letting Contractors in the Platform.</p>
+									</div>
+
+									<div class="single_process">
+										<h3><img src="../images/layout/Licensing.png" class="img-fluid" alt="" /> Licensing</h3>
+										<p>We currently only Verify Applicable State-Level Licenses and we Require Companies to have the appropriate Local Licensing to practice their Trade. Within the Near Future, Gabazzo will start to check and confirm local licensing. As we may be working with Third-Party Local Attorneys to help Guide Contractors get their Paperwork done. Gabazzo gives up to 60 days to acquire a State License if working with an Attorney or have proof of submitted Application.</p>
+									</div>
+
+									<div class="single_process">
+										<h3><img src="../images/layout/State_Business_Filings.png" class="img-fluid" alt="" /> State Business Filings</h3>
+										<p>We will be checking if the Business is in Good Standing and Registered as an Limited Liability Company ("LLC"), Limited Liability Partnership ("LLP"), C - Corporation, S - Corporation, Non Profit, Partnership, or Sole Proprietorship.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===== Markup For "Verified" Ends Here =====-->
+					<!--===== Markup For "Share Company" Starts From Here =====-->
+					<div class="modal fade share_company_modal" id="shareTheCompany">
+						<div class="modal-dialog modal-md modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-body">
+									<div class="share_company_wrap">
+										<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+										<div class="share_company">
+											<h3>Share This Company</h3>
+											<p>Spread the world about this Company on Gabazzo</p>
+											<div class="share_links">
+												<ul>
+													<li><a href="https://m.facebook.com/sharer.php?u=<%= company.facebookUrl %>"
+															target="_blank" title="Facebook" data-toggle="tooltip">
+															<i class="fab fa-facebook-f"></i>
+														</a>
+													</li>
+													<li><a href="https://www.linkedin.com/sharing/share-offsite/?url=<%= company.linkedinUrl %>"
+															target="_blank" title="LinkedIn" data-toggle="tooltip"><i
+																class="fab fa-linkedin-in"></i></a>
+													</li>
+													<li><a href="https://twitter.com/share?<%= company.twitterUrl %>"
+															title="Twitter" target="_blank" data-toggle="tooltip"><i
+																class="fab fa-twitter"></i></a>
+													</li>
+													<li><a href="javascript:void(0)"
+															onclick="copyUrl('<%= company.website %>')"
+															id="copy_clipboard" title="Copy Link" data-toggle="tooltip">
+															<%= company.website %><i class="fas fa-link"></i>
+														</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--===== Markup For "Share Company" Ends Here =====-->
+					<!--===== Markup For "Report" Starts From Here =====-->
+					<div class="modal fade report_company_modal" id="reportTheCompany">
+						<div class="modal-dialog modal-md modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4>Report This Company</h4>
+									<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+								</div>
+								<div class="modal-body">
+									<div class="report_reasons_wrap">
+										<div class="top_texts">
+											<h5>Let us know why you would like to report this Company</h5>
+											<p>Your report will be kept anonymous</p>
+										</div>
+										<div class="report_reasons">
+											<ul data-toggle="buttons">
+												<li class="btn">
+													<input type="radio" name="reportReason" autocomplete="off">
+													<div class="circle"></div>
+													<h6>Non Original Content</h6>
+												</li>
+												<li class="btn">
+													<input type="radio" name="reportReason" autocomplete="off">
+													<div class="circle"></div>
+													<h6>Inappropriate Company</h6>
+												</li>
+												<li class="btn">
+													<input type="radio" name="reportReason" autocomplete="off">
+													<div class="circle"></div>
+													<h6>Trademark Violations</h6>
+												</li>
+												<li class="btn">
+													<input type="radio" name="reportReason" autocomplete="off">
+													<div class="circle"></div>
+													<h6>Copyright Violations</h6>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="submit" class="btn gbtn">Report</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--===== Markup For "Report" Ends Here =====-->
+					<!--===== Markup For "Review Modal" Starts From Here =====-->
+					<div class="modal dash_port_modal dashboard_wrap fade" id="createReview">
+						<div class="modal-dialog modal-lg modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h3>Create New Review</h3>
+									<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"
+											aria-hidden="true"></i></button>
+								</div>
+								<div class="modal-body">
+									<form action="/create-review/<%= company._id %>" method="POST"
+										enctype="multipart/form-data">
+										<div class="form">
+											<div class="single_upload">
+												<div class="upload_header">
+													<h5>Upload Portfolio Photos/Videos</h5>
+												</div>
+												<div class="upload_area">
+													<div class="form-group mb-2">
+														<input type="file" name="images" id="file-1"
+															class="inputfile inputfile-1"
+															data-multiple-caption="{count} files selected" multiple
+															required />
+														<label for="file-1">
+															<div class="upload_fils">
+																<div class="icon">
+																	<i class="fa fa-cloud-upload"
+																		aria-hidden="true"></i>
+																</div>
+																<h5>Drag & Drop a Photos Here <br /> or <br /> Click to
+																	Upload</h5>
+															</div>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<fieldset class="starability-basic">
+													<legend>Rating:</legend>
+													<input type="radio" id="first-rate1" name="rating" value="1"
+														checked />
+													<label for="first-rate1" title="Terrible">1 star</label>
+													<input type="radio" id="first-rate2" name="rating" value="2" />
+													<label for="first-rate2" title="Not good">2 stars</label>
+													<input type="radio" id="first-rate3" name="rating" value="3" />
+													<label for="first-rate3" title="Average">3 stars</label>
+													<input type="radio" id="first-rate4" name="rating" value="4" />
+													<label for="first-rate4" title="Very good">4 stars</label>
+													<input type="radio" id="first-rate5" name="rating" value="5" />
+													<label for="first-rate5" title="Amazing">5 stars</label>
+												</fieldset> <textarea name="text" placeholder="Write a Review..."
+													cols="30" rows="3" class="form-control"></textarea>
+												<div class="form-text text-right">
+													<span>0/600</span>
+												</div>
+											</div>
+											<div class="save_button text-right">
+												<button type="submit" class="btn btn-gbz-success">Submit</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--===== Markup For "Review Modal" Ends Here =====-->
+					<!--===== Markup For "Login Form" Starts From Here =====-->
+					<div class="modal fade creating_list_modal" id="loginForm">
+						<div class="modal-dialog modal-md modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4>Login to Send the Message</h4>
+									<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+								</div>
+								<div class="modal-body" style="padding: 0;">
+									<section class="registration_form">
+										<div class="container_gbz">
+											<div class="">
+												<div class="sign_in_wrap">
+													<div class="form_wrapper">
+														<form action="/login" method="POST">
+															<div class="form">
+																<div class="form-group">
+																	<label for="">Username</label>
+																	<input type="text" name="username" required
+																		class="form-control" />
+																</div>
+																<div class="form-group">
+																	<label for="">Password</label>
+																	<input type="password" name="password" required
+																		class="form-control" />
+																</div>
+																<div class="form-row">
+																	<div class="form-group col-6">
+																		<label class="checkbox">
+																			<input type="checkbox" name="" value=""
+																				checked />
+																			<span class="checkmark"></span>
+																			Remember Me
+																		</label>
+																	</div>
+																	<div class="form-group col-6 text-right">
+																		<a href="/forgot-password">Forgot Password?</a>
+																	</div>
+																</div>
+																<div class="create_account_button mt-0">
+																	<button type="submit" class="nav-link gbtn">Sign
+																		In</button>
+																</div>
+																<div class="or_text">
+																	<h4>OR</h4>
+																</div>
+																<div class="form_text text-center">
+																	<span>By clicking Sign In with Facebook or Sign In
+																		with Google, you agree to the <a
+																			href="/terms-and-conditions">Terms of
+																			Use</a> and <a
+																			href="/privacy-policy">Privacy
+																			Policy</a>.</span>
+																</div>
+																<div class="google_fb_sign_up">
+																	<ul>
+																		<li class="facebook"><a
+																				href="/auth/facebook"><img
+																					src="../images/icons/facebook_icon.png"
+																					alt="" />Sign In With
+																				Facebook</a></li>
+																		<li class="google"><a href="/auth/google"><img
+																					src="../images/icons/google_icon.png"
+																					alt="" />Sign In With
+																				Google</a></li>
+																	</ul>
+																</div>
+															</div>
+														</form>
+														<div class="form_bottom">
+															<h6>Don't have an account? <a href="/sign-up">Sign Up</a>
+															</h6>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--===== Markup For "Login Form" Ends Here =====-->
+					<!--jQuery Main Libraty Latest Version-->
+					<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+					<!--Bootstrap v4.5.3 JS File-->
+					<script type="text/javascript" src="../js/popper.min.js"></script>
+					<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+					<!--Owl Carousel JS File-->
+					<script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+					<!--Splide Slider JS File-->
+					<script type="text/javascript" src="../js/splide.min.js"></script>
+					<!--Lightcase JS File-->
+					<script type="text/javascript" src="../js/lightcase.js"></script>
+					<!--Custom Script JS File-->
+					<script type="text/javascript" src="../js/updatedCustom.js"></script>
+					<script src="../js/autocomplete.js" type="text/javascript"></script>
+					<script src="../js/messageModal.js" type="text/javascript"></script>
+					<!--Custom JavaScript-->
+					<script type="text/javascript">
+						function copyUrl(url) {
+							navigator.clipboard.writeText(window.location.href);
+						}
+						function seemoreseeless(arr) {
+							const a = document.getElementById('hide').style.display = 'none';
+							document.getElementById('showbtn').style.display = 'flex';
+							document.getElementById('hidebtn').style.display = 'none';
+							const b = document.getElementById('show');
+							b.style.display = 'flex';
+							b.append(`${arr.replaceAll(',', ' ')}     `);
+						}
+						function seelessClick() {
+							const a = document.getElementById('show');
+							a.append('');
+							$("#show").empty();
+							a.style.display = 'none';
+							document.getElementById('hide').style.display = 'flex';
+							document.getElementById('hidebtn').style.display = 'flex';
+							document.getElementById('showbtn').style.display = 'none';
+						}
+						//For Smothly Scroll In My Page	Start	
+						$(function () {
+							var topoffset = 60; //variable for menu height
+							//Use smooth scrolling when clicking on navigation
+							$('a[href*="#"]').click(function () {
+								if (location.pathname.replace(/^\//, '') ===
+									this.pathname.replace(/^\//, '') &&
+									location.hostname === this.hostname) {
+									var target = $(this.hash);
+									target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+									if (target.length) {
+										$('html,body').animate({
+											scrollTop: target.offset().top - topoffset
+										}, 1000);
+										return false;
+									} //target.length
+								} //click function
+							}); //smooth scrolling
+						});
+						//copy to clipboard
+						$(document).ready(function () {
+							$('#copy_clipboard').click(function () {
+
+							});
+						});
+						// Code For Portfolio Media Popup Slider Starts
+						$(document).ready(function () {
+							var lightcase = $(".portfolio_1");
+							if (lightcase.length) {
+								$('a[data-rel^=portfolio_1]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+							var lightcase = $(".portfolio_2");
+							if (lightcase.length) {
+								$('a[data-rel^=portfolio_2]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+							var lightcase = $(".portfolio_3");
+							if (lightcase.length) {
+								$('a[data-rel^=portfolio_3]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+							var lightcase = $(".portfolio_4");
+							if (lightcase.length) {
+								$('a[data-rel^=portfolio_4]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+							var lightcase = $(".portfolio_5");
+							if (lightcase.length) {
+								$('a[data-rel^=portfolio_5]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+						});
+						// Code For Portfolio Media Popup Slider Ends
+						// Code For Reviews Media Popup Slider Starts
+						$(document).ready(function () {
+							var lightcase = $(".reviews_1");
+							if (lightcase.length) {
+								$('a[data-rel^=reviews_1]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+							var lightcase = $(".reviews_2");
+							if (lightcase.length) {
+								$('a[data-rel^=reviews_2]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+							var lightcase = $(".reviews_3");
+							if (lightcase.length) {
+								$('a[data-rel^=reviews_3]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+							var lightcase = $(".reviews_4");
+							if (lightcase.length) {
+								$('a[data-rel^=reviews_4]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+							var lightcase = $(".reviews_5");
+							if (lightcase.length) {
+								$('a[data-rel^=reviews_5]').lightcase({
+									transition: 'elastic',
+									video: {
+										width: 760,
+										height: 'auto',
+										poster: '',
+										preload: 'auto',
+										controls: true,
+										autobuffer: true,
+										autoplay: false,
+										loop: false,
+									},
+									showSequenceInfo: true,
+									showTitle: false,
+								});
+							}
+						});
+		// Code For Reviews Media Popup Slider Ends
+					</script>
+</body>
+
+</html>

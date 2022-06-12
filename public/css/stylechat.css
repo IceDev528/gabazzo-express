@@ -1,0 +1,3425 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background:#FFFFFF;
+}
+
+/* ========== Custom CSS Starts ========== */
+
+
+/* ===== CSS For "Humbergur Icon" Starts Here ===== */
+.navbar-toggler{
+	padding:0px;
+}
+.navbar-toggler:focus{
+	outline: none;
+}
+.humbergur_icon{
+	width: 30px;
+	height: 20px;
+	position: relative;
+	margin: 0px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+}
+.humbergur_icon span{
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+.humbergur_icon span {
+	background: var(--lightColor);
+}
+.humbergur_icon span:nth-child(1) {
+	top: 0px;
+}
+.humbergur_icon span:nth-child(2),
+.humbergur_icon span:nth-child(3) {
+	top: 10px;
+}
+.humbergur_icon span:nth-child(4) {
+	top: 20px;
+}
+.humbergur_icon.open span:nth-child(1) {
+	top: 11px;
+	width: 0%;
+	left: 50%;
+}
+.humbergur_icon.open span:nth-child(2) {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.humbergur_icon.open span:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.humbergur_icon.open span:nth-child(4) {
+	top: 11px;
+	width: 0%;
+	left: 50%;
+}
+/* ===== CSS For "Humbergur Icon" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Header" Starts Here ===== */
+.header{
+	background: var(--secondaryColor);
+}
+
+.navbar{
+	padding: 15px 0px;
+}
+.navbar .menus{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 25px 415px;
+    grid-template-columns: 1fr 415px;
+    grid-auto-rows: auto;
+    gap: 25px;	
+}
+.members_navbar .menus{
+    -ms-grid-columns: 1fr 25px 290px;
+    grid-template-columns: 1fr 290px;	
+}
+.navbar .navbar-brand{
+	padding: 0px;
+	margin-right: 0px;
+	font-size: inherit;
+	line-height: 1;
+}
+.navbar .navbar-brand img{
+	max-width: 195px;
+}
+.logo_mode_switching ul{
+	margin-bottom: 0px;
+	font-size: 0px;
+}
+.logo_mode_switching ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 25px;
+}
+.logo_mode_switching ul li:last-child{
+	margin-right: 0px;
+}
+
+.logo_mode_switching .mode_icon .day_icon{
+	display: none;
+}
+.logo_mode_switching .mode_icon.active .day_icon{
+	display: inline-block;
+}
+.logo_mode_switching .mode_icon.active .night_icon{
+	display: none;
+}
+
+.navbar .access_menu{
+	margin-left: auto;
+}
+.navbar .access_menu .nav-item{
+	margin-right: 10px;
+}
+.navbar .access_menu .nav-item:last-child{
+	margin-right: 0px;
+}
+
+.navbar .profile_pic_link{
+	padding: 0px !important;
+}
+.navbar .profile_pic{
+	position: relative;
+}
+.navbar .profile_pic img{
+	width: 47px;
+	height: 47px;
+	border-radius: 50%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border: 1px solid var(--baseColor);
+}
+.navbar .profile_pic .activity_status {
+	position: absolute;
+	bottom: 20px;
+	right: -5px;
+}
+.navbar .profile_pic .activity_status::before {
+	width: 12px;
+	height: 12px;
+	left: 5px;
+	top: 1.5px;
+}
+
+.navbar .services_menu .nav-item{
+	margin-right: 15px;
+}
+.navbar .services_menu .nav-item:last-child{
+	margin-right: 0px;
+}
+
+.navbar .navbar-nav .nav-item .nav-link{
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 14px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.navbar .navbar-nav .nav-item .nav-link:hover{
+	color: var(--baseColor);
+}
+
+.navbar .services_menu .dropdown-toggle{
+	position: relative;
+	padding-right: 25px;
+}
+.navbar .services_menu .dropdown-toggle::after {
+	content: "";
+	display: inline-block;
+	margin-left: .255em;
+	vertical-align: .255em;
+	border-top: none;
+	border-right: .3em solid transparent;
+	border-bottom: 0;
+	border-left: .3em solid transparent;
+
+	width: 22px;
+	height: 22px;
+	background: url(../images/down_arrow.png) no-repeat;
+	background-position: center center;
+	background-size: 20px 20px;
+	position: absolute;
+	right: 0%;
+	top: 50%;
+	-webkit-transform: translate(0%, -50%);
+	-ms-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.navbar .services_menu .dropdown.show .dropdown-toggle::after{
+	-webkit-transform: translate(0%, -50%) rotate(-180deg);
+	-ms-transform: translate(0%, -50%) rotate(-180deg);
+	transform: translate(0%, -50%) rotate(-180deg);
+}
+
+.navbar .navbar-nav .nav-item .nav-link.gbtn{
+	padding: 15px 15px;
+	font-size: 15px;
+}
+.navbar .navbar-nav .nav-item .nav-link.gbtn:hover{
+	color: var(--lightColor);
+}
+.navbar .navbar-nav .nav-item .nav-link.sign_in{
+	padding: 15px 25px;
+	line-height: 1;
+	font-size: 15px;
+}
+.navbar .navbar-nav .cp_search_btn{
+	margin-right: 0px;
+}
+.navbar .navbar-nav .cp_search_btn img {
+	max-width: 18px;
+	position: relative;
+	top: -2px;
+}
+
+.navbar .navbar-nav.services_menu .dropdown-menu{
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 25px;
+    -moz-column-gap: 25px;
+    column-gap: 25px;
+
+	background: var(--secondaryColor);
+	padding: 20px;
+	padding-bottom: 10px;
+	border-radius: 0px;
+	border: none;
+	margin-top: 0px;
+	top: 36px;
+	min-width: 285px;
+	z-index: 9999;
+
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    break-inside: avoid;
+}
+.navbar .navbar-nav.services_menu .dropdown-menu .dropdown_column{
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    break-inside: avoid;
+}
+.navbar .navbar-nav.services_menu .dropdown-menu .dropdown_column li{
+	list-style: none;
+	width: 110px;
+}
+.navbar .navbar-nav .dropdown-menu .dropdown_column .dropdown-item{
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 14px;
+	padding: 8px 0px;
+}
+.navbar .navbar-nav .dropdown_column .dropdown-item:hover,
+.navbar .navbar-nav .dropdown_column .dropdown-item:active,
+.navbar .navbar-nav .dropdown_column .dropdown-item:focus{
+	color: var(--baseColor);
+	background: transparent;
+}
+
+.navbar .mobile_profile_menubar{
+	display: none;
+}
+/* ===== CSS For "Header" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Members Profile Link" Starts Here ===== */
+.membersProfileLinks {
+    width: 275px;
+    position: fixed;
+    top: 0;
+    right: -275px;
+    height: 100vh;
+    z-index: 2010;
+	background: var(--secondaryColor);
+	padding: 30px 20px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.membersProfileLinks.show {
+    right: 0;
+}
+.dismissMembersProfileLinks {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+	z-index: 2010;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+	color:#FFFFFF;
+	opacity:0.7;
+}
+.dismissMembersProfileLinks i{
+	font-size: 24px;
+}
+.dismissMembersProfileLinks:hover {
+    opacity:1.0;
+}
+
+.membersProfileLinks .members_profile_pic{
+	text-align: center;
+	margin-bottom: 25px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid var(--lightColor);
+}
+.membersProfileLinks .members_profile_pic img{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+.membersProfileLinks .members_profile_pic h6{
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	margin-bottom: 0px;
+	margin-top: 5px;
+	text-transform: capitalize;
+}
+
+.membersProfileLinks .profile_links ul{
+	margin-bottom: 0px;
+}
+.membersProfileLinks .profile_links ul li{
+	list-style: none;
+	margin-bottom: 15px;
+}
+.membersProfileLinks .profile_links ul li.mobile_only{
+	display: none;
+}
+.membersProfileLinks .profile_links ul li:last-child{
+	margin-bottom: 0px;
+}
+.membersProfileLinks .profile_links ul li a{
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.membersProfileLinks .profile_links ul li i{
+	color: var(--baseColor);
+	font-size: 16px;
+	width: 25px;
+}
+.membersProfileLinks .profile_links ul li a:hover,
+.membersProfileLinks .profile_links ul li.active a{
+	color: var(--baseColor);
+}
+/* ===== CSS For "Members Profile Link" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Client Search" Starts Here ===== */
+.gb_top_search_wrap{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 10px 65px;
+    grid-template-columns: 1fr; /*65px;*/
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    gap: 10px;
+	margin-bottom: 5px;
+}
+.gb_top_search_wrap .client_search{
+	position: relative;
+}
+.gb_top_search_wrap .client_search .form-control{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+	border: 1px solid #E5E6E7;
+	border-radius: 0px;
+	height: inherit;
+	padding: 7.5px 15px;
+	padding-left: 40px;
+}
+.gb_top_search_wrap .client_search button{
+	position: absolute;
+	left: 10px;
+	top: 5px;
+	padding: 0px;
+	border: none;
+	border-radius: 0px;
+}
+.gb_top_search_wrap .client_search button:active,
+.gb_top_search_wrap .client_search button:focus{
+	box-shadow: none;
+	outline: 0px;
+}
+.gb_top_search_wrap .client_search button img{
+	max-width: 20px;
+}
+.gb_top_search_wrap .client_search button .blue_icon{
+	display: none;
+}
+
+.gb_top_search_wrap .other_actions ul{
+	margin-bottom: 0px;
+	text-align: right;
+	font-size: 0px;
+}
+.gb_top_search_wrap .other_actions ul li{
+	display: inline-block;
+	margin-left: 15px;
+	list-style: none;
+}
+.gb_top_search_wrap .other_actions ul li:first-child{
+	margin-left: 0px;
+}
+.gb_top_search_wrap .other_actions ul li a{
+	display: block;
+}
+.gb_top_search_wrap .other_actions ul li img{
+	max-width: 20px;
+}
+.gb_top_search_wrap .other_actions ul li .blue_icon{
+	display: none;
+}
+
+.gb_top_search_wrap .back_to_list{
+	display: none;
+}
+/* ===== CSS For "Client Search" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Chat Common CSS" Starts Here ===== */
+.gb_chat_wrap{
+	height: calc(100vh - 77px);
+	padding: 15px;
+	overflow: hidden;
+	background: var(--grayColor);
+}
+.gb_chat{
+	border: 1px solid var(--borderColor);
+	background: var(--lightColor);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 325px 0px 1fr 0px 285px;
+    grid-template-columns: 325px 1fr 285px;
+    grid-auto-rows: auto;
+    gap: 0px;
+}
+.gb_chat img{
+	max-width: 100%;
+}
+/* ===== CSS For "Chat Common CSS" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Sliding Search" Starts Here ===== */
+.sliding_search_wrap{
+	position: relative;
+	width: 0%;
+	min-width: 36px;
+	height: 36px;
+	overflow: hidden;
+	-webkit-transition: width 0.5s;
+	-moz-transition: width 0.5s;
+	transition: width 0.5s;
+}
+.sliding_search_wrap .form-control {
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  	outline: none;
+  	width: 36;
+  	height: 36px;
+  	margin: 0;
+  	z-index: 10;
+	overflow: hidden;
+	border: none;
+	border-radius: 0px;
+	text-indent: -1000px;
+  	-webkit-transition: width 0.5s;
+  	-moz-transition: width 0.5s;
+  	transition: width 0.5s;
+  	
+}
+.search_submit,
+.search_label{
+	width: 34px;
+	height: 34px;
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	cursor: pointer;
+}
+.search_submit{
+	background: transparent;
+	opacity: 1;
+	color: #232323;
+	border: none;
+	outline: none;
+	z-index: 1;
+}
+.search_label{
+	z-index: 90;
+	line-height: 32px;
+}
+.sliding_search_wrap.search_expanded{
+	width: 100%;
+}
+.sliding_search_wrap.search_expanded .form-control{
+	border: 1px solid var(--borderColor);
+	text-indent: 0px;
+}
+.sliding_search_wrap.search_expanded .search_label{
+	background: transparent;
+	z-index: 11;
+}
+.sliding_search_wrap.search_expanded .search_submit{
+	background: var(--lightColor);
+	z-index: 90;
+}
+/* ===== CSS For "Sliding Search" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Search Result" Starts Here ===== */
+.gb_chat .msg_header_search .search_results_wrap{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: justify;
+	align-content: space-between;
+}
+.gb_chat .msg_header_search .search_form{
+	position: relative;
+}
+.gb_chat .msg_header_search .search_form .search_results_wrap{
+	position: absolute;
+	top: 44px;
+	left: 0px;
+	background: var(--lightColor);
+	box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.15);
+	z-index: 11;
+	width: calc(100vw - 822px);
+	height: calc(100vh - 265px);
+	overflow-y: auto;
+}
+.gb_chat .msg_header_search .search_form .single_result a{
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 50px 10px 1fr;
+	grid-template-columns: 50px 1fr;
+	grid-auto-rows: auto;
+	gap: 10px;
+	padding: 10px 15px;
+	border-left: 4px solid transparent;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.gb_chat .msg_header_search .search_form .single_result a:hover{
+	background: var(--baseLightColor);
+}
+.gb_chat .msg_header_search .search_form .single_result .profile_pic{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+.gb_chat .msg_header_search .search_form .single_result .profile_pic img{
+	width: 50px;
+	max-width: 100%;
+	height: 50px;
+	border-radius: 50%;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+.gb_chat .msg_header_search .search_form .single_result .profile_info h6 {
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	margin-bottom: 2.5px;
+	line-height: 1.3;
+}
+.gb_chat .msg_header_search .search_form .single_result .profile_info p {
+	color: rgba(0,0,0, 0.6);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 13px;
+	margin-bottom: 2.5px;
+	line-height: 1.3;
+}
+.gb_chat .msg_header_search .search_form .single_result .profile_info time {
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 1.2;
+	display: block;
+}
+
+.gb_chat .msg_header_search .search_pagination{
+	padding: 15px;
+}
+.gb_chat .msg_header_search .search_pagination ul{
+	margin-bottom: 0px;
+	font-size: 0px;
+	text-align: center;
+}
+.gb_chat .msg_header_search .search_pagination ul li{
+	list-style: none;
+	display: inline-block;
+}
+.gb_chat .msg_header_search .search_pagination ul li:last-child{
+	margin-right: 0px;
+}
+.gb_chat .msg_header_search .search_pagination ul li a{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	display: block;
+	padding: 5px 10px;
+	line-height: 1;
+	border-radius: 20px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.gb_chat .msg_header_search .search_pagination ul li a:hover{
+	color: var(--baseColor);
+}
+.gb_chat .msg_header_search .search_pagination ul li.active a{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+.gb_chat .msg_header_search .search_pagination ul li.disabled a{
+	color: rgba(0,0,0, 0.5);
+}
+/* ===== CSS For "Search Result" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "List Header" Starts Here ===== */
+.gb_chat .gb_list .nav{
+	height: 50px;
+	border-bottom: none;
+	background: #F8F9FD;
+}
+.gb_chat .gb_list .nav .nav-link{
+	margin-bottom: 0px;
+	border: none;
+	border-radius: 0px;
+	width: 50%;
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+	text-align: center;
+	padding: 10px;
+	border-bottom: 2px solid var(--borderColor);
+	line-height: 29px;
+}
+.gb_chat .gb_list .nav .nav-link.active{
+	border: none;
+	font-weight: 600;
+	background: transparent;
+	border-bottom: 2px solid var(--baseColor);
+	border-radius: 0px;
+}
+/* ===== CSS For "List Header" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Contact List" Starts Here ===== */
+.gb_chat .contact_list{
+	height: calc(100vh - 202px);
+	overflow-y: auto;
+	background: #F8F9FD;
+}
+.gb_chat .contact_list ul{
+	margin: 0px;
+	padding: 0px;
+}
+.gb_chat .contact_list ul li{
+	list-style: none;
+}
+.gb_chat .contact_list ul li a{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50px 10px 1fr;
+    grid-template-columns: 50px 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+	padding: 10px;
+	padding-left: 15px;
+	border-left: 4px solid transparent;
+	text-decoration: none;
+	background: #F8F9FD;
+}
+.gb_chat .contact_list ul li.active a{
+	background: var(--lightColor);
+	border-left: 4px solid var(--baseColor);
+}
+.gb_chat .contact_list .profile_pic{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+	position: relative;
+}
+.gb_chat .contact_list .profile_pic img{
+	width: 50px;
+	height: 50px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.gb_chat .contact_list .profile_pic .activity_status {
+	position: absolute;
+	right: -5px;
+	bottom: 20px;
+}
+.gb_chat .contact_list .profile_pic .activity_status::before {
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	border: 2px solid var(--lightColor);
+}
+.gb_chat .contact_list .profile_info h6{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	margin-bottom: 2.5px;
+	line-height: 1.3;
+}
+.gb_chat .contact_list .profile_info p{
+	color: rgba(0,0,0, 0.6);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 13px;
+	margin-bottom: 2.5px;
+	line-height: 1.3;
+}
+.gb_chat .contact_list .profile_info p span{
+	font-weight: 600;
+}
+.gb_chat .contact_list .profile_info time{
+	color: rgba(0,0,0, 0.7);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 1.2;
+	display: block;
+}
+.gb_chat .contact_list .profile_info .label_wrap{
+	margin-top: 5px;
+}
+.gb_chat .contact_list .profile_info .label_wrap span{
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 12px;
+	background: var(--baseColor);
+	display: inline-block;
+	padding: 2.5px 10px;
+	border-radius: 2.5px;
+}
+/* ===== CSS For "Contact List" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Message Header" Starts Here ===== */
+
+.msg_attachments{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 10px;
+}
+.msg_attachments_files{
+	display: flex;
+}
+
+.gb_chat .gb_messages{
+	border-left: 1px solid var(--borderColor);	
+	border-right: 1px solid var(--borderColor);	
+}
+.gb_chat .gb_messages .message_header{
+	height: 50px;
+	border-bottom: 1px solid var(--borderColor);
+	padding: 10px 15px;
+	
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+    -ms-grid-columns: 1fr 15px 105px;
+    grid-template-columns: 1fr 105px;
+    grid-auto-rows: auto;
+    gap: 15px;
+}
+
+.gb_chat .gb_messages .message_header .history_search{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 24px 5px 1fr;
+    grid-template-columns: 24px 1fr;
+    grid-auto-rows: auto;
+    gap: 5px;
+}
+.gb_chat .gb_messages .message_header .history_search img{
+	max-width: 24px;
+}
+.gb_chat .gb_messages .message_header .history_search .blue_icon{
+	display: none;
+}
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Order History Modal" Starts Here ===== */
+.order_history_modal{
+	z-index: 9999999999;
+}
+.order_history_modal .modal-lg {
+	max-width: 800px;
+}
+.order_history_modal .modal-header{
+	background: var(--baseColor);
+	padding: 10px 15px;
+	border-bottom: none;
+}
+.order_history_modal .modal-header h3{
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 18px;
+	margin-bottom: 0px;
+}
+
+.order_history_modal .modal-body{
+	padding: 0px;
+}
+.order_history_modal .table{
+	margin-bottom: 0px;
+	border: 1px solid #DEE2E6;
+}
+.order_history_modal thead th{
+	border-bottom: 1px solid #DEE2E6;
+}
+.order_history_modal td,
+.order_history_modal th{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 16px;
+	text-align: center;
+	padding: 10px;
+	vertical-align: middle;
+}
+.order_history_modal th{
+	font-weight: 600;
+}
+.order_history_modal td{
+	border-bottom: none;
+	font-size: 15px;
+}
+.order_history_modal td .gbadge{
+	font-size: 12px;
+}
+
+.order_history_modal .member_info{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 65px 10px 1fr;
+    grid-template-columns: 65px 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+}
+.order_history_modal .member_info .service_photo img{
+	width: 65px;
+	height: 60px;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+.order_history_modal .member_info .member_texts .member_name{
+	text-align: left;
+}
+.order_history_modal .member_info .member_texts .member_name a{
+	text-decoration: none;
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.order_history_modal .member_info .member_texts .member_name a:hover{
+	color: var(--baseColor);
+}
+.order_history_modal .member_info .member_texts .member_address h6{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 13px;
+	text-align: left;
+	margin-bottom: 0px;
+}
+.order_history_modal .member_info .member_texts .member_address h6 .light_texts{
+	font-weight: 500;
+}
+
+.order_history_modal .member_info_column{
+	width: 250px;
+}
+/* ===== CSS For "Order History Modal" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+.gb_chat .gb_messages .message_header .call_actions ul{
+	margin-bottom: 0px;
+	font-size: 0px;
+}
+.gb_chat .gb_messages .message_header .call_actions ul li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 15px;
+}
+.gb_chat .gb_messages .message_header .call_actions ul li a{
+	display: block;
+}
+.gb_chat .gb_messages .message_header .call_actions ul li img{
+	max-width: 24px;
+}
+.gb_chat .gb_messages .message_header .call_actions ul > li > a .blue_icon{
+	display: none;
+}
+.gb_chat .gb_messages .message_header .call_actions ul li:first-child{
+	margin-left: 0px;
+}
+
+.gb_chat .gb_messages .message_header .dotted_dropdown .dotted_link img{
+	display: inline-block;
+}
+.gb_chat .gb_messages .message_header .dotted_dropdown .dotted_link .blue_icon{
+	display: none;
+}
+.gb_chat .gb_messages .message_header .dotted_dropdown.show .dotted_link .black_icon{
+	display: none;
+}
+.gb_chat .gb_messages .message_header .dotted_dropdown.show .dotted_link .blue_icon{
+	display: inline-block;
+}
+
+.gb_chat .gb_messages .message_header .user_actions_down {
+	width: 180px;
+	-webkit-transform: translate3d(0px, -1px, 0px) !important;
+	-ms-transform: translate3d(0px, -1px, 0px) !important;
+	transform: translate3d(0px, -1px, 0px) !important;
+	padding: 0px;
+	margin: 0px;
+	border-radius: 3px;
+	left: inherit !important;
+	top: 36px !important;
+	right: -15px;
+	border: none;
+	box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.2);
+}
+.gb_chat .gb_messages .message_header .user_actions_down::before {
+	content: "";
+	background: var(--lightColor);
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: -7px;
+	right: 15px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	z-index: 0;
+}
+.gb_chat .gb_messages .message_header .user_actions ul{
+	padding: 10px 0px;
+}
+.gb_chat .gb_messages .message_header .user_actions ul li{
+	display: block;
+	margin: 0px;
+}
+.gb_chat .gb_messages .message_header .user_actions ul li a{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+	display: block;
+	padding: 7.5px 15px;
+	text-decoration: none;
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+.gb_chat .gb_messages .message_header .user_actions ul li a img {
+	max-width: 16px;
+	position: relative;
+	top: -2px;
+	margin-right: 5px;
+	display: inline-block;
+}
+.gb_chat .gb_messages .message_header .user_actions ul li a .blue_icon{
+	display: none;
+}
+.gb_chat .gb_messages .message_header .user_actions ul li a:hover{
+	color: var(--baseColor);
+}
+.gb_chat .gb_messages .message_header .user_actions ul li a:hover .black_icon{
+	display: none;
+}
+.gb_chat .gb_messages .message_header .user_actions ul li a:hover .blue_icon{
+	display: inline-block;
+}
+/* ===== CSS For "Message Header" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Sent & Received SMS" Starts Here ===== */
+.gb_chat .gb_messages .msg_flow{
+	height: calc(100vh - 332px);
+	overflow-y: auto;	
+	padding: 20px;
+}
+.gb_chat.show_payment_warning .gb_messages .msg_flow{
+	height: calc(100vh - 350px);
+}
+.gb_chat .gb_messages .msg_flow .security_alert_msg{
+	text-align: center;
+	margin-bottom: 30px;
+	line-height: 1;
+}
+.gb_chat .gb_messages .msg_flow .security_alert_msg h5{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1;
+	margin-bottom: 5px;
+}
+.gb_chat .gb_messages .msg_flow .security_alert_msg h5 img{
+	max-width: 12px;
+	position: relative;
+	top: -1px;
+}
+.gb_chat .gb_messages .msg_flow .security_alert_msg p{
+	color: rgba(0,0,0, 0.5);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 12px;
+	display: inline-block;
+	margin-bottom: 0px;
+}
+.gb_chat .gb_messages .msg_flow .security_alert_msg p a{
+	color: var(--baseColor);
+}
+
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50px 10px 1fr;
+    grid-template-columns: 50px 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+	margin-bottom: 20px;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap:last-child{
+	margin-bottom: 0px;
+}
+
+.gb_chat .gb_messages .msg_flow .all_msgs .sent_msg_wrap{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 10px 50px;
+    grid-template-columns: 1fr 50px;
+    grid-auto-rows: auto;
+    gap: 10px;	
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .sent_msg_wrap .profile_link_image{
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+}
+
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .profile_link_image img{
+	width: 50px;
+	height: 50px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_header h6{
+	color: #999999;
+	line-height: 1.3;
+	margin-bottom: 5px;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_header h6 .msg_sender{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;	
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_header h6 time{
+	color: #999999;
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 12px;
+	display: inline-block;	
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_body p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_body p a{
+	color: var(--baseColor);
+	font-weight: 500;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_body p:last-child{
+	margin-bottom: 0px;
+}
+
+.gb_chat .gb_messages .msg_flow .all_msgs .sent_msg_wrap .msg_time_actions{
+	text-align: right;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .sent_msg_wrap .msg_body p{
+	text-align: right;
+}
+
+.gb_chat .gb_messages .msg_flow .msg_time_actions{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 125px 5px 1fr;
+    grid-template-columns: 125px 1fr;
+    grid-auto-rows: auto;
+    gap: 5px;
+	margin-top: 7px;
+}
+.gb_chat .gb_messages .msg_flow .sent_msg_wrap .msg_time_actions{
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+}
+.gb_chat .gb_messages .msg_flow .msg_time_actions .msg_time time{
+	color: rgba(0,0,0, 0.5);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 1;
+	display: inline-block;
+	margin-bottom: 0px;
+}
+.gb_chat .gb_messages .msg_flow .msg_actions ul{
+	margin-bottom: 0px;
+	font-size: 0px;
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.gb_chat .gb_messages .msg_flow .msg_content:hover .msg_actions ul{
+	opacity: 1;
+}
+.gb_chat .gb_messages .msg_flow .msg_actions ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 10px;
+}
+.gb_chat .gb_messages .msg_flow .msg_actions ul li:last-child{
+	margin-right: 0px;
+}
+.gb_chat .gb_messages .msg_flow .msg_actions ul li a{
+	display: block;
+}
+.gb_chat .gb_messages .msg_flow .msg_actions ul li img{
+	max-width: 15px;
+}
+.gb_chat .gb_messages .msg_flow .msg_actions ul li .blue_icon{
+	display: none;
+}
+/* ===== CSS For "Sent & Received SMS" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Message Actions" Starts Here ===== */
+.gb_chat .conversation_footer{
+	border-top: 2px solid var(--baseColor);
+	padding: 12.25px 15px;
+	background: #F8F9FD;
+	height: 130px;
+}
+.gb_chat.show_payment_warning .conversation_footer{
+	height: 148px;
+}
+.gb_chat .conversation_footer .out_payment_warning p{
+	color: rgba(0,0,0, 0.5);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 2.5px;
+}
+.gb_chat .conversation_footer .message_box textarea{
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	min-height: 54.25px;
+	resize: vertical;
+	border: none;
+	padding: 10px;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+	box-sizing: border-box;
+	color: var(--darkColor);
+	background: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+}
+.gb_chat .conversation_footer .message_box textarea:focus,
+.gb_chat .conversation_footer .message_box textarea:active{
+	outline: none;
+}
+.gb_chat .conversation_footer .sending_actions{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 125px;
+    grid-template-columns: 1fr 125px;
+    grid-auto-rows: auto;
+    gap: 15px;
+	margin-top: 10px;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul{
+	margin-bottom: 0px;
+	font-size: 0px;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 10px;
+	
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li:last-child{
+	margin-right: 0px;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li a{
+	color: var(--baseColor);
+	background: var(--lightColor);
+	border: 2px solid var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 1;
+	display: inline-block;
+	border-radius: 4px;
+	padding: 9.5px 15px;
+	text-decoration: none;
+	max-height: 38px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li a:hover{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+.gb_chat .conversation_footer .sending_actions .send_btn{
+	text-align: right;
+}
+.gb_chat .conversation_footer .sending_actions .send_btn button{
+	color: var(--lightColor);
+	background: var(--baseColor);
+	font-family: var(--baseFont);
+	border: 2px solid var(--baseColor);
+	font-weight: 500;
+	font-size: 15px;
+	display: inline-block;
+	border-radius: 4px;
+	padding: 9.5px 25px;
+	line-height: 1;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;	
+}
+.gb_chat .conversation_footer .sending_actions .send_btn button:active,
+.gb_chat .conversation_footer .sending_actions .send_btn button:focus{
+	box-shadow: none;
+}
+
+.gb_chat .conversation_footer .sending_actions ul li a img{
+	display: inline-block;
+}
+.gb_chat .conversation_footer .sending_actions ul li a .white_icon{
+	display: none;
+}
+.gb_chat .conversation_footer .sending_actions ul li a:hover .white_icon{
+	display: inline-block;
+}
+.gb_chat .conversation_footer .sending_actions ul li a:hover .blue_icon{
+	display: none;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li .attach_file_btn{
+	padding: 7px 15px;
+}
+.gb_chat .conversation_footer .sending_actions ul li .attach_file_btn img{
+	max-width: 10px;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li .quick_msg_btn {
+	padding: 5.775px 15px;
+}
+.gb_chat .conversation_footer .sending_actions ul li .quick_msg_btn img{
+	max-width: 24px;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li .create_offer_btn{
+	position: relative;
+	top: 1px;
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+
+.gb_chat .conversation_footer .sending_actions .left_btns .file_attachment{
+	display: none;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns .attachment{
+	color: var(--baseColor);
+	background: var(--lightColor);
+	border: 2px solid var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 1;
+	display: inline-block;
+	border-radius: 4px;
+	padding: 7px 15px;
+	text-decoration: none;
+	max-height: 38px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;	
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li .attachment:hover{
+	transform: none;
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+.gb_chat .conversation_footer .sending_actions ul li .attachment img{
+	max-width: 10px;
+}
+.gb_chat .conversation_footer .sending_actions ul li .attachment .white_icon{
+	display: none;
+}
+.gb_chat .conversation_footer .sending_actions ul li .attachment:hover .white_icon{
+	display: inline-block;
+}
+.gb_chat .conversation_footer .sending_actions ul li .attachment:hover .blue_icon{
+	display: none;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li.dropdown.show a{
+	background: var(--baseColor);
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li.dropdown.show a .blue_icon{
+	display: none;
+}
+.gb_chat .conversation_footer .sending_actions .left_btns ul li.dropdown.show a .white_icon{
+	display: inline-block;
+}
+.gb_chat .quick_sms_down .all_quick_sms .create_fast_reply a{
+	display: block;
+	background: none !important;
+}
+/* ===== CSS For "Message Actions" Ends Here ===== */
+
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Quick Messages" Starts Here ===== */
+.gb_chat .quick_sms_down {
+	width: calc(100vw - 675px);
+	-webkit-transform: translate3d(0px, -1px, 0px) !important;
+	-ms-transform: translate3d(0px, -1px, 0px) !important;
+	transform: translate3d(0px, -1px, 0px) !important;
+	padding: 0px;
+	margin: 0px;
+	border-radius: 3px;
+	left: -273px !important;
+	top: inherit !important;
+	bottom: 117px;
+	border: none;
+	box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.2);
+}
+.gb_chat .conversation_footer_members .quick_sms_down{
+	left: -136.733px !important;
+}
+.gb_chat .quick_sms_down .all_quick_sms{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	min-width: 100%;
+	min-height: 180px;
+	overflow-x: auto;
+	padding: 10px;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms {
+	min-width: 220px;
+	height: 160px;
+	overflow-y: auto;
+	margin-right: 10px;
+	text-align: left;
+	border: 1px solid #DEE2E6;
+	padding: 10px;
+	border-radius: 5px;
+
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: justify;
+	align-content: space-between;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms:last-child{
+	margin-right: 0px;
+}
+
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .created_sms p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 14px;
+	margin-bottom: 0px;
+}
+
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer{
+	margin-top: 5px;
+}
+
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_title h5{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 0px;	
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms:hover .sms_footer .sms_title{
+	display: none;
+}
+
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions{
+	display: none;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms:hover .sms_footer .sms_actions{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 5px 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 5px;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .use_this a{
+	color: var(--lightColor);
+	background: var(--baseColor);
+	font-size: 14px;
+	padding: 5px 10px;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .edit_delete ul{
+	margin-bottom: 0px;
+	text-align: right;
+	font-size: 0px;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .edit_delete ul li{
+	margin-right: 10px;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .edit_delete ul li:last-child{
+	margin-right: 0px;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .edit_delete ul li a{
+	border: none;
+	padding: 0px;
+	background: none !important;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .edit_delete ul li a img{
+	max-width: 20px;
+}
+.gb_chat .quick_sms_down .all_quick_sms .single_quick_sms .sms_footer .sms_actions .edit_delete ul li a:hover{
+	background: transparent;
+}
+
+.gb_chat .quick_sms_down .all_quick_sms .create_fast_reply{
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+	text-align: center;
+}
+.gb_chat .quick_sms_down .all_quick_sms .create_fast_reply a{
+	border: none !important;
+	padding: 0px !important;
+	text-align: center;
+}
+.gb_chat .quick_sms_down .all_quick_sms .create_fast_reply a:hover{
+	background: transparent !important;
+}
+.gb_chat .quick_sms_down .all_quick_sms .create_fast_reply span{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 20px;
+	display: block;
+}
+.gb_chat .quick_sms_down .all_quick_sms .create_fast_reply a i{
+	color: var(--baseColor);
+	width: 45px;
+	height: 45px;
+	line-height: 43px;
+	font-size: 20px;
+	text-align: center;
+	border: 2px solid var(--baseColor);
+	border-radius: 50%;
+	margin-bottom: 10px;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.gb_chat .quick_sms_down .all_quick_sms .create_fast_reply a:hover i{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+/* ===== CSS For "Quick Messages" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "User Info" Starts Here ===== */
+.gb_chat .gb_info{
+	background: #F8F9FD;
+}
+.gb_chat .gb_info .profile_info{
+	padding: 20px;
+	text-align: center;
+}
+.gb_chat .gb_info .profile_info .profile_link_image{
+	display: inline-block;
+	margin-bottom: 0px;
+	position: relative;
+}
+.gb_chat .gb_info .profile_info .profile_link_image img{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+.gb_chat .gb_info .profile_info .profile_link_image .activity_status {
+	position: absolute;
+	bottom: 30px;
+	right: -5px;
+}
+.gb_chat .gb_info .profile_info .profile_link_image .activity_status::before {
+	content: "";
+	background: var(--baseColor);
+	width: 16px;
+	height: 16px;
+	border: 2px solid var(--lightColor);
+	border-radius: 50%;
+	position: absolute;
+	left: 0px;
+	top: 1.5px;
+}
+.gb_chat .gb_info .profile_info .profile_link_image .online_status::before{
+	background: var(--greenColor);
+}
+.gb_chat .gb_info .profile_info .profile_link_image .offline_status::before{
+	background: var(--redColor);
+}
+.gb_chat .gb_info .profile_info .profile_user_link a{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	text-decoration: none;
+	line-height: 1;
+	display: inline-block;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.gb_chat .gb_info .profile_info .profile_user_link a:hover{
+	color: var(--baseColor);
+}
+.gb_chat .gb_info .profile_info .member_location p{
+	color: rgba(0,0,0, 0.5);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 12px;
+	margin-bottom: 0px;	
+}
+
+.gb_chat .gb_info .profile_info .company_ratings{
+	line-height: 1;
+	margin-bottom: 10px;
+}
+.gb_chat .gb_info .profile_info .company_ratings i{
+	color: var(--baseColor);
+	font-size: 13px;
+}
+.gb_chat .gb_info .profile_info .company_ratings span{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 14px;	
+}
+.gb_chat .gb_info .profile_info .cp_address_lang{
+	text-align: left;
+}
+.gb_chat .gb_info .profile_info .cp_address_lang .single_part{
+	margin-bottom: 15px;
+}
+.gb_chat .gb_info .profile_info .cp_address_lang .single_part:last-child{
+	margin-bottom: 0px;
+}
+.gb_chat .gb_info .profile_info .cp_address_lang .single_part h6{
+	color: #666666;
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 13px;
+	text-transform: uppercase;
+	margin-bottom: 0px;
+}
+.gb_chat .gb_info .profile_info .cp_address_lang .single_part p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+	margin-bottom: 0px;
+}
+
+
+.gb_chat .user_files_manage .nav {
+	border-bottom: none;
+}
+.gb_chat .user_files_manage .nav .nav-link {
+	margin-bottom: 0px;
+	border: none;
+	border-radius: 0px;
+	width: 50%;
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+	text-align: center;
+	padding: 5px 10px;
+	border-bottom: 2px solid var(--borderColor);
+	line-height: 1.25;
+}
+.gb_chat .user_files_manage .nav .nav-link.active {
+	border: none;
+	font-weight: 600;
+	background: transparent;
+	border-bottom: 2px solid var(--baseColor);
+	border-radius: 0px;
+}
+
+.gb_chat .user_files_manage .tab-content{
+	height: calc(100vh - 354.75px);
+	overflow-y: auto;
+}
+.gb_chat .user_files_manage_members .tab-content{
+	height: calc(100vh - 476.95px);
+	overflow-y: auto;
+}
+
+.gb_chat .user_files_manage .the_contents{
+	padding: 20px 15px;
+}
+
+.gb_chat .user_files_manage .files_contents h5{
+	color: rgba(0,0,0, 0.5);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+.gb_chat .user_files_manage .files_contents ul{
+	margin-bottom: 0px;
+}
+.gb_chat .user_files_manage .files_contents ul li{
+	list-style: none;
+	margin-bottom: 7.5px;
+	background: url(images/file_type_zip.png) no-repeat;
+	background-position: left center;
+	background-size: 20px 20px;
+	padding-left: 30px;
+}
+.gb_chat .user_files_manage .files_contents ul li.pdf_file{
+	background: url(../images/file_type_pdf.png) no-repeat;
+	background-position: left center;
+	background-size: 20px 20px;
+}
+.gb_chat .user_files_manage .files_contents ul li.zip_file{
+	background: url(../images/file_type_zip.png) no-repeat;
+	background-position: left center;
+	background-size: 20px 20px;
+}
+.gb_chat .user_files_manage .files_contents ul li.doc_file{
+	background: url(../images/file_type_doc.png) no-repeat;
+	background-position: left center;
+	background-size: 20px 20px;
+}
+.gb_chat .user_files_manage .files_contents ul li a{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.gb_chat .user_files_manage .single_manage{
+	margin-bottom: 25px;
+}
+.gb_chat .user_files_manage .single_manage:last-child{
+	margin-bottom: 0px;
+}
+.gb_chat .user_files_manage .single_manage .manage_heading{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 5px 60px;
+    grid-template-columns: 1fr 60px;
+    grid-auto-rows: auto;
+    gap: 5px;
+	margin-bottom: 10px;
+}
+.gb_chat .user_files_manage .single_manage h6{
+	color: rgba(0,0,0, 0.5);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 0px;
+}
+.gb_chat .user_files_manage .single_manage .manage_heading .add_button button{
+	color: var(--baseColor);
+	background: var(--lightColor);
+	border-radius: 2.5px;
+	padding: 2.5px 15px;
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 14px;
+	text-transform: uppercase;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.gb_chat .user_files_manage .single_manage .manage_heading .add_button button:hover{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+
+.gb_chat .user_files_manage .single_manage .manage_field{
+	position: relative;
+}
+.gb_chat .user_files_manage .single_manage .manage_field .form-control{
+	color: var(--darkColor);
+	background: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 12px;
+	padding: 10px;
+	padding-bottom: 30px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 3.5px;
+	resize: none;
+}
+.gb_chat .user_files_manage .single_manage .manage_field button{
+	color: var(--baseColor);
+	background: var(--lightColor);
+	padding: 5px 12.5px;
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1;
+	position: absolute;
+	right: 1px;
+	bottom: 5px;
+}
+.gb_chat .user_files_manage .single_manage .manage_field button:active,
+.gb_chat .user_files_manage .single_manage .manage_field button:focus{
+	box-shadow: none;
+	outline: 0;
+}
+/* ===== CSS For "User Info" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Create Offer Common" Starts Here ===== */
+.create_offer_modal{
+	z-index: 99999999999;
+}
+.create_offer_modal [type='radio'] {
+	display: none; 
+}
+.create_offer_modal .modal-header{
+	background: var(--baseColor);
+	padding: 10px 15px;
+	border-bottom: none;
+}
+.create_offer_modal .modal-header h3{
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 22px;
+	margin-bottom: 0px;
+}
+.create_offer_modal .modal-header h3 a{
+	color: var(--darkColor);
+}
+
+.create_offer_modal .modal-footer{
+	padding: 10px 15px;
+	border-top: none;
+}
+.create_offer_modal .modal_actions ul{
+	margin-bottom: 0px;
+	text-align: right;
+}
+.create_offer_modal .modal_actions ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 10px;
+}
+.create_offer_modal .modal_actions ul li:last-child{
+	margin-right: 0px;
+}
+.create_offer_modal .modal_actions ul li a{
+	color: var(--baseColor);
+	background: var(--lightColor);
+	border: 2px solid var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 1;
+	display: inline-block;
+	border-radius: 4px;
+	padding: 10px 15px;
+	text-decoration: none;
+	min-width: 110px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.create_offer_modal .modal_actions ul li a.gbtn_bdr:hover{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+.create_offer_modal .modal_actions ul li a.continue{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+
+.create_offer_modal .go_back_button a{
+	color: var(--lightColor);
+	background: var(--orangeColor);
+	border: 2px solid var(--orangeColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 1;
+	display: inline-block;
+	border-radius: 4px;
+	padding: 10px 15px;
+	text-decoration: none;
+	min-width: 110px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+/* ===== CSS For "Create Offer Common" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Select Services" Starts Here ===== */
+.create_offer_modal .select_services ul{
+	margin-bottom: 0px;
+}
+.create_offer_modal .select_services .btn{
+	padding: 0px;
+	margin-bottom: 15px;
+	display: block;
+	text-align: left;
+}
+.create_offer_modal .select_services .btn:last-child{
+	margin-bottom: 0px;
+}
+.create_offer_modal .select_services .single_service{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 185px 15px 1fr;
+    grid-template-columns: 185px 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    gap: 15px;
+	padding: 0px;
+	border: 1px solid var(--borderColor);
+	border-radius: 4px;
+	box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+.create_offer_modal .select_services .btn.active .single_service{
+	border: 1px solid var(--baseColor);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.25);
+	position: relative;
+}
+.create_offer_modal .select_services .btn.active .single_service:after{
+	content: "\f058";
+	font-family: "Font Awesome 5 Free";
+	font-size: 24px;
+	color: var(--baseColor);
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.create_offer_modal .select_services .single_service .service_image img{
+	width: 100%;
+	height: 105px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 4px 0px 0px 4px;
+}
+.create_offer_modal .select_services .single_service .service_title{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+	padding: 10px;	
+}
+.create_offer_modal .select_services .single_service .service_title h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 18px;
+	margin-bottom: 0px;	
+}
+/* ===== CSS For "Select Services" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Payment Way" Starts Here ===== */
+.create_offer_modal .select_payment ul{
+	margin-bottom: 0px;
+}
+.create_offer_modal .select_payment .btn{
+	padding: 0px;
+	margin-bottom: 15px;
+	display: block;
+	text-align: left;
+}
+.create_offer_modal .select_payment .btn:last-child{
+	margin-bottom: 0px;
+}
+.create_offer_modal .select_payment .single_payment{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 90px 15px 1fr;
+    grid-template-columns: 90px 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+	padding: 15px;
+	border: 1px solid var(--borderColor);
+	border-radius: 4px;
+}
+.create_offer_modal .select_payment .btn.active .single_payment{
+	border: 1px solid var(--baseColor);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.25);
+	position: relative;
+}
+.create_offer_modal .select_payment .btn.active .single_payment:after{
+	content: "\f058";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 500;
+	font-size: 24px;
+	color: var(--baseColor);
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.create_offer_modal .select_payment .single_payment .icon{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;	
+}
+.create_offer_modal .select_payment .single_payment .texts{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;	
+}
+.create_offer_modal .select_payment .single_payment .texts h2{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 24px;
+	margin-bottom: 10px;	
+}
+.create_offer_modal .select_payment .single_payment .texts p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 0px;	
+}
+.create_offer_modal .top_texts p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 20px;	
+}
+.create_offer_modal .top_texts p i{
+	color: var(--baseColor);
+}
+/* ===== CSS For "Payment Way" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Creating Offer" Starts Here ===== */
+.payment_method_modal .modal-lg{
+	max-width: 960px;
+}
+.creating_offer .title h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.creating_offer .proposal_wrap{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 210px 15px 1fr;
+    grid-template-columns: 210px 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    gap: 15px;
+	margin-bottom: 25px;
+}
+.creating_offer .proposal_wrap .service_image img{
+	width: 100%;
+	height: 120px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 4px;
+}
+.creating_offer .proposal_wrap .describe_offer .form-control{
+	height: 120px;
+}
+
+/* ============================== */
+
+.creating_offer .offer_box{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 25px 1fr 25px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 25px;
+	margin-bottom: 1rem;
+	background: #F2F2F2;
+	border-radius: 4px;
+	padding: 15px;
+}
+.creating_offer .set_offer{
+    -ms-grid-columns: 1fr 25px 1fr 25px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+	gap: 25px;
+}
+.creating_offer .delivery_revisions{
+    -ms-grid-columns: 1fr 15px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+}
+.creating_offer .pricing_details{
+    -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+    grid-template-columns: repeat(4, 1fr);
+}
+.creating_offer .set_milestones{
+    -ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ============================== */
+
+.creating_offer .set_offer .single_field{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 185px;
+    grid-template-columns: 1fr 185px;
+    grid-auto-rows: auto;
+    gap: 15px;
+}
+.creating_offer .set_offer .single_field.the_qty_field{
+	max-width: 235px;
+}
+.creating_offer .delivery_revisions .single_field{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 10px 260px;
+    grid-template-columns: 1fr 260px;
+    grid-auto-rows: auto;
+    gap: 10px;
+}
+.creating_offer .delivery_revisions .single_field.delivery_field{
+	max-width: 350px;
+}
+
+
+
+
+.creating_offer .label_wrap{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+}
+.creating_offer label{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	margin-bottom: 0px;
+	display: block;
+	text-align: right;
+}
+.creating_offer label i{
+	color: var(--baseColor);
+}
+.creating_offer label span{
+	font-weight: 300;
+}
+.creating_offer .pricing_details label{
+	text-align: left;
+}
+.creating_offer .set_milestones label{
+	text-align: left;
+}
+.creating_offer .form-control{
+	color: var(--darkColor);
+	border: 1px solid #E5E5E5;
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 16px;
+	padding: 10px 15px;
+	height: inherit;
+	border-radius: 4px;
+}
+.creating_offer .pricing_details .form-control:disabled {
+	background: var(--lightColor);
+	text-align: center;
+	font-weight: 700;
+	font-size: 18px;
+	padding: 8.5px 15px;
+}
+.creating_offer .input_icon{
+	position: relative;
+}
+.creating_offer .input_icon .form-control{
+	padding-left: 40px;
+}
+.creating_offer .input_icon i{
+	color: var(--baseColor);
+	font-size: 20px;
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/* ============================== */
+
+.creating_offer .add_create_btns ul{
+	margin-bottom: 0px;
+	text-align: right;
+}
+.creating_offer .add_create_btns ul li{
+	list-style: none;
+	margin-left: 10px;
+	display: inline-block;
+}
+.creating_offer .add_create_btns ul li:first-child{
+	margin-left: 0px;
+}
+.creating_offer .add_create_btns ul li a{
+	font-weight: 500;
+	font-size: 15px;
+	border: 2px solid var(--baseColor);
+	border-radius: 4px;
+	padding: 10px 15px;
+	min-width: 110px;
+}
+
+
+/* ============================== */
+
+.create_offer_modal .modal_actions{
+	margin-left: auto;
+}
+.create_offer_modal .modal_actions ul{
+	margin-bottom: 0px;
+	font-size: 0px;
+}
+.create_offer_modal .modal_actions ul li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 10px;
+}
+.create_offer_modal .modal_actions ul li:first-child{
+	margin-left: 0px;
+}
+
+/* ============================== */
+
+.created_milestones{
+	border: 1px solid var(--borderColor);
+	border-radius: 4px;
+	margin-bottom: 15px;
+}
+.created_milestones .single_item {
+	border-bottom: 1px solid var(--borderColor);	
+}
+.created_milestones .single_item:last-child{
+	border-bottom: none;
+}
+.created_milestones .click_item a{
+	color: var(--darkColor);
+	background: #F2F2F2;
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	display: block;
+	text-decoration: none;
+	text-transform: capitalize;
+	padding: 12.5px 15px;
+	position: relative;
+	padding-right: 40px;
+}
+.created_milestones .single_item:first-child .click_item a{
+	border-radius: 4px 4px 0px 0px;
+}
+.created_milestones .single_item:last-child .click_item a{
+	border-radius: 0px 0px 4px 4px;
+}
+.created_milestones .click_item a:after{
+	content:"\f0d8";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--baseColor);
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);	
+	-ms-transform: translateY(-50%);	
+	transform: translateY(-50%);	
+}
+.created_milestones .click_item a.collapsed:after{
+	content:"\f0d7";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--baseColor);
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);	
+	-ms-transform: translateY(-50%);	
+	transform: translateY(-50%);
+}
+.created_milestones .milestone_name_price{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 0px 125px;
+    grid-template-columns: 1fr 125px;
+    grid-auto-rows: auto;
+    gap: 0px;	
+}
+.created_milestones .milestone_name_price h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 0px;	
+}
+.created_milestones .milestone_name_price .milestone_price h4{
+	font-weight: 700;
+	text-align: right;
+}
+
+/* ============================== */
+
+.created_milestone_box{
+	background: var(--lightColor);
+	padding: 15px;
+	padding-top: 5px;
+}
+.created_milestone_box .service_title h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.created_milestone_box .service_img_descrip{
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 210px 15px 1fr;
+	grid-template-columns: 210px 1fr;
+	-ms-grid-rows: auto;
+	grid-template-rows: auto;
+	gap: 15px;
+	margin-bottom: 15px;	
+}
+.created_milestone_box .service_img_descrip .service_image img{
+	width: 100%;
+	height: 120px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 4px;
+}
+.created_milestone_box .service_img_descrip .service_descrip .form-control{
+	height: 120px;
+	border-radius: 4px;
+}
+.created_milestones .offer_box{
+	margin-bottom: 0px;
+}
+/* ===== CSS For "Creating Offer" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/* ===== CSS For "Sent Offer" Starts Here ===== */
+.sent_offer .indicator_texts h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 15px;
+	margin-bottom: 5px;
+}.sent_offer .indicator_texts h4 time{
+	color: rgba(0,0,0, 0.5);
+	font-weight: 400;
+	font-size: 13px;
+}
+.sent_offer .indicator_texts h4 a{
+	color: var(--baseColor);
+}
+.sent_msg_wrap .sent_offer .indicator_texts h4{
+	text-align: right;
+}
+.gb_chat .gb_messages .msg_flow .all_msgs .sent_msg_wrap .msg_body .sent_offer p {
+	text-align: left;
+}
+
+/* ============================== */
+
+.sent_offer .offer_box_wrap{
+	border: 1px solid var(--borderColor);
+	border-radius: 4px;
+}
+.sent_offer .payment_type{
+	background: var(--baseColor);
+	padding: 7.5px 15px;
+	border-radius: 3px 3px 0px 0px;
+}
+.sent_offer .payment_type h4{
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+/* ============================== */
+
+.sent_offer .sent_offer_box{
+	padding: 10px;
+}
+.sent_offer .sent_offer_box .title h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 10px;	
+}
+
+/* ============================== */
+
+.sent_offer .sent_offer_box .service_img_descrip{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 160px 15px 1fr;
+    grid-template-columns: 160px 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+}
+.sent_offer .sent_offer_box .service_img_descrip .service_image img{
+	width: 100%;
+	height: 105px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 4px;
+}
+
+/* ============================== */
+
+.sent_offer .offer_facts{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 10px;
+	background: #F2F2F2;
+	border-radius: 4px;
+	margin-top: 10px;
+	padding: 10px;
+}
+.sent_offer .total_facts{
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
+    grid-template-columns: repeat(5, 1fr);	
+}
+.sent_offer .milestone_facts{
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr;
+    grid-template-columns: repeat(4, 1fr);	
+}
+.sent_offer .offer_facts_buttons{
+	padding: 15px 10px;
+	padding-top: 5px;
+}
+.sent_offer .offer_facts h6{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 14px;
+	margin-bottom: 2px;
+}
+.sent_offer .offer_facts .tiny_box{
+	background: var(--lightColor);
+	border: 1px solid var(--borderColor);
+	border-radius: 3.5px;
+	padding: 7.5px 10px;
+}
+.sent_offer .offer_facts .tiny_box_usd{
+	position: relative;
+	padding-left: 30px;
+}
+.sent_offer .offer_facts .tiny_box_usd i{
+	color: var(--baseColor);
+	font-size: 15px;
+	position: absolute;
+	left: 7px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.sent_offer .offer_facts .tiny_box h5{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 15px;
+	margin-bottom: 0px;	
+}
+
+/* ============================== */
+
+.sent_offer .offer_buttons{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
+	margin-top: 15px;
+}
+.sent_offer .offer_buttons .gbtn{
+	border-width: 2px;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 1;
+	border-radius: 4px;
+	padding: 10px 15px;
+	min-width: 110px;
+}
+.sent_offer .offer_buttons .left_buttons ul{
+	margin-bottom: 0px;
+}
+.sent_offer .offer_buttons .left_buttons ul li{
+	list-style: none;
+	margin-right: 10px;
+	display: inline-block;
+}
+.sent_offer .offer_buttons .left_buttons ul li:last-child{
+	margin-right: 0px;
+}
+
+.sent_offer .offer_buttons .right_buttons ul{
+	text-align: right;
+	margin-bottom: 0px;
+}
+.sent_offer .offer_buttons .right_buttons ul li{
+	list-style: none;
+	margin-right: 10px;
+	display: inline-block;
+}
+.sent_offer .offer_buttons .right_buttons ul li:last-child{
+	margin-right: 0px;
+}
+
+/* ============================== */
+
+.all_milestones .single_item {
+	border-bottom:1px solid #DADCE0;	
+}
+.all_milestones .single_item:first-child{
+	border-top:1px solid #DADCE0;
+}
+.all_milestones .single_item .click_item a{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 20px;
+	display:block;
+	text-decoration:none;
+	text-transform: capitalize;
+	padding:10px 15px;
+	position:relative;
+	padding-right: 40px;
+}
+.all_milestones .single_item .click_item a:after{
+	content:"\f0d8";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--baseColor);
+	position:absolute;
+	right: 15px;
+	top: 50%;	
+	-webkit-transform: translateY(-50%);	
+	-ms-transform: translateY(-50%);	
+	transform: translateY(-50%);	
+}
+.all_milestones .single_item .click_item a.collapsed:after{
+	content:"\f0d7";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--baseColor);
+	position:absolute;
+	right: 15px;
+	top: 50%;	
+	-webkit-transform: translateY(-50%);	
+	-ms-transform: translateY(-50%);	
+	transform: translateY(-50%);
+}
+.all_milestones .contents{
+	border-top: 1px dashed #666666;
+}
+.all_milestones .single_item .milestone_name_price{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 10px 90px;
+    grid-template-columns: 1fr 90px;
+    grid-auto-rows: auto;
+    gap: 10px;	
+}
+.all_milestones .single_item .milestone_name_price h4{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 0px;	
+}
+.all_milestones .single_item .milestone_name_price .milestone_price h4{
+	text-align: right;
+	font-weight: 700;
+}
+/* ===== CSS For "Sent Offer" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+
+/*	Extra small devices (portrait phones, less than 576px)	*/
+@media (max-width: 575.98px) {
+	
+	.gb_chat_wrap{
+		padding: 5px;
+	}
+
+	.gb_chat {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+	}
+	.gb_chat .gb_info{
+		display: none;
+	}
+	.gb_chat .gb_messages{
+		display: none;
+	}
+	.gb_chat_wrap.mobile_chat_layout .gb_messages{
+		display: block;
+	}
+	.gb_chat_wrap.mobile_chat_layout .gb_list{
+		display: none;
+	}
+	.gb_chat_wrap.mobile_chat_layout .gb_top_search_wrap{
+		-ms-grid-columns: 40px  1fr 10px 65px;
+		grid-template-columns:40px 1fr 65px;
+		gap: 10px;
+	}
+	.gb_top_search_wrap .back_to_list{
+		display: none;
+	}
+	.gb_chat_wrap.mobile_chat_layout .gb_top_search_wrap .back_to_list{
+		display: inline-block;
+	}
+	.gb_top_search_wrap .back_to_list a{
+		display: block;
+	}
+
+	.gb_chat .contact_list {
+		height: calc(100vh - 184px);
+	}
+	.gb_chat .gb_messages .msg_flow {
+		height: calc(100vh - 314px);
+	}
+
+	
+
+	.gb_chat .conversation_footer .sending_actions {
+		-ms-grid-columns: 1fr 5px 80px;
+		grid-template-columns: 1fr 80px;
+		gap: 5px;
+	}
+	.gb_chat .conversation_footer .sending_actions .left_btns .attachment .attach_texts{
+		display: none;
+	}
+	.gb_chat .conversation_footer .sending_actions .left_btns .attachment{
+		padding: 5.5px 10px;
+	}
+	.gb_chat .conversation_footer .sending_actions .send_btn button{
+		font-size: 12px;
+		padding: 9.5px 20px;
+	}
+	.gb_chat .conversation_footer .sending_actions .left_btns ul li {
+		margin-right: 5px;
+	}
+	.gb_chat .conversation_footer .sending_actions .left_btns ul li a{
+		font-size: 12px;
+		padding: 9.5px 10px;
+	}
+	.gb_chat .conversation_footer .sending_actions .left_btns ul li .quick_msg_btn {
+		padding: 4.75px 10px;
+	}
+	.gb_chat .conversation_footer .sending_actions ul li .quick_msg_btn img {
+		max-width: 23px;
+	}
+
+	.order_history_modal .member_info {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+	}
+	.order_history_modal td,
+	.order_history_modal th {
+		font-size: 10px;
+		padding: 5px;
+		min-width: 80px;
+	}
+	.order_history_modal td{
+		font-size: 12px;
+	}
+	.order_history_modal .member_info .member_texts .member_name a{
+		font-size: 12px;
+	}
+	.order_history_modal .member_info .member_texts .member_address h6{
+		font-size: 10px;
+	}
+	.order_history_modal td .gbadge {
+		font-size: 10px;
+	}
+
+	.gb_chat .quick_sms_down {
+		width: calc(100vw - 47px);
+		left: -140px !important;
+	}
+
+	.gb_chat .msg_header_search .search_form .search_results_wrap {
+		width: calc(100vw - 14px);
+		left: -44px;
+	}
+
+	.gb_chat .conversation_footer .out_payment_warning p{
+		font-size: 10px;
+		margin-bottom: 0px;
+	}
+
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+
+	.create_offer_modal{
+		padding: 0px;
+	}
+	.create_offer_modal .modal-lg{
+		max-width: 100%;
+	}
+
+	.create_offer_modal .modal-header h3{
+		font-size: 18px;
+	}
+
+	.create_offer_modal .select_services .single_service {
+		-ms-grid-columns: 105px 5px 1fr;
+		grid-template-columns: 105px 1fr;
+		gap: 5px;
+	}
+	.create_offer_modal .select_services .single_service .service_image img {
+		height: 70px;
+	}
+	.create_offer_modal .select_services .single_service .service_title {
+		padding: 5px;
+	}
+	.create_offer_modal .select_services .single_service .service_title h4{
+		font-size: 15px;
+	}
+
+	.create_offer_modal .top_texts p{
+		font-size: 14px;
+	}
+	.create_offer_modal .select_payment .single_payment {
+		-ms-grid-columns: 60px 10px 1fr;
+		grid-template-columns: 60px 1fr;
+		gap: 10px;
+		padding: 10px;
+	}
+	.create_offer_modal .select_payment .single_payment .texts h2{
+		font-size: 16px;
+	}
+	.create_offer_modal .select_payment .single_payment .texts p{
+		font-size: 12px;
+	}
+	.creating_offer .set_milestones {
+		-ms-grid-columns: 1fr 15px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+	.creating_offer .delivery_revisions .single_field.delivery_field {
+		max-width: 100%;
+	}
+	.creating_offer .delivery_revisions .single_field {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 5px;
+	}
+	.creating_offer .delivery_revisions label{
+		text-align: left;
+	}
+
+	.creating_offer .pricing_details {
+		-ms-grid-columns: 1fr 15px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+
+	.create_offer_modal .modal_actions ul li{
+		margin-left: 0px;
+	}
+	.create_offer_modal .modal_actions ul li a{
+		font-size: 14px;
+		min-width: 90px;
+	}
+	.create_offer_modal .go_back_button a{
+		font-size: 14px;
+		min-width: 90px;
+	}
+
+	.creating_offer .proposal_wrap {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 5px;
+	}
+
+	.creating_offer .add_create_btns ul li a {
+		font-size: 14px;
+		min-width: 90px;
+	}
+
+	.created_milestone_box .service_img_descrip {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 5px;
+	}
+	.creating_offer label{
+		font-size: 13px;
+	}
+	.creating_offer .form-control {
+		font-size: 14px;
+		padding: 7.5px 10px;
+	}
+	.created_milestones .milestone_name_price h4{
+		font-size: 15px;
+	}
+
+	.creating_offer .set_offer {
+		-ms-grid-columns: 1fr 10px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	}
+	.creating_offer .set_offer .single_field {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 2px;
+	}
+	.creating_offer .set_offer .single_field:last-child{
+		grid-column: 1/-1;
+	}
+	.creating_offer .set_offer .single_field label{
+		text-align: left;
+	}
+
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+
+	.sent_offer .total_facts {
+		-ms-grid-columns: 1fr 10px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.sent_offer .total_facts .single_fact:last-child{
+		grid-column: 1/-1;
+	}
+	.sent_offer .sent_offer_box .service_img_descrip {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 5px;
+	}
+	.sent_offer .milestone_facts {
+		-ms-grid-columns: 1fr 10px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.all_milestones .single_item .milestone_name_price {
+		-ms-grid-columns: 1fr 10px 80px;
+		grid-template-columns: 1fr 80px;
+	}
+	.all_milestones .single_item .milestone_name_price h4{
+		font-size: 14px;
+	}
+	.sent_offer .payment_type h4{
+		font-size: 15px;
+	}
+	.sent_offer .indicator_texts h4{
+		font-size: 13px;
+	}
+	.sent_offer .indicator_texts h4 time {
+		font-size: 12px;
+	}
+	.gb_chat .gb_messages .msg_flow .msg_time_actions .msg_time time{
+		font-size: 12px;
+	}
+	.sent_offer .sent_offer_box .title h4{
+		font-size: 14px;
+	}
+	.gb_chat .gb_messages .msg_flow .all_msgs .msg_wrap .msg_body p{
+		font-size: 12px;
+	}
+	.sent_offer .offer_facts .tiny_box h5{
+		font-size: 12px;
+	}
+	.sent_offer .offer_facts h6{
+		font-size: 12px;
+	}
+
+	.sent_offer .offer_buttons {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 10px;
+	}
+	.sent_offer .offer_buttons .gbtn{
+		font-size: 13px;
+		min-width: 100%;
+	}
+	.sent_offer .offer_buttons .left_buttons ul li{
+		display: block;
+	}
+	.sent_offer .offer_buttons .right_buttons ul li{
+		display: block;
+		margin-right: 0px;
+		margin-bottom: 10px;
+	}
+	.sent_offer .offer_buttons .right_buttons ul li:last-child{
+		margin-bottom: 0px;
+	}
+
+	.gb_chat .conversation_footer_members .quick_sms_down {
+		left: -36.733px !important;
+	}
+	
+}
+
+/*	Small devices (landscape phones, 576px and up)	*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+	
+	.gb_chat {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+	}
+	.gb_chat .gb_info{
+		display: none;
+	}
+	.gb_chat .gb_messages{
+		display: none;
+	}
+	.gb_chat_wrap.mobile_chat_layout .gb_messages{
+		display: block;
+	}
+	.gb_chat_wrap.mobile_chat_layout .gb_list{
+		display: none;
+	}
+	.gb_chat_wrap.mobile_chat_layout .gb_top_search_wrap{
+		-ms-grid-columns: 40px  1fr 10px 65px;
+		grid-template-columns:40px 1fr 65px;
+		gap: 10px;
+	}
+	.gb_top_search_wrap .back_to_list{
+		display: none;
+	}
+	.gb_chat_wrap.mobile_chat_layout .gb_top_search_wrap .back_to_list{
+		display: inline-block;
+	}
+	.gb_top_search_wrap .back_to_list a{
+		display: block;
+	}
+
+	.order_history_modal{
+		padding: 0px 15px;
+	}
+	.gb_chat .quick_sms_down {
+		width: calc(100vw - 65px);
+	}
+
+	.order_history_modal .member_info {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+	}
+
+	.gb_chat .msg_header_search .search_form .search_results_wrap {
+		width: calc(100vw - 213px);
+	}
+
+	.gb_chat .conversation_footer .out_payment_warning p{
+		font-size: 10px;
+	}
+
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+
+	.create_offer_modal{
+		padding: 0px 15px;
+	}
+	.create_offer_modal .modal-lg{
+		max-width: 100%;
+	}
+
+	.create_offer_modal .modal-header h3{
+		font-size: 18px;
+	}
+	.create_offer_modal .top_texts p{
+		font-size: 14px;
+	}
+	.create_offer_modal .select_payment .single_payment .texts h2{
+		font-size: 18px;
+	}
+	.create_offer_modal .select_payment .single_payment .texts p{
+		font-size: 13px;
+	}
+	.creating_offer .set_milestones {
+		-ms-grid-columns: 1fr 15px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+	.creating_offer .delivery_revisions .single_field.delivery_field {
+		max-width: 100%;
+	}
+	.creating_offer .delivery_revisions .single_field {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 5px;
+	}
+	.creating_offer .delivery_revisions label{
+		text-align: left;
+	}
+
+	.creating_offer .pricing_details {
+		-ms-grid-columns: 1fr 15px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+
+	.creating_offer .set_offer {
+		-ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+	}
+	.creating_offer .set_offer .single_field {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 2px;
+	}
+	.creating_offer .set_offer .single_field label{
+		text-align: left;
+	}
+
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+
+	.sent_offer .total_facts {
+		-ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.sent_offer .total_facts .single_fact:last-child{
+		grid-column: 2/-1;
+	}
+	.sent_offer .sent_offer_box .service_img_descrip {
+		-ms-grid-columns: 125px 10px 1fr;
+		grid-template-columns: 125px 1fr;
+		gap: 10px;
+	}
+	.sent_offer .milestone_facts {
+		-ms-grid-columns: 1fr 10px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.sent_offer .offer_buttons {
+		-ms-grid-columns: 125px 1fr;
+		grid-template-columns: 125px 1fr;
+		gap: 10px;
+	}
+	.sent_offer .offer_buttons .gbtn{
+		font-size: 13px;
+		padding: 10px;
+	}
+	
+}
+
+/*	Medium devices (tablets, 768px and up)	*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	
+	.gb_chat {
+		-ms-grid-columns: 225px 0px 1fr;
+		grid-template-columns: 225px 1fr;
+	}
+	.gb_chat .gb_info{
+		display: none;
+	}
+	.gb_chat .contact_list ul li a {
+		-ms-grid-columns: 40px 5px 1fr;
+		grid-template-columns: 40px 1fr;
+		grid-auto-rows: auto;
+		gap: 5px;
+		padding: 5px;
+		padding-left: 10px;
+	}
+	.gb_chat .contact_list .profile_pic img {
+		width: 40px;
+		height: 40px;
+	}
+	.gb_chat .gb_list .nav .nav-link{
+		font-size: 14px;
+		padding: 5px;
+		line-height: 40px;
+	}
+	.gb_chat .gb_list .nav .nav-link:nth-child(1){
+		width: 65%;
+	}
+	.gb_chat .gb_list .nav .nav-link:nth-child(2){
+		width: 35%;
+	}
+
+	.order_history_modal{
+		padding: 0px 15px;
+	}
+	.gb_chat .quick_sms_down {
+		width: calc(100vw - 290px);
+	}
+
+	.gb_chat .msg_header_search .search_form .search_results_wrap {
+		width: calc(100vw - 438px);
+	}
+
+	.gb_chat .conversation_footer .out_payment_warning p{
+		font-size: 10px;
+	}
+
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+
+	.create_offer_modal{
+		padding: 0px 15px;
+	}
+	.create_offer_modal .modal-lg{
+		max-width: 100%;
+	}
+	.creating_offer .set_milestones {
+		-ms-grid-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 15px;
+	}
+	.creating_offer .delivery_revisions .single_field.delivery_field {
+		max-width: 100%;
+	}
+	.creating_offer .delivery_revisions .single_field {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 5px;
+	}
+	.creating_offer .delivery_revisions label{
+		text-align: left;
+	}
+
+	.creating_offer .set_offer .single_field {
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 2px;
+	}
+	.creating_offer .set_offer .single_field label{
+		text-align: left;
+	}
+
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+
+	.sent_offer .total_facts {
+		-ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.sent_offer .total_facts .single_fact:last-child{
+		grid-column: 2/-1;
+	}
+	.sent_offer .sent_offer_box .service_img_descrip {
+		-ms-grid-columns: 125px 10px 1fr;
+		grid-template-columns: 125px 1fr;
+		gap: 10px;
+	}
+	.sent_offer .milestone_facts {
+		-ms-grid-columns: 1fr 10px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.sent_offer .offer_buttons {
+		-ms-grid-columns: 125px 1fr;
+		grid-template-columns: 125px 1fr;
+		gap: 10px;
+	}
+	.sent_offer .offer_buttons .gbtn{
+		font-size: 13px;
+		padding: 10px;
+	}
+	
+}
+
+/*	Large devices (desktops, 992px and up)	*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	
+	.gb_chat {
+		-ms-grid-columns: 225px 0px 1fr 0px 200px;
+		grid-template-columns: 225px 1fr 200px;
+	}
+	.gb_chat .contact_list ul li a {
+		-ms-grid-columns: 40px 5px 1fr;
+		grid-template-columns: 40px 1fr;
+		grid-auto-rows: auto;
+		gap: 5px;
+		padding: 5px;
+		padding-left: 10px;
+	}
+	.gb_chat .contact_list .profile_pic img {
+		width: 40px;
+		height: 40px;
+	}
+	.gb_chat .gb_list .nav .nav-link{
+		font-size: 14px;
+		padding: 5px;
+		line-height: 40px;
+	}
+	.gb_chat .gb_list .nav .nav-link:nth-child(1){
+		width: 65%;
+	}
+	.gb_chat .gb_list .nav .nav-link:nth-child(2){
+		width: 35%;
+	}
+
+	.gb_chat .msg_header_search .search_form .search_results_wrap {
+		width: calc(100vw - 635px);
+	}
+
+	.gb_chat .quick_sms_down {
+		width: calc(100vw - 490px);
+	}
+
+	.gb_chat .gb_info .profile_info .cp_address_lang .single_part {
+		margin-bottom: 10px;
+	}
+	.gb_chat .gb_info .profile_info .cp_address_lang .single_part p{
+		font-size: 11px;
+	}
+	.gb_chat .user_files_manage_members .tab-content {
+		height: calc(100vh - 453.95px);
+		overflow-y: auto;
+	}
+
+	/* ============================== */
+	/* ============================== */
+	/* ============================== */
+
+	.sent_offer .total_facts {
+		-ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.sent_offer .total_facts .single_fact:last-child{
+		grid-column: 2/-1;
+	}
+	.sent_offer .sent_offer_box .service_img_descrip {
+		-ms-grid-columns: 125px 10px 1fr;
+		grid-template-columns: 125px 1fr;
+		gap: 10px;
+	}
+	.sent_offer .milestone_facts {
+		-ms-grid-columns: 1fr 10px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.sent_offer .offer_buttons {
+		-ms-grid-columns: 130px 1fr;
+		grid-template-columns: 130px 1fr;
+		gap: 10px;
+	}
+	.sent_offer .offer_buttons .gbtn{
+		font-size: 14px;
+	}
+	
+}
+
+
+/* ===== CSS For "" Starts Here ===== */
+/* ===== CSS For "" Ends Here ===== */
+
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+

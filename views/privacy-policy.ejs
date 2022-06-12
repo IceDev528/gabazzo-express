@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>		
+		<!--Metatags-->
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+		<meta http-equiv="X-UA-Compatble" content="ie=edge"/>		
+		<!--Website Title-->
+		<title>Privacy Policy</title>
+		<!--Calling Favicon-->
+		<link rel="icon" href="images/favicon.png" />
+		<link rel="shortcut icon" href="images/favicon.ico" />		
+		<!--FontAwesome CDN-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+		<!--Normalize v8.0.1 CSS FILE-->
+		<link rel="stylesheet" href="css/normalize.css"/>
+		<!--Bootstrap v4.6.0 CSS FILE-->
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<!--Gabazzo Common CSS File-->
+		<link rel="stylesheet" href="css/gabazzo.common.css" />		
+		<!--Fonts Are Loads From Here-->
+		<link rel="stylesheet" href="fonts/fonts.css"/>
+		<!--Main Stylesheet-->
+		<link rel="stylesheet" href="css/updatedStyles.css"/>
+		<!--Stylesheet For The Responsiveness-->
+		<link rel="stylesheet" href="css/responsive.css"/>
+		<!--Stylesheet For The Night Mode-->
+		<link rel="stylesheet" href="css/night.mode.css"/>	
+	</head>
+	
+	<body>
+
+       <!-- Google Tag Manager (noscript) -->
+	   <noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T23WPNV"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+
+	 <!--===== Markup For "Header" Starts From Here =====-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <div class="logo_mode_switching">
+        <ul>
+          <li>
+            <a href="/" class="navbar-brand"
+              ><img
+                src="../images/layout/gabazzo_logo_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+          </li>
+          <li>
+            <a class="mode_icon" href="javascript:void(0)">
+              <img
+                src="../images/layout/mode_icon_night.png"
+                class="img-fluid night_icon"
+                title="Night Mode"
+                data-toggle="tooltip"
+                alt=""
+              />
+              <img src="../images/layout/mode_icon_day.png" class="img-fluid day_icon" title="Day Mode" data-toggle="tooltip" alt=""/>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="members_navbar">
+        <div class="mobile_search_btn_menubar">
+          <div class="cp_search_btn dropdown">
+            <a
+              href="javascript:void(0)"
+              data-target="#companySearchBar"
+              data-toggle="dropdown"
+              class="nav-link"
+              ><img
+                src="../images/layout/search_icon_white.png"
+                class="img-fluid"
+                alt=""
+            /></a>
+
+            <div
+              class="dropdown-menu company_search_down"
+              aria-labelledby="companySearchBar"
+            >
+              <form action="">
+                <div class="company_search_field">
+                  <input
+                    id="myInput"
+                    type="search"
+                    placeholder="Search..."
+                    class="form-control"
+                  />
+                  <button class="btn" type="submit">
+                    <img
+                      src="../images/layout/search_icon_black.png"
+                      class="black_icon"
+                      alt=""
+                    />
+                    <img
+                      src="../images/layout/search_icon_white.png"
+                      class="white_icon"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            data-target="#responsive-bar"
+            data-toggle="collapse"
+          >
+            <div class="humbergur_icon">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </button>
+
+          <% if(currentUser) { %>
+          <a
+            href="javascript:void(0)"
+            class="nav-link profile_pic_link membersProfilePic"
+          >
+            <div class="profile_pic">
+              <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) {
+              %>
+              <img src="<%= currentUser.logo %>" class="img-fluid" alt="" />
+              <% } else {%>
+              <img src="../images/man.png" class="img-fluid" alt="" />
+              <% }%> <% } else { %> <% if(currentUser?.profilePicture) {%>
+              <img
+                src="<%= currentUser.profilePicture %>"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <%} else {%>
+              <img
+                src="../images/man.png"
+                class="img-fluid"
+                alt="<%= currentUser.username %>"
+              />
+              <% }%> <% } %>
+              <span class="activity_status online_status"></span>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="responsive-bar">
+        <div class="menus ml-auto">
+          <ul class="navbar-nav services_menu">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Construction Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=roofing services"
+                      class="dropdown-item"
+                      >Roofing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=landscaping services"
+                      class="dropdown-item"
+                      >Landscaping</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=junk removal"
+                      class="dropdown-item"
+                      >Junk Removal</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=masonry services"
+                      class="dropdown-item"
+                      >Masonry</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=plumbing services"
+                      class="dropdown-item"
+                      >Plumbing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=hvac services"
+                      class="dropdown-item"
+                      >HVAC</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=pest control"
+                      class="dropdown-item"
+                      >Pest Control</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=painting services"
+                      class="dropdown-item"
+                      >Painting</a
+                    >
+                  </li>
+                </ul>
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=flooring services"
+                      class="dropdown-item"
+                      >Flooring</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=electrical services"
+                      class="dropdown-item"
+                      >Electrical</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=moving services"
+                      class="dropdown-item"
+                      >Moving</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=appliance services"
+                      class="dropdown-item"
+                      >Appliance</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=locksmith services"
+                      class="dropdown-item"
+                      >Locksmith</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Vehicle Services</a
+              >
+              <div class="dropdown-menu">
+                <ul class="dropdown_column">
+                  <li>
+                    <a
+                      href="/search?category=towing services"
+                      class="dropdown-item"
+                      >Towing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/search?category=vehicle repair"
+                      class="dropdown-item"
+                      >Vehicle Repair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav access_menu">
+            <li
+              class="nav-item cp_search_btn cp_search_btn_desktop dropdown"
+            >
+              <a
+                href="javascript:void(0)"
+                data-target="#companySearchBar"
+                data-toggle="dropdown"
+                class="nav-link"
+                ><img
+                  src="../images/layout/search_icon_white.png"
+                  class="img-fluid"
+                  alt=""
+              /></a>
+              <div
+                class="dropdown-menu company_search_down"
+                aria-labelledby="companySearchBar"
+              >
+                <form action="">
+                  <div class="company_search_field">
+                    <input
+                      id="myInput"
+                      type="search"
+                      placeholder="Search..."
+                      class="form-control"
+                    />
+                    <button class="btn" type="submit">
+                      <img
+                        src="../images/layout/search_icon_black.png"
+                        class="black_icon"
+                        alt=""
+                      />
+                      <img
+                        src="../images/layout/search_icon_white.png"
+                        class="white_icon"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <% if(currentUser) { %>
+            <li class="nav-item desktop_only_link">
+              <a
+                href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+                class="nav-link"
+                >Messages</a
+              >
+            </li>
+            <% if(currentUser && !currentUser.isCompany) { %>
+            <li class="nav-item desktop_only_link">
+              <a href="/saved-list" class="nav-link">Saved List</a>
+            </li>
+            <% } %>
+            <li class="nav-item profile_pic_desktop">
+              <a
+                href="javascript:void(0)"
+                class="nav-link profile_pic_link membersProfilePic"
+              >
+                <div class="profile_pic">
+                  <% if (currentUser?.isCompany) { %> <%
+                  if(currentUser.logo) { %>
+                  <img
+                    src="<%= currentUser.logo %>"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <% } else {%>
+                  <img src="../images/man.png" class="img-fluid" alt="" />
+                  <% }%> <% } else { %> <% if(currentUser.profilePicture)
+                  {%>
+                  <img
+                    src="<%= currentUser.profilePicture %>"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <%} else {%>
+                  <img
+                    src="../images/man.png"
+                    class="img-fluid"
+                    alt="<%= currentUser.username %>"
+                  />
+                  <% }%> <% } %>
+                  <span class="activity_status online_status"></span>
+                </div>
+              </a>
+            </li>
+            <% } else {%>
+            <li class="nav-item">
+              <a href="/login" class="nav-link sign_in">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a href="/sign-up" class="nav-link gbtn gbtn_white_bdr"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/become-a-seller-overview" class="nav-link gbtn"
+                >Become a Seller</a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--===== Markup For "Header" Ends Here =====-->
+<% if(currentUser) { %>
+<!--===== Markup For "Members Profile Link" Starts From Here =====-->
+<div class="membersProfileLinks">
+  <div class="dismissMembersProfileLinks">
+    <i class="fa fa-times"></i>
+  </div>
+  <div class="members_profile_pic">
+    <% if (currentUser?.isCompany) { %> <% if(currentUser.logo) { %>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.logo %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <% } else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile Picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.companyName %></h6>
+    <% } else { %> <% if(currentUser?.profilePicture) {%>
+    <a href="javascript:void(0)"
+      ><img
+        src="<%= currentUser.profilePicture %>"
+        class="img-fluid"
+        alt="<%= currentUser.username %>"
+    /></a>
+    <%} else {%>
+    <a href="javascript:void(0)"
+      ><img src="../images/man.png" class="img-fluid" alt="profile picture"
+    /></a>
+    <% }%>
+    <h6><%= currentUser.firstName + " " + currentUser.lastName %></h6>
+    <% } %>
+  </div>
+  <div class="profile_links">
+    <% if (currentUser.isCompany) { %>
+    <ul>
+      <li>
+        <i class="fas fa-user"></i>
+        <a href="/company-dashboard">View Dashboard</a>
+      </li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } else { %>
+    <ul>
+      <li><i class="fas fa-user"></i><a href="/member-profile/<%= currentUser._id %>">View Profile</a></li>
+      <li class="mobile_only">
+        <i class="fas fa-envelope"></i>
+        <a href="/inbox/<%= lastMessage?.messages?.receiver.id %>"
+          >Messages</a
+        >
+      </li>
+      <% if(currentUser && !currentUser.isCompany) { %>
+      <li class="mobile_only"><i class="fas fa-list-alt"></i> <a href="/saved-list">Saved List</a></li>
+      <% } %>
+      <li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+      <li><i class="fas fa-cog"></i><a href="/company-settings/account">Settings</a></li>
+      <li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
+    </ul>
+    <% } %>
+  </div>
+</div>
+<!--===== Markup For "Members Profile Link" Ends Here =====-->
+<% } %>
+
+		<!--===== Markup For "Legal Pages" Starts From Here =====-->
+		<section class="legal_pages_wrap">
+			<div class="container">
+				<div class="legal_page_title">
+					<h3>Privacy Policy</h3>
+					<h6>Last Updated: <span>November 17, 2021</span></h6>
+				</div>
+
+				<div class="single_legal_texts">
+					<p>Please read this Privacy Policy (the “Policy”) carefully to understand how we use personal information. Gabazzo LLC and its affiliates (collectively “Gabazzo”, “We,” “Our,”, or “Us”) value your privacy. In this Privacy Policy (“Policy”), we describe the information we collect, how we use it, and when and with whom we may share it. This Policy applies to all sites, mobile applications, including <a href="https://www.gabazzo.com">www.gabazzo.com</a>. and other online services (collectively, “Platform”) we made available by Gabazzo, here, this Policy applies only to information collected on or through the Platform, and it does not apply to information collected or obtained by through any other means (including, without limitation, information collected offline, in person, over the telephone and/or by mail, or from third parties outside the Platform). Undefined capitalized terms used here shall have the definitions set forth in our <a href="/terms-and-conditions">Terms of Use</a>. By accessing or using the Platform, you agree to this Policy. This Policy may change from time to time; any changes we make to this Policy will be posted on the Site, we will also take any other steps,to the extent required by applicable law, including notifying you and.or seeking your explicit consent to material changes. Changes to this Policy are effective as of the state “Last Updated” date. Other than where we have sought such explicit consent from you, your continued use of the Site after we make changes will constitute acceptance ifm and agreement to be bound by those changes so please check the Policy periodically for any updates or changes. . IF YOU DO NOT AGREE TO THIS POLICY, PLEASE DO NOT ACCESS OR USE THE PLATFORM.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Key Terms & Definitions</h4>
+					<p>“<span class="bold_texts">Collective</span>” Content means User Content and Gabazzo Content Together.</p>
+					<p>“<span class="bold_texts">Content</span>” means text, graphics, images, software, video, other Document Files, information or other materials, including but not limited to profile information, Contractor Services, message threads, reviews, search engine results, map services, and other information or materials available on or through Gabazzo.</p>
+					<p>“<span class="bold_texts">Customer Member</span>” means a Member who is registered to receive messages from contractors, request quotes from contractors, or otherwise uses the platform to receive, review, or facilitate the receipt of Contractors.</p>
+					<p>“<span class="bold_texts">Member</span>” means a person or entity who completes Gabazzo;s registration process or a person or entity who submits or receives a request through Gabazzo, including buy not limited to Contractors and Customer Members.</p>
+					<p>“<span class="bold_texts">Platform</span>” means all Gabazzo Websites, mobile or other applications, software, process and any other services provided by or through Gabazzo.</p>
+					<p>“<span class="bold_texts">Contractor Services</span>” means the services listed, offered by Contactors, or sought, scheduled or received by the Customer Members, through the platform.</p>
+					<p>“<span class="bold_texts">Contractor</span>” means a Member who is registered to send quotes for Contractor Services, sends quotes for Contractor Services, or otherwise uses the platform to offer services, provide, message, share files, or facilitate the provision of Contractor Services.</p>
+					<p>“<span class="bold_texts">Gabazzo Content</span>” means all Content Gabazzo makes/offers available on or through the Platform, including any Content Licensed from a third party, but excluding User Content.</p>
+					<p>“<span class="bold_texts">User Content</span>” means all Content submitted, posted, uploaded, published, or transmitted on or through the Platform by any Member or other user of the Platform. Including but not limited to photographs, profile information, descriptions, postings, reviews, and messages made through the Platform, but excluding Gabazzo Content.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>INFORMATION GABAZZO COLLECTS</h4>
+					<p>When you Register on Gabazzo, use it, complete forms, or use it as a collaborator, and/or register to our programs, we ask you to provide certain personal information, including a valid email address, Facebook or Google account login details and username, we will also ask you to provide or otherwise collect additional information that you provide us, such as:</p>
+					<p><span class="bold_texts">Types of Information You Directly provide Us with (We may collect information from you during your use or access of the Platform):</span></p>
+					<div class="checked_items">
+						<ul>
+							<li>When you Register for an Account;</li>
+							<li>When you Enroll for Electronic Newsletters;</li>
+							<li>When you Request a Quote or Other Information;</li>
+							<li>When you Submit or Respond to a Quote;</li>
+							<li>When you fill out any forms;</li>
+							<li>When you Transmit User Content;</li>
+							<li>When you download or use one of our Mobile Applications; or</li>
+							<li>When you otherwise communicate with us or other users through the Platform.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>This list is illustrative, not exhaustive; the Privacy Policy applies to all use of the Platform.</h4>
+					<p>All information you provide directly to us may concern you or others and may include, but is not limited to: (i) Name; (ii) Zip Code; (iii) Email Address; (iv) Home or Business Telephone Number; (v) Home, Business or other Physical Mailing Address; (vi) Demographic Information (e.g., gender, age, political preference, education, race, or ethnic origin, and other information; (vii) Date of Birth; (viii) Insurance Information; (ix) Photographs; (x) Information about your project, home, request or need; (xi) Video or Audio Files; (xii) Identity Verification Information; (xiii) Information about other Social Networks linked Accounts; (xiv) Details about your listed ports, Areas of Expertise, Payments Accepted, Languages, Business Hours, Service Areas, Important Facts [State License Trade, License Number, and Insurance Type] (xv) Any other content you include/upload in Gabazzo messaging system with other users through the Platform or communication with us. It may also include information specific to services you are requesting or offering through the Platform, such as a Business name, service description, qualifications and credentials. You aren’t required to provide us with such information, but certain features of the Platform may not be accessible or available to use, absent the provision of the requested information.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Information that is passively or automatically collected</h4>
+					<p>Device/Usage Information. We and our Third-party service providers, which include Ad networks & analytics providers including Google Analytics, may use cookies, web beacons, and other tracking technologies to collect information about the computers, mobile, or other devices when you access the Platform. As described further below, we may collect and analyze information including but not limited to (i) Browser Type; (ii) ISP or operating system; (iii) Domain Name; (iv) Access time; (v) referring or exit pages; (vi) page views; (vii) IP Address; (viii) Unique Device Identifiers (e.g. IDFA or Android ID); and (ix) the type of device that you may use. We may also track and record when and how frequently you access or use the Platform, or how you browse the Platform. We use this information (including the information collected by our third party service providers) for Platform view of analytics (Including to determine which portions of the Platform are used most frequently and what our users like or don’t like), to assist in determining relevant advertising (both on and off the Platform), to evaluate the success of our advertising campaigns, and as otherwise described in this Policy.</p>
+					<p>Location Information. When you use the Platform, we may collect general location information (such as IP Address). To deliver customized content and advertising, we may share your local information with our agents, contractors, or advertisers. Contractors Location will be displayed on the Search Engine, Contractor Index Card, or company profile. Customer Members will have only City and State displayed on their Member Profile Page for contractors to view.</p>
+					<p>Cookies and Other Electronic Technologies. We and our Third-party service providers may use cookies and other technologies that help us better understand user behavior, personalize preferences, perform research and analytics, and improve the Platform. These technologies may allow us to tailor the Platform at your needs, save your password in password-protected areas, track the pages you may visit, help us manage content, and compile statistics about Platform usage. We also use these technologies to deliver advertisements through the Platform that may have an interest in you. We or our third party service providers also may use certain technologies in emails to our customers to help us track the email response rates, identify when our emails are viewed, and track whether our emails are forwarded.</p>
+					<p>We may also use local shared objects (known as “Flash Cookies”) to assist in delivering special content, such as Video clips or other types of moving content. Flash cookies are stored on your device, but they are not managed through your web browser. To learn more about how to manage Flash Cookies, you can visit Adobe webpage and make changes to your Global Privacy Settings Panel.</p>
+					<p>You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but your web browser may allow you to change these settings to decline cookies if you prefer. If you disable cookies, you may be prevented from taking full advantage of the Platform, because it may not function properly. Flash cookies operate differently than browser cookies, and cookie management tools available in a web browser may not be possible to to affect flash cookies. As we adopt new technologies, we may also gather additional information through other methods.</p>
+					<p>Additionally, in order for us to improve your online experience at Gabazzo, we have implemented impression reporting. While you view our ads, we gather user Global Unique Identifier (GUI), HTTP request data like, user agent, IP, host, URL, country/continent from which a request is made, browser info, device/operating system Version. You may learn more about <a href="/cookie-policy">Cookie Policy</a> at the webpage.</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>Information from Affiliates, Social Networking Sites, and other Non-affiliated Third Parties</h4>
+					<p>We may collect information about you or others through Gabazzo affiliates or through non-affiliated third parties. For example, you may be able to access the Platform through a social networking account, such as Facebook or Google. If you access the Platform through your Facebook or Google account, you may allow us to have access to certain information in your Social media account profile. This may include your name, profile picture, gender, networks, user IDs, list of friends, locations, date of birth, email address, photos, videos, people you may follow and/or who follow you, and/or your posts or “likes”. Social networking sites, such as Facebook and Google, have their own policies for handling your information. For a description of how these sites may use and disclose your information, including any information YOU make PUBLIC, please consult the sites’ privacy policies. We have no control over how any third-party site uses or discloses the personal information it collects about you.</p>
+					<p>We may collect information about you or others through non-affiliated third parties. For example, to the extent permitted by law, we may, in our sole discretion, ask for and collect supporting information from third parties, such as information about your Credit from a Credit Bureau, or information to verify your identity or trustworthiness, or for other fraud or safety related purposes. We may combine information that we collect from you through the Platform with information that we obtain from such third parties and other information derived from any other products or services we provide to you.</p>
+					<p>Through non-affiliated third parties, we may NOT collect any information that demonstrates the occurrence of an off-Platform communication between a Contractor and Client Member, we aren’t responsible for any communication exchanges</p>
+				</div>
+
+				<div class="single_legal_texts">
+					<h4>How Gabazzo uses the Information we Collect</h4>
+					<p>Where relevant under applicable laws, all processing of your personal information will be justified by a “lawful ground” for processing. In the majority of cases, processing will be justified on the basis of:</p>
+					<div class="checked_items">
+						<ul>
+							<li>You’ve provided us with your consent for us to use your personal information for a specific purpose;</li>
+							<li>Our use of your personal information is necessary to perform a contract or take steps to enter into a contract with you (e.g. to provide you with services which you have purchased);</li>
+							<li>The processing is necessary for complying with relevant legal obligations or regulatory obligation that we may have</li>
+							<li>The processing is necessary to support our legitimate interests as a business (e.g. ti improve our services to you), subject to your interest and fundamental rights and provided it is conducted at all times in a way that is proportionate.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="single_legal_texts">
+					<h5>We will use your personal information for the following purposes: We will use your personal information for the following purposes:</h5>
+					<div class="checked_items">
+						<ul>
+							<li>To provide you with quality service and security, to operate the platform. Our obligation to you and to develop our service. For example, we may use the information collected from you to verify your identity. We also use this information to confirm and set up your account, verify or re-issue a password, log your activity, enable your messages with other members, provide customer service and contact you from time to time. The information helps us to develop and improve our service to you, to understand and analyse your preferences and performance and to customize and personalize your experience (including by making Port/Services suggestions, ranking search results, and etc.);</li>
+							<li>For internal record-keeping purposes</li>
+							<li>To ensure Gabazzo marketplace integrity, prevent any fraud and maintain a safe and secure marketplace. For example, we may use your information to track and prevent fraudulent activities and other inappropriate activities, monitor content integrity, conduct security investigations and risk assessments, verify or authenticate information provided by you, enforce our Terms of Service and comply with applicable laws. We may conduct certain behavioral analytics from our third parties to achieve the above objectives and in limited cases, if we detect activity that we think poses a risk to the Gabazzo marketplace, other users, our community, or third parties, automated processes may result in suspension or limit the use of Gabazzo. If you would like to challenge any such decision, please contact us at <a href="mailto:privacy@gabazzo.com">privacy@gabazzo.com</a>.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--===== Markup For "Legal Pages" Ends Here =====-->
+
+	<!--===== Markup For "Registration Counter" Starts From Here =====-->
+    <div class="registration_counter_wrap">
+        <div class="container">
+            <div class="registration_counter">
+                <div class="single_count">
+                    <div class="heading">
+                        <h2><%= total.length %>+</h2>
+                    </div>
+                    <p>Registered Companies</p>
+                </div>
+
+                <div class="single_count">
+                    <div class="heading">
+                        <h2><%= members %>+</h2>
+                    </div>
+                    <p>Registered Members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===== Markup For "Registration Counter" Ends Here =====-->
+
+
+     <!--===== Markup For "Footer" Starts From Here =====-->
+    <footer class="footer_wrap">
+      <div class="footer_top">
+        <div class="container">
+          <div class="footer">
+            <div class="single_part">
+              <div class="footer_logo">
+                <a href="/"
+                  ><img
+                    src="images/layout/gabazzo_logo_white.png"
+                    class="img-fluid"
+                    alt=""
+                /></a>
+              </div>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/contact-us">Contact Us</a></li>
+                  <li><a href="/about-us">About</a></li>
+                  <li><a href="/site-map">Sitemap</a></li>
+                  <li><a href="/partnerships">Partnerships</a></li>
+		  <li><a href="/investor-relations">Investor Relations</a></li>
+		  <li><a href="/jobs-and-opportunities">Jobs & Opportunities</a></li>
+		  <li><a href="/press-and-news">Press & News</a></li>
+                </ul>
+              </div>
+              <div class="social_links">
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/gabazzoBCT"
+                      target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/gabazzo/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+		  <li>
+                    <a
+                      href="https://discord.gg/RTDhKw4r99" target="_blank"><i class="fab fa-discord"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Members</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/sign-up">Sign Up</a></li>
+		  <li><a href="/trust-and-safety-members">Trust & Safety</a></li>
+		  <li><a href="/ranking-system-members">Ranking System</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Business</h4>
+              <div class="site_links">
+                <ul>
+                  <li><a href="/company-sign-up-home">Register Business</a>
+                  </li>
+		  <li><a href="/study-buyer">Study Buyer</a>
+                  </li>
+		   <li><a href="/seller-league-system">League System</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="single_part">
+              <h4>Support</h4>
+              <div class="site_links">
+                <ul>
+		  <li><a href="/help-center-buyer">Help Center</a></li>
+                  <li><a href="/terms-and-conditions">Terms of Use</a></li>
+                  <li><a href="/privacy-policy">Privacy Policy</a></li>
+                  <li><a href="/cookie-policy">Cookie Policy</a></li>
+                  <li><a href="/safety-for-members">Safety</a></li>
+		  <li><a href="/covid-info">Covid-19 Info</a></li>
+		  <li><a href="/intellectual-property-claims">IP Claims</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <p>
+            Copyright &copy; 2021 Gabazzo. All Rights Reserved. Patent Pending
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!--===== Markup For "Footer" Ends Here =====-->
+    <!--===== Markup For "" Starts From Here =====-->
+    <!--===== Markup For "" Ends Here =====-->
+    
+    
+    <!--jQuery Main Libraty Latest Version-->
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <!--Bootstrap v4.5.3 JS File-->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--Custom Script JS File-->
+    <script type="text/javascript" src="js/updatedCustom.js"></script>
+    <script src="js/autocomplete.js" type="text/javascript"></script>
+    <!--Custom JavaScript-->
+    <script type="text/javascript"></script>
+</body>
+</html>
