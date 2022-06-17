@@ -1435,7 +1435,7 @@
 																							<div class="single_fact">
 																								<h6>Gabazzo Fee</h6>
 																								<div class="tiny_box">
-																									<h5>2.4%</h5>
+																									<h5>5%</h5>
 																								</div>
 																							</div>
 																							
@@ -1992,7 +1992,7 @@
 																										</h6>
 																										<div
 																											class="tiny_box">
-																											<h5>2.4%
+																											<h5>5%
 																											</h5>
 																										</div>
 																									</div>
@@ -3475,7 +3475,7 @@
 													</div>
 													<div class="input_icon">
 														<input type="number" class="form-control"
-															id="tax" />
+															id="tax" name="tax"/>
 														<i class="fas fa-percentage"></i>
 													</div>
 												</div>
@@ -3483,7 +3483,7 @@
 													<div class="label_wrap">
 														<label for="">Gabazzo Rate</label>
 													</div>
-													<input type="text" class="form-control" disabled value="2.4%"
+													<input type="text" class="form-control" disabled value="5%"
 														placeholder="" id="" />
 												</div>
 												<div class="single_field">
@@ -3759,7 +3759,7 @@
 												</div>
 												<div class="single_field">
 													<label for="">Gabazzo Rate</label>
-													<input type="text" class="form-control" disabled value="2.4%"
+													<input type="text" class="form-control" disabled value="5%"
 														placeholder="" />
 												</div>
 												<div class="single_field">
@@ -4098,7 +4098,7 @@
 															counter = i + 1;
 															html = html + '<div class="single_item"><div class="click_item"><a href="javascript:void(0)" data-target="#milestask' + data[x].offer.id + counter + '" class="collapsed" data-toggle="collapse"><div class="milestone_name_price"><div class="milestone_name"><h4>Description #' + counter + '</h4></div><div class="milestone_price"><h4>$' + data[x].offer.tasks[i].totalPrice + '</h4></div></div></a></div><div id="milestask' + data[x].offer.id + counter + '" class="collapse fade contents" data-parent="#allMilestone"><div class="title"><h4>' + data[x].offer.service.title + '</h4></div><div class="service_img_descrip"><div class="service_image"><img src="' + data[x].offer.service.image + '" class="img-fluid" alt="" /></div><div class="service_descrip"><p>' + data[x].offer.tasks[i].description + '</p><div class="offer_facts milestone_facts"><div class="single_fact"><h6>QTY</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.tasks[i].quantity + '</h5><i class="fas fa-sort-amount-up-alt"></i></div></div><div class="single_fact"><h6>Unit Price</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.tasks[i].unitPrice + '</h5><i class="fas fa-dollar-sign"></i></div></div><div class="single_fact"><h6>Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.tasks[i].totalPrice + '</h5><i class="fas fa-dollar-sign"></i></div></div></div></div></div></div></div>';
 														}
-														html = html + '<div class="offer_facts total_facts"><div class="single_fact"><h6>Sub Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.subTotal + '</h5><i class="fas fa-dollar-sign"></i></div></div><div class="single_fact"><h6>Delivery</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalDuration + '</h5><i class="far fa-clock"></i></div></div><div class="single_fact"><h6>Gabazzo Fee</h6><div class="tiny_box"><h5>2.4%</h5></div></div><div class="single_fact"><h6>Revisions</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.revision + '</h5><i class="fas fa-sync-alt"></i></div></div><div class="single_fact"><h6>Quote Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalCost + '</h5><i class="fas fa-dollar-sign"></i></div></div></div></div>';
+														html = html + '<div class="offer_facts total_facts"><div class="single_fact"><h6>Sub Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.subTotal + '</h5><i class="fas fa-dollar-sign"></i></div></div><div class="single_fact"><h6>Delivery</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalDuration + '</h5><i class="far fa-clock"></i></div></div><div class="single_fact"><h6>Gabazzo Fee</h6><div class="tiny_box"><h5>5%</h5></div></div><div class="single_fact"><h6>Revisions</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.revision + '</h5><i class="fas fa-sync-alt"></i></div></div><div class="single_fact"><h6>Quote Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalCost + '</h5><i class="fas fa-dollar-sign"></i></div></div></div></div>';
 													}
 													else {
 														html = html + '<div class="msg_body"><div class="sent_offer"><div class="indicator_texts"><h4><time>' + data[x].timeAgo + '|</time> Sent Custom Offer <a href="javascript:void(0)" title="' + data[x].offer.service.title + '" data-toggle="tooltip" data-placement="left"><i class="fas fa-info-circle"></i></a></h4></div><div class="offer_box_wrap"><div class="payment_type"><h4>Milestone Payment Offer</h4></div><div class="sent_offer_box"><div class="all_milestones" id="allMilestone">'
@@ -4106,7 +4106,7 @@
 															counter = i + 1;
 															html = html + '<div class="single_item"><div class="click_item"><a href="javascript:void(0)" data-target="#milestask' + data[x].offer.id + counter + '" class="collapsed" data-toggle="collapse"><div class="milestone_name_price"><div class="milestone_name"><h4>Milestone #' + counter + '</h4></div><div class="milestone_price"><h4>$' + data[x].offer.tasks[i].totalPrice + '</h4></div></div></a></div><div id="milestask' + data[x].offer.id + counter + '" class="collapse fade contents" data-parent="#allMilestone"><div class="sent_offer_box"><div class="title"><h4>' + data[x].offer.service.title + '</h4></div><div class="service_img_descrip"><div class="service_image"><img src="' + data[x].offer.service.image + '" class="img-fluid" alt="" /></div><div class="service_descrip"><p>' + data[x].offer.tasks[i].description + '</p><div class="offer_facts milestone_facts"><div class="single_fact"><h6>QTY</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.tasks[i].quantity + '</h5><i class="fas fa-sort-amount-up-alt"></i></div></div><div class="single_fact"><h6>Delivery</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.tasks[i].delivery + ' Days</h5><i class="far fa-clock"></i></div></div><div class="single_fact"><h6>Unit Price</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.tasks[i].unitPrice + '</h5><i class="fas fa-dollar-sign"></i></div></div><div class="single_fact"><h6>Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.tasks[i].totalPrice + '</h5><i class="fas fa-dollar-sign"></i></div></div></div></div></div></div></div>';
 														}
-														html = html + '<div class="offer_facts total_facts"><div class="single_fact"><h6>Sub Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.subTotal + '</h5><i class="fas fa-dollar-sign"></i></div></div><div class="single_fact"><h6>Delivery</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalDuration + '</h5><i class="far fa-clock"></i></div></div><div class="single_fact"><h6>Gabazzo Fee</h6><div class="tiny_box"><h5>2.4%</h5></div></div><div class="single_fact"><h6>Revisions</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.revision + '</h5><i class="fas fa-sync-alt"></i></div></div><div class="single_fact"><h6>Quote Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalCost + '</h5><i class="fas fa-dollar-sign"></i></div></div></div></div>';
+														html = html + '<div class="offer_facts total_facts"><div class="single_fact"><h6>Sub Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.subTotal + '</h5><i class="fas fa-dollar-sign"></i></div></div><div class="single_fact"><h6>Delivery</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalDuration + '</h5><i class="far fa-clock"></i></div></div><div class="single_fact"><h6>Gabazzo Fee</h6><div class="tiny_box"><h5>5%</h5></div></div><div class="single_fact"><h6>Revisions</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.revision + '</h5><i class="fas fa-sync-alt"></i></div></div><div class="single_fact"><h6>Quote Total</h6><div class="tiny_box tiny_box_usd"><h5>' + data[x].offer.totalCost + '</h5><i class="fas fa-dollar-sign"></i></div></div></div></div>';
 													}
 													// SENDER VIEW - APPENDING THE BTNS
 													if (window.location.href.includes(data[0].receiverID)) {

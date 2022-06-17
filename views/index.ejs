@@ -211,12 +211,21 @@
         <div class="single_company" style="min-height: 450px">
           <div class="logo_info">
             <div class="logo">
-              <a href="/company-profile/<%= company._id %>"
-                ><img
-                  src="<%= company.logo %>"
-                  class="img-fluid"
-                  alt="Company Logo"
-              /></a>
+              <% if(company.logo) { %>
+                <a href="/company-profile/<%= company._id %>"
+                  ><img
+                    src="<%= company.logo %>"
+                    class="img-fluid"
+                    alt="Company Logo"
+                /></a>
+              <% } else { %>
+                <a href="/company-profile/<%= company._id %>"
+                  ><img
+                    src="../images/avatar.png"
+                    class="img-fluid"
+                    alt="Company Logo"
+                /></a>
+              <% } %>
               <% if(company.companyStatus) {%>
               <span class="activity_status online_status"></span>
               <%} else {%>
@@ -291,29 +300,54 @@
         if(service[i].existingService){ %>
         <div class="single_home_service">
           <div class="service_image">
-            <a href="/service/<%= service[i].existingService._id %>"
-              ><img
-                class="lazyload img-fluid"
-                width="406"
-                height="109"
-                defer
-                data-src="<%= service[i].existingService?.images[0]?.url %>"
-                alt="Service image"
-            /></a>
+            <% if(service[i].existingService?.images[0].url) { %>
+              <a href="/service/<%= service[i].existingService._id %>"
+                ><img
+                  class="lazyload img-fluid"
+                  width="406"
+                  height="109"
+                  defer
+                  data-src="<%= service[i].existingService?.images[0]?.url %>"
+                  alt="Service image"
+              /></a>
+            <% } else { %>
+              <a href="/service/<%= service[i].existingService._id %>"
+                ><img
+                  class="lazyload img-fluid"
+                  width="406"
+                  height="109"
+                  defer
+                  data-src="../images/outdoor-work/Roofing.jpg"
+                  alt="Service image"
+              /></a>
+            <% } %>
+
             <h6><%= service[i].existingService.category %></h6>
           </div>
           <div class="service_details">
             <div class="logo_info">
               <div class="logo">
-                <a href="/service/<%= service[i].existingService._id %>"
-                  ><img
-                    class="lazyload img-fluid"
-                    width="406"
-                    height="109"
-                    defer
-                    data-src="<%= service[i].logo %>"
-                    alt="Company logo"
-                /></a>
+                <% if(service[i].logo) { %>
+                  <a href="/service/<%= service[i].existingService._id %>"
+                    ><img
+                      class="lazyload img-fluid"
+                      width="406"
+                      height="109"
+                      defer
+                      data-src="<%= service[i].logo %>"
+                      alt="Company logo"
+                  /></a>  
+                <% } else { %>
+                  <a href="/service/<%= service[i].existingService._id %>"
+                    ><img
+                      class="lazyload img-fluid"
+                      width="406"
+                      height="109"
+                      defer
+                      data-src="../images/avatar.png"
+                      alt="Company logo"
+                  /></a>  
+                <% } %>
               </div>
               <div class="info">
                 <a
@@ -414,7 +448,7 @@
             </p>
           </div>
           <div class="clickable_link">
-            <a class="gbtn" href="/safety-seller">Learn More</a>
+            <a class="gbtn" href="/safety-for-contractors">Learn More</a>
           </div>
         </div>
       </div>
@@ -435,7 +469,7 @@
             </p>
           </div>
           <div class="clickable_link">
-            <a class="gbtn" href="/safety-buyer">Learn More</a>
+            <a class="gbtn" href="/safety-for-members">Learn More</a>
           </div>
         </div>
       </div>

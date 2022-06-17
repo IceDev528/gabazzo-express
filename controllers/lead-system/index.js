@@ -15,6 +15,14 @@ const geocodingClient = mbxGeocoding({
 
 const { uploadToS3, deleteFileFromS3 } = require("../aws/fileHandler.js");
 
+// Random number generator
+const getRandomId = (min = 10000, max = 500000000000) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  const num = Math.floor(Math.random() * (max - min + 1)) + min;
+  return num;
+};
+
 module.exports = {
   // GET View Request Page
   async getViewRequest(req, res, next) {
@@ -273,6 +281,9 @@ module.exports = {
         });
       }
 
+      const tempProject = await Project.findById(tempOffer.projectID);
+      const client = await User.findById(tempOffer.receiver);
+
       // Leads only support the single payment for now that's why making an single payment to constant
       const offerObject = new Offer({
         sender: user._id,
@@ -288,6 +299,14 @@ module.exports = {
         totalCost: tempOffer.quotetotal,
         revision: tempOffer.revision,
         totalDuration: tempOffer.delivery,
+        tax: tempOffer.tax,
+        receiverAddress: {
+          name: client.firstName + " " + client.lastName,
+          location: tempProject.address,
+          phoneNumber: client.phoneNumber,
+          email: client.email,
+        },
+        invoiceNo: getRandomId(),
       });
 
       const sentOffer = await Offer.create(offerObject);
@@ -296,8 +315,6 @@ module.exports = {
         { _id: tempOffer.projectID },
         { $push: { sentoffers: user.username } }
       );
-
-      const client = await User.findById(tempOffer.receiver);
 
       // Generate the PDF Invoice
       const pdfData = {
@@ -319,23 +336,19 @@ module.exports = {
             phoneNumber: client.billing.billTo.phoneNumber,
             email: client.billing.billTo.email,
           },
-          deliverTo: {
-            name: client.billing.deliverTo.name,
-            companyName: client.billing.deliverTo.companyName,
-            location: client.billing.deliverTo.location,
-            phoneNumber: client.billing.deliverTo.phoneNumber,
-            email: client.billing.deliverTo.email,
-          },
+          deliverTo: offerObject.receiverAddress,
         },
         tasks: offerObject.tasks,
         subTotal: offerObject.subTotal,
         discount: offerObject.discount,
-        serviceTotal: (0.024 * offerObject.subTotal).toFixed(2),
+        serviceTotal: (0.05 * offerObject.subTotal).toFixed(2),
         totalCost: offerObject.totalCost,
         notes: offerObject.notes,
         totalDuration: offerObject.totalDuration,
         date: moment().format("DD-MM-YYYY"),
-        estimationNo: Math.floor(Math.random() * 100000000000) + 1,
+        estimationNo: offerObject.invoiceNo,
+        tax: offerObject.tax,
+        revision: offerObject.revision,
       };
 
       // Generate the PDF

@@ -737,9 +737,19 @@
                                 </div>
                                 <div class="single_field">
                                     <div class="label_wrap">
+                                        <label for="">Tax</label>
+                                    </div>
+                                    <div class="input_icon">
+                                        <input type="number" class="form-control"
+                                            id="tax" name="tax" />
+                                        <i class="fas fa-percentage"></i>
+                                    </div>
+                                </div>
+                                <div class="single_field">
+                                    <div class="label_wrap">
                                         <label for="">Gabazzo Rate</label>
                                     </div>
-                                    <input type="text" class="form-control" disabled value="2.4%" placeholder="" readonly/>
+                                    <input type="text" class="form-control" disabled value="5%" placeholder="" readonly/>
                                 </div>
                                 <div class="single_field">
                                     <div class="label_wrap">
@@ -798,7 +808,7 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
-        let selectedService = '', serviceImage = '', serviceID = '', qty = '', unitPrice = '', total = '', description = '', count = 1, quantity = 1, noOfTask = 0, subTotal = 0, discount = 0, quotetotal;
+        let selectedService = '', serviceImage = '', serviceID = '', qty = '', unitPrice = '', total = '', description = '', count = 1, quantity = 1, noOfTask = 0, subTotal = 0, discount = 0, quotetotal, tax = 0, totalPrice = 0;
 
         //Service Select Modal
         $(".serviceSelect").click(function () {
@@ -840,6 +850,7 @@
         $("input[name='offer[unitPrice]']")[0].onchange = function(){
             unitPrice =  $(this).val();
             total = $(this).val() * quantity;
+            console.log(total)
             $("input[name='offer[totalPrice]']")[0].value = $(this).val() * quantity;
 
             if(unitPrice != 0)
@@ -854,6 +865,7 @@
             }
         }
 
+    
         $("#addbtn").click(function(){
             if(unitPrice == '' || unitPrice == 0 || description == ''){
                 if(unitPrice == '' && description == '' || unitPrice == 0 && description == ''){
@@ -885,6 +897,7 @@
                 
                 noOfTask += 1;
             }
+
         })
     
         $(".sendoffer").click(function(){
@@ -903,31 +916,52 @@
 
                 $("#taskerr").css("display", 'none');
 
+                quotetotal =  Math.round((subTotal) + (subTotal  * 0.05));
+
                 // Changing the values of next modal
                 $("#subtotal").val(subTotal);
-                $("#quotetotal").val(subTotal);
+                $("#quotetotal").val(quotetotal);
             }
         })
 
         $("#discount").on("change", function(){
             discount = $(this).val();
+            tax = $("#tax").val();
 
-            quotetotal = Math.round((subTotal - discount) + ((subTotal - discount) * 0.024));
+            let amount = ((Number(subTotal) - Number(discount)) + ((Number(subTotal) - Number(discount)) * 0.05) + ((Number(subTotal) - Number(discount)) * Number(tax)/100 ) );
 
             if(discount <= -1 || quotetotal <= 4){
                 $("#discounterr").css("display", 'block');
             }else{
-                $("#quotetotal").val(quotetotal);
+                totalPrice = amount.toFixed(2);
+                quoteTotal = amount.toFixed(2);
+
+                $("#quotetotal").val(quoteTotal);
                 $("#discounterr").css("display", 'none');
+    
             }
 
+        })
+
+        $("#tax").change(function(){
+      
+            tax = $(this).val();
+            let tempdiscount = Number($("#discount").val());
+
+            let amount = ((Number(subTotal) - Number(tempdiscount)) + ((Number(subTotal) - Number(tempdiscount)) * 0.05) + ((Number(subTotal) - Number(tempdiscount)) * Number(tax)/100 ) );
+            
+            if (subtotal > tax) {
+                $("#quotetotal").val(amount.toFixed(2));
+                discount = tempdiscount;
+                totalPrice = amount.toFixed(2);
+                quoteTotal = amount.toFixed(2);
+            }
         })
 
         $("#submitoffer").click(function(){
             if(discount <= -1 || quotetotal <= 4){
                 $("#discounterr").css("display", 'block');
             }else{
-                console.log("trueee")
                 $("#discounterr").css("display", 'none');
                 $("#createofferform").submit();
             }

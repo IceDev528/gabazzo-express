@@ -268,10 +268,13 @@
         <div class="forgot_reset_form">
           <h3>Recover Your Password!</h3>
           <p>A link to reset your password will be sent to your email. <span class="break"></span> Please check in Your spam folder also.</p>
-          <form action="/forgot-password?_method=PUT" method="POST">
+          <form action="/forgot-password?_method=PUT" method="POST" class="needs-validation" novalidate >
             <div class="form-group">
               <label for="">Email:</label>
               <input type="text" name="email" placeholder="Your Email Address..." class="form-control">
+              <div class="invalid-feedback">
+                Please enter email address.
+              </div>
             </div>
             <div class="submit_button">
               <button type="submit" class="btn gbtn">Submit</button>
@@ -413,6 +416,31 @@
 <script src="js/autocomplete.js" type="text/javascript"></script>
 <!--Custom JavaScript-->
 <script type="text/javascript">
+  $(document).ready(function() {
+
+// Validation work
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms)
+.forEach(function (form) {
+form.addEventListener('submit', function (event) {
+  if (!form.checkValidity()) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+
+  form.classList.add('was-validated')
+}, false)
+})
+})()
+
+})
 </script>
   
 </body>

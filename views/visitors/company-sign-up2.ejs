@@ -101,12 +101,15 @@
 
 			<!--===== Markup For "Profile Form" Starts From Here =====-->
 			<div class="form_wrap">
-				<form action="/company-sign-up2" method="POST" enctype="multipart/form-data">
+				<form action="/company-sign-up2" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
 					<div class="single_input">
 						<div class="form-group">
 							<label for="companyName">Company Name<b>*</b></label>
 							<input name="companyName" type="text" placeholder="Your Company Name..."
 								class="form-control" required>
+								<div class="invalid-feedback">
+									Please enter company name.
+								</div>
 						</div>
 					</div>
 
@@ -134,9 +137,12 @@
 													or <span class="break"></span> Click to Upload</h6>
 											</div>
 										</div>
-										<input type="file" name="logo" id="logo" class="form-control" accept="image/*"
+										<input type="file" name="logo" required id="logo" class="form-control" accept="image/*"
 											onchange="document.getElementById('companyLogo').src = window.URL.createObjectURL(this.files[0])"
 											required>
+											<div class="invalid-feedback">
+												Please select a company logo file.
+											</div>
 									</label>
 								</div>
 							</div>
@@ -148,6 +154,9 @@
 							<label for="about">About Company<b>*</b></label>
 							<textarea name="about" placeholder="Write a short description about your company..." id=""
 								cols="30" rows="3" class="form-control" required></textarea>
+								<div class="invalid-feedback">
+									Please fill the about section.
+								</div>
 							<div class="indicator_texts">
 								<h6>0/800</h6>
 							</div>
@@ -187,6 +196,31 @@
 
 	<!--Custom JavaScript-->
 	<script type="text/javascript">
+		$(document).ready(function() {
+
+			// Validation work
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(function () {
+		'use strict'
+
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		var forms = document.querySelectorAll('.needs-validation')
+
+		// Loop over them and prevent submission
+		Array.prototype.slice.call(forms)
+			.forEach(function (form) {
+			form.addEventListener('submit', function (event) {
+				if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+				}
+
+				form.classList.add('was-validated')
+			}, false)
+			})
+		})()
+
+		})
 
 	</script>
 

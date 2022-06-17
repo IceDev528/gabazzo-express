@@ -1064,14 +1064,11 @@
     ></script>
 
     <script>
-      var currentUser = <%-JSON.stringify(currentUser)%>;
-    </script>
-
-
-
-    <script>
       (() => {
         $(document).ready(function () {
+          
+          var user = <%- JSON.stringify(user) -%>;
+
           var element = function (id) {
             return document.getElementById(id);
           };
@@ -1217,7 +1214,7 @@
               if (event.which === 13 && event.shiftKey == false) {
                 if (textarea.value !== "") {
                   var url;
-                  if (currentUser?.isCompany) {
+                  if (user?.isCompany) {
                     url = "/company/send-message-activity";
                   } else {
                     url = "/user/send-message-activity";
@@ -1233,7 +1230,7 @@
                   }).done(function (data) {
                     console.log("data", data);
                     socket.emit("chatMessage", {
-                      userId: currentUser._id,
+                      userId: user._id,
                       room: jobId,
                       message: textarea.value.trim(),
                       attachments: fileURL,
@@ -1254,7 +1251,7 @@
               console.log("Asdasdasdasd")
               if (textarea.value !== "") {
                 var url;
-                if (currentUser?.isCompany) {
+                if (user?.isCompany) {
                   url = "/company/send-message-activity";
                 } else {
                   url = "/user/send-message-activity";
@@ -1271,7 +1268,7 @@
                   event.preventDefault();
                   console.log("data", data);
                   socket.emit("chatMessage", {
-                    userId: currentUser._id,
+                    userId: user._id,
                     room: jobId,
                     message: textarea.value.trim(),
                     attachments: fileURL,

@@ -274,7 +274,8 @@ module.exports = function (io) {
               template_id: "d-ebbb99a37dd04d19b4b7c1f4c96c7e60",
               dynamic_template_data: pdfData,
             };
-            await sgMail.send(templateData).catch((err) => console.error(err));
+            sgMail.send(templateData).catch((err) => console.error(err));
+            sgMail.send(templateData).catch((err) => console.error(err));
           } else {
             const pdfData = {
               contractor: {
@@ -330,7 +331,14 @@ module.exports = function (io) {
               template_id: "d-89cc25bf5f6a4f3cb2b7b1caf45223fd",
               dynamic_template_data: pdfData,
             };
-            await sgMail.send(templateData).catch((err) => console.error(err));
+
+            // Sending an email to member
+            sgMail.send(templateData).catch((err) => console.error(err));
+
+            templateData.to = socket.request.user.email;
+            (templateData.subject = "Gabazzo - Contractor Invoice"),
+              // Sending an email to contractor
+              sgMail.send(templateData).catch((err) => console.error(err));
           }
         });
       });

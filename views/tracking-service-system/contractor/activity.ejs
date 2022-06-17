@@ -973,6 +973,9 @@
     <script>
       (() => {
         $(document).ready(function () {
+          
+          var user = <%- JSON.stringify(user) -%>;
+          
           var element = function (id) {
             return document.getElementById(id);
           };
@@ -1005,6 +1008,7 @@
           if (socket !== undefined) {
             console.log("Connected to socket...");
             socket.emit("activity_room", jobId);
+
             socket.on("message", (data) => {
               console.log(data, " ACTIVITYU ROIOM EMIT");
               if (data) {
@@ -1112,13 +1116,12 @@
               },
               false
             );
-
             // Handle Input
             textarea.addEventListener("keydown", async function (event) {
               if (event.which === 13 && event.shiftKey == false) {
                 if (textarea.value !== "") {
                   var url;
-                  if (currentUser?.isCompany) {
+                  if (user?.isCompany) {
                     url = "/company/send-message-activity";
                   } else {
                     url = "/user/send-message-activity";
@@ -1134,15 +1137,12 @@
                   }).done(function (data) {
                     console.log("data", data);
                     socket.emit("chatMessage", {
-                      userId: currentUser._id,
+                      userId: user._id,
                       room: jobId,
                       message: textarea.value.trim(),
                       attachments: fileURL,
                       messagesLength: messagesLength,
                     });
-                    if (messagesLength === "0") {
-                      location.reload();
-                    }
                     // Clear input
                     textarea.value = "";
                     textarea.focus();
@@ -1155,9 +1155,10 @@
             });
 
             $("#sendMsgBtn").click(async function () {
+              console.log("Asdasdasdasd")
               if (textarea.value !== "") {
                 var url;
-                if (currentUser?.isCompany) {
+                if (user?.isCompany) {
                   url = "/company/send-message-activity";
                 } else {
                   url = "/user/send-message-activity";
@@ -1171,23 +1172,21 @@
                     attachments: fileURL,
                   },
                 }).done(function (data) {
+                  event.preventDefault();
                   console.log("data", data);
                   socket.emit("chatMessage", {
-                    userId: currentUser._id,
+                    userId: user._id,
                     room: jobId,
                     message: textarea.value.trim(),
                     attachments: fileURL,
                     messagesLength: messagesLength,
                   });
-                  if (messagesLength === "0") {
-                    location.reload();
-                  }
                   // Clear input
                   textarea.value = "";
                   textarea.focus();
                   fileURL = [];
 
-                  event.preventDefault();
+                 
                 });
               }
             });
@@ -1206,6 +1205,40 @@
 
         $(".mobile_ts_menu_switch").on("click", function () {
           $(".nav_with_bar .menu ul").addClass("show");
+        });
+
+        $("a[name=completed]").on("click ", function () {
+          if (progress === "100" && status === "Delivered") {
+            // alert("yes");
+            $.ajax({
+              method: "POST",
+              url: "/company/change-status",
+              data: {
+                job_id: jobId,
+                status: "Awaiting Review",
+              },
+            }).done(function (data) {
+              console.log("data", data);
+              location.replace(`/review/${jobId}`);
+            });
+          }
+        });
+
+        $("button[id=extendDeliveryButton]").on("click ", function () {
+          var extendDeliveryDays = $("#extendDeliveryDays")
+            .find(":selected")
+            .val();
+          $.ajax({
+            method: "POST",
+            url: "/user/extend",
+            data: {
+              job_id: jobId,
+              days: extendDeliveryDays,
+            },
+          }).done(function (data) {
+            console.log("data", data);
+            location.reload();
+          });
         });
       });
 

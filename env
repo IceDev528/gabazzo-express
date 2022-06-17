@@ -1,0 +1,22 @@
+mongoURI=mongodb+srv://newuser:mugheera@gabazzo.d9ugd.mongodb.net/gabazzo?retryWrites=true&w=majority&readPreference=secondary&replicaSet=your_replSet_name&ssl=true
+API_LOGGER_DB=mongodb+srv://admin:admin@apilogger.1rvb9yg.mongodb.net/?retryWrites=true&w=majority
+jwtSecret= sl_myJwtSecret
+cookieKey=adnanaslam
+CLOUDINARY_APP_ID=556571676319423
+CLOUDINARY_SECRET=sWisiYMcCRTJegnl80NBJrBi2cQ
+GOOGLE_CLIENT_ID=694735128820-jhg6ra68e3258lalaeouv4b4lgqibsbc.apps.googleusercontent.com
+GOOGLE_CALLBACK=/auth/google/callback
+GOOGLE_CLIENT_SECRET=aEOikdyi5YV1-eYM8WBFHUo1
+FACEBOOK_APP_ID= 540245506966109
+FACEBOOK_APP_SECRET=11dfa49a7a5e8f4022996c1e7a0d511d
+FACEBOOK_CALLBACK=/auth/facebook/callback
+GITHUB_CLIENT_ID=934d17ca394bac1fc9ab
+GITHUB_CLIENT_SECRET=6bf27a664304496f44c304ae37e0f6a6225d6341
+SENDGRID_API_KEY= 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
+DROPBOX_AUTH = zb_0TA1v-TcAAAAAAAAAAXAneBhctlmKq4huZiWYzcsg8qu96UZgKc9QCCBXoNO9
+AWS_ACCESS_KEY = AKIA4NXXAXJGA4KR24PD
+AWS_SECRET_KEY = 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
+AWS_BUCKET_NAME = assets.gabazzo.com
+STRIPE_KEY = sk_test_51KQfcHLj3cUFAL0kblYE9aJGg6nagg8Q9j97UfRKzyJe7Uj6nnmKTsPoq4fS7H3Xk0mQITPIF09RjT2DNW9mnejW00YY2nMGM6
+PAYPAL_CLIENT_ID = Aey2sFhJqeVmn1ndbDF10qp6ltYbg5UHqLOqFNIM1prCjmOqGntaNvtP9exJ7J0X1sQxuj2-AxcRHiBK
+PAYPAL_CLIENT_SECRET = ECmovBxpxer3I4t709hNef_2lMtCcf_z0wq6_rdd5EYQ1K6geksGW4zNDtcq4RXaaXBT7i44jZrVaHtt

@@ -539,41 +539,41 @@
 										<div class="legal_documents">
 											<div class="action_buttons">
 												<ul>
-													<% if(company.isLicensed) { %>
-														<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
-																data-target="#licensedCertificate"
-																data-toggle="modal"><img
-																	src="../images/layout/licensed_icon.png"
-																	class="img-fluid" alt="" /> Licensed</a></li>
-														<% } %>
-															<% if(company.isInsured) { %>
-																<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
-																		data-target="#insuredCertificate"
-																		data-toggle="modal"><img
-																			src="../images/layout/insured_icon.png"
-																			class="img-fluid" alt="" /> Insured</a></li>
-																<% } %>
-																	<% if(company.isEmailVerified) { %>
-																		<li><a class="gbtn gbtn_dark"
-																				href="javascript:void(0)"
-																				data-target="#verifiedCertificate"
-																				data-toggle="modal"><img
-																					src="../images/layout/verified_icon.png"
-																					class="img-fluid" alt="" />
-																				Verified</a></li>
-																		<% } %>
-																			<% if(company.isBonded) { %>
-																				<li><a class="gbtn gbtn_dark"
-																						href="javascript:void(0)"
-																						data-target="#bondedCertificate"
-																						data-toggle="modal"><img
-																							src="../images/layout/bonded_icon.png"
-																							class="img-fluid" alt="" />
-																						Bonded</a></li>
-																				<% } %>
-																				
-																				<li class="seller_badges_link"><a class="gbtn gbtn_dark" href="javascript:void(0)" data-target="#sellerBadges" data-toggle="modal"><img src="../images/seller_badges_icon.png" alt=""> Seller Badges</a></li>
-																				
+												<% if(company.isStateLicensed) { %>
+													<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+															data-target="#licensedCertificate"
+															data-toggle="modal"><img
+																src="../images/layout/licensed_icon.png"
+																class="img-fluid" alt="" /> Licensed</a></li>
+												<% } %>
+												<% if(company.isInsured) { %>
+													<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+															data-target="#insuredCertificate"
+															data-toggle="modal"><img
+																src="../images/layout/insured_icon.png"
+																class="img-fluid" alt="" /> Insured</a></li>
+												<% } %>
+												<% if(company.isEmailVerified) { %>
+													<li><a class="gbtn gbtn_dark"
+															href="javascript:void(0)"
+															data-target="#verifiedCertificate"
+															data-toggle="modal"><img
+																src="../images/layout/verified_icon.png"
+																class="img-fluid" alt="" />
+															Verified</a></li>
+												<% } %>
+												<% if(company.isBonded) { %>
+													<li><a class="gbtn gbtn_dark"
+															href="javascript:void(0)"
+															data-target="#bondedCertificate"
+															data-toggle="modal"><img
+																src="../images/layout/bonded_icon.png"
+																class="img-fluid" alt="" />
+															Bonded</a></li>
+												<% } %>
+													
+												<!-- <li class="seller_badges_link"><a class="gbtn gbtn_dark" href="javascript:void(0)" data-target="#sellerBadges" data-toggle="modal"><img src="../images/seller_badges_icon.png" alt=""> Seller Badges</a></li> -->
+													
 																				
 												</ul>
 											</div>
@@ -630,34 +630,34 @@
 						<div class="legal_documents desktop_only">
 							<div class="action_buttons">
 								<ul>
-									<% if(company.isLicensed) { %>
+								<% if(company.isStateLicensed) { %>
 										<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
-												data-target="#licensedCertificate" data-toggle="modal"><img
-													src="../images/layout/licensed_icon.png" class="img-fluid" alt="" />
-												Licensed</a></li>
-										<% } %>
-											<% if(company.isInsured) { %>
-												<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
-														data-target="#insuredCertificate" data-toggle="modal"><img
-															src="../images/layout/insured_icon.png" class="img-fluid"
-															alt="" /> Insured</a></li>
-												<% } %>
-													<% if(company.isEmailVerified) { %>
-														<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
-																data-target="#verifiedCertificate"
-																data-toggle="modal"><img
-																	src="../images/layout/verified_icon.png"
-																	class="img-fluid" alt="" /> Verified</a></li>
-														<% } %>
-															<% if(company.isBonded) { %>
-																<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
-																		data-target="#bondedCertificate"
-																		data-toggle="modal"><img
-																			src="../images/layout/bonded_icon.png"
-																			class="img-fluid" alt="" /> Bonded</a></li>
-																<% } %>
-																
-																<li><a class="gbtn gbtn_dark" href="javascript:void(0)" data-target="#sellerBadges" data-toggle="modal"><img src="../images/seller_badges_icon.png" alt=""> Seller Badges</a></li>
+										data-target="#licensedCertificate" data-toggle="modal"><img
+											src="../images/layout/licensed_icon.png" class="img-fluid" alt="" />
+										Licensed</a></li>
+								<% } %>
+								<% if(company.isInsured) { %>
+									<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+											data-target="#insuredCertificate" data-toggle="modal"><img
+										src="../images/layout/insured_icon.png" class="img-fluid"
+										alt="" /> Insured</a></li>
+								<% } %>
+								<% if(company.isEmailVerified) { %>
+										<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+												data-target="#verifiedCertificate"
+												data-toggle="modal"><img
+										src="../images/layout/verified_icon.png"
+										class="img-fluid" alt="" /> Verified</a></li>
+								<% } %>
+								<% if(company.isBonded) { %>
+									<li><a class="gbtn gbtn_dark" href="javascript:void(0)"
+											data-target="#bondedCertificate"
+											data-toggle="modal"><img
+												src="../images/layout/bonded_icon.png"
+												class="img-fluid" alt="" /> Bonded</a></li>
+								<% } %>
+									
+								<!-- <li><a class="gbtn gbtn_dark" href="javascript:void(0)" data-target="#sellerBadges" data-toggle="modal"><img src="../images/seller_badges_icon.png" alt=""> Seller Badges</a></li> -->
 																
 															
 								</ul>
@@ -1289,7 +1289,7 @@
 													<% } %>
 												</div>
 												<div class="profile_name">
-													<h6>Replay from Company:</h6>
+													<h6>Reply from Company:</h6>
 												</div>
 											</div>
 											<div class="replied_review">
@@ -1768,17 +1768,19 @@
 											<div class="certificate_texts">
 												<h1>State License</h1>
 												<ul>
-													<li>State: <%= company.licenseState %>
+													<li>State: <%= company.stateLicense.licenseState %>
 													</li>
-													<li>License #: <%= company.licenseNo %>
+													<li>License #: <%= company.stateLicense.licenseNo %>
 													</li>
-													<li>Expiration: <%= company.licenseExpiration %>
+													<li>Expiration: <%= company.stateLicense.licenseExpiration %>
 													</li>
 												</ul>
 											</div>
 											<div class="certificate_image">
-												<img src="<%= company.licenseCertificateImage %>" class="img-fluid"
-													alt="" />
+												<img src="<%= company.stateLicense.file.path %>" class="img-fluid" alt="" />
+												<div class="certificate_pdf">
+													<a href="<%= company.stateLicense.file.path %>">Click to download the Certificate.</a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -1797,14 +1799,17 @@
 										<div class="the_certificate bonded_certificate">
 											<div class="certificate_texts">
 												<h1>Bonded</h1>
-												<h3>State:<%= company.bondState %>
+												<h3>State: <%= company.bond.bondState %>
 												</h3>
 												<p>
-													<%= company.bondInfo %>
+													<%= company.bond.bondInfo %>
 												</p>
 											</div>
 											<div class="certificate_image">
-												<img src="<%= company.bondImage %>" class="img-fluid" alt="" />
+												<img src="<%= company.bond.file.path %>" class="img-fluid" alt="" />
+												<div class="certificate_pdf">
+													<a href="<%= company.bond.file.path %>">Click to download the Certificate.</a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -1823,24 +1828,24 @@
 										<div class="the_certificate insurance_certificate">
 											<div class="certificate_texts grid_item">
 												<h1>Insurance</h1>
-												<h3 class="mb-4">Expiration: <%= company.insuranceExpiration %>
+												<h3 class="mb-4">Expiration: <%= company.insurance.insuranceExpiration %>
 												</h3>
 												<ul>
-													<li>State: <%= company.insuranceState %>
+													<li>State: <%= company.insurance.insuranceState %>
 													</li>
-													<li>Company: <%= company.insuranceCompany %>
+													<li>Company: <%= company.insurance.insuranceCompany %>
 													</li>
-													<li>Insurance #: <%= company.insuranceNo %>
+													<li>Insurance #: <%= company.insurance.insuranceNo %>
 													</li>
 													<li>
-														Covered: <%= company.insuranceCovered %>
+														Covered: <%= company.insurance.insuranceCovered %>
 													</li>
 												</ul>
 											</div>
 											<div class="certificate_image">
-												<img src="<%= company.insuranceImage %>" class="img-fluid" alt="" />
+												<img src="<%= company.insurance.file.path %>" class="img-fluid" alt="" />
 												<div class="certificate_pdf">
-													<a href="javascript:void(0)">Insurance Certificate.pdf</a>
+													<a href="<%= company.insurance.file.path %>">Click to download the Certificate</a>
 												</div>
 											</div>
 										</div>
@@ -1850,7 +1855,7 @@
 						</div>
 					</div>
 					<!--===== Markup For "Insurance" Ends Here =====-->
-					<!--===== Markup For "Verified" Starts From Here =====-->
+						<!--===== Markup For "Verified" Starts From Here =====-->
 		<div class="modal fade legal_doc_modal" id="verifiedCertificate">
 			<div class="modal-dialog modal-lg modal-dialog-centered">
 				<div class="modal-content">
@@ -1862,8 +1867,8 @@
 								<div class="top_part">
 									<div class="single_process">
 										<h3>
-											<img src="../images/layout/gabazzo_logo_black.png" class="img-fluid gabazzo_logo black_logo" alt="" />
-											<img src="../images/layout/gabazzo_logo_white.png" class="img-fluid gabazzo_logo white_logo" alt="" />
+											<img src="../images/gabazzo_logo_black.png" class="img-fluid gabazzo_logo black_logo" alt="" />
+											<img src="../images/gabazzo_logo_white.png" class="img-fluid gabazzo_logo white_logo" alt="" />
 											Verification Process
 										</h3>
 										<div class="verifi_process_txt_img">

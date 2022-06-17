@@ -278,11 +278,11 @@
 						<div class="intro_texts">
 							<h4>Welcome to Gabazzo!</h4>
 							<ul>
-								<li>Have access to message verified companies throughout the Chicago area or nearby.</li>
+								<li>Message verified companies throughout the Chicago area or nearby.</li>
 								<li>Analyze company profiles and view if they're the right fit for your project needs.</li>
-								<li>View Services the companies are offering.</li>
-								<li>Take a look at our Map to see where companies are located easily!</li>
-								<li>Compare Pricing, always working with different different budgets easier.</li>
+								<li>View services the companies are offering.</li>
+								<li>Take a look at our map to see where companies are located easily!</li>
+								<li>Compare pricing, always working with different different budgets easier.</li>
 							</ul>
 						</div>
 					</div>
@@ -291,29 +291,47 @@
 						<div class="login_form">
 							<h3>Create Your Account</h3>
 
-							<form action="/sign-up" method="POST">
+							<form action="/sign-up" method="POST" class="needs-validation" novalidate >
 								<div class="form-group">
 									<input type="text" name="firstName" required placeholder="First Name" class="form-control">
+									<div class="invalid-feedback">
+										Please enter firstName.
+									</div>
 								</div>
 
 								<div class="form-group">
 									<input type="text" name="lastName" required placeholder="Last Name" class="form-control">
+									<div class="invalid-feedback">
+										Please enter lastName.
+									</div>
 								</div>
 
 								<div class="form-group">
 									<input type="text" name="username" required placeholder="User Name" class="form-control">
+									<div class="invalid-feedback">
+										Please enter username.
+									</div>
 								</div>
 
 								<div class="form-group">
 									<input type="email" name="email" required placeholder="Email" class="form-control">
+									<div class="invalid-feedback">
+										Please enter email address.
+									</div>
 								</div>
 								
 								<div class="form-group">
 									<input type="password" id="password" name="password" required  placeholder="Password" class="form-control">
+									<div class="invalid-feedback">
+										Please enter password.
+									</div>
 								</div>
 
 								<div class="form-group">
 									<input type="password" id="confirmpassword" name="confirmpassword" required placeholder="Re-Type Password" class="form-control">
+									<div class="invalid-feedback">
+										Please enter confirm password.
+									</div>
 									<p id="confirmationErr" style="color: red;"></p>
 								</div>
 
@@ -328,7 +346,7 @@
 
 							<div class="alter_login_wrap">
 								<div class="alter_info_texts">
-									<p>By clicking Sign Up on Gabazzo OR with Facebook or with Google.</p>
+									<p>By clicking Create Account or Sign up with Facebook/Google.</p>
 									<p>You agree to the <a href="/terms-and-conditions">Terms of Use</a> and <a href="/privacy-policy">Privacy Policy</a>.</p>
 								</div>
 
@@ -493,6 +511,32 @@
 				}
 			})
 		})
+
+		$(document).ready(function() {
+
+			// Validation work
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function () {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.prototype.slice.call(forms)
+			.forEach(function (form) {
+			form.addEventListener('submit', function (event) {
+				if (!form.checkValidity()) {
+					event.preventDefault()
+					event.stopPropagation()
+				}
+
+				form.classList.add('was-validated')
+			}, false)
+			})
+			})()
+
+			})
 		</script>
 			
 	</body>

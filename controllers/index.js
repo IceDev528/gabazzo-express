@@ -14,10 +14,14 @@ const Conversation = require("../models/conversation");
 const Faq = require("../models/faq");
 const List = require("../models/list");
 const Label = require("../models/label");
+const Job = require("../models/job");
+const Offer = require("../models/offer");
 const moment = require("moment-timezone");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const AvailableService = require("../models/availableServices");
+const Project = require("../models/project");
 const filterHandler = require("../helpers/filterHelper");
+const resolutionCenter = require("../models/resolutionCenter");
 const geocodingClient = mbxGeocoding({
   accessToken:
     "pk.eyJ1IjoiYWRuYW5hc2xhbSIsImEiOiJja2h0YzR1YXoxbHllMnRwNXNkamJiNmxvIn0.-eU0lnIjgCMBLn4yh-c-Yg",
@@ -28,6 +32,8 @@ const crypto = require("crypto");
 const util = require("util");
 const sgMail = require("@sendgrid/mail");
 const multer = require("multer");
+
+const axios = require("axios").default;
 
 const { uploadToS3, deleteFileFromS3 } = require("./aws/fileHandler");
 
@@ -49,22 +55,11 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 module.exports = {
   //GET /
   async getHomePage(req, res, next) {
-    let lastMessage, user;
-
-    if (req.user) {
-      //getting the conversation of the sender in descending order
-      let existingConv = await Conversation.find({
-        participants: { $in: req.user.id },
-      }).sort({ lastMsgTime: -1 });
-
-      if (existingConv) {
-        //getting the msgs against the current sender and receiver
-        lastMessage = await Chat.find({
-          conversationID: existingConv[0]?._id,
-        });
-        lastMessage = lastMessage[0];
-      }
-    }
+    let lastMessage,
+      user,
+      service,
+      projects = [],
+      services = [];
 
     let company = await User.find({
       isEmailVerified: true,
@@ -90,7 +85,8 @@ module.exports = {
         },
       },
     ];
-    let service = await User.aggregate(aggregateQuery);
+    service = await User.aggregate(aggregateQuery);
+
     let companies = [];
 
     company.forEach(function (comp) {
@@ -135,16 +131,56 @@ module.exports = {
       }
     });
 
-    // if (req.user) {
-    //   user.status = true;
-    //   await user.save();
-    // }
-
     let time = moment.utc(new Date(), "HH:mm").tz("America/Chicago");
 
     usaTime = time.format("HH:mm");
 
-    res.render("index", {
+    if (req.user) {
+      //getting the conversation of the sender in descending order
+      let existingConv = await Conversation.find({
+        participants: { $in: req.user.id },
+      }).sort({ lastMsgTime: -1 });
+
+      if (existingConv) {
+        //getting the msgs against the current sender and receiver
+        lastMessage = await Chat.find({
+          conversationID: existingConv[0]?._id,
+        });
+        lastMessage = lastMessage[0];
+      }
+
+      // Recommendation on the basis of users past orders
+      if (!req.user.isCompany) {
+        const jobs = await Job.find({ buyer: req.user._id }).populate(
+          "service"
+        );
+        let purchased_categories = [];
+
+        for (let i = 0; i < jobs.length; i++) {
+          purchased_categories.push(jobs[i].service.category);
+        }
+        projects = await Job.find({
+          "owner.id": req.user.id,
+        });
+        services = await AvailableService.find({});
+
+        // Recommendation API - User based recommendation - Apriori
+        const recommendation = await axios.post(
+          "https://gabazzo-recommendation-api.herokuapp.com/test",
+          {
+            services: purchased_categories,
+          }
+        );
+
+        service = service.filter((ser) => {
+          return recommendation.data.response.includes(
+            ser?.existingService?.category
+          );
+        });
+      }
+    }
+
+    return res.render("index", {
       title: "GABAZZO",
       user,
       company,
@@ -152,6 +188,8 @@ module.exports = {
       service,
       usaTime,
       lastMessage,
+      projects,
+      services,
     });
   },
 
@@ -2023,6 +2061,7 @@ module.exports = {
 
   //POST /sign-up
   async postSignUp(req, res, next) {
+    console.log(req.body)
     if (req.body.password === req.body.confirmpassword) {
       const token = await crypto.randomBytes(20).toString("hex");
       const newUser = new User({
@@ -7922,7 +7961,11 @@ module.exports = {
         );
       }
 
-      if (typeof location !== "undefined") {
+      if (
+        typeof location !== "undefined" &&
+        location != "" &&
+        location.length != 0
+      ) {
         servicePorts = servicePorts.filter((port) => {
           if (port.companyInfo?.city.toLowerCase() == location.toLowerCase()) {
             return true;
@@ -8194,44 +8237,6 @@ module.exports = {
     res.redirect("back");
   },
 
-  async saveInsurance(req, res) {
-    const { id } = req.params;
-    const {
-      insuranceState = "",
-      insuranceCompany = "",
-      insuranceNo = "",
-      insuranceCovered = "",
-      insuranceExpiration = "",
-    } = req.body;
-    let company = await User.findById(id);
-    // let insuranceImage = await cloudinary.v2.uploader.upload(req.file?.path);
-    company.insuranceState = insuranceState;
-    company.insuranceCompany = insuranceCompany;
-    company.insuranceNo = insuranceNo;
-    company.insuranceCovered = insuranceCovered;
-    company.insuranceExpiration = insuranceExpiration;
-    // company.insuranceImage = insuranceImage.secure_url;
-    company.isInsured = true;
-    await company.save();
-    res.redirect("back");
-  },
-  async saveBonded(req, res) {
-    const { id } = req.params;
-    const { bondState = "", bondInfo = "" } = req.body;
-    let company = await User.findById(id);
-
-    // if (req.file) {
-    //   if (company.bondImage) {
-    //     await cloudinary.v2.uploader.destroy(company.bondImage);
-    //   }
-    //   bondImage = await cloudinary.v2.uploader.upload(req.file.path);
-    // }
-    company.bondInfo = bondInfo;
-    company.isBonded = true;
-    company.bondState = bondState;
-    await company.save();
-    res.redirect("back");
-  },
   async saveStateLicence(req, res, next) {
     try {
       const { id } = req.params;
@@ -8243,9 +8248,9 @@ module.exports = {
       company.stateLicense.licenseExpiration = licenseExpiration;
 
       if (typeof company.stateLicense.file.key !== "undefined") {
-        const deleteFile = await deleteFileFromS3(
-          company.stateLicense.file.key
-        ).catch((err) => console.log(err));
+        const deleteFile = await deleteFileFromS3(company.stateLicense.file.key)
+          .then((res) => console.log("file deleted", res))
+          .catch((err) => console.log(err));
       }
 
       if (req.file) {
@@ -8255,6 +8260,7 @@ module.exports = {
         );
 
         if (uploadFile) {
+          console.log("uploaded file: ", uploadFile);
           company.stateLicense.file = {
             key: uploadFile.Key,
             path: uploadFile.Location,
@@ -8321,26 +8327,17 @@ module.exports = {
   async saveBondLicense(req, res, next) {
     try {
       const { id } = req.params;
-      const {
-        insuranceState,
-        insuranceCompany,
-        insuranceNo,
-        insuranceCovered,
-        insuranceExpiration,
-      } = req.body;
+      const { bondState, bondInfo } = req.body;
 
       let company = await User.findById(id);
 
-      company.insurance.insuranceState = insuranceState;
-      company.insurance.insuranceCompany = insuranceCompany;
-      company.insurance.insuranceNo = insuranceNo;
-      company.insurance.insuranceCovered = insuranceCovered;
-      company.insurance.insuranceExpiration = insuranceExpiration;
+      company.bond.bondState = bondState;
+      company.bond.bondInfo = bondInfo;
 
-      if (typeof company.insurance.file.key !== "undefined") {
-        const deleteFile = await deleteFileFromS3(
-          company.stateLicense.file.key
-        ).catch((err) => console.log(err));
+      if (typeof company.bond.file.key !== "undefined") {
+        const deleteFile = await deleteFileFromS3(company.bond.file.key).catch(
+          (err) => console.log(err)
+        );
       }
 
       if (req.file) {
@@ -8349,18 +8346,18 @@ module.exports = {
         );
 
         if (uploadFile) {
-          company.insurance.file = {
+          company.bond.file = {
             key: uploadFile.Key,
             path: uploadFile.Location,
           };
         }
       }
 
-      company.isInsured = true;
+      company.isBonded = true;
 
       await company.save();
 
-      req.session.success = "Insurance License successfully uploaded!";
+      req.session.success = "Bond License successfully uploaded!";
       return res.redirect("back");
     } catch (err) {}
   },
@@ -8383,4 +8380,107 @@ module.exports = {
       return res.status(400).json({ err: err });
     }
   },
+
+  //get resolution-center
+  async getResolutionCenterForm(req, res, next) {
+    let user = req.user;
+    let id = req.params.id;
+    
+    // console.log("offer",offer)
+    // const { id } = req.params;
+    // console.log("check ",user);
+    res.render('resolution-center/select-action',{user,id});
+    
+  },
+
+  async postResolutionCenterForm(req, res, next) {
+    let offer = await Offer.findById(req.body['offer-id']);
+    let sender = await User.findById(offer.sender);
+    let receiver = await User.findById(offer.receiver);
+    let mainReason = req.body.mainReasons;
+    let subReason = "";
+    let detail = "";
+
+
+    if(req.body.cancelOptions!='')
+    {
+      subReason = req.body.cancelOptions;
+    }
+    else if(req.body.extendOptions!='')
+    {
+      subReason = req.body.extendOptions;
+    }
+    else if(req.body.other1 !='')
+    {
+      subReason = req.body.other1
+    }
+    else if(req.body.other2 !='')
+    {
+      subReason = req.body.other2
+    }
+
+    detail = req.body.other3
+    
+
+    let dispute = new resolutionCenter({
+      sender: {
+        id: sender._id,
+        username: sender.username,
+      },
+      receiver: {
+        id: receiver._id,
+        username: receiver.username,
+      },
+      offer: {
+        id: offer._id,
+      },
+      mainReason: mainReason,
+      subReasons: subReason,
+      details: detail,
+      timeExtension:""
+    });
+
+    // await resolutionCenter.create(dispute);
+    console.log("dispute saved",dispute)
+    
+    
+
+
+  },
+
+  async getDisputedSubmittedPage(req, res, next) {
+    res.render('resolution-center/dispute-submitted')
+  },
+
+  //resolution center contractor POV
+  async getResolutionCenterFormContractor(req, res, next) {
+    let user = req.user;
+    let id = req.params.id;
+
+    res.render('resolution-contractor/action-details',{user,id});
+  },
+
+  async postResolutionCenterFormContractor(req, res, next) {
+    console.log(req.body)
+    let pagetitle = ""
+    if(req.body.mainReasons == "cancelOrder")
+    {
+      pagetitle = "Dispute Submitted"
+      res.render('resolution-center/dispute-submitted',{pagetitle})
+    }
+    else if(req.body.mainReasons == "modifyOrder")
+    {
+      
+      pagetitle = "Offer Submitted"
+      res.render('resolution-center/dispute-submitted',{pagetitle})
+    }
+    else if(req.body.mainReasons == "extendTime")
+    {
+      
+      pagetitle = "Time Extend Request Submitted"
+      res.render('resolution-center/dispute-submitted',{pagetitle})
+    }
+    
+  },
+  
 };

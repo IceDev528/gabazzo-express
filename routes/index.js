@@ -197,10 +197,14 @@ const {
   createLabel,
   saveToLabel,
   saveStateLicence,
-  saveInsurance,
-  saveBonded,
   addCommentReply,
   saveInsuranceLicense,
+  saveBondLicense,
+  getResolutionCenterForm,
+  getDisputedSubmittedPage,
+  postResolutionCenterForm,
+  getResolutionCenterFormContractor,
+  postResolutionCenterFormContractor,
 } = require("../controllers");
 const {
   asyncErrorHandler,
@@ -1288,7 +1292,11 @@ router.post(
   messageAttachment.single("insurance-doc"),
   asyncErrorHandler(saveInsuranceLicense)
 );
-router.post("/bonded/:id", asyncErrorHandler(saveStateLicence));
+router.post(
+  "/bonded/:id",
+  messageAttachment.single("bond-doc"),
+  asyncErrorHandler(saveBondLicense)
+);
 
 // OFFERS
 router.get(
@@ -1495,26 +1503,49 @@ router.get(
 );
 
 router.post(
-  "/state-license/:id",
-  upload.single("image"),
-  asyncErrorHandler(saveStateLicence)
-);
-router.post(
-  "/insurance-certificate/:id",
-  upload.single("image"),
-  asyncErrorHandler(saveInsurance)
-);
-router.post(
-  "/bonded/:id",
-  upload.single("image"),
-  asyncErrorHandler(saveBonded)
-);
-
-router.post(
   "/add-comment-reply/:id",
   isLoggedIn,
   isCompany,
   asyncErrorHandler(addCommentReply)
 );
 
+//resolution center user POV
+router.get(
+  "/resolution-center/:id",
+  isLoggedIn,
+  isMember,
+  asyncErrorHandler(getResolutionCenterForm)
+);
+
+router.post(
+  "/resolution-center-data",
+  isLoggedIn,
+  isMember,
+  asyncErrorHandler(postResolutionCenterForm)
+);
+
+router.get(
+  "/dispute-submitted",
+  isLoggedIn,
+  isMember,
+  asyncErrorHandler(getDisputedSubmittedPage)
+);
+
+//resolution center contractor POV
+
+router.get(
+  "/resolution-center-contractor/:id",
+  isLoggedIn,
+  // isCompany,
+  // isMember,
+  asyncErrorHandler(getResolutionCenterFormContractor)
+);
+
+router.post(
+  "/resolution-center-data-contractor",
+  isLoggedIn,
+  // isCompany,
+  // isMember,
+  asyncErrorHandler(postResolutionCenterFormContractor)
+);
 module.exports = router;

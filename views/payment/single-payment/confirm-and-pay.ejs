@@ -1,4 +1,4 @@
-<%var serviceFee = 2.4;%>
+<%var serviceFee = 0.05; %>
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -383,8 +383,8 @@
       </div>
     </section>
 
-    		<!--===== Markup For "Loading Page" Starts From Here =====-->
-		<section class="loading_page_wrap" id="loader" style="display: none;">
+    <!--===== Markup For "Loading Page" Starts From Here =====-->
+		<section class="loading_page_wrap" id="pageloader" style="display: none;">
 			<div class="loding_page">
 				<div class="loading_content">
 					<div class="logo_slogan">
@@ -451,7 +451,7 @@
 
           // Showing the loader
           $("#mainPage").css("display", 'none')
-          $("#loader").css("display", "grid" );
+          $("#pageloader").css("display", "grid" );
 
           var loader = document.getElementById("loader");
           var buttonPay = document.getElementById("pay");

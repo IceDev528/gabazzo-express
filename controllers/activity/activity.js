@@ -200,6 +200,8 @@ exports.getActivityPage = async (req, res) => {
     }
   }
 
+  const user = req.user;
+
   if (!req.user.isCompany) {
     if (job.isActive) {
       res.render("tracking-service-system/member/activity", {
@@ -208,6 +210,7 @@ exports.getActivityPage = async (req, res) => {
         activity,
         lastMessage,
         moment: moment,
+        user,
       });
     } else {
       res.render(
@@ -218,6 +221,7 @@ exports.getActivityPage = async (req, res) => {
           activity,
           lastMessage,
           moment: moment,
+          user,
         }
       );
     }
@@ -229,6 +233,7 @@ exports.getActivityPage = async (req, res) => {
         activity,
         lastMessage,
         moment: moment,
+        user,
       });
     } else {
       res.render(
@@ -239,6 +244,7 @@ exports.getActivityPage = async (req, res) => {
           activity,
           lastMessage,
           moment: moment,
+          user,
         }
       );
     }

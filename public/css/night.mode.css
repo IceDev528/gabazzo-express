@@ -439,6 +439,139 @@
 
 
 /* ============================== */
+
+/* ===== CSS For "Lead Pages" Starts Here ===== */
+.night .post_project_modal .modal-body{
+	background: var(--nightBoxColor);
+}
+.night .post_project_modal .form_wrap{
+	background: var(--nightBodyColor);
+}
+.night .post_project_modal .form-control{
+	background: var(--nightBoxColor) !important;
+	border: 1px solid #575757;
+}
+.night .post_project_modal .budget_openbids .gbtn{
+	background: var(--nightBoxColor);
+}
+.night .post_project_modal .budget_openbids .gbtn:hover{
+	color: var(--lightColor);
+	background: var(--baseColor);
+}
+.night .post_project_modal .open_to_bids .btn.active .gbtn_bdr {
+	color: var(--lightColor) !important;
+	background: var(--baseColor);
+}
+.night .post_project_modal .upload_box{
+	background: #121212;
+}
+.night .post_project_modal .upload_box .label {
+	border: 2px dashed #575757;
+}
+
+/* ============================== */
+/* ============================== */
+
+.night .view_offer .members_request_wrap{
+	background: var(--nightBoxColor);
+}
+.night .view_offer .members_request .request .download_files ul li a {
+	color: var(--baseColor) !important;
+}
+.night .view_offer .members_request .request .download_files ul li a .file_name{
+	color: var(--baseColor) !important;
+}
+.night .view_offer .single_company_offer{
+	background: var(--nightBoxColor);
+}
+.night .view_offer .single_company_offer .offered_price h2 {
+	color: var(--baseColor) !important;
+}
+.night .view_offer .members_request .request p a {
+	color: var(--baseColor) !important;
+}
+.night .view_offer .single_company_offer .offer p a {
+	color: var(--baseColor) !important;
+}
+.night .view_offer .offer_sort_by .form-control{
+	border: 1px solid #575757;
+}
+.night .view_offer .offer_sort_by .select_field::after {
+	color: var(--baseColor);
+}
+.night .view_offer .tags ul li{
+	border: 1px solid #575757;
+}
+
+/* ============================== */
+/* ============================== */
+
+.night .view_requests_tab .table .action .dropdown-menu{
+	background: var(--nightBodyColor);
+	box-shadow: 0px 4px 32px rgba(19, 187, 182, 0.2);
+}
+.night .view_requests_tab .table .action .dropdown-menu::before{
+	background: var(--nightBodyColor);
+}
+.night .view_requests_tab .table .action .dropdown-menu ul li a{
+	border-bottom: 1px solid #575757;
+}
+.night .view_requests_tab .table .action .dropdown-menu ul li a:hover{
+	color: var(--baseColor) !important;
+}
+.night .view_requests_tab .table{
+	background: var(--nightBoxColor);
+}
+.night .view_requests_tab .table th,
+.night .view_requests_tab .table td{
+	border: 1px solid #575757;
+}
+.night .view_requests_tab .table .request .tags ul li{
+	border: 1px solid #575757;
+}
+.night .view_requests_tab .table .request .download_files ul li a {
+	color: var(--baseColor) !important;
+}
+.night .view_requests_tab .table .request .download_files ul li a .file_name{
+	color: var(--baseColor) !important;
+}
+
+/* ============================== */
+/* ============================== */
+
+.night .view_offer .members_request .request_head .request_method h2{
+	color: var(--baseColor) !important;
+}
+.night .delete_leads_modal .modal-body{
+	background: var(--nightBodyColor);
+}
+.night .view_leads_tab .leads_header .filter_wrappp .form-control{
+	border: 1px solid #575757;
+	background: var(--nightBoxColor) !important;
+}
+.night .view_leads_tab .leads_header .filter_wrappp .select_field::after {
+	color: var(--baseColor);
+}
+
+/* ============================== */
+/* ============================== */
+
+.night .requested_services_tab .nav .nav-link{
+	background: var(--nightBoxColor);
+}
+.night .requested_services_tab .nav .nav-link.active{
+	background: var(--baseColor);
+}
+.night .requested_companies .single_company{
+	background: var(--nightBoxColor);
+}
+.night .requested_companies .single_company .logo_info ul li::before{
+	color: var(--baseColor);
+}
+.night .requested_ports .single_service .service_details {
+	background: var(--nightBoxColor);
+}
+/* ===== CSS For "Lead Pages" Ends Here ===== */
 /* ============================== */
 /* ============================== */
 

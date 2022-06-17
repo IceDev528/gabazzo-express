@@ -11,7 +11,6 @@ const Review = require("../../models/review");
 
 const { differenceInHours } = require("../../helpers/dateHelpers");
 
-
 const MakePayment = require("../../services/make_payment");
 const MakePaymentIntent = require("../../services/make_payment_intent");
 const RefundPayment = require("../../services/refund_payment");
@@ -30,17 +29,16 @@ const storage = multer.diskStorage({
   },
 });
 
-const Environment =
-  process.env.NODE_ENV === "production"
-    ? paypal.core.LiveEnvironment
-    : paypal.core.SandboxEnvironment;
+// const Environment =
+//   process.env.NODE_ENV === "production"
+//     ? paypal.core.LiveEnvironment
+//     : paypal.core.SandboxEnvironment;
 
-const paypalClient = new paypal.core.PayPalHttpClient(
-  new Environment(
-    process.env.PAYPAL_CLIENT_ID,
-    process.env.PAYPAL_CLIENT_SECRET
-  )
+let environment = new paypal.core.SandboxEnvironment(
+  process.env.PAYPAL_CLIENT_ID,
+  process.env.PAYPAL_CLIENT_SECRET
 );
+let paypalClient = new paypal.core.PayPalHttpClient(environment);
 
 const {
   generatePaypalToken,
@@ -82,8 +80,6 @@ exports.createJob = async (req, res, next) => {
     } = req.body;
     const opts = { session };
     let someDate = new Date();
-
-    console.log(offer_id);
 
     const offer = await Offer.findById(offer_id);
     if (!offer) throw new Error("Invalid Offer ID");
@@ -659,6 +655,7 @@ exports.extendDeadLine = async (req, res) => {
 
 exports.createPaypalCharge = async (req, res) => {
   try {
+    console.log("Paypal method called");
     const { offer_id, serviceFee } = req.body;
     const offer = await Offer.findById(offer_id);
     if (!offer) throw new Error("Invalid Offer");
@@ -680,22 +677,38 @@ exports.createPaypalCharge = async (req, res) => {
               },
             },
           },
-          items: offer.tasks.map((item) => {
-            const service_fee = item.totalPrice * (serviceFee / 100);
-            return {
-              name: item.description,
-              unit_amount: {
-                currency_code: "USD",
-                value:
-                  parseFloat(item.totalPrice) +
-                  parseFloat(service_fee.toFixed(2)),
-              },
-              quantity: parseFloat(item.quantity),
-            };
-          }),
         },
       ],
     });
+
+    // request.requestBody({
+    //   intent: "CAPTURE",
+    //   purchase_units: [
+    //     {
+    //       amount: {
+    //         currency_code: "USD",
+    //         value: total,
+    //         breakdown: {
+    //           item_total: {
+    //             currency_code: "USD",
+    //             value: total,
+    //           },
+    //         },
+    //       },
+    //       items: offer.tasks.map((item) => {
+    //         const service_fee = item.totalPrice * (serviceFee / 100);
+    //         return {
+    //           name: item.description,
+    //           unit_amount: {
+    //             currency_code: "USD",
+    //             value: parseFloat(item.unitPrice),
+    //           },
+    //           quantity: parseFloat(item.quantity),
+    //         };
+    //       }),
+    //     },
+    //   ],
+    // });
 
     const order = await paypalClient.execute(request);
     res.status(200).json({
@@ -708,3 +721,14 @@ exports.createPaypalCharge = async (req, res) => {
     });
   }
 };
+
+
+// //resolution center
+
+// exports.getResolutionCenterPage = async (req, res) => {
+//   res.render('resolution-center/select-action');
+// };
+
+// exports.getDisputedSubmittedPage = async (req, res) => {
+//   res.render('resolution-center/dispute-submitted');
+// }

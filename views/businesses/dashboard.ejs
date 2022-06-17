@@ -143,6 +143,7 @@
 						<li class="mobile_only"><i class="fas fa-envelope"></i> <a
 								href="/inbox/<%= lastMessage?.messages?.receiver.id %>">Messages</a></li>
 						<li><i class="fas fa-shopping-cart"></i><a href="/manage-orders">Manage Orders</a></li>
+						<li><i class="fab fa-angellist"></i> <a href="/view-lead">View Leads</a></li>
 						<li><i class="fas fa-cog"></i> <a href="/company-settings/account">Settings</a></li>
 						<li><i class="fas fa-power-off"></i> <a href="/logout">Logout</a></li>
 					</ul>
@@ -486,35 +487,96 @@
 								<h3>Business Documents</h3>
 							</div>
 							<div class="info_texts">
-								<p>It is okay if you do not have neither of these. Gabazzo gives up to 60 days to
-									acquire a state License and insurance. this will secure your company from potential
-									warnings/lawsuits from your local jurisdiction. if you do not know how to acquire
+								<p>Gabazzo gives up to 60 days to
+									acquire a state license and insurance. this will secure your company from potential
+									warnings/lawsuits from your local jurisdiction. If you do not know how to acquire
 									either, please contact us at support@gabazzo.com</p>
 							</div>
 
-							<div class="business_docs">
-								<div class="single_documents">
-									<h5>State License</h5>
-									<div class="upload_documents">
-										<a href="javascript:void(0)" data-target="#uploadLicensedCertificate"
-											data-toggle="modal"><i class="fas fa-plus"></i></a>
+							<div class="business_docs business_docs_uploaded">
+								<% if(currentUser.isStateLicensed) { %> 
+									<div class="single_documents">
+										<h5>State License</h5>
+										<div class="uploaded_documents">
+											<div class="the_document">
+												<div class="document_preview">
+													<a href="javascript:void(0)"><img src="<%= currentUser.stateLicense.file.path %>" class="img-fluid" alt="" /></a>
+												</div>
+												<div class="document_link">
+													<a href="<%= currentUser.stateLicense.file.path %>">Click to Download</a>
+												</div>
+											</div>
+											
+											<div class="edit_document">
+												<a href="javascript:void(0)" class="gbtn" data-target="#uploadLicensedCertificate" data-toggle="modal">Edit Document</a>
+											</div>
+										</div>
 									</div>
-								</div>
-								<div class="single_documents">
-									<h5>Insurance</h5>
-									<div class="upload_documents">
-										<a href="javascript:void(0)" data-target="#uploadInsuranceCertificate"
-											data-toggle="modal"><i class="fas fa-plus"></i></a>
+								<% } else { %>
+									<div class="single_documents">
+										<h5>State License</h5>
+										<div class="upload_documents">
+											<a href="javascript:void(0)" data-target="#uploadLicensedCertificate"
+												data-toggle="modal"><i class="fas fa-plus"></i></a>
+										</div>
 									</div>
-								</div>
+								<% } %>
+								
+								<% if(currentUser.isInsured) { %>
+									<div class="single_documents">
+										<h5>Insurance</h5>
+										<div class="uploaded_documents">
+											<div class="the_document">
+												<div class="document_preview">
+													<a href="javascript:void(0)"><img src="<%= currentUser.insurance.file.path %>" class="img-fluid" alt="" /></a>
+												</div>
+												<div class="document_link">
+													<a href="<%= currentUser.insurance.file.path %>">Click to Download</a>
+												</div>
+											</div>
+											
+											<div class="edit_document">
+												<a href="javascript:void(0)" class="gbtn" data-target="#uploadInsuranceCertificate" data-toggle="modal">Edit Document</a>
+											</div>
+										</div>
+									</div>
+								<% } else { %>
+									<div class="single_documents">
+										<h5>Insurance</h5>
+										<div class="upload_documents">
+											<a href="javascript:void(0)" data-target="#uploadInsuranceCertificate"
+												data-toggle="modal"><i class="fas fa-plus"></i></a>
+										</div>
+									</div>
+								<% } %>
 
-								<div class="single_documents">
-									<h5>Bonded</h5>
-									<div class="upload_documents">
-										<a href="javascript:void(0)" data-target="#uploadBondedCertificate"
-											data-toggle="modal"><i class="fas fa-plus"></i></a>
+								<% if(currentUser.isBonded) { %>
+									<div class="single_documents">
+										<h5>Bonded</h5>
+										<div class="uploaded_documents">
+											<div class="the_document">
+												<div class="document_preview">
+													<a href="javascript:void(0)"><img src="<%= currentUser.bond.file.path %>" class="img-fluid" alt="" /></a>
+												</div>
+												<div class="document_link">
+													<a href="<%= currentUser.bond.file.path %>">Click to Download</a>
+												</div>
+											</div>
+											
+											<div class="edit_document">
+												<a href="javascript:void(0)" class="gbtn" data-target="#uploadBondedCertificate" data-toggle="modal">Edit Document</a>
+											</div>
+										</div>
 									</div>
-								</div>
+								<% } else { %>		
+									<div class="single_documents">
+										<h5>Bonded</h5>
+										<div class="upload_documents">
+											<a href="javascript:void(0)" data-target="#uploadBondedCertificate"
+												data-toggle="modal"><i class="fas fa-plus"></i></a>
+										</div>
+									</div>
+								<% } %>
 							</div>
 						</div>
 					</div>
@@ -886,96 +948,72 @@
 			<!--===== Markup For "Reviews" Ends Here =====-->
 
 
-			<!--===== Markup For "Insurance Certificate" Starts From Here =====-->
-			<div class="modal fade legal_doc_modal legal_doc_upload_modal" id="uploadInsuranceCertificate">
+			<!--===== Markup For "State License" Starts From Here =====-->
+			<div class="modal fade legal_doc_modal legal_doc_upload_modal" id="uploadBondedCertificate">
 				<div class="modal-dialog modal-lg modal-dialog-centered">
 					<div class="modal-content">
 						<div class="modal-body">
 							<div class="certificate_wrap">
 								<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
 
-								<form action="/insurance-certificate/<%= currentUser._id %>" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+								<form action="/bonded/<%= currentUser._id %>" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+
 									<div class="the_certificate licensed_certificate">
 										<div class="certificate_texts">
-											<h1>Insurance</h1>
-											<div class="form_row">
-												<div class="single_certificate_info">
-													<label for="">State:</label>
-													<input type="text" value="<%= currentUser.insurance.insuranceState %>"
-														name="insuranceState" placeholder="" class="form-control" required>
-													<div class="invalid-feedback">
-														Please write a valid Insurance State.
-													</div>
-												</div>
-
-												<div class="single_certificate_info">
-													<label for="">Company:</label>
-													<input type="text" name="insuranceCompany"
-														value="<%= currentUser.insurance.insuranceCompany %>" placeholder=""
-														class="form-control" required>
-														<div class="invalid-feedback">
-															Please write a valid Insurance Company.
-														</div>
-												</div>
-											</div>
-
-											<div class="form_row">
-												<div class="single_certificate_info">
-													<label for="">Insurance #: </label>
-													<input type="text" name="insuranceNo"
-														value="<%= currentUser.insurance.insuranceNo %>" placeholder=""
-														class="form-control" required>
-														<div class="invalid-feedback">
-															Please write a valid Insurance No.
-														</div>
-												</div>
-
-												<div class="single_certificate_info">
-													<label for="">Covered:</label>
-													<input type="text" name="insuranceCovered"
-														value="<%= currentUser.insurance.insuranceCovered  %>" placeholder=""
-														class="form-control" required>
-														<div class="invalid-feedback">
-															Please write Insurance Covered.
-														</div>
-												</div>
+											<h1>Bonded</h1>
+											<div class="single_certificate_info">
+												<label for="">State:</label>
+												<input type="text" value="<%= currentUser.bond.bondState %>" name="bondState"
+													placeholder="" class="form-control" />
 											</div>
 
 											<div class="single_certificate_info">
-												<label for="">Expiration:</label>
-												<input type="date" name="insuranceExpiration"
-													value="<%= currentUser.insurance.insuranceExpiration %>" placeholder=""
-													class="form-control" required> 
-													<div class="invalid-feedback">
-														Please select a valid Insurance Expiration date.
-													</div>
+												<label for="">Info:</label>
+												<textarea name="bondInfo" id="" cols="30" rows="3"
+													class="form-control"><%= currentUser.bond.bondInfo %></textarea>
 											</div>
 										</div>
 
-										<div class="certificate_image">
-											<div class="attach_file">
-												<label class="attachment">
-													<div class="texts">
-														<i class="fas fa-cloud-upload-alt"></i>
-														<span>Upload Certificate</span>
+										<% if(currentUser.isBonded) { %>
+											<div class="certificate_image">
+												<div class="uploaded_documents">
+													<div class="the_document">
+														<div class="document_preview">
+															<a href="javascript:void(0)"><img src="<%= currentUser.bond.file.path %>" class="img-fluid" alt=""></a>
+														</div>
+														<div class="document_link">
+															<a href="<%= currentUser.bond.file.path %>">Click to Download</a>
+														</div>
 													</div>
-													<input
-														type="file"
-														name="insurance-doc"
-														id="insurance-attachment"
-														class="form-control file_attachment"
-														required
-													/>
-													<div class="invalid-feedback">
-														Please attach the document.
+													
+													<div class="replace_document">
+														<label class="attachment gbtn">
+															<span class="attach_texts">Replace File</span>		
+															<input type="file" name="bond-doc" class="file_attachment" id="bondattachment" accept="application/msword, text/plain, application/pdf, image/*" class="form-control" required/>
+														</label>
 													</div>
-												</label>
-											
-												<div class="valid-feedback" id="insuranceattachment-msg">
-
+												</div>
 											</div>
-										</div>
-									</div>
+										<% } else { %>
+											<div class="certificate_image">
+												<div class="attach_file">
+													<label class="attachment">
+														<div class="texts">
+															<i class="fas fa-cloud-upload-alt"></i>
+															<span>Upload Certificate</span>
+														</div>
+														<input type="file" name="bond-doc" class="file_attachment" id="bondattachment" accept="application/msword, text/plain, application/pdf, image/*" class="form-control" required/>
+														<div class="invalid-feedback">
+																Please attach the document.
+														</div>
+														</label>
+													
+														<div class="valid-feedback" id="bondattachment-msg">
+												</div>
+											</div>
+											</div>
+										<% } %>
+									
 
 									<div class="submit_button">
 										<button type="submit" class="btn gbtn">Upload Certificate</button>
@@ -986,57 +1024,6 @@
 					</div>
 				</div>
 			</div>
-			<!--===== Markup For "Insurance Certificate" Ends Here =====-->
-
-			<!--===== Markup For "State License" Starts From Here =====-->
-			<div class="modal fade legal_doc_modal legal_doc_upload_modal" id="uploadBondedCertificate">
-				<div class="modal-dialog modal-lg modal-dialog-centered">
-					<div class="modal-content">
-						<div class="modal-body">
-							<div class="certificate_wrap">
-								<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
-
-								<form enctype="multipart/form-data"
-									action="/insurance-certificate/<%= currentUser._id %>" method="post">
-
-									<div class="the_certificate licensed_certificate">
-										<div class="certificate_texts">
-											<h1>Bonded</h1>
-											<div class="single_certificate_info">
-												<label for="">State:</label>
-												<input type="text" value="<%= currentUser.bondState %>" name="bondState"
-													placeholder="" class="form-control">
-											</div>
-
-											<div class="single_certificate_info">
-												<label for="">Info:</label>
-												<textarea name="bondInfo" id="" cols="30" rows="3"
-													class="form-control"><%= currentUser.bondInfo %></textarea>
-											</div>
-										</div>
-
-										<div class="certificate_image">
-											<div class="attach_file">
-												<label class="attachment">
-													<div class="texts">
-														<i class="fas fa-cloud-upload-alt"></i>
-														<span>Upload Certificate</span>
-													</div>
-													<input type="file" name="image" class="file_attachment" id=""
-														accept="image/*" class="form-control" />
-												</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="submit_button">
-										<button type="submit" class="btn gbtn">Upload Certificate</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 			<!--===== Markup For "State License" Ends Here =====-->
 
@@ -1059,7 +1046,7 @@
 													<label for="">State:</label>
 													<input type="text" name="licenseState"
 														value="<%= currentUser.stateLicense.licenseState %>"
-														class="form-control" required>
+														class="form-control" required/>
 													<div class="invalid-feedback">
 														Please write a State
 													</div>
@@ -1069,7 +1056,7 @@
 													<label for="">License #:</label>
 													<input type="text" name="licenseNo"
 														value="<%= currentUser.stateLicense.licenseNo %>"
-														class="form-control" required>
+														class="form-control" required/>
 													<div class="invalid-feedback">
 														Please write a valid License No.
 													</div>
@@ -1079,37 +1066,68 @@
 											<div class="single_certificate_info">
 												<label for="">Expiration:</label>
 												<input type="date" name="licenseExpiration" 
-													value="<%= currentUser.stateLicense.licenseExpiration %>" class="form-control" required>
+													value="<%= currentUser.stateLicense.licenseExpiration %>" class="form-control" required/>
 												<div class="invalid-feedback" >
 													Please select an Expiration date.
 												</div>
 											</div>
 										</div>
 
-										<div class="certificate_image">
-											<div class="attach_file">
-												<label class="attachment">
-													<div class="texts">
-														<i class="fas fa-cloud-upload-alt"></i>
-														<span>Upload Certificate</span>
+										<% if(currentUser.isStateLicensed) { %>
+											<div class="certificate_image">
+												<div class="uploaded_documents">
+													<div class="the_document">
+														<div class="document_preview">
+															<a href="javascript:void(0)"><img src="<%= currentUser.stateLicense.file.path %>" class="img-fluid" alt=""></a>
+														</div>
+														<div class="document_link">
+															<a href="<%= currentUser.stateLicense.file.path %>">Click to Download</a>
+														</div>
 													</div>
-
-													<input
-														type="file"
-														name="state-doc"
-														id="statelicense-attachment"
-														class="form-control file_attachment"
-														required
-													/>
-													<div class="invalid-feedback">
-														Please attach the document.
+													
+													<div class="replace_document">
+														<label class="attachment gbtn">
+															<span class="attach_texts">Replace File</span>		
+															<input
+															type="file"
+															name="state-doc"
+															id="statelicense-attachment"
+															class="form-control file_attachment"
+															accept="application/msword, text/plain, application/pdf, image/*"
+															required
+														/>
+														</label>
 													</div>
-												</label>
-											
-												<div class="valid-feedback" id="stateattachment-msg">
+												</div>
 											</div>
-										</div>
-									</div>
+										<% } else {%>
+											<div class="certificate_image">
+												<div class="attach_file">
+													<label class="attachment">
+														<div class="texts">
+															<i class="fas fa-cloud-upload-alt"></i>
+															<span>Upload Certificate</span>
+														</div>
+	
+														<input
+															type="file"
+															name="state-doc"
+															id="statelicense-attachment"
+															class="form-control file_attachment"
+															accept="application/msword, text/plain, application/pdf, image/*"
+															required
+														/>
+														<div class="invalid-feedback">
+															Please attach the document.
+														</div>
+													</label>
+												
+													<div class="valid-feedback" id="stateattachment-msg">
+													</div>
+												</div>
+											</div>
+										<% } %>
+
 									<div class="submit_button">
 										<button type="submit" class="btn gbtn">Upload Certificate</button>
 									</div>
@@ -1118,69 +1136,201 @@
 						</div>
 					</div>
 				</div>
+				</div>
 			</div>
 			<!--===== Markup For "State License" Ends Here =====-->
 
 
-			<!-- Report Review Modal Starts From Here -->
-			<div class="modal report_review_modal fade" id="reportAgainstReview">
-				<div class="modal-dialog modal-lg modal-dialog-centered">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h3>Report Against This Review</h3>
-							<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"
-									aria-hidden="true"></i></button>
+		<!-- Report Review Modal Starts From Here -->
+		<div class="modal report_review_modal fade" id="reportAgainstReview">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3>Report Against This Review</h3>
+						<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"
+								aria-hidden="true"></i></button>
+					</div>
+					<div class="modal-body">
+						<h5>Let us know why you would like to report this Reviews?</h5>
+
+						<div class="report_field_button">
+							<label class="radio">It's a Fake Review
+								<input type="radio" id="fakeReport" name="report_type"/>
+								<span class="checkround"></span>
+							</label>
+							<label class="radio">Other
+								<input type="radio" id="otherReport" name="report_type"/>
+								<span class="checkround"></span>
+							</label>
 						</div>
-						<div class="modal-body">
-							<h5>Let us know why you would like to report this Reviews?</h5>
 
-							<div class="report_field_button">
-								<label class="radio">It's a Fake Review
-									<input type="radio" id="fakeReport" name="report_type">
-									<span class="checkround"></span>
-								</label>
-								<label class="radio">Other
-									<input type="radio" id="otherReport" name="report_type">
-									<span class="checkround"></span>
-								</label>
+						<div class="hidden_report_fields">
+							<div id="fakeReportBottom">
+								<h6>Are you sure it's a Fake Review?</h6>
+								<form action="">
+									<div class="form">
+										<div class="form-group">
+											<textarea name="" id="" placeholder="Tell Us How It's Fake?" cols="30"
+												rows="3" class="form-control"></textarea>
+										</div>
+										<div class="submit_button text-right">
+											<button type="button" class="btn btn-gbz-success">Report Submit</button>
+										</div>
+									</div>
+								</form>
 							</div>
-
-							<div class="hidden_report_fields">
-								<div id="fakeReportBottom">
-									<h6>Are you sure it's a Fake Review?</h6>
-									<form action="">
-										<div class="form">
-											<div class="form-group">
-												<textarea name="" id="" placeholder="Tell Us How It's Fake?" cols="30"
-													rows="3" class="form-control"></textarea>
-											</div>
-											<div class="submit_button text-right">
-												<button type="button" class="btn btn-gbz-success">Report Submit</button>
-											</div>
+							<div id="otherReportBottom">
+								<h6>Please mentioned your report.</h6>
+								<form action="">
+									<div class="form">
+										<div class="form-group">
+											<textarea name="" id="" placeholder="Tell Us a Brief." cols="30"
+												rows="3" class="form-control"></textarea>
 										</div>
-									</form>
-								</div>
-								<div id="otherReportBottom">
-									<h6>Please mentioned your report.</h6>
-									<form action="">
-										<div class="form">
-											<div class="form-group">
-												<textarea name="" id="" placeholder="Tell Us a Brief." cols="30"
-													rows="3" class="form-control"></textarea>
-											</div>
-											<div class="submit_button text-right">
-												<button type="button" class="btn btn-gbz-success">Report Submit</button>
-											</div>
+										<div class="submit_button text-right">
+											<button type="button" class="btn btn-gbz-success">Report Submit</button>
 										</div>
-									</form>
-								</div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Report Review Modal Ends Here -->
+		</div>
+		<!-- Report Review Modal Ends Here -->
 
+		<!--===== Markup For "Insurance Certificate" Starts From Here =====-->
+		<div class="modal fade legal_doc_modal legal_doc_upload_modal" id="uploadInsuranceCertificate">
+			<div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="certificate_wrap">
+							<a href="javascript:void(0)" class="close" data-dismiss="modal">&times;</a>
+
+							<form action="/insurance-certificate/<%= currentUser._id %>" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+								<div class="the_certificate licensed_certificate">
+									<div class="certificate_texts">
+										<h1>Insurance</h1>
+										<div class="form_row">
+											<div class="single_certificate_info">
+												<label for="">State:</label>
+												<input type="text" value="<%= currentUser.insurance.insuranceState %>"
+													name="insuranceState" placeholder="" class="form-control" required />
+												<div class="invalid-feedback">
+													Please write a valid Insurance State.
+												</div>
+											</div>
+
+											<div class="single_certificate_info">
+												<label for="">Company:</label>
+												<input type="text" name="insuranceCompany"
+													value="<%= currentUser.insurance.insuranceCompany %>" placeholder=""
+													class="form-control" required />
+													<div class="invalid-feedback">
+														Please write a valid Insurance Company.
+													</div>
+											</div>
+										</div>
+
+										<div class="form_row">
+											<div class="single_certificate_info">
+												<label for="">Insurance #: </label>
+												<input type="text" name="insuranceNo"
+													value="<%= currentUser.insurance.insuranceNo %>" placeholder=""
+													class="form-control" required />
+													<div class="invalid-feedback">
+														Please write a valid Insurance No.
+													</div>
+											</div>
+
+											<div class="single_certificate_info">
+												<label for="">Covered:</label>
+												<input type="text" name="insuranceCovered"
+													value="<%= currentUser.insurance.insuranceCovered  %>" placeholder=""
+													class="form-control" required />
+													<div class="invalid-feedback">
+														Please write Insurance Covered.
+													</div>
+											</div>
+										</div>
+
+										<div class="single_certificate_info">
+											<label for="">Expiration:</label>
+											<input type="date" name="insuranceExpiration"
+												value="<%= currentUser.insurance.insuranceExpiration %>" placeholder=""
+												class="form-control" required /> 
+												<div class="invalid-feedback">
+													Please select a valid Insurance Expiration date.
+												</div>
+										</div>
+									</div>
+
+									<% if(currentUser.isInsured) { %>
+										<div class="certificate_image">
+											<div class="uploaded_documents">
+												<div class="the_document">
+													<div class="document_preview">
+														<a href="javascript:void(0)"><img src="<%= currentUser.insurance.file.path %>" class="img-fluid" alt=""></a>
+													</div>
+													<div class="document_link">
+														<a href="<%= currentUser.insurance.file.path %>">Click to Download</a>
+													</div>
+												</div>
+												
+												<div class="replace_document">
+													<label class="attachment gbtn">
+														<span class="attach_texts">Replace File</span>		
+														<input
+														type="file"
+														name="insurance-doc"
+														id="insurance-attachment"
+														class="form-control file_attachment"
+														accept="application/msword, text/plain, application/pdf, image/*"
+														required
+													/>
+													</label>
+												</div>
+											</div>
+										</div>
+									<%} else { %>
+										<div class="certificate_image">
+											<div class="attach_file">
+												<label class="attachment">
+													<div class="texts">
+														<i class="fas fa-cloud-upload-alt"></i>
+														<span>Upload Certificate</span>
+													</div>
+													<input
+														type="file"
+														name="insurance-doc"
+														id="insurance-attachment"
+														class="form-control file_attachment"
+														accept="application/msword, text/plain, application/pdf, image/*"
+														required
+													/>
+													<div class="invalid-feedback">
+														Please attach the document.
+													</div>
+												</label>
+											
+												<div class="valid-feedback" id="insuranceattachment-msg">
+	
+											</div>
+										</div>
+									</div>
+									<% } %>
+
+								<div class="submit_button">
+									<button type="submit" class="btn gbtn">Upload Certificate</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===== Markup For "Insurance Certificate" Ends Here =====-->
 
 
 			<!--jQuery Main Libraty Latest Version-->
@@ -1242,7 +1392,7 @@
 				// File attachment manuplator
 				$(document).ready(function(){
 					
-					// Image upload preview
+					// Document upload for License modal
 					async function readLicenseURL(input) {
 						console.log(input)
 						if (input.files && input.files[0]) {
@@ -1262,29 +1412,51 @@
 					});
 				})
 
-					// File attachment manuplator
-					$(document).ready(function(){
-					
-					// Image upload preview
-					async function readInsuranceURL(input) {
-						console.log(input)
-						if (input.files && input.files[0]) {
-							var reader = new FileReader();
 
-							reader.readAsDataURL(input.files[0]);
+				$(document).ready(function(){
+				
+				// Document upload for insurance modal
+				async function readInsuranceURL(input) {
+					console.log(input)
+					if (input.files && input.files[0]) {
+						var reader = new FileReader();
 
-							$("#insuranceattachment-msg").css("display", "block");
-							$("#insuranceattachment-msg").html(
-								"Files attached successfully."
-							);
-						}
+						reader.readAsDataURL(input.files[0]);
+
+						$("#insuranceattachment-msg").css("display", "block");
+						$("#insuranceattachment-msg").html(
+							"Files attached successfully."
+						);
 					}
+				}
 
-					$("#insurance-attachment").change(function () {
-						readInsuranceURL(this);
-					});
-				})
+				$("#insurance-attachment").change(function () {
+					readInsuranceURL(this);
+				});
+			})
 
+			// Document upload for bond modal
+			$(document).ready(function(){
+	
+				// Image upload preview
+				async function readBondURL(input) {
+					console.log(input)
+					if (input.files && input.files[0]) {
+						var reader = new FileReader();
+
+						reader.readAsDataURL(input.files[0]);
+
+						$("#bondattachment-msg").css("display", "block");
+						$("#bondattachment-msg").html(
+							"Files attached successfully."
+						);
+					}
+				}
+
+				$("#bondattachment").change(function () {
+					readBondURL(this);
+				});
+			})
 
 
 				// Select Open to Bids or Left an Amount Toggler

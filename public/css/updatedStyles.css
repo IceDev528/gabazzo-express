@@ -2538,226 +2538,6 @@ body {
 }
 /* ===== CSS For "Company Banner" Ends Here ===== */
 
-/* ===== CSS For "Company Modals" Starts Here ===== */
-.legal_doc_modal{
-	z-index: 2222;
-}
-.legal_doc_modal .modal-lg{
-	max-width: 860px;
-}
-.legal_doc_modal .modal-content{
-	border-radius: 0px;
-}
-.legal_doc_modal .modal-body{
-	padding: 0px;
-}
-.legal_doc_modal .certificate_wrap{
-	background: url(images/certificate_bg.png) no-repeat;
-	background-position: center center;
-	background-size: 100% 100%;
-	background-color: var(--lightColor);
-	padding: 100px 20px;
-	position: relative;
-}
-.night .legal_doc_modal .certificate_wrap{
-	background: url(images/certificate_bg_night.png) no-repeat;
-	background-position: center center;
-	background-size: 100% 100%;
-}
-.legal_doc_modal .verification_process_wrap{
-	position: relative;
-}
-.legal_doc_modal .close{
-	color: var(--darkColor);
-	font-family: var(--baseFont);
-	font-weight: 400;
-	font-size: 30px;
-	position: absolute;
-	right: 15px;
-	top: 10px;
-}
-.legal_doc_modal .the_certificate h1{
-	color: var(--baseColor);
-	font-family: var(--baseFont);
-	font-weight: 600;
-	font-size: 60px;
-	margin-bottom: 15px;
-	line-height: 1;
-}
-.legal_doc_modal .the_certificate h3{
-	color: var(--darkColor);
-	font-family: var(--baseFont);
-	font-weight: 600;
-	font-size: 30px;
-	line-height: 1;
-	margin-bottom: 10px;
-}
-.legal_doc_modal .the_certificate ul{
-	margin-bottom: 0px;
-}
-.legal_doc_modal .the_certificate ul li{
-	list-style: none;
-	color: var(--darkColor);
-	font-family: var(--baseFont);
-	font-weight: 500;
-	font-size: 20px;
-	margin-bottom: 5px;
-}
-.legal_doc_modal .the_certificate ul li:last-child{
-	margin-bottom: 0px;
-}
-.legal_doc_modal .the_certificate p{
-	color: var(--darkColor);
-	font-family: var(--baseFont);
-	font-weight: 500;
-	font-size: 20px;
-	margin-bottom: 10px;
-}
-.legal_doc_modal .the_certificate p:last-child{
-	margin-bottom: 0px;
-}
-
-.legal_doc_modal .licensed_certificate{
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 4fr 20px 3fr;
-    grid-template-columns: 4fr 3fr;
-    grid-auto-rows: auto;
-    gap: 20px;
-}
-.legal_doc_modal .bonded_certificate{
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 20px 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: auto;
-    gap: 20px;
-}
-.legal_doc_modal .insurance_certificate{
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 2fr 20px 1fr;
-    grid-template-columns: 2fr 1fr;
-    grid-auto-rows: auto;
-    gap: 20px;
-}
-.legal_doc_modal .insurance_certificate .certificate_image{
-	text-align: center;
-}
-.legal_doc_modal .insurance_certificate .certificate_pdf a{
-	color: var(--baseColor);
-	font-family: var(--baseFont);
-	font-weight: 500;
-	font-size: 18px;
-	display: inline-block;
-	margin-top: 5px;
-}
-
-.legal_doc_modal .verification_process .gabazzo_logo{
-	max-width: 150px !important;
-}
-.legal_doc_modal .verification_process .gabazzo_logo.white_logo{
-	display: none;
-}
-.legal_doc_modal .verification_process .top_part{
-	padding: 40px 30px;
-}
-.legal_doc_modal .verification_process .bottom_part{
-	background: #F7F7F7;
-	padding: 20px 30px;
-}
-.legal_doc_modal .verification_process .single_process{
-	margin-bottom: 30px;
-}
-.legal_doc_modal .verification_process .single_process:last-child{
-	margin-bottom: 0px;
-}
-.legal_doc_modal .verification_process .single_process h3{
-	color: var(--baseColor);
-	font-family: var(--baseFont);
-	font-weight: 600;
-	font-size: 30px;
-	margin-bottom: 15px;
-}
-.legal_doc_modal .verification_process .single_process h3 img{
-	max-width: 50px;
-}
-
-.legal_doc_modal .verification_process .verifi_process_txt_img{
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 15px 200px;
-    grid-template-columns: 1fr 200px;
-    grid-auto-rows: auto;
-    gap: 15px;	
-}
-@media screen and (max-width:767.98px){
-	.legal_doc_modal .verification_process .verifi_process_txt_img{
-		-ms-grid-columns: auto;
-		grid-template-columns: auto;	
-	}
-	.legal_doc_modal .verification_process .verifi_process_txt_img .gb_badge_wrap{
-		text-align: center;
-	}
-	.legal_doc_modal .verification_process .verifi_process_txt_img .gb_badge_wrap img{
-		max-width: 200px;
-	}
-}
-
-.legal_doc_modal .verification_process .single_process h5{
-	color: var(--darkColor);
-	font-family: var(--baseFont);
-	font-weight: 500;
-	font-size: 20px;
-	margin-bottom: 5px;
-}
-.legal_doc_modal .verification_process .single_process p{
-	color: var(--darkColor);
-	font-family: var(--baseFont);
-	font-weight: 300;
-	font-size: 15px;
-	margin-bottom: 10px;
-}
-.legal_doc_modal .verification_process .single_process p:last-child{
-	margin-bottom: 0px;
-}
-.legal_doc_modal .verification_process .single_process ul{
-	margin-bottom: 0px;
-}
-.legal_doc_modal .verification_process .single_process ul li{
-	color: var(--darkColor);
-	font-family: var(--baseFont);
-	font-weight: 300;
-	font-size: 15px;
-	margin-bottom: 10px;
-	list-style: none;
-	position: relative;
-	padding-left: 25px;
-}
-.legal_doc_modal .verification_process .single_process ul li:last-child{
-	margin-bottom: 0px;
-}
-.legal_doc_modal .verification_process .single_process ul li:before{
-	content: "\f00c";
-	font-family: "Font Awesome 5 Free";
-	font-weight: 700;
-	font-size: 16px;
-	color: var(--baseColor);
-	position: absolute;
-	left: 0px;
-	top: 1px;
-}
-
-.legal_doc_modal .verification_process .sub_process{
-	margin-bottom: 30px;
-}
-.legal_doc_modal .verification_process .sub_process:last-child{
-	margin-bottom: 0px;
-}
-
-/* =============================== */
-/* =============================== */
-
 .user_badges_modal {
 	z-index: 2222;
 }
@@ -3036,6 +2816,83 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
     gap: 15px;
+}
+
+
+/* ==================================== */
+
+.legal_doc_upload_modal .uploaded_documents {
+	background: var(--grayColor);
+	border: 1px solid var(--borderColor);
+	border-radius: 4px;
+	padding: 10px;
+}
+.legal_doc_upload_modal .uploaded_documents .the_document{
+	margin-bottom: 10px;
+}
+.legal_doc_upload_modal .uploaded_documents .document_preview{
+	margin-bottom: 5px;
+}
+.legal_doc_upload_modal .uploaded_documents .document_preview img{
+	width: 100%;
+	height: 250px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border: 2px solid var(--darkColor);
+	border-radius: 4px;
+}
+.business_docs .uploaded_documents{
+	text-align: center;
+}
+.legal_doc_upload_modal .uploaded_documents .document_link a{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	display: inline-block;
+}
+.legal_doc_upload_modal .uploaded_documents .document_link a:hover{
+	text-decoration: underline;
+}
+
+.legal_doc_upload_modal .uploaded_documents .replace_document .attachment{
+	color: var(--lightColor);
+	border-radius: 3px;
+	display: block;
+	padding: 12.5px 40px;
+	font-size: 15px;
+	cursor: pointer;
+	background: var(--baseColor);
+	height: inherit;
+	border: none;
+	position: static;
+	margin-bottom: 0px;
+}
+.legal_doc_upload_modal .uploaded_documents .replace_document .attachment .file_attachment{
+	display: none;
+}
+.legal_doc_upload_modal .uploaded_documents .replace_document .attachment span{
+	color: var(--lightColorColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	display: inline-block;
+}
+
+.legal_doc_uploaded_modal .certificate_wrap {
+	padding: 50px 20px;
+}
+.legal_doc_uploaded_modal .the_certificate .certificate_texts{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+}
+.legal_doc_uploaded_modal .the_certificate .certificate_image{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
 }
 
 /* ===== CSS For "Company Modals" Ends Here ===== */
@@ -5558,6 +5415,49 @@ body {
 }
 
 /* ============================== */
+
+.business_docs .uploaded_documents {
+	background: var(--grayColor);
+	border: 1px solid var(--borderColor);
+	border-radius: 4px;
+	padding: 10px;
+}
+.business_docs .uploaded_documents .the_document{
+	margin-bottom: 10px;
+}
+.business_docs .uploaded_documents .document_preview{
+	margin-bottom: 5px;
+}
+.business_docs .uploaded_documents .document_preview img{
+	width: 100%;
+	height: 250px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border: 2px solid var(--darkColor);
+	border-radius: 4px;
+}
+.business_docs .uploaded_documents .document_link{
+	text-align: center;
+}
+.business_docs .uploaded_documents .document_link a{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	display: inline-block;
+}
+.business_docs .uploaded_documents .document_link a:hover{
+	text-decoration: underline;
+}
+.business_docs .uploaded_documents .edit_document a{
+	border-radius: 3px;
+	display: block;
+	padding: 12.5px 40px;
+	font-size: 15px;
+}
+
+/* ============================== */
+
 /* ============================== */
 
 .dash_home_wrap {
@@ -17863,286 +17763,592 @@ body {
   top: 2px;
   background: var(--baseColor);
 }
-/* ===== CSS For "Company Banner" Ends Here ===== */
 
 /* ===== CSS For "Company Modals" Starts Here ===== */
-.legal_doc_modal {
-  z-index: 2222;
+.legal_doc_modal{
+	z-index: 2222;
 }
-.legal_doc_modal .modal-lg {
-  max-width: 860px;
+.legal_doc_modal .modal-lg{
+	max-width: 860px;
 }
-.legal_doc_modal .modal-content {
-  border-radius: 0px;
+.legal_doc_modal .modal-content{
+	border-radius: 0px;
 }
-.legal_doc_modal .modal-body {
-  padding: 0px;
+.legal_doc_modal .modal-body{
+	padding: 0px;
 }
-.legal_doc_modal .certificate_wrap {
-  background: url(../images/layout/certificate_bg.png) no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
-  background-color: var(--lightColor);
-  padding: 100px 20px;
-  position: relative;
+.legal_doc_modal .certificate_wrap{
+	background: url(../images/layout/certificate_bg.png) no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+	background-color: var(--lightColor);
+	padding: 100px 20px;
+	position: relative;
 }
-.legal_doc_modal .verification_process_wrap {
-  position: relative;
+.night .legal_doc_modal .certificate_wrap{
+	background: url(../images/layout/certificate_bg.png) no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
 }
-.legal_doc_modal .close {
-  color: var(--darkColor);
-  font-family: var(--baseFont);
-  font-weight: 400;
-  font-size: 30px;
-  position: absolute;
-  right: 15px;
-  top: 10px;
+.legal_doc_modal .verification_process_wrap{
+	position: relative;
 }
-.legal_doc_modal .the_certificate h1 {
-  color: var(--baseColor);
-  font-family: var(--baseFont);
-  font-weight: 600;
-  font-size: 60px;
-  margin-bottom: 15px;
-  line-height: 1;
+.legal_doc_modal .close{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 30px;
+	position: absolute;
+	right: 15px;
+	top: 10px;
 }
-.legal_doc_modal .the_certificate h3 {
-  color: var(--darkColor);
-  font-family: var(--baseFont);
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 1;
-  margin-bottom: 10px;
+.legal_doc_modal .the_certificate h1{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 60px;
+	margin-bottom: 15px;
+	line-height: 1;
 }
-.legal_doc_modal .the_certificate ul {
-  margin-bottom: 0px;
+.legal_doc_modal .the_certificate h3{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 1;
+	margin-bottom: 10px;
 }
-.legal_doc_modal .the_certificate ul li {
-  list-style: none;
-  color: var(--darkColor);
-  font-family: var(--baseFont);
-  font-weight: 500;
-  font-size: 20px;
-  margin-bottom: 5px;
+.legal_doc_modal .the_certificate ul{
+	margin-bottom: 0px;
 }
-.legal_doc_modal .the_certificate ul li:last-child {
-  margin-bottom: 0px;
+.legal_doc_modal .the_certificate ul li{
+	list-style: none;
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 5px;
 }
-.legal_doc_modal .the_certificate p {
-  color: var(--darkColor);
-  font-family: var(--baseFont);
-  font-weight: 500;
-  font-size: 20px;
-  margin-bottom: 10px;
+.legal_doc_modal .the_certificate ul li:last-child{
+	margin-bottom: 0px;
 }
-.legal_doc_modal .the_certificate p:last-child {
-  margin-bottom: 0px;
+.legal_doc_modal .the_certificate p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 10px;
 }
-
-.legal_doc_modal .licensed_certificate {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 4fr 20px 3fr;
-  grid-template-columns: 4fr 3fr;
-  grid-auto-rows: auto;
-  gap: 20px;
-}
-.legal_doc_modal .bonded_certificate {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 20px 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: auto;
-  gap: 20px;
-}
-.legal_doc_modal .insurance_certificate {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 20px 1fr;
-  grid-template-columns: 2fr 1fr;
-  grid-auto-rows: auto;
-  gap: 20px;
-}
-.legal_doc_modal .insurance_certificate .certificate_image {
-  text-align: center;
-}
-.legal_doc_modal .insurance_certificate .certificate_pdf a {
-  color: var(--baseColor);
-  font-family: var(--baseFont);
-  font-weight: 500;
-  font-size: 18px;
-  display: inline-block;
-  margin-top: 5px;
+.legal_doc_modal .the_certificate p:last-child{
+	margin-bottom: 0px;
 }
 
-.legal_doc_modal .verification_process .gabazzo_logo {
-  max-width: 150px !important;
+.legal_doc_modal .licensed_certificate{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 4fr 20px 3fr;
+    grid-template-columns: 4fr 3fr;
+    grid-auto-rows: auto;
+    gap: 20px;
 }
-.legal_doc_modal .verification_process .gabazzo_logo.white_logo {
-  display: none;
+.legal_doc_modal .bonded_certificate{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 20px;
 }
-.legal_doc_modal .verification_process .top_part {
-  padding: 40px 30px;
+.legal_doc_modal .insurance_certificate{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 20px 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: auto;
+    gap: 20px;
 }
-.legal_doc_modal .verification_process .bottom_part {
-  background: #f7f7f7;
-  padding: 20px 30px;
+.legal_doc_modal .insurance_certificate .certificate_image{
+	text-align: center;
 }
-.legal_doc_modal .verification_process .single_process {
-  margin-bottom: 30px;
-}
-.legal_doc_modal .verification_process .single_process:last-child {
-  margin-bottom: 0px;
-}
-.legal_doc_modal .verification_process .single_process h3 {
-  color: var(--baseColor);
-  font-family: var(--baseFont);
-  font-weight: 600;
-  font-size: 30px;
-  margin-bottom: 15px;
-}
-.legal_doc_modal .verification_process .single_process h3 img {
-  max-width: 50px;
-}
-.legal_doc_modal .verification_process .single_process h5 {
-  color: var(--darkColor);
-  font-family: var(--baseFont);
-  font-weight: 500;
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-.legal_doc_modal .verification_process .single_process p {
-  color: var(--darkColor);
-  font-family: var(--baseFont);
-  font-weight: 300;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-.legal_doc_modal .verification_process .single_process p:last-child {
-  margin-bottom: 0px;
-}
-.legal_doc_modal .verification_process .single_process ul {
-  margin-bottom: 0px;
-}
-.legal_doc_modal .verification_process .single_process ul li {
-  color: var(--darkColor);
-  font-family: var(--baseFont);
-  font-weight: 300;
-  font-size: 15px;
-  margin-bottom: 10px;
-  list-style: none;
-  position: relative;
-  padding-left: 25px;
-}
-.legal_doc_modal .verification_process .single_process ul li:last-child {
-  margin-bottom: 0px;
-}
-.legal_doc_modal .verification_process .single_process ul li:before {
-  content: "\f00c";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--baseColor);
-  position: absolute;
-  left: 0px;
-  top: 1px;
+.legal_doc_modal .insurance_certificate .certificate_pdf a{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 18px;
+	display: inline-block;
+	margin-top: 5px;
 }
 
-.legal_doc_modal .verification_process .sub_process {
-  margin-bottom: 30px;
+.legal_doc_modal .verification_process .gabazzo_logo{
+	max-width: 150px !important;
 }
-.legal_doc_modal .verification_process .sub_process:last-child {
-  margin-bottom: 0px;
+.legal_doc_modal .verification_process .gabazzo_logo.white_logo{
+	display: none;
+}
+.legal_doc_modal .verification_process .top_part{
+	padding: 40px 30px;
+}
+.legal_doc_modal .verification_process .bottom_part{
+	background: #F7F7F7;
+	padding: 20px 30px;
+}
+.legal_doc_modal .verification_process .single_process{
+	margin-bottom: 30px;
+}
+.legal_doc_modal .verification_process .single_process:last-child{
+	margin-bottom: 0px;
+}
+.legal_doc_modal .verification_process .single_process h3{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 30px;
+	margin-bottom: 15px;
+}
+.legal_doc_modal .verification_process .single_process h3 img{
+	max-width: 50px;
+}
+
+.legal_doc_modal .verification_process .verifi_process_txt_img{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 200px;
+    grid-template-columns: 1fr 200px;
+    grid-auto-rows: auto;
+    gap: 15px;	
+}
+@media screen and (max-width:767.98px){
+	.legal_doc_modal .verification_process .verifi_process_txt_img{
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;	
+	}
+	.legal_doc_modal .verification_process .verifi_process_txt_img .gb_badge_wrap{
+		text-align: center;
+	}
+	.legal_doc_modal .verification_process .verifi_process_txt_img .gb_badge_wrap img{
+		max-width: 200px;
+	}
+}
+
+.legal_doc_modal .verification_process .single_process h5{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.legal_doc_modal .verification_process .single_process p{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 300;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+.legal_doc_modal .verification_process .single_process p:last-child{
+	margin-bottom: 0px;
+}
+.legal_doc_modal .verification_process .single_process ul{
+	margin-bottom: 0px;
+}
+.legal_doc_modal .verification_process .single_process ul li{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 300;
+	font-size: 15px;
+	margin-bottom: 10px;
+	list-style: none;
+	position: relative;
+	padding-left: 25px;
+}
+.legal_doc_modal .verification_process .single_process ul li:last-child{
+	margin-bottom: 0px;
+}
+.legal_doc_modal .verification_process .single_process ul li:before{
+	content: "\f00c";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 700;
+	font-size: 16px;
+	color: var(--baseColor);
+	position: absolute;
+	left: 0px;
+	top: 1px;
+}
+
+.legal_doc_modal .verification_process .sub_process{
+	margin-bottom: 30px;
+}
+.legal_doc_modal .verification_process .sub_process:last-child{
+	margin-bottom: 0px;
 }
 
 /* =============================== */
+/* =============================== */
 
-.legal_doc_upload_modal .certificate_image {
-  display: -ms-grid;
-  display: grid;
-  -ms-flex-line-pack: end;
-  align-content: end;
+.user_badges_modal {
+	z-index: 2222;
 }
-.legal_doc_upload_modal .attachment {
-  background: var(--grayColor);
-  border: 1px solid var(--borderColor);
-  width: 100%;
-  height: 180px;
-  padding: 25px;
-  border-radius: 5px;
-  position: relative;
+.tooltip{
+	z-index: 3333;
 }
-.legal_doc_upload_modal .attach_file .attachment {
-  margin-bottom: -5px;
-  cursor: pointer;
+.user_badges_modal .modal-header {
+	background: var(--baseColor);
+	padding: 10px 15px;
+	border-bottom: none;
+	position: relative;
 }
-.legal_doc_upload_modal .attachment .texts {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+.user_badges_modal .modal-header .close {
+	position: absolute;
+	right: 10px;
+	top: 8px;
 }
-.legal_doc_upload_modal .attachment .texts span {
-  color: var(--baseColor);
-  font-family: var(--baseFont);
-  font-weight: 500;
-  font-size: 20px;
-  display: block;
-  margin-bottom: 10px;
+.user_badges_modal .modal-body{
+	padding: 15px;
 }
-.legal_doc_upload_modal .attachment .texts i {
-  color: var(--baseColor);
-  font-size: 40px;
+.user_badges_modal .modal-header h3 {
+	color: var(--lightColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 22px;
+	margin-bottom: 0px;
+	width: 100%;
+	text-align: center;
 }
 
-.legal_doc_upload_modal .single_certificate_info {
-  margin-bottom: 10px;
+.user_badges_modal .user_badges_tabs{
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 175px 15px 1fr;
+	grid-template-columns: 175px 1fr;
+	grid-auto-rows: auto;
+	gap: 15px;	
 }
-.legal_doc_upload_modal .single_certificate_info:last-child {
-  margin-bottom: 0px;
+.user_badges_modal .all_years{
+	border: 1px solid #E6E6E6;
 }
-.legal_doc_upload_modal label {
-  color: var(--darkColor);
-  font-family: var(--baseFont);
-  font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 5px;
+.user_badges_modal .all_years h4{
+	color: var(--lightColor);
+	background: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 600;
+	font-size: 18px;
+	margin-bottom: 0px;
+	text-align: center;
+	padding: 10px;
 }
-.legal_doc_upload_modal .form-control {
-  color: var(--darkColor);
-  font-family: var(--baseFont);
-  font-weight: 400;
-  font-size: 15px;
-  border: 1px solid var(--borderColor);
-  border-radius: 2px;
-  height: inherit;
-  padding: 7.5px 10px;
+.user_badges_modal .nav{
+	display: block;
+	padding: 10px;
+	font-size: 0px;
+}
+.user_badges_modal .nav a {
+	display: block;
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	text-align: center;
+	font-size: 16px;
+	padding: 6px 15px;
+	border: 1px solid #E6E6E6;
+	border-bottom: none;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.user_badges_modal .nav a:last-child{
+	border-bottom: 1px solid #E6E6E6;
+}
+.user_badges_modal .nav a.active {
+	color: var(--darkColor);
+	background: var(--baseLightColor);
 }
 
-.legal_doc_upload_modal .submit_button {
-  margin-top: 30px;
-  text-align: center;
+.user_badges_modal .tab-content {
+	padding: 15px;
+	height: 410px;
+	overflow-y: auto;
+	border: 1px solid #E6E6E6;
 }
-.legal_doc_upload_modal .the_certificate h1 {
-  font-size: 36px;
+
+.user_badges_modal .all_badges_wrap{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px;
+}
+.user_badges_modal .single_badge {
+	text-align: center;
+}
+.user_badges_modal .single_badge a{
+	display: inline-block;
+}
+.user_badges_modal .single_badge img{
+	max-width: 120px;
+}
+.user_badges_modal .single_badge h6{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 0px;
+	margin-top: 5px;
+}
+
+
+@media (max-width: 575.98px) {
+	
+	.user_badges_modal .modal-header h3{
+		font-size: 20px;
+	}
+	.user_badges_modal .modal-body {
+		padding: 10px;
+	}
+	.user_badges_modal .user_badges_tabs{
+		-ms-grid-columns: auto;
+		grid-template-columns: auto;
+		gap: 10px;	
+	}
+	.user_badges_modal .single_badge img {
+		max-width: 100px;
+	}
+
+	.user_badges_modal .single_badge h6{
+		font-size: 14px;
+	}
+
+	.user_badges_modal .nav{
+		padding: 5px;
+	}
+	.user_badges_modal .nav a{
+		display: inline-block;
+		margin: 5px;
+		border-bottom: 1px solid #E6E6E6;
+	}
+	.user_badges_modal .all_years h4 {
+		font-size: 16px;
+		padding: 7.5px;
+	}
+	.user_badges_modal .all_badges_wrap {
+		-ms-grid-columns: 1fr 20px 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+	
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+	.user_badges_modal {
+		padding: 10px;
+	}
+	.user_badges_modal .modal-lg {
+		max-width: 100%;
+	}
+	.user_badges_modal .modal-body {
+		padding: 10px;
+	}
+	.user_badges_modal .user_badges_tabs{
+		-ms-grid-columns: 120px 10px 1fr;
+		grid-template-columns: 120px 1fr;
+		gap: 10px;	
+	}
+	.user_badges_modal .single_badge img {
+		max-width: 100px;
+	}
+
+	.user_badges_modal .single_badge h6{
+		font-size: 14px;
+	}
+	
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	
+	.user_badges_modal {
+		padding: 10px;
+	}
+	.user_badges_modal .modal-lg {
+		max-width: 800px;
+	}
+	
+}
+
+/* =============================== */
+/* =============================== */
+
+.legal_doc_upload_modal .certificate_image{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: end;
+	align-content: end;
+}
+.legal_doc_upload_modal .attachment{
+	background: var(--grayColor);
+	border: 1px solid var(--borderColor);
+	width: 100%;
+	height: 180px;
+	padding: 25px;
+	border-radius: 5px;
+	position: relative;
+}
+.legal_doc_upload_modal .attach_file .attachment{
+	margin-bottom: -5px;
+	cursor: pointer;
+}
+.legal_doc_upload_modal .attachment .file_attachment{
+	display: none;
+}
+.legal_doc_upload_modal .attachment .texts{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.legal_doc_upload_modal .attachment .texts span{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 20px;
+	display: block;
+	margin-bottom: 10px;
+}
+.legal_doc_upload_modal .attachment .texts i{
+	color: var(--baseColor);
+	font-size: 40px;
+}
+
+.legal_doc_upload_modal .single_certificate_info{
+	margin-bottom: 10px;
+}
+.legal_doc_upload_modal .single_certificate_info:last-child{
+	margin-bottom: 0px;
+}
+.legal_doc_upload_modal label{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+.legal_doc_upload_modal .form-control{
+	color: var(--darkColor);
+	font-family: var(--baseFont);
+	font-weight: 400;
+	font-size: 15px;
+	border: 1px solid var(--borderColor);
+	border-radius: 2px;
+	height: inherit;
+	padding: 7.5px 10px;	
+}
+
+.legal_doc_upload_modal .submit_button{
+	margin-top: 30px;
+	text-align: center;
+}
+.legal_doc_upload_modal .submit_button .gbtn{
+	padding: 15px 15px;
+	border-radius: 3px;
+	font-size: 18px;
+	min-width: 280px;
+}
+.legal_doc_upload_modal .the_certificate h1{
+	font-size: 36px;
 }
 .legal_doc_upload_modal .certificate_wrap {
-  padding: 100px 20px;
+	padding: 100px 20px;
 }
 
-.legal_doc_upload_modal .form_row {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 15px 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: auto;
-  gap: 15px;
+.legal_doc_upload_modal .form_row{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 15px;
 }
 
+/* ==================================== */
+
+.legal_doc_upload_modal .uploaded_documents {
+	background: var(--grayColor);
+	border: 1px solid var(--borderColor);
+	border-radius: 4px;
+	padding: 10px;
+}
+.legal_doc_upload_modal .uploaded_documents .the_document{
+	margin-bottom: 10px;
+}
+.legal_doc_upload_modal .uploaded_documents .document_preview{
+	margin-bottom: 5px;
+}
+.legal_doc_upload_modal .uploaded_documents .document_preview img{
+	width: 100%;
+	height: 250px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border: 2px solid var(--darkColor);
+	border-radius: 4px;
+}
+.legal_doc_upload_modal .uploaded_documents .document_link{
+	text-align: center;
+}
+.legal_doc_upload_modal .uploaded_documents .document_link a{
+	color: var(--baseColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	display: inline-block;
+}
+.legal_doc_upload_modal .uploaded_documents .document_link a:hover{
+	text-decoration: underline;
+}
+
+
+.legal_doc_upload_modal .uploaded_documents .replace_document .attachment{
+	color: var(--lightColor);
+	border-radius: 3px;
+	display: block;
+	padding: 12.5px 40px;
+	font-size: 15px;
+	cursor: pointer;
+	background: var(--baseColor);
+	height: inherit;
+	border: none;
+	position: static;
+	margin-bottom: 0px;
+}
+.legal_doc_upload_modal .uploaded_documents .replace_document .attachment .file_attachment{
+	display: none;
+}
+.legal_doc_upload_modal .uploaded_documents .replace_document .attachment span{
+	color: var(--lightColorColor);
+	font-family: var(--baseFont);
+	font-weight: 500;
+	font-size: 16px;
+	display: inline-block;
+}
+
+.legal_doc_uploaded_modal .certificate_wrap {
+	padding: 50px 20px;
+}
+.legal_doc_uploaded_modal .the_certificate .certificate_texts{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+}
+.legal_doc_uploaded_modal .the_certificate .certificate_image{
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+	align-content: center;
+}
 /* ===== CSS For "Company Modals" Ends Here ===== */
 
 .cp_info_legals_m_wrap {
@@ -40044,6 +40250,16 @@ color: rgba(0,0,0, 0.5);
 }
 /* ===== CSS For "Loading Page" Ends Here ===== */
 
+.customloader {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0.8;
+  z-index: 100000000;
+}
+
 
 /* ============================== */
 /* ============================== */
@@ -40113,4 +40329,3 @@ color: rgba(0,0,0, 0.5);
 /* ============================== */
 /* ============================== */
 /* ============================== */
-
